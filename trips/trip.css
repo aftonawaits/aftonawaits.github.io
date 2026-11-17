@@ -85,3 +85,8 @@ a { text-underline-offset: .22em; }
 .dock span { font-size: .875rem; color: rgb(244 239 230 / .75); white-space: nowrap; }
 .dock .btn { min-height: 2.6rem; padding: .35rem 1rem; font-size: .9375rem; white-space: nowrap; }
 @media (max-width: 560px) { .dock span { display: none; } .dock { padding-left: .5rem; } }
+
+/* the selling paragraph, in the owner's words */
+.pitch { padding-top: clamp(1.6rem, 5vw, 3rem); }
+.pitch__text { font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: clamp(1.25rem, 2.6vw, 1.7rem); line-height: 1.4; letter-spacing: -.01em; max-width: 56rem; color: #f4efe6; border-left: 3px solid var(--accent); padding-left: clamp(1rem, 3vw, 1.6rem); }
+.sec--tight { padding-top: clamp(1.8rem, 5vw, 3rem); }
