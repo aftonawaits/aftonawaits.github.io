@@ -4,31 +4,136 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The tee-time weekend | Afton Awaits</title>
 <meta name="description" content="An early start, eighteen holes, then a pool, a grill and a fire with the Blue Ridge for a backdrop. The house is the nineteenth hole.">
-<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/trips/trips.css">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101216">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/trips/trip.css">
+<style>:root { --accent: #7fd6a0; --accent-ink: #06281a; }</style>
 </head>
-<body class="t-golf">
-<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><a class="switch" href="/?switch" id="switch">Switch trip</a></header>
+<body data-trip="golf">
+<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><nav><a href="/?switch">Switch trip</a><a class="pill" href="/plan/?i=beer-cider,food,music">Plan your stay</a></nav></header>
 <main>
-  <section class="hero">
-    <div class="hero__text"><p class="kicker">Clubhouse · Afton, Virginia</p><h1>Play all day. <em>Finish here.</em></h1><p class="lede">An early start, eighteen holes, then a pool, a grill and a fire with the Blue Ridge for a backdrop. The house is the nineteenth hole.</p>
-      <p class="also" id="also" hidden></p>
-      <p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></div>
-    <figure class="hero__img"><img src="/img/porchView-1200.webp" alt="The view from the porch across the lawn to the Blue Ridge." width="1200" height="800"></figure>
+  <section class="open">
+    <div class="open__thread" id="thread" aria-label="Your conversation with the house">
+      <p class="bub bub--out">Tee time’s at 8.</p>
+      <p class="bub bub--in">Early start, long evening. The fire will be going when you’re back.</p>
+    </div>
+    <div class="open__copy">
+      <p class="kicker">The tee-time weekend</p>
+      <h1>Play all day. <em>Finish here.</em></h1>
+      <p class="lede">An early start, eighteen holes, then a pool, a grill and a fire with the Blue Ridge for a backdrop. The house is the nineteenth hole.</p>
+      <p class="cta"><a class="btn" href="/plan/?i=beer-cider,food,music">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></p>
+    </div>
+    <img class="open__img" src="/img/porchView-1200.webp" alt="The view from the porch across the lawn to the Blue Ridge." width="1200" height="800" fetchpriority="high">
   </section>
-  <ul class="facts"><li>Sleeps six</li><li>Three bedrooms</li><li>Two and a half baths</li><li>Saltwater pool, May to September</li><li>Hot tub</li><li>One level, no stairs</li></ul>
-  <section class="day"><header><h2>The scorecard</h2><p>Six holes after the eighteenth. Par is generous.</p></header><ol><li><span class="n">1</span><div><h3>Coffee on the porch</h3><p>Before the first tee time, with the ridge in front of you.</p></div></li><li><span class="n">2</span><div><h3>Out the drive</h3><p>Free parking at the door, so the clubs go straight in the car.</p></div></li><li><span class="n">3</span><div><h3>Back by mid-afternoon</h3><p>Straight into the saltwater pool. Open May to September.</p></div></li><li><span class="n">4</span><div><h3>Fire up the grill</h3><p>A gas grill and an outdoor kitchen beside the patio. Barbecue utensils are provided.</p></div></li><li><span class="n">5</span><div><h3>The game is on</h3><p>HDTV and wifi inside, a gas fireplace under it.</p></div></li><li><span class="n">6</span><div><h3>Settle up at the fire</h3><p>Chairs around the fire table. Quiet hours from 10, which suits an early tee time.</p></div></li></ol></section>
-  <section class="feats"><h2>The house, for this trip</h2><ul><li><img src="/img/outdoorKitchen-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The outdoor kitchen</h3><p>A gas grill, a counter and a place to eat outside.</p></li><li><img src="/img/patioFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The fire table</h3><p>Where the round gets replayed.</p></li><li><img src="/img/hotTub-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The hot tub</h3><p>For backs and shoulders.</p></li></ul></section>
-  <section class="picks"><h2>Local courses</h2><p>Our course list, with drive times, is coming soon.</p><p class="cta"><a class="btn" href="/plan/?i=beer-cider,food,music">Plan your trip</a></p><!-- TODO: owner to supply named places and drive times; nothing is named until then --></section>
-  <section class="good"><h2>Good to know</h2><ul><li>Three beds: a king and two queens</li><li>Two twin air mattresses in the closet</li><li>Six registered guests, no parties</li><li>Washer and dryer</li></ul></section>
-  <section class="end"><h2>Six of you, one house.</h2><p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></section>
+
+  <nav class="jump" aria-label="On this page"><a href="#why">Why this house</a><a href="#day">A day here</a><a href="#near">Close by</a><a href="#on">What’s on</a><a href="#sleep">Who sleeps where</a><a href="#know">Good to know</a></nav>
+
+  <section class="sec" id="why">
+    <h2>Why this house works <em>after eighteen</em></h2>
+    <ul class="why" id="why-list">
+      <li><img src="/img/outdoorKitchen-800.webp" alt="" loading="lazy" width="800" height="600"><h3>An outdoor kitchen</h3><p>A gas grill, a counter and a place to eat outside. Barbecue utensils are provided.</p></li>
+      <li><img src="/img/patioFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The fire table</h3><p>Where the round gets replayed, shot by shot.</p></li>
+      <li><img src="/img/hotTub-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The hot tub</h3><p>For backs and shoulders, in every season.</p></li>
+      <li><img src="/img/livingWide-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The game is on</h3><p>A television and wifi inside, with a gas fireplace under it.</p></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="day">
+    <h2>A Saturday, <em>hole by hole</em></h2>
+    <ol class="day">
+      <li><span>Early</span><h3>Coffee on the porch</h3><p>Before the first tee time, with the ridge in front of you.</p></li>
+      <li><span>Morning</span><h3>Out the drive</h3><p>Free parking at the door, so the clubs go straight in the car.</p></li>
+      <li><span>Afternoon</span><h3>Back by mid-afternoon</h3><p>Straight into the saltwater pool, open May to September.</p></li>
+      <li><span>Evening</span><h3>Fire up the grill</h3><p>Dinner outside, steps from the water.</p></li>
+      <li><span>Later</span><h3>Settle up at the fire</h3><p>Chairs around the fire table. Quiet hours start at 10, which suits an early tee time.</p></li>
+      <li><span>Bedtime</span><h3>Real beds</h3><p>A king and two queens, linens included.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec" id="near">
+    <h2>Close by, <em>before and after the round</em></h2>
+    <p class="note">Drive times are estimates from the house. Tap <strong>Add</strong> and it goes into your plan.</p>
+    <ul class="near" id="near-list">
+      <li><div><h3><a href="/explore/places/paulie-s-pig-out/">Paulie's Pig Out</a></h3><p>Barbecue.</p></div><span class="mins">about 5 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~paulie-s-pig-out" aria-label="Add Paulie's Pig Out to my trip">Add</a></li>
+      <li><div><h3><a href="/explore/places/grill-151/">Grill 151</a></h3><p>A diner in the valley. Breakfast all day.</p></div><span class="mins">about 10 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~grill-151" aria-label="Add Grill 151 to my trip">Add</a></li>
+      <li><div><h3><a href="/explore/places/wintergreen-resort/">Wintergreen Resort</a></h3><p>The resort has golf. Book tee times with them directly.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~wintergreen-resort" aria-label="Add Wintergreen Resort to my trip">Add</a></li>
+      <li><div><h3><a href="/explore/places/blue-mountain-brewery/">Blue Mountain Brewery</a></h3><p>A brewery in Afton with a kitchen.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~blue-mountain-brewery" aria-label="Add Blue Mountain Brewery to my trip">Add</a></li>
+      <li><div><h3><a href="/explore/places/devils-backbone-basecamp-brewpub/">Devils Backbone Basecamp Brewpub</a></h3><p>A brewpub in the valley.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~devils-backbone-basecamp-brewpub" aria-label="Add Devils Backbone Basecamp Brewpub to my trip">Add</a></li>
+      <li><div><h3><a href="/explore/places/bold-rock-hard-cider/">Bold Rock Hard Cider</a></h3><p>A cidery in Nellysford.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=beer-cider,food,music&add=p~bold-rock-hard-cider" aria-label="Add Bold Rock Hard Cider to my trip">Add</a></li>
+    </ul>
+    <p class="more"><a href="/plan/?i=beer-cider,food,music">See everything on the map</a></p>
+  </section>
+
+  <section class="sec" id="on">
+    <h2>What’s on <em>nearby</em></h2>
+    <ul class="on" id="events" data-filter="beer-cider,music,food"><li class="on__wait">Checking the calendar…</li></ul>
+    <p class="more"><a href="/explore/this-weekend/">This weekend near Afton</a></p>
+  </section>
+
+  <section class="sec" id="sleep">
+    <h2>Who sleeps <em>where</em></h2>
+    <ul class="sleep">
+      <li><img src="/img/king-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The king suite</h3><p>A king bed, a fireplace and its own bathroom. Low score takes it.</p></li>
+      <li><h3>Two queen rooms</h3><p>One each side of a shared full bathroom, at the other end of the house.</p></li>
+      <li><h3>A bed each, if you want</h3><p>Two twin air mattresses are in the closet. Bring linens for those.</p></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="know">
+    <h2>Good to <em>know</em></h2>
+    <div class="know">
+      <dl>
+        <div><dt>Check-in</dt><dd>4:00 PM</dd></div>
+        <div><dt>Check-out</dt><dd>11:00 AM</dd></div>
+        <div><dt>Pool season</dt><dd>May to September</dd></div>
+        <div><dt>Hot tub</dt><dd>All year</dd></div>
+        <div><dt>From Charlottesville</dt><dd>about 30 minutes</dd></div>
+        <div><dt>From Richmond</dt><dd>about 1½ hours</dd></div>
+        <div><dt>From Washington, DC</dt><dd>about 2½ hours</dd></div>
+      </dl>
+      <ul><li>Sleeps six: a king and two queens</li><li>Two and a half bathrooms</li><li>Six registered guests, no parties</li><li>Washer and dryer</li><li>Free parking at the door</li><li>Sorry, no pets</li></ul>
+    </div>
+  </section>
+
+  <section class="end">
+    <h2>Ready to <em>plan it?</em></h2>
+    <p>Pick your dates, add what looks good, and send yourself the itinerary.</p>
+    <p class="cta"><a class="btn" href="/plan/?i=beer-cider,food,music">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></p>
+    <p class="end__house"><a href="https://afton-awaits.netlify.app/">See the whole house</a></p>
+  </section>
 </main>
-<footer class="foot"><a class="mark" href="/">Afton <em>Awaits</em></a><p>Afton, Virginia</p></footer>
+<div class="dock" id="dock" hidden><span>The tee-time weekend</span><a class="btn" href="/plan/?i=beer-cider,food,music">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></div>
 <script type="module">
-import { forget } from '/shared.js';
-const NAMES = {'family': 'the family weekend', 'girls': 'the girls’ weekend', 'golf': 'the tee-time weekend', 'outdoors': 'the trail and snow weekend', 'trail151': 'the Route 151 weekend'}, LINKS = {'family': '/trips/family/', 'golf': '/trips/golf/', 'trail151': '/trips/trail151/', 'outdoors': '/trips/outdoors/', 'girls': 'https://afton-awaits-invitation.netlify.app/girls-trip/'};
-const also = new URLSearchParams(location.search).get('also');
-if (NAMES[also] && also !== 'golf') { const p = document.getElementById('also'); p.innerHTML = `Mixed group? You also picked <a href="${LINKS[also]}">${NAMES[also]}</a>.`; p.hidden = false; }
-document.getElementById('switch').addEventListener('click', () => forget());
+// The bar with both buttons appears once the opening has scrolled away.
+const dock = document.getElementById('dock'), end = document.querySelector('.end');
+const seen = new Map();
+const io = new IntersectionObserver((es) => { for (const e of es) seen.set(e.target, e.isIntersecting); dock.hidden = [...seen.values()].some(Boolean); }); io.observe(document.querySelector('.open')); io.observe(end);
+// Mixed group (?also=other): add the second trip's reply, two of its reasons and three of its places, and plan for both.
+const also = new URLSearchParams(location.search).get('also'), me = document.body.dataset.trip;
+if (also && also !== me) try {
+  const o = (await (await fetch('/trips/trips.json')).json())[also];
+  if (o) {
+    const safe = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'), thread = document.getElementById('thread');
+    thread.querySelector('.bub--in').insertAdjacentHTML('beforebegin', '<p class="bub bub--out">' + safe(o.said) + '</p>'); thread.querySelector('.bub--in').textContent = 'Both, then. I like this group.';
+    document.querySelector('.kicker').textContent += ' + ' + o.title.replace(/^The /, 'the ');
+    const mine = new URLSearchParams(document.querySelector('.cta .btn').getAttribute('href').split('?')[1]).get('i').split(','), both = [...new Set([...mine, ...o.interests.split(',')])].join(',');
+    document.getElementById('why-list').insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
+    const have = new Set([...document.querySelectorAll('#near-list .add')].map((a) => a.getAttribute('href').split('add=p~')[1]));
+    document.getElementById('near-list').insertAdjacentHTML('beforeend', o.near.filter((n) => !have.has(n.slug)).slice(0, 3).map((n) => '<li><div><h3><a href="/explore/places/' + n.slug + '/">' + safe(n.name) + '</a></h3><p>' + safe(n.note) + '</p></div><span class="mins">about ' + n.mins + ' min</span><a class="add" href="/plan/?i=x&add=p~' + n.slug + '" aria-label="Add ' + safe(n.name) + ' to my trip">Add</a></li>').join(''));
+    for (const a of document.querySelectorAll('a[href^="/plan/?i="]')) a.setAttribute('href', a.getAttribute('href').replace(/i=[^&]*/, 'i=' + both));
+  }
+} catch { /* the page still works as a single trip */ }
+// What's on: the next few events that suit this trip, straight from the calendar so the page never goes stale.
+const list = document.getElementById('events'), want = list.dataset.filter;
+try {
+  const data = await (await fetch('/api/events.json')).json(), now = Date.now(), soon = now + 45 * 864e5;
+  const all = (data.events ?? data).filter((e) => { const s = Date.parse(e.start); return s > now && s < soon && e.status !== 'cancelled'; }).sort((a, b) => a.start.localeCompare(b.start));
+  const fits = (e) => want === 'family' ? e.familyFriendly === true || e.categories?.includes('family') || e.categories?.includes('market') : e.categories?.some((c) => want.split(',').includes(c));
+  const wantNow = want; const pick = all.filter(fits).slice(0, 4), fmt = (s) => new Date(s).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/New_York' });
+  list.innerHTML = pick.length
+    ? pick.map((e) => '<li><span>' + fmt(e.start) + '</span><h3><a href="/explore/events/' + e.id + '/">' + e.title.replace(/</g, '&lt;') + '</a></h3><p>' + (e.venueName ?? '').replace(/</g, '&lt;') + '</p></li>').join('')
+    : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
+} catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
 </body>
 </html>

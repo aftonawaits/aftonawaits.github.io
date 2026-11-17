@@ -11,7 +11,7 @@ export const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const KEY = 'afton-trip';
 
 // The girls' weekend lives on its own site. In a mixed trip the other choice leads and the girls' site is linked from that page.
-export const EXTERNAL = { girls: 'https://afton-awaits-invitation.netlify.app/girls-trip/' };
+export const EXTERNAL = {};   // every trip now has its own page here
 export const HOUSE = 'https://afton-awaits.netlify.app/';
 export const url = (ids) => {
   const o = [...ids].sort((a, b) => (a in EXTERNAL) - (b in EXTERNAL));

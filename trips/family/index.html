@@ -13,7 +13,7 @@
 <header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><nav><a href="/?switch">Switch trip</a><a class="pill" href="/plan/?i=family,outdoors">Plan your stay</a></nav></header>
 <main>
   <section class="open">
-    <div class="open__thread" aria-label="Your conversation with the house">
+    <div class="open__thread" id="thread" aria-label="Your conversation with the house">
       <p class="bub bub--out">The kids need a pool.</p>
       <p class="bub bub--in">Good. It’s fenced, it’s saltwater, and there’s room for six of you.</p>
     </div>
@@ -30,7 +30,7 @@
 
   <section class="sec" id="why">
     <h2>Why this house works <em>for a family</em></h2>
-    <ul class="why">
+    <ul class="why" id="why-list">
       <li><img src="/img/aerialPool-800.webp" alt="" loading="lazy" width="800" height="600"><h3>A pool that’s only yours</h3><p>Saltwater, private to your family, and fenced all the way round with a gate. Open May to September.</p></li>
       <li><img src="/img/patioFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>Everything is steps apart</h3><p>Pool, grill, table and fire table sit together behind the house, so you can cook and still see the water.</p></li>
       <li><img src="/img/livingWide-800.webp" alt="" loading="lazy" width="800" height="600"><h3>One level, no stairs</h3><p>Nothing to gate off and nobody to carry up. A gas fireplace and a television for the rainy hour.</p></li>
@@ -53,7 +53,7 @@
   <section class="sec" id="near">
     <h2>Close by, <em>and good with kids</em></h2>
     <p class="note">Drive times are estimates from the house. Tap <strong>Add</strong> and it goes into your plan.</p>
-    <ul class="near">
+    <ul class="near" id="near-list">
       <li><div><h3><a href="/explore/places/black-bear-creamery/">Black Bear Creamery</a></h3><p>Ice cream in Nellysford.</p></div><span class="mins">about 10 min</span><a class="add" href="/plan/?i=family,outdoors&add=p~black-bear-creamery" aria-label="Add Black Bear Creamery to my trip">Add</a></li>
       <li><div><h3><a href="/explore/places/blue-ridge-tunnel-east-trailhead/">Blue Ridge Tunnel (east trailhead)</a></h3><p>A railway tunnel you can walk through. Bring a torch for everyone.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=family,outdoors&add=p~blue-ridge-tunnel-east-trailhead" aria-label="Add Blue Ridge Tunnel (east trailhead) to my trip">Add</a></li>
       <li><div><h3><a href="/explore/places/rockfish-valley-trail/">Rockfish Valley Trail</a></h3><p>Flat walking beside the river. The main loop is about two miles.</p></div><span class="mins">about 15 min</span><a class="add" href="/plan/?i=family,outdoors&add=p~rockfish-valley-trail" aria-label="Add Rockfish Valley Trail to my trip">Add</a></li>
@@ -108,13 +108,28 @@
 const dock = document.getElementById('dock'), end = document.querySelector('.end');
 const seen = new Map();
 const io = new IntersectionObserver((es) => { for (const e of es) seen.set(e.target, e.isIntersecting); dock.hidden = [...seen.values()].some(Boolean); }); io.observe(document.querySelector('.open')); io.observe(end);
+// Mixed group (?also=other): add the second trip's reply, two of its reasons and three of its places, and plan for both.
+const also = new URLSearchParams(location.search).get('also'), me = document.body.dataset.trip;
+if (also && also !== me) try {
+  const o = (await (await fetch('/trips/trips.json')).json())[also];
+  if (o) {
+    const safe = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'), thread = document.getElementById('thread');
+    thread.querySelector('.bub--in').insertAdjacentHTML('beforebegin', '<p class="bub bub--out">' + safe(o.said) + '</p>'); thread.querySelector('.bub--in').textContent = 'Both, then. I like this group.';
+    document.querySelector('.kicker').textContent += ' + ' + o.title.replace(/^The /, 'the ');
+    const mine = new URLSearchParams(document.querySelector('.cta .btn').getAttribute('href').split('?')[1]).get('i').split(','), both = [...new Set([...mine, ...o.interests.split(',')])].join(',');
+    document.getElementById('why-list').insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
+    const have = new Set([...document.querySelectorAll('#near-list .add')].map((a) => a.getAttribute('href').split('add=p~')[1]));
+    document.getElementById('near-list').insertAdjacentHTML('beforeend', o.near.filter((n) => !have.has(n.slug)).slice(0, 3).map((n) => '<li><div><h3><a href="/explore/places/' + n.slug + '/">' + safe(n.name) + '</a></h3><p>' + safe(n.note) + '</p></div><span class="mins">about ' + n.mins + ' min</span><a class="add" href="/plan/?i=x&add=p~' + n.slug + '" aria-label="Add ' + safe(n.name) + ' to my trip">Add</a></li>').join(''));
+    for (const a of document.querySelectorAll('a[href^="/plan/?i="]')) a.setAttribute('href', a.getAttribute('href').replace(/i=[^&]*/, 'i=' + both));
+  }
+} catch { /* the page still works as a single trip */ }
 // What's on: the next few events that suit this trip, straight from the calendar so the page never goes stale.
 const list = document.getElementById('events'), want = list.dataset.filter;
 try {
   const data = await (await fetch('/api/events.json')).json(), now = Date.now(), soon = now + 45 * 864e5;
   const all = (data.events ?? data).filter((e) => { const s = Date.parse(e.start); return s > now && s < soon && e.status !== 'cancelled'; }).sort((a, b) => a.start.localeCompare(b.start));
   const fits = (e) => want === 'family' ? e.familyFriendly === true || e.categories?.includes('family') || e.categories?.includes('market') : e.categories?.some((c) => want.split(',').includes(c));
-  const pick = all.filter(fits).slice(0, 4), fmt = (s) => new Date(s).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/New_York' });
+  const wantNow = want; const pick = all.filter(fits).slice(0, 4), fmt = (s) => new Date(s).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/New_York' });
   list.innerHTML = pick.length
     ? pick.map((e) => '<li><span>' + fmt(e.start) + '</span><h3><a href="/explore/events/' + e.id + '/">' + e.title.replace(/</g, '&lt;') + '</a></h3><p>' + (e.venueName ?? '').replace(/</g, '&lt;') + '</p></li>').join('')
     : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
