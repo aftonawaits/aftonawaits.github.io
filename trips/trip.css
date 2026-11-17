@@ -87,3 +87,21 @@ a { text-underline-offset: .22em; }
 @media (max-width: 560px) { .dock span { display: none; } .dock { padding-left: .5rem; } }
 .end .end__direct { justify-content: center; margin: 0 auto 1.2rem; color: #ffd993; max-width: none; }
 .dock span { color: #ffd993; font-weight: 600; }
+
+/* occasion pages (under the girls' weekend) */
+.open__copy--solo { align-self: center; grid-row: 1 / -1; }
+.days { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); align-items: start; }
+.days section { background: #1b1e25; border-radius: 1.2rem; padding: 1.2rem 1.2rem 1rem; }
+.days h3 { color: var(--accent); margin-bottom: .7rem; }
+.days ol { display: grid; gap: .8rem; } .days li span { font-family: var(--mono); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: rgb(244 239 230 / .6); } .days li p { margin-top: .1rem; color: #f4efe6; }
+.note--after { margin: 1.2rem 0 0; }
+.faq { display: grid; gap: .5rem; max-width: 52rem; }
+.faq details { background: #1b1e25; border-radius: 1rem; padding: 0 1.1rem; }
+.faq summary { cursor: pointer; padding: .95rem 0; font-family: var(--serif); font-size: 1.15rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; } .faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--accent); font-family: var(--sans); } .faq details[open] summary::after { content: '–'; }
+.faq p { padding: 0 0 1rem; color: rgb(244 239 230 / .8); max-width: 44rem; }
+.policy { margin-top: 1.2rem; max-width: 52rem; padding: 1rem 1.1rem; border-left: 3px solid var(--accent); background: rgb(255 255 255 / .04); border-radius: 0 1rem 1rem 0; color: rgb(244 239 230 / .85); }
+.also { display: flex; flex-wrap: wrap; gap: .6rem; } .also a { display: inline-flex; align-items: center; min-height: 2.8rem; padding: .4rem 1.1rem; border-radius: 99px; border: 1.5px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; } .also a:hover { background: var(--accent); color: var(--accent-ink); }
+/* a card that leads somewhere */
+.why li.go { position: relative; transition: transform .2s; } .why li.go:hover { transform: translateY(-3px); }
+.why li.go a { color: var(--accent); font-weight: 600; text-decoration: none; display: inline-block; margin: .6rem 1.1rem 0; } .why li.go a::after { content: ''; position: absolute; inset: 0; } .why li.go a::before { content: '→ '; }
