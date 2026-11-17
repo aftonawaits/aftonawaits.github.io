@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Route 151 weekend | Afton Awaits</title>
+<meta name="description" content="Route 151 and its wineries, breweries, cideries and distilleries are right outside. The house is where the evening is poured.">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/trips/trips.css">
+</head>
+<body class="t-trail151">
+<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><a class="switch" href="/?switch" id="switch">Switch trip</a></header>
+<main>
+  <section class="hero">
+    <div class="hero__text"><p class="kicker">A weekend on Route 151</p><h1>Taste there. <em>Stay here.</em></h1><p class="lede">Route 151 and its wineries, breweries, cideries and distilleries are right outside. The house is where the evening is poured.</p>
+      <p class="also" id="also" hidden></p>
+      <p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></div>
+    <figure class="hero__img"><img src="/img/dining-1024.webp" alt="The farm table and bench in the dining room, with the door to the patio and the ridge beyond." width="1200" height="800"></figure>
+  </section>
+  <ul class="facts"><li>Sleeps six</li><li>Three bedrooms</li><li>Two and a half baths</li><li>Saltwater pool, May to September</li><li>Hot tub</li><li>One level, no stairs</li></ul>
+  <section class="day"><header><h2>The order of the day</h2><p>Served in five courses.</p></header><ol><li><span class="n">First</span><div><h3>A slow morning</h3><p>Coffee in the kitchen, the porch, and no hurry at all.</p></div></li><li><span class="n">Second</span><div><h3>The trail</h3><p>Out the drive and onto Route 151. Choose a driver before the first glass.</p></div></li><li><span class="n">Third</span><div><h3>The return</h3><p>A swim in season, or the hot tub in any.</p></div></li><li><span class="n">Fourth</span><div><h3>Dinner at the long table</h3><p>A full kitchen, wine glasses in the cupboard, and room for all six.</p></div></li><li><span class="n">Fifth</span><div><h3>A last glass by the fire</h3><p>Outside at the fire table, or in by the gas fireplace.</p></div></li></ol></section>
+  <section class="feats"><h2>The house, for this trip</h2><ul><li><img src="/img/dining-1024.webp" alt="" loading="lazy" width="800" height="600"><h3>The table</h3><p>A farm table and bench, a step from the patio.</p></li><li><img src="/img/kitchen-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The kitchen</h3><p>For the bottle you brought home.</p></li><li><img src="/img/kingFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The king suite</h3><p>A fireplace and a soaking tub.</p></li></ul></section>
+  <section class="picks"><h2>The cellar list</h2><p>Our own list of tasting rooms is being written.</p><p class="cta"><a class="btn" href="/plan/?i=wine,beer-cider,music">Plan your trip</a></p><!-- TODO: owner to supply named places and drive times; nothing is named until then --></section>
+  <section class="good"><h2>Good to know</h2><ul><li>About 30 minutes from Charlottesville</li><li>Three bedrooms for six guests</li><li>Quiet hours from 10 PM</li><li>Keypad entry, no key to lose</li></ul></section>
+  <section class="end"><h2>Six of you, one house.</h2><p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></section>
+</main>
+<footer class="foot"><a class="mark" href="/">Afton <em>Awaits</em></a><p>Afton, Virginia</p></footer>
+<script type="module">
+import { forget } from '/shared.js';
+const NAMES = {'family': 'the family weekend', 'girls': 'the girls’ weekend', 'golf': 'the tee-time weekend', 'outdoors': 'the trail and snow weekend', 'trail151': 'the Route 151 weekend'}, LINKS = {'family': '/trips/family/', 'golf': '/trips/golf/', 'trail151': '/trips/trail151/', 'outdoors': '/trips/outdoors/', 'girls': 'https://afton-awaits-invitation.netlify.app/girls-trip/'};
+const also = new URLSearchParams(location.search).get('also');
+if (NAMES[also] && also !== 'trail151') { const p = document.getElementById('also'); p.innerHTML = `Mixed group? You also picked <a href="${LINKS[also]}">${NAMES[also]}</a>.`; p.hidden = false; }
+document.getElementById('switch').addEventListener('click', () => forget());
+</script>
+</body>
+</html>

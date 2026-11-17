@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afton Awaits | Who’s coming, and what are we doing?</title>
+<meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, golf, trails and skiing, or the Route 151 wine and beer trail.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101216">
+<link rel="stylesheet" href="/shared.css">
+<style>
+  /* The landing page: a text thread from the house, on a phone, at dusk. */
+  html, body { height: 100%; }
+  body { display: flex; flex-direction: column; background: #101216; color: #f4efe6; overflow: hidden; }
+  .back { position: static; flex: none; }
+  .wrap { flex: 1; min-height: 0; display: grid; }
+  .side { display: none; }
+  .device { min-height: 0; display: flex; }
+  .phone { flex: 1; min-height: 0; display: flex; flex-direction: column; width: 100%; background: #101216; position: relative; }
+  /* phone chrome */
+  .status { flex: none; display: flex; justify-content: space-between; align-items: center; padding: .55rem 1.4rem .15rem; font-family: var(--sans); font-weight: 600; font-size: .875rem; letter-spacing: .01em; }
+  .status svg { height: .8rem; width: auto; display: block; } .status span { display: flex; gap: .35rem; align-items: center; }
+  .top { flex: none; display: grid; grid-template-columns: 3rem 1fr 3rem; align-items: center; padding: .25rem .6rem .55rem; background: rgb(22 25 31 / .92); border-bottom: 1px solid rgb(255 255 255 / .08); }
+  .top .nav { display: flex; align-items: center; gap: .15rem; color: #6fb1ff; font-size: .9375rem; } .top .nav svg, .top .cam svg { width: 1.5rem; height: 1.5rem; }
+  .top .nav b { font-weight: 600; font-size: .75rem; background: #6fb1ff; color: #0e1116; border-radius: 99px; padding: .05rem .4rem; }
+  .top .who { display: grid; justify-items: center; gap: .15rem; text-align: center; }
+  .top img { width: 2.9rem; height: 2.9rem; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px rgb(255 255 255 / .12); }
+  .top h1 { font-family: var(--sans); font-weight: 600; font-size: .8125rem; line-height: 1.1; } .top h1 em { font-style: normal; } .top h1::after { content: ' ›'; opacity: .5; }
+  .top .cam { justify-self: end; color: #6fb1ff; }
+  .thread { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: .35rem; padding: .8rem .8rem .5rem; scrollbar-width: none; overscroll-behavior: contain; } .thread::-webkit-scrollbar { display: none; }
+  .thread > :first-child { margin-top: auto; }
+  .thread > * { flex: none; }
+  .stamp { align-self: center; font-size: .6875rem; opacity: .55; margin-bottom: .3rem; } .stamp b { font-weight: 600; }
+  .msg { max-width: 80%; padding: .55rem .9rem; border-radius: 1.2rem; font-size: 1.0625rem; line-height: 1.3; animation: pop .45s var(--ease) both; transform-origin: 0 100%; }
+  .msg--in { align-self: flex-start; background: #262a31; border-bottom-left-radius: .35rem; }
+  .msg--out { align-self: flex-end; background: var(--ember); color: #1b1408; border-bottom-right-radius: .35rem; transform-origin: 100% 100%; margin-top: .35rem; }
+  .msg--out + .sent { align-self: flex-end; font-size: .625rem; opacity: .5; margin: -.1rem .3rem 0 0; }
+  .msg--photo { padding: 0; overflow: hidden; width: 80%; background: none; } .msg--photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  .msg--ask { font-family: var(--serif); font-size: 1.45rem; line-height: 1.12; font-variation-settings: 'SOFT' 100; letter-spacing: -.015em; padding: .8rem 1rem; }
+  .msg--ask em { color: var(--ember); }
+  .dots { align-self: flex-start; display: flex; gap: .28rem; padding: .85rem .9rem; background: #262a31; border-radius: 1.2rem; border-bottom-left-radius: .35rem; }
+  .dots b { width: .45rem; height: .45rem; border-radius: 50%; background: #9aa0aa; animation: blink 1s infinite; } .dots b:nth-child(2) { animation-delay: .15s; } .dots b:nth-child(3) { animation-delay: .3s; }
+  .card { align-self: flex-start; width: 80%; display: block; border-radius: 1.2rem; border-bottom-left-radius: .35rem; overflow: hidden; background: #262a31; text-decoration: none; animation: pop .45s var(--ease) both; transform-origin: 0 100%; }
+  .card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  .card span { display: block; padding: .6rem .9rem .75rem; } .card small { display: block; font-size: .6875rem; opacity: .6; }
+  .card strong { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; line-height: 1.15; } .card u { color: var(--ember); text-underline-offset: .25em; font-size: .9375rem; }
+  .reply { flex: none; padding: .45rem .8rem .2rem; border-top: 1px solid rgb(255 255 255 / .07); background: #14171c; }
+  .reply h2 { font-family: var(--sans); font-weight: 500; font-size: .6875rem; opacity: .6; margin: 0 0 .4rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .chips a { display: inline-flex; align-items: center; min-height: 2.6rem; padding: .4rem .9rem; border: 1.5px solid var(--ember); border-radius: 1.4rem; color: #ffd993; text-decoration: none; font-size: .9375rem; line-height: 1.2; transition: background-color .2s, color .2s, opacity .3s, transform .2s; -webkit-tap-highlight-color: transparent; }
+  .chips a:hover { background: rgb(240 179 82 / .14); } .chips a:active { transform: scale(.96); }
+  .chips a.plain { border-style: dashed; border-color: rgb(244 239 230 / .55); color: #f4efe6; }
+  .chips[hidden], .chips li[hidden] { display: none; }
+  .is-wait .chips a { pointer-events: none; opacity: .45; }
+  .compose { flex: none; display: flex; align-items: center; gap: .5rem; padding: .45rem .8rem .3rem; background: #14171c; }
+  .compose i { flex: none; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: #262a31; font-style: normal; font-size: 1.3rem; line-height: 1; color: #9aa0aa; }
+  .compose p { flex: 1; display: flex; justify-content: space-between; align-items: center; min-height: 2.2rem; padding: 0 .35rem 0 .9rem; border: 1px solid rgb(255 255 255 / .16); border-radius: 99px; font-size: .9375rem; color: rgb(244 239 230 / .45); }
+  .compose p b { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--ember); color: #1b1408; font-size: .9rem; }
+  .foot { flex: none; text-align: center; background: #14171c; padding-bottom: calc(.2rem + env(safe-area-inset-bottom)); } .foot .quiet { opacity: .75; padding: .5rem 0; font-size: .6875rem; }
+  .foot::after { content: ''; display: block; width: 8.4rem; height: .3rem; border-radius: 99px; background: rgb(244 239 230 / .55); margin: .1rem auto .35rem; }
+  .island { display: none; }
+  @keyframes pop { from { opacity: 0; transform: scale(.7) translateY(.6rem); } }
+  @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
+  @media (min-width: 900px) {
+    .wrap { grid-template-columns: 1fr minmax(27rem, 32rem); }
+    .side { display: block; position: relative; background: url('/img/aerialDusk-1200.webp') center / cover; }
+    .side::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, #101216); }
+    .side::before { content: ''; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(transparent, rgb(16 18 22 / .88)); }
+    .side .mark { position: absolute; z-index: 1; left: 2rem; top: 1.4rem; color: #f4efe6; }
+    .side nav { position: absolute; z-index: 1; left: 2rem; bottom: 2rem; display: grid; gap: .55rem; justify-items: start; }
+    .side nav a { font-family: var(--serif); font-variation-settings: 'SOFT' 100; letter-spacing: -.01em; font-size: 1.7rem; line-height: 1.15; color: #f4efe6; text-decoration: underline; text-decoration-color: var(--ember); text-decoration-thickness: 2px; text-underline-offset: .28em; }
+    .side nav a::after { content: ' →'; color: var(--ember); } .side nav a:hover { color: #ffd993; }
+    .foot .quiet, .foot { font-size: 0; } .foot .quiet { display: none; }
+    .device { align-items: center; justify-content: center; padding: 1.2rem; }
+    /* the handset: bezel, rounded glass, side buttons */
+    .phone { flex: none; width: 24.4rem; height: min(100%, 52rem); border-radius: 3.2rem; border: .68rem solid #05060a; box-shadow: 0 0 0 2px #3a3e47, 0 0 0 5px #17191e, 0 2.5rem 5rem -1.5rem #000, 0 0 6rem -2rem rgb(161 114 191 / .5); overflow: hidden; }
+    .phone::before, .phone::after { content: ''; position: absolute; width: 5px; border-radius: 3px; background: #2a2d34; z-index: 0; }
+    .device { position: relative; } .device::before, .device::after { content: ''; position: absolute; left: calc(50% - 12.75rem); width: 5px; border-radius: 3px 0 0 3px; background: #2a2d34; } .device::before { top: calc(50% - 11rem); height: 3.6rem; } .device::after { top: calc(50% - 6.6rem); height: 3.6rem; }
+    .island { display: block; position: absolute; top: .55rem; left: 50%; translate: -50% 0; width: 6.6rem; height: 1.75rem; border-radius: 99px; background: #000; z-index: 6; }
+    .status { padding: .85rem 1.9rem .35rem; }
+  }
+  @media (max-height: 640px) { .top img { width: 2.2rem; height: 2.2rem; } .msg--ask { font-size: 1.25rem; } }
+</style>
+</head>
+<body>
+<p class="back" id="back" hidden></p>
+<div class="wrap">
+  <div class="side"><a class="mark" href="/" aria-label="Afton Awaits, home">Afton <em>Awaits</em></a>
+    <nav aria-label="Skip the questions"><a href="https://afton-awaits.netlify.app/">Just show me the house</a><a href="/plan/">Plan your trip</a></nav></div>
+  <div class="device">
+  <main class="phone">
+    <span class="island" aria-hidden="true"></span>
+    <div class="status" aria-hidden="true"><span id="clock">7:42</span><span>
+      <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx=".8" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx=".8" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx=".8" fill="currentColor"/></svg>
+      <svg viewBox="0 0 17 12"><path d="M8.5 2.2c2.5 0 4.7 1 6.3 2.6l1.1-1.2C14 1.7 11.4 .5 8.5 .5S3 1.7 1.1 3.6l1.1 1.2C3.800 3.2 6 2.2 8.5 2.2Zm0 3.5c1.500 0 2.900.6 3.900 1.600l1.1-1.2c-1.300-1.300-3.100-2.100-5-2.100s-3.700.8-5 2.100l1.1 1.2c1-1 2.400-1.600 3.900-1.600Zm0 3.400c-.9 0-1.600.3-2.2.9l2.2 2 2.2-2c-.6-.6-1.300-.9-2.2-.9Z" fill="currentColor"/></svg>
+      <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="1.8" fill="currentColor"/><rect x="24" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".5"/></svg></span></div>
+    <header class="top">
+      <span class="nav" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg><b>3</b></span>
+      <div class="who"><img src="/img/houseDusk-800.webp" alt="" width="80" height="80"><h1>Afton <em>Awaits</em></h1></div>
+      <span class="cam" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="13" height="11" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></svg></span>
+    </header>
+    <div class="thread" id="thread" role="log" aria-live="polite">
+      <p class="stamp"><b>Text Message</b> · Today <span id="stamp">7:41 PM</span></p>
+      <p class="msg msg--in msg--photo"><img src="/img/aerialDusk-800.webp" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="800" height="600"></p>
+      <p class="msg msg--in">Pool’s open. Fire’s lit.</p>
+      <p class="msg msg--in msg--ask">Who’s coming, and what are <em>we</em> doing?</p>
+    </div>
+    <nav class="reply" aria-label="Choose your trip">
+      <h2 id="hint">Tap a reply</h2>
+      <ul class="chips" id="chips">
+        <li><a href="/trips/family/" data-trip="family">The kids need a pool.</a></li>
+        <li><a href="https://afton-awaits-invitation.netlify.app/girls-trip/" data-trip="girls">Just us girls.</a></li>
+        <li><a href="/trips/golf/" data-trip="golf">Tee time’s at 8.</a></li>
+        <li><a href="/trips/outdoors/" data-trip="outdoors">Boots or skis.</a></li>
+        <li><a href="/trips/trail151/" data-trip="trail151">Wine. All of it.</a></li>
+        <li><a class="plain" href="/plan/">Just help me plan.</a></li>
+      </ul>
+    </nav>
+    <div class="compose" aria-hidden="true"><i>+</i><p>Text Message <b>↑</b></p></div>
+    <p class="foot"><a class="quiet" href="https://afton-awaits.netlify.app/">Just show me the house</a> &nbsp;·&nbsp; <a class="quiet" href="/plan/">Plan your trip</a></p>
+  </main>
+  </div>
+</div>
+<script type="module">
+import { byId, url, remember, forget, label, welcomeBack, reduced } from '/shared.js';
+if (location.search.includes('switch')) { forget(); history.replaceState(null, '', '/'); }
+welcomeBack(document.getElementById('back'));
+// the phone shows the visitor's own time; the text arrived a minute ago
+{ const fmt = (d, o) => d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', ...o }), clock = document.getElementById('clock'), tick = () => { clock.textContent = fmt(new Date()).replace(/\s?[AP]M/, ''); };
+  tick(); setInterval(tick, 15000); document.getElementById('stamp').textContent = fmt(new Date(Date.now() - 60000)); }
+const thread = document.getElementById('thread'), nav = document.querySelector('.reply'), hint = document.getElementById('hint');
+const REPLY = {
+  family: 'Good. It’s fenced, it’s saltwater, and there’s room for six of you.',
+  girls: 'Then the porch is yours. I’ll keep the hot tub warm.',
+  golf: 'Early start, long evening. The fire will be going when you’re back.',
+  outdoors: 'Good. Go get tired. The hot tub’s for after.',
+  trail151: 'Smart. Sleep here, taste there. Somebody pick a driver.',
+};
+const picked = []; let card;
+thread.scrollTop = thread.scrollHeight;
+const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? 0 : ms));
+const add = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const n = t.content.firstChild; thread.append(n); thread.scrollTo({ top: thread.scrollHeight, behavior: reduced ? 'auto' : 'smooth' }); return n; };
+async function typing(ms) { const d = add('<p class="dots" aria-hidden="true"><b></b><b></b><b></b></p>'); await wait(ms); d.remove(); }
+
+for (const a of document.querySelectorAll('a[data-trip]')) a.addEventListener('click', async (e) => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  const id = a.dataset.trip; if (picked.includes(id) || picked.length >= 2) return;
+  picked.push(id); remember(picked);
+  a.parentElement.hidden = true; nav.classList.add('is-wait');
+  thread.querySelector('.sent')?.remove(); add(`<p class="msg msg--out">${a.textContent}</p>`); add('<p class="sent">Delivered</p>');
+  await typing(900);
+  if (picked.length === 1) add(`<p class="msg msg--in">${REPLY[id]}</p>`); else add(`<p class="msg msg--in">Both, then. I like this group.</p>`);
+  await typing(600);
+  card?.remove();
+  const t = byId(picked[0]);
+  card = add(`<a class="card" href="${url(picked)}"><img src="/img/${t.img}.webp" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${label(picked)}</strong><br><u>Open your weekend</u></span></a>`);
+  if (picked.length === 1) { hint.textContent = 'Mixed group? Add one more, or open your weekend above'; nav.classList.remove('is-wait'); }
+  else { hint.textContent = 'All set. Open your weekend above'; document.getElementById('chips').hidden = true; }
+  card.focus({ preventScroll: true });
+});
+</script>
+</body>
+</html>

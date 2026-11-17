@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The family weekend | Afton Awaits</title>
+<meta name="description" content="A fenced saltwater pool, a big lawn, three bedrooms on one level and a kitchen that can feed all six of you. Follow the path.">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/trips/trips.css">
+</head>
+<body class="t-family">
+<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><a class="switch" href="/?switch" id="switch">Switch trip</a></header>
+<main>
+  <section class="hero">
+    <div class="hero__text"><p class="kicker">Start here</p><h1>Everybody <em>in the pool.</em></h1><p class="lede">A fenced saltwater pool, a big lawn, three bedrooms on one level and a kitchen that can feed all six of you. Follow the path.</p>
+      <p class="also" id="also" hidden></p>
+      <p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></div>
+    <figure class="hero__img"><img src="/img/poolLevel-1200.webp" alt="The pool at water level with the lawn, the black fence and the Blue Ridge beyond." width="1200" height="800"></figure>
+  </section>
+  <ul class="facts"><li>Sleeps six</li><li>Three bedrooms</li><li>Two and a half baths</li><li>Saltwater pool, May to September</li><li>Hot tub</li><li>One level, no stairs</li></ul>
+  <section class="day"><header><h2>The path through a Saturday</h2><p>Roll the dice. Or just follow the squares.</p></header><ol><li><span class="n">Square one</span><div><h3>Pancakes at the island</h3><p>A full kitchen with the basics already in the cupboards. Somebody small gets to flip.</p></div></li><li><span class="n">Square two</span><div><h3>Cannonball o’clock</h3><p>The pool is saltwater, private to your family and fenced. Open May to September.</p></div></li><li><span class="n">Square three</span><div><h3>Lunch off the grill</h3><p>The outdoor kitchen is steps from the water, so nobody has to dry off to eat.</p></div></li><li><span class="n">Square four</span><div><h3>The great lawn</h3><p>Wide, flat grass in every direction. Bring a ball, a kite, or nothing.</p></div></li><li><span class="n">Square five</span><div><h3>Fire table and stories</h3><p>Chairs around the fire as the ridge goes blue. Quiet hours start at 10.</p></div></li><li><span class="n">Home</span><div><h3>Lights out</h3><p>A king and two queens. Two twin air mattresses in the closet if the kids want their own; bring linens for those.</p></div></li></ol></section>
+  <section class="feats"><h2>The house, for this trip</h2><ul><li><img src="/img/aerialPool-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The pool</h3><p>Fenced, saltwater, and all yours.</p></li><li><img src="/img/kitchenIsland-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The kitchen</h3><p>Stocked with the basics, with a dishwasher for after.</p></li><li><img src="/img/livingWide-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The living room</h3><p>A gas fireplace and a television for the rainy hour.</p></li></ul></section>
+  <section class="picks"><h2>Side quests</h2><p>Our favourite family stops nearby are coming soon.</p><p class="cta"><a class="btn" href="/plan/?i=family,outdoors">Plan your trip</a></p><!-- TODO: owner to supply named places and drive times; nothing is named until then --></section>
+  <section class="good"><h2>Good to know</h2><ul><li>No stairs anywhere</li><li>Washer and dryer</li><li>Free parking at the door</li><li>Sorry, no pets</li></ul></section>
+  <section class="end"><h2>Six of you, one house.</h2><p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></section>
+</main>
+<footer class="foot"><a class="mark" href="/">Afton <em>Awaits</em></a><p>Afton, Virginia</p></footer>
+<script type="module">
+import { forget } from '/shared.js';
+const NAMES = {'family': 'the family weekend', 'girls': 'the girls’ weekend', 'golf': 'the tee-time weekend', 'outdoors': 'the trail and snow weekend', 'trail151': 'the Route 151 weekend'}, LINKS = {'family': '/trips/family/', 'golf': '/trips/golf/', 'trail151': '/trips/trail151/', 'outdoors': '/trips/outdoors/', 'girls': 'https://afton-awaits-invitation.netlify.app/girls-trip/'};
+const also = new URLSearchParams(location.search).get('also');
+if (NAMES[also] && also !== 'family') { const p = document.getElementById('also'); p.innerHTML = `Mixed group? You also picked <a href="${LINKS[also]}">${NAMES[also]}</a>.`; p.hidden = false; }
+document.getElementById('switch').addEventListener('click', () => forget());
+</script>
+</body>
+</html>

@@ -1,0 +1,952 @@
+{
+ "updated": "2026-11-17T17:49:56.701Z",
+ "events": [
+  {
+   "id": "wine-wednesday-king-family-vineyards-2026-11-18",
+   "title": "Wine Wednesday",
+   "description": "Break up the midweek monotony and join us as we keep the tasting room open until 8:30pm every Wednesday! Unwind with a rotating lineup of local food trucks serving from 4:00–7:30pm, then put your knowledge to the test at trivia in the pavilion starting at 6:00pm – with King Family Vineyards gift cards up for grabs. Our…",
+   "start": "2026-11-18T16:30:00-05:00",
+   "end": "2026-11-18T20:30:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-18/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-dara-james-brewing-tree-beer-co-2026-11-20",
+   "title": "Live Music: Dara James",
+   "description": "",
+   "start": "2026-11-20T17:30:00-05:00",
+   "end": "2026-11-20T20:30:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-michael-bergamo-afton-mountain-vineyards-2026-11-21",
+   "title": "Live Music: Michael Bergamo",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-11-21T13:00:00-05:00",
+   "end": "2026-11-21T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-michael-bergamo-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-jon-spear-brewing-tree-beer-co-2026-11-21",
+   "title": "Live Music: Jon Spear",
+   "description": "",
+   "start": "2026-11-21T14:00:00-05:00",
+   "end": "2026-11-21T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-11-22",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-11-22T11:00:00-05:00",
+   "end": "2026-11-22T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "wine-wednesday-king-family-vineyards-2026-11-25",
+   "title": "Wine Wednesday",
+   "description": "Break up the midweek monotony and join us as we keep the tasting room open until 8:30pm every Wednesday! Unwind with a rotating lineup of local food trucks serving from 4:00–7:30pm, then put your knowledge to the test at trivia in the pavilion starting at 6:00pm – with King Family Vineyards gift cards up for grabs. Our…",
+   "start": "2026-11-25T16:30:00-05:00",
+   "end": "2026-11-25T20:30:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-25/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "black-friday-at-brewing-tree-brewing-tree-beer-co-2026-11-27",
+   "title": "Black Friday at Brewing Tree",
+   "description": "Oyster Catcher Sea Farms is here from 12 to 5 PM, or until the oysters sell out. The Loya Brothers play the beer garden from 2 to 5 PM. The Friday Singer Songwriter Showcase opens at 5:30 PM and runs to close. And the Christmas lights switch on.",
+   "start": "2026-11-27T12:00:00-05:00",
+   "end": "2026-11-27T21:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-the-loya-brothers-brewing-tree-beer-co-2026-11-27",
+   "title": "Live Music: The Loya Brothers",
+   "description": "",
+   "start": "2026-11-27T14:00:00-05:00",
+   "end": "2026-11-27T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-nicholas-darden-afton-mountain-vineyards-2026-11-28",
+   "title": "Live Music: Nicholas Darden",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-11-28T13:00:00-05:00",
+   "end": "2026-11-28T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-nicholas-darden-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-bryan-horowitz-brewing-tree-beer-co-2026-11-28",
+   "title": "Live Music: Bryan Horowitz",
+   "description": "",
+   "start": "2026-11-28T14:00:00-05:00",
+   "end": "2026-11-28T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-11-29",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-11-29T11:00:00-05:00",
+   "end": "2026-11-29T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "meritage-vertical-king-family-vineyards-2026-12-03",
+   "title": "Meritage Vertical",
+   "description": "Thursday, December 3rd | 6:00PM Purchase Tickets Here What does a single wine become over fifteen harvests? Find out as we pour five vintages of Meritage, our flagship Bordeaux-style blend, side by side: 2009, 2013, 2017, 2023, and a first taste of the 2024, before it’s released to anyone else. Each bottle is a…",
+   "start": "2026-12-03T18:00:00-05:00",
+   "end": "2026-12-03T20:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/meritage-vertical-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "wreath-making-workshop-king-family-vineyards-2026-12-05",
+   "title": "Wreath Making Workshop",
+   "description": "Saturday, December 5th | 10:30AM – 12:30PM Purchase Tickets Here Spend a festive Saturday at the vineyard and get into the holiday spirit! During this hands-on workshop, you’ll create a beautiful, one-of-a-kind wreath using fresh greenery and grapevines straight from our farm. As you craft, enjoy a complimentary glass…",
+   "start": "2026-12-05T10:30:00-05:00",
+   "end": "2026-12-05T12:30:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-moon-glow-afton-mountain-vineyards-2026-12-05",
+   "title": "Live Music: Moon Glow",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-12-05T13:00:00-05:00",
+   "end": "2026-12-05T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-moon-glow-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-dara-james-brewing-tree-beer-co-2026-12-05",
+   "title": "Live Music: Dara James",
+   "description": "",
+   "start": "2026-12-05T14:00:00-05:00",
+   "end": "2026-12-05T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "carriage-house-christmas-king-family-vineyards-2026-12-06",
+   "title": "Carriage House Christmas",
+   "description": "Mark your calendars and join us for our annual Carriage House Christmas and experience the true magic of the season at King Family Vineyards! Discover unique treasures from local artisan vendors, savor festive foods from an assortment of food trucks, and let the little ones enjoy a special surprise visit from the North…",
+   "start": "2026-12-06T10:00:00-05:00",
+   "end": "2026-12-06T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "market",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/carriage-house-christmas/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-12-06",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-12-06T11:00:00-05:00",
+   "end": "2026-12-06T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "wreath-making-workshop-king-family-vineyards-2026-12-12",
+   "title": "Wreath Making Workshop",
+   "description": "Saturday, December 12th | 10:30AM – 12:30PM Purchase Tickets Here Spend a festive Saturday at the vineyard and get into the holiday spirit! During this hands-on workshop, you’ll create a beautiful, one-of-a-kind wreath using fresh greenery and grapevines straight from our farm. As you craft, enjoy a complimentary glass…",
+   "start": "2026-12-12T10:30:00-05:00",
+   "end": "2026-12-12T12:30:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "king-family-vineyards",
+   "venueName": "King Family Vineyards",
+   "address": "6550 Roseland Farm, Crozet, 22932",
+   "lat": 38.06163,
+   "lng": -78.72789,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "king-family",
+     "name": "King Family Vineyards",
+     "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-porch-dogs-afton-mountain-vineyards-2026-12-12",
+   "title": "Live Music: Porch Dogs",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-12-12T13:00:00-05:00",
+   "end": "2026-12-12T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-porch-dogs-2/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-jon-spear-brewing-tree-beer-co-2026-12-12",
+   "title": "Live Music: Jon Spear",
+   "description": "",
+   "start": "2026-12-12T15:00:00-05:00",
+   "end": "2026-12-12T18:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-12-13",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-12-13T11:00:00-05:00",
+   "end": "2026-12-13T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-jingle-w-jimmy-o-afton-mountain-vineyards-2026-12-13",
+   "title": "Live Music: Jingle w/ Jimmy O",
+   "description": "Tasting Room Open 11-5PM",
+   "start": "2026-12-13T13:00:00-05:00",
+   "end": "2026-12-13T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-jingle-w-jimmy-o/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-shane-click-afton-mountain-vineyards-2026-12-19",
+   "title": "Live Music: Shane Click",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-12-19T13:00:00-05:00",
+   "end": "2026-12-19T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-shane-click/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-sean-stringer-brewing-tree-beer-co-2026-12-19",
+   "title": "Live Music: Sean Stringer",
+   "description": "",
+   "start": "2026-12-19T13:00:00-05:00",
+   "end": "2026-12-19T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-12-20",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-12-20T11:00:00-05:00",
+   "end": "2026-12-20T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-rob-midnight-afton-mountain-vineyards-2026-12-26",
+   "title": "Live Music: Rob Midnight",
+   "description": "Tasting Room Open 11-6PM",
+   "start": "2026-12-26T13:00:00-05:00",
+   "end": "2026-12-26T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "afton-mountain-vineyards",
+   "venueName": "Afton Mountain Vineyards",
+   "address": "234 Vineyard Lane, Afton, VA, 22920",
+   "lat": 38.00966,
+   "lng": -78.85512,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "afton-mountain",
+     "name": "Afton Mountain Vineyards",
+     "url": "https://www.aftonmountainvineyards.com/event/live-music-rob-midnight/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-alex-arbaugh-brewing-tree-beer-co-2026-12-26",
+   "title": "Live Music: Alex Arbaugh",
+   "description": "",
+   "start": "2026-12-26T14:00:00-05:00",
+   "end": "2026-12-26T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-brunch-brewing-tree-beer-co-2026-12-27",
+   "title": "Sunday Brunch",
+   "description": "Brunch every Sunday from 11 to 3: a Bloody Mary bar, mimosas, avocado toast with a poached egg, egg sandwiches and fresh baked goods from the Scratch Kitchen.",
+   "start": "2026-12-27T11:00:00-05:00",
+   "end": "2026-12-27T15:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "brewing-tree-beer-co",
+   "venueName": "Brewing Tree Beer Company",
+   "address": "9278 Rockfish Valley Hwy, Afton, VA, 22920",
+   "lat": 37.96799,
+   "lng": -78.83467,
+   "categories": [
+    "food",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "brewing-tree",
+     "name": "Brewing Tree Beer Co",
+     "url": "https://brewingtreebeer.com/events/",
+     "lastSeen": "2026-11-17T17:49:56.701Z"
+    }
+   ],
+   "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  }
+ ]
+}

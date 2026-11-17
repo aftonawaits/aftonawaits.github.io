@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The trail and snow weekend | Afton Awaits</title>
+<meta name="description" content="Trails in the warm months, snow in the cold ones, and a hot tub under the ridge either way. The house is base camp.">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/trips/trips.css">
+</head>
+<body class="t-outdoors">
+<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><a class="switch" href="/?switch" id="switch">Switch trip</a></header>
+<main>
+  <section class="hero">
+    <div class="hero__text"><p class="kicker">Field notes · Blue Ridge, Virginia</p><h1>Out early. <em>Back tired.</em></h1><p class="lede">Trails in the warm months, snow in the cold ones, and a hot tub under the ridge either way. The house is base camp.</p>
+      <p class="also" id="also" hidden></p>
+      <p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></div>
+    <figure class="hero__img"><img src="/img/valleyDusk-1200.webp" alt="The valley and the layered Blue Ridge at dusk, seen from the property." width="1200" height="800"></figure>
+  </section>
+  <ul class="facts"><li>Sleeps six</li><li>Three bedrooms</li><li>Two and a half baths</li><li>Saltwater pool, May to September</li><li>Hot tub</li><li>One level, no stairs</li></ul>
+  <section class="day"><header><h2>The log</h2><p>One day, written down.</p></header><ol><li><span class="n">Dawn</span><div><h3>Coffee, boots, go</h3><p>Pack lunches in a full kitchen. The ridge is the first thing you see from the porch.</p></div></li><li><span class="n">Midday</span><div><h3>On the mountain</h3><p>Trail or slope. The valley will be exactly where you left it.</p></div></li><li><span class="n">Return</span><div><h3>Gear off at the door</h3><p>Washer and dryer for wet layers. Everything is on one level, so no stairs for tired legs.</p></div></li><li><span class="n">Dusk</span><div><h3>Hot tub</h3><p>Open in every season, with the ridge going dark in front of you.</p></div></li><li><span class="n">Night</span><div><h3>Fire, then bed</h3><p>The fire table outside, the gas fireplace in. Three bedrooms, six of you.</p></div></li></ol></section>
+  <section class="feats"><h2>The house, for this trip</h2><ul><li><img src="/img/hotTub-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The hot tub</h3><p>The reason to come back before dark.</p></li><li><img src="/img/patioFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The fire table</h3><p>With the ridge behind it.</p></li><li><img src="/img/king-800.webp" alt="" loading="lazy" width="800" height="600"><h3>Real beds</h3><p>A king and two queens, linens included.</p></li></ul></section>
+  <section class="picks"><h2>Routes</h2><p>Our trail and ski notes, with drive times, are coming soon.</p><p class="cta"><a class="btn" href="/plan/?i=outdoors,scenic">Plan your trip</a></p><!-- TODO: owner to supply named places and drive times; nothing is named until then --></section>
+  <section class="good"><h2>Good to know</h2><ul><li>Free parking on the property</li><li>Heating and air conditioning</li><li>Pool open May to September</li><li>Sorry, no pets</li></ul></section>
+  <section class="end"><h2>Six of you, one house.</h2><p class="cta"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true">Check dates</a><a class="ghost" href="https://afton-awaits.netlify.app/">See the whole house</a></p></section>
+</main>
+<footer class="foot"><a class="mark" href="/">Afton <em>Awaits</em></a><p>Afton, Virginia</p></footer>
+<script type="module">
+import { forget } from '/shared.js';
+const NAMES = {'family': 'the family weekend', 'girls': 'the girls’ weekend', 'golf': 'the tee-time weekend', 'outdoors': 'the trail and snow weekend', 'trail151': 'the Route 151 weekend'}, LINKS = {'family': '/trips/family/', 'golf': '/trips/golf/', 'trail151': '/trips/trail151/', 'outdoors': '/trips/outdoors/', 'girls': 'https://afton-awaits-invitation.netlify.app/girls-trip/'};
+const also = new URLSearchParams(location.search).get('also');
+if (NAMES[also] && also !== 'outdoors') { const p = document.getElementById('also'); p.innerHTML = `Mixed group? You also picked <a href="${LINKS[also]}">${NAMES[also]}</a>.`; p.hidden = false; }
+document.getElementById('switch').addEventListener('click', () => forget());
+</script>
+</body>
+</html>

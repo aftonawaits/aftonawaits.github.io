@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plan your trip | Afton Awaits</title>
+<meta name="description" content="Plan your stay near Afton, Virginia: pick your dates, add wineries, breweries, trails, restaurants and what’s on, and get a day-by-day itinerary by email, calendar or link.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101216">
+<link rel="stylesheet" href="/shared.css"><link rel="stylesheet" href="/plan/vendor/maplibre-gl.css"><link rel="stylesheet" href="/plan/plan.css"><link rel="stylesheet" href="/plan/looks.css">
+</head>
+<body data-look="d">
+<header class="bar"><a class="mark" href="/">Afton <em>Awaits</em></a><a class="quiet" href="#trip" id="jump">Your trip <b id="count">0</b></a></header>
+<main>
+  <section class="intro">
+    <p class="kicker">Afton and the Rockfish Valley</p>
+    <h1>Plan your <em>trip</em></h1>
+    <p class="lede">Build your days in three steps, then send the plan to yourself.</p>
+    <ol class="steps" aria-label="How it works">
+      <li><a href="#step1"><b>1</b><span><strong>Pick your dates</strong> and what you’re into.</span></a></li>
+      <li><a href="#step2"><b>2</b><span><strong>Add what looks good</strong> from the map or the lists.</span></a></li>
+      <li><a href="#trip"><b>3</b><span><strong>Get your itinerary</strong> by email, in your calendar, or as a link to share.</span></a></li>
+    </ol>
+  </section>
+
+  <section class="step" id="step1" aria-labelledby="s1-h">
+    <h2 id="s1-h"><b>1</b> Your dates</h2>
+    <form class="setup" id="setup" aria-label="Your dates and interests">
+      <fieldset class="dates"><legend class="sr">Your dates</legend>
+        <label>Arrive <input type="date" id="from" required></label>
+        <label>Leave <input type="date" id="to" required></label>
+      </fieldset>
+      <fieldset><legend>Show me (optional)</legend><div class="chips" id="chips"></div></fieldset>
+    </form>
+    <p class="avail" id="avail-row"><a class="btn" id="avail" target="_blank" rel="noopener">Check availability for these dates</a><span id="avail-note"></span></p>
+  </section>
+
+  <section class="step" id="step2" aria-labelledby="s2-h">
+    <h2 id="s2-h"><b>2</b> Add what looks good</h2>
+    <p class="hint">Tap <strong>Add</strong> on anything you fancy. We’ll put it in order for you in step 3.</p>
+    <div class="tabs" role="tablist" aria-label="Browse by">
+      <button type="button" role="tab" id="tab-map" data-tab="map" aria-selected="true" aria-controls="panel-map">Map</button>
+      <button type="button" role="tab" id="tab-events" data-tab="events" aria-selected="false" aria-controls="panel-events">On your dates <b id="n-events"></b></button>
+      <button type="button" role="tab" id="tab-places" data-tab="places" aria-selected="false" aria-controls="panel-places">Places <b id="n-places"></b></button>
+    </div>
+    <div class="atlas" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-panel="map">
+      <div class="mapbox">
+        <div id="map" role="application" aria-label="Zoomable map of the house, places and events. Everything on it is also in the two lists."></div>
+        <button type="button" class="reset" id="reset">Show everything</button>
+      </div>
+      <p class="mapnote" id="mapnote"></p>
+      <div class="detail" id="detail" aria-live="polite"></div>
+    </div>
+    <div id="panel-events" role="tabpanel" aria-labelledby="tab-events" data-panel="events" hidden>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <div id="list"></div>
+    </div>
+    <div id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-panel="places" hidden>
+      <p class="hint">No set time: add any and we’ll find room. Opening hours aren’t checked yet, and restaurants change often, so confirm before you go.</p>
+      <ul class="places" id="places"></ul>
+    </div>
+  </section>
+
+  <section class="step weekend" id="trip" aria-labelledby="s3-h" tabindex="-1">
+    <h2 id="s3-h"><b>3</b> Your itinerary</h2>
+    <div class="send" id="send" hidden>
+      <form class="mail" id="mail" name="itinerary" method="POST" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="itinerary"><input type="hidden" name="plan" id="mail-plan"><input type="hidden" name="link" id="mail-link"><input type="hidden" name="dates" id="mail-dates">
+        <p class="sr"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <label for="mail-to">Email me this itinerary</label>
+        <div class="mail__row"><input type="email" id="mail-to" name="email" placeholder="you@example.com" autocomplete="email" required><button class="btn" type="submit">Send it to me</button></div>
+        <label class="check"><input type="checkbox" name="updates" value="yes"> Also send me the occasional note from Afton Awaits (offers and open dates). Optional.</label>
+      </form>
+      <p class="actions"><button type="button" class="ghost" id="ics">Add to my calendar</button><button type="button" class="ghost" id="share">Copy a link to share</button><a class="ghost" id="avail2" target="_blank" rel="noopener">Check availability</a><button type="button" class="ghost" id="clear">Start over</button></p>
+    </div>
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    <div id="plan"></div>
+    <fieldset class="opts" form="setup" id="opts" hidden><legend>Fine-tune</legend>
+      <label>Pace <select id="pace"><option value="easy">Easy: up to 3 stops a day</option><option value="steady" selected>Steady: up to 4</option><option value="full">Full: up to 6</option></select></label>
+      <label class="check"><input type="checkbox" id="kids"> Kids are coming</label>
+      <label class="check"><input type="checkbox" id="driver"> We have a designated driver</label>
+    </fieldset>
+  </section>
+</main>
+<footer class="foot"><p>Events come from each venue’s own calendar. <span id="updated"></span> Always confirm with the venue before you drive. Drive times are estimates, and route lines on the map are straight lines, not roads. The house is shown approximately.</p></footer>
+<a class="tray" id="tray" href="#trip" hidden><span id="tray-text"></span><b>See my itinerary</b></a>
+<script src="/plan/vendor/maplibre-gl.js" defer></script>
+<script type="module" src="/plan/plan.js"></script>
+</body>
+</html>

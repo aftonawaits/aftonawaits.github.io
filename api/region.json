@@ -1,0 +1,23 @@
+{
+ "name": "Blue Ridge and Rockfish Valley, Virginia",
+ "timezone": "America/New_York",
+ "center": {
+  "lat": 37.95,
+  "lng": -78.87
+ },
+ "radiusMinutes": 45,
+ "bounds": {
+  "w": -79.6,
+  "e": -78.2,
+  "s": 37.45,
+  "n": 38.5
+ },
+ "corridors": [
+  {
+   "name": "Route 151",
+   "lng": -78.86,
+   "halfWidth": 0.09
+  }
+ ],
+ "userAgent": "RegionalEventsCalendar/0.2 (one request per page per day)"
+}

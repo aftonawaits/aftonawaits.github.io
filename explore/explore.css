@@ -1,0 +1,8 @@
+/* Public guide pages. Shares the Watercolour look with Plan your trip. */
+.ex { gap: 1.4rem; max-width: 46rem; } .ex article { display: grid; gap: 1rem; }
+.crumbs { font-size: .875rem; opacity: .8; margin-top: 1rem; } .crumbs a { text-underline-offset: .2em; }
+.ex h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); } .ex h2 { margin-top: 1.2rem; font-size: clamp(1.5rem, 5vw, 2rem); } .ex h3 a { text-decoration: none; } .ex h3 a:hover { text-decoration: underline; }
+.ex .cards { grid-template-columns: 1fr; } @media (min-width: 720px) { .ex .cards { grid-template-columns: 1fr 1fr; } }
+.facts2 { display: grid; gap: .1rem; margin: 0; } .facts2 div { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding: .6rem 0; border-top: 1px solid var(--line); } .facts2 dt { opacity: .7; } .facts2 dd { margin: 0; }
+.row { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: center; } .row .btn { display: inline-flex; align-items: center; text-decoration: none; }
+.stay { margin-top: 1.6rem; padding: 1.4rem; border-radius: 1.6rem; background: var(--blush); display: grid; gap: .7rem; } .stay h2 { margin: 0; }
