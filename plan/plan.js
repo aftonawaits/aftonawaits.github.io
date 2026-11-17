@@ -14,6 +14,7 @@ const ICON = {
   cidery: svg('<path d="M12 8c-6-3-8 3-6 8s4 5 6 3c2 2 4 2 6-3s0-11-6-8ZM12 8c0-3 1-4 3-5"/>'), distillery: svg('<path d="M10 3h4v5l3 4v9H7v-9l3-4ZM7 15h10"/>'),
   trail: svg('<path d="M3 20 9 8l4 7 3-4 5 9Z"/>'), overlook: svg('<circle cx="17" cy="7" r="3"/><path d="M2 20c4-8 7-8 10-3 2-3 5-3 10 3"/>'),
   park: svg('<path d="M12 3 5 14h14ZM12 14v7"/>'), orchard: svg('<path d="M12 8c-6-3-8 3-6 8s4 5 6 3c2 2 4 2 6-3s0-11-6-8ZM12 8c0-3 1-4 3-5"/>'),
+  golf: svg('<path d="M8 21V3l10 4-10 4M5 21h6"/>'),
   resort: svg('<path d="M12 2v20M3 7l18 10M21 7 3 17"/>'), town: svg('<path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/>'),
   restaurant: svg('<path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/>'), cafe: svg('<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5ZM17 10h2a2 2 0 0 1 0 5h-2M8 3v3M12 3v3"/>'),
   home: svg('<path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6"/>'), event: svg('<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'),
