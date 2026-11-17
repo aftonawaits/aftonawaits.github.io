@@ -107,7 +107,7 @@ document.addEventListener('click', (e) => {
 });
 
 // ---------- map ----------
-const DAYCOLOR = ['#f0b352', '#4fb3c8', '#9b7fe0', '#63c08a', '#e56b8a'];
+const DAYCOLOR = ['#c9781f', '#2f8fa6', '#7a5cc9', '#3f9a66', '#cf4f73'];   // deep enough to read on the daytime map
 let map = null, pins = [], mapReady = false, popup = null;
 function initMap() {
   try {
@@ -118,7 +118,7 @@ function initMap() {
     map.addControl(new maplibregl.ScaleControl({ unit: 'imperial' }), 'bottom-right');
     map.on('load', () => {
       map.addSource('routes', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
-      map.addLayer({ id: 'routes', type: 'line', source: 'routes', paint: { 'line-color': ['get', 'color'], 'line-width': 3.5, 'line-dasharray': [1.5, 1.5] }, layout: { 'line-cap': 'round' } });
+      map.addLayer({ id: 'routes', type: 'line', source: 'routes', paint: { 'line-color': ['get', 'color'], 'line-width': 4, 'line-dasharray': [1.5, 1.5] }, layout: { 'line-cap': 'round' } });
       mapReady = true; drawRoutes();
     });
     $('#mapnote').textContent = touch ? 'Pinch to zoom, two fingers to move the map. Tap a pin for details.' : 'Scroll or use + and − to zoom. Click a pin for details.';
