@@ -24,7 +24,7 @@ a { text-underline-offset: .22em; }
 @keyframes pop { from { opacity: 0; transform: translateY(.6rem) scale(.9); } }
 .kicker { font-family: var(--mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: .7rem; }
 .open h1 { font-size: clamp(2.6rem, 9vw, 5rem); line-height: .98; }
-.lede { font-size: 1.125rem; line-height: 1.5; color: rgb(244 239 230 / .82); max-width: 34rem; margin: 1rem 0 1.4rem; }
+.lede { font-size: 1.0625rem; line-height: 1.55; color: rgb(244 239 230 / .86); max-width: 36rem; margin: 1rem 0 1.4rem; }
 .open__img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.4rem; box-shadow: 0 2rem 4rem -2rem #000, 0 0 5rem -2.5rem var(--accent); }
 @media (min-width: 900px) {
   .open { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-areas: 'thread img' 'copy img'; align-items: center; column-gap: 3rem; padding-top: 2.6rem; padding-bottom: 3.4rem; }
@@ -85,8 +85,3 @@ a { text-underline-offset: .22em; }
 .dock span { font-size: .875rem; color: rgb(244 239 230 / .75); white-space: nowrap; }
 .dock .btn { min-height: 2.6rem; padding: .35rem 1rem; font-size: .9375rem; white-space: nowrap; }
 @media (max-width: 560px) { .dock span { display: none; } .dock { padding-left: .5rem; } }
-
-/* the selling paragraph, in the owner's words */
-.pitch { padding-top: clamp(1.6rem, 5vw, 3rem); }
-.pitch__text { font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: clamp(1.25rem, 2.6vw, 1.7rem); line-height: 1.4; letter-spacing: -.01em; max-width: 56rem; color: #f4efe6; border-left: 3px solid var(--accent); padding-left: clamp(1rem, 3vw, 1.6rem); }
-.sec--tight { padding-top: clamp(1.8rem, 5vw, 3rem); }
