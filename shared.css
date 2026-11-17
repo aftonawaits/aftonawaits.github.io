@@ -17,3 +17,8 @@ button { font: inherit; color: inherit; }
 .back[hidden] { display: none; }
 .back a { font-weight: 600; } .back button { border: 1px solid currentColor; background: none; border-radius: 99px; padding: .25rem .8rem; min-height: 2rem; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+
+/* Book direct: a slim strip across the top of every page, and a short line beside booking buttons */
+.strip { display: block; margin: 0; padding: .45rem 1rem; text-align: center; font-size: .8125rem; line-height: 1.35; background: var(--ember); color: #1b1408; text-decoration: none; } .strip b { font-weight: 700; } .strip:hover { background: #ffd993; }
+.direct { display: flex; align-items: center; gap: .45rem; margin: .8rem 0 0; font-size: .875rem; font-weight: 600; color: #ffd993; } .direct::before { content: ''; flex: none; width: .5rem; height: .5rem; border-radius: 50%; background: var(--ember); }
+.direct span { font-weight: 400; color: rgb(244 239 230 / .75); }

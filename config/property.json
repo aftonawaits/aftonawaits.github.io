@@ -25,5 +25,9 @@
   }
  },
  "siteUrl": "https://afton-awaits-welcome.netlify.app",
- "indexable": false
+ "indexable": false,
+ "direct": {
+  "short": "Book direct and save",
+  "long": "Book direct and save. Booking here skips the service fees the big rental sites add."
+ }
 }

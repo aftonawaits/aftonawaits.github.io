@@ -85,3 +85,5 @@ a { text-underline-offset: .22em; }
 .dock span { font-size: .875rem; color: rgb(244 239 230 / .75); white-space: nowrap; }
 .dock .btn { min-height: 2.6rem; padding: .35rem 1rem; font-size: .9375rem; white-space: nowrap; }
 @media (max-width: 560px) { .dock span { display: none; } .dock { padding-left: .5rem; } }
+.end .end__direct { justify-content: center; margin: 0 auto 1.2rem; color: #ffd993; max-width: none; }
+.dock span { color: #ffd993; font-weight: 600; }

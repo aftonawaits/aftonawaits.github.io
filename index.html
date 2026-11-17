@@ -57,6 +57,7 @@
   .compose p b { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--ember); color: #1b1408; font-size: .9rem; }
   .foot { flex: none; text-align: center; background: #14171c; padding-bottom: calc(.2rem + env(safe-area-inset-bottom)); } .foot .quiet { opacity: .75; padding: .5rem 0; font-size: .6875rem; }
   .foot::after { content: ''; display: block; width: 8.4rem; height: .3rem; border-radius: 99px; background: rgb(244 239 230 / .55); margin: .1rem auto .35rem; }
+  .foot-direct { flex: none; margin: 0; padding: .35rem 0 0; text-align: center; background: #14171c; font-size: .75rem; font-weight: 600; color: #ffd993; }
   .island { display: none; }
   @keyframes pop { from { opacity: 0; transform: scale(.7) translateY(.6rem); } }
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
@@ -69,7 +70,7 @@
     .side nav { position: absolute; z-index: 1; left: 2rem; bottom: 2rem; display: grid; gap: .55rem; justify-items: start; }
     .side nav a { font-family: var(--serif); font-variation-settings: 'SOFT' 100; letter-spacing: -.01em; font-size: 1.7rem; line-height: 1.15; color: #f4efe6; text-decoration: underline; text-decoration-color: var(--ember); text-decoration-thickness: 2px; text-underline-offset: .28em; }
     .side nav a::after { content: ' →'; color: var(--ember); } .side nav a:hover { color: #ffd993; }
-    .foot .quiet, .foot { font-size: 0; } .foot .quiet { display: none; }
+    .foot .quiet, .foot { font-size: 0; } .foot .quiet { display: none; } .foot-direct { display: none; }
     .device { align-items: center; justify-content: center; padding: 1.2rem; }
     /* the handset: bezel, rounded glass, side buttons */
     .phone { flex: none; width: 24.4rem; height: min(100%, 52rem); border-radius: 3.2rem; border: .68rem solid #05060a; box-shadow: 0 0 0 2px #3a3e47, 0 0 0 5px #17191e, 0 2.5rem 5rem -1.5rem #000, 0 0 6rem -2rem rgb(161 114 191 / .5); overflow: hidden; }
@@ -85,7 +86,7 @@
 <p class="back" id="back" hidden></p>
 <div class="wrap">
   <div class="side"><a class="mark" href="/" aria-label="Afton Awaits, home">Afton <em>Awaits</em></a>
-    <nav aria-label="Skip the questions"><a href="https://afton-awaits.netlify.app/">Just show me the house</a><a href="/plan/">Plan your trip</a></nav></div>
+    <nav aria-label="Skip the questions"><a href="https://afton-awaits.netlify.app/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="direct">Book direct and save <span>No rental-site service fees.</span></p></nav></div>
   <div class="device">
   <main class="phone">
     <span class="island" aria-hidden="true"></span>
@@ -116,6 +117,7 @@
       </ul>
     </nav>
     <div class="compose" aria-hidden="true"><i>+</i><p>Text Message <b>↑</b></p></div>
+    <p class="foot-direct">Book direct and save</p>
     <p class="foot"><a class="quiet" href="https://afton-awaits.netlify.app/">Just show me the house</a> &nbsp;·&nbsp; <a class="quiet" href="/plan/">Plan your trip</a></p>
   </main>
   </div>
@@ -159,6 +161,6 @@ for (const a of document.querySelectorAll('a[data-trip]')) a.addEventListener('c
   card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 5:28 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 5:31 PM ET</p>
 </body>
 </html>
