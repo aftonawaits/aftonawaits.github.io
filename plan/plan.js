@@ -79,7 +79,7 @@ $('#setup').addEventListener('submit', (e) => e.preventDefault());
 // ---------- lists ----------
 const wanted = (cats) => !state.interests.size || cats.some((c) => state.interests.has(c));
 const hm = (s) => +s.slice(11, 13) * 60 + +s.slice(14, 16);
-const timeOf = (e) => (e.allDay ? 'Time not published' : `${clock(hm(e.start))}${e.end ? ` to ${clock(hm(e.end))}` : ''}`);
+const timeOf = (e) => (e.allDay ? 'Confirm times with organizer' : `${clock(hm(e.start))}${e.end ? ` to ${clock(hm(e.end))}` : ''}`);
 const label = (k) => INTERESTS.find(([x]) => x === k)?.[1] ?? k;
 const addBtn = (type, id, name) => { const on = inBasket(type, id); return `<button class="add" type="button" data-add="${type}" data-id="${esc(id)}" aria-pressed="${on}">${on ? 'Added ✓' : name ? `Add ${esc(name)}` : 'Add'}</button>`; };
 function eventCard(e) {
