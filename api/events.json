@@ -1,6 +1,41 @@
 {
- "updated": "2026-11-18T20:49:25.855Z",
+ "updated": "2026-11-18T22:29:38.462Z",
  "events": [
+  {
+   "id": "wine-wednesday-three-notch-d-nellysford-2026-11-18",
+   "title": "Wine Wednesday",
+   "description": "Half off wine bottles every Wednesday.",
+   "start": "2026-11-18T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "three-notch-d-nellysford",
+   "venueName": "Three Notch'd Brewery & Craft Kitchen, Nelson County, VA",
+   "address": "2461 Rockfish Valley Hwy, Nellysford, VA 22958",
+   "lat": 37.88746,
+   "lng": -78.88007,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "indoor",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published"
+  },
   {
    "id": "wine-wednesday-king-family-vineyards-2026-11-18",
    "title": "Wine Wednesday",
@@ -27,11 +62,84 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-18/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "mcguffey-winter-market-forwarded-2026-11-20",
+   "title": "McGuffey Winter Market",
+   "description": "Handmade art and gifts from McGuffey's resident artists, open November 20 through December 27.",
+   "start": "2026-11-20T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "McGuffey Art Center",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "market"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "fallen-tree-fall-market-forwarded-2026-11-20",
+   "title": "Fallen Tree Fall Market",
+   "description": "Fall market with 6 vendors and live music, plus savory and sweet s'mores, flatbreads and sandwiches, mulled wine and hot chocolate.",
+   "start": "2026-11-20T16:00:00-05:00",
+   "end": "2026-11-20T20:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Fallen Tree Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "music",
+    "wine",
+    "market"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.7,
+   "flags": [
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -61,11 +169,153 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "millennial-cartoon-trivia-night-bold-rock-hard-cider-2026-11-20",
+   "title": "Millennial Cartoon Trivia Night",
+   "description": "Millennial cartoon-themed trivia night. Bring your friends.",
+   "start": "2026-11-20T18:00:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "bold-rock-hard-cider",
+   "venueName": "Bold Rock (Nellysford)",
+   "address": "",
+   "lat": 37.881,
+   "lng": -78.9057,
+   "categories": [
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "farmers-market-at-ix-forwarded-2026-11-21",
+   "title": "Farmers Market at IX",
+   "description": "Winter market with produce, pantry goods and makers under cover, running all season.",
+   "start": "2026-11-21T09:00:00-05:00",
+   "end": "2026-11-21T13:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "IX Art Park",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "market"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.7,
+   "flags": [
+    "venue not matched"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "craft-sublime-artisan-fair-basic-city-beer-co-2026-11-21",
+   "title": "Craft Sublime Artisan Fair",
+   "description": "Free, family-friendly holiday market of local artisans selling handmade jewelry, pottery, textiles, woodwork, original art, prints, photography and gourmet treats. Vendor inquiries: craftsublimearts@basiccitybeer.com.",
+   "start": "2026-11-21T11:00:00-05:00",
+   "end": "2026-11-21T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "basic-city-beer-co",
+   "venueName": "The Foundry at Basic City Beer Co",
+   "address": "",
+   "lat": 38.06364,
+   "lng": -78.87324,
+   "categories": [
+    "family",
+    "festival",
+    "market",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": true,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "charlottesville-holiday-market-forwarded-2026-11-21",
+   "title": "Charlottesville Holiday Market",
+   "description": "More than 100 makers downtown with gifts, food and local finds every Saturday through the holidays.",
+   "start": "2026-11-21T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Water Street",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "market"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -95,7 +345,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-michael-bergamo-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -129,11 +379,47 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-joel-streeter-chad-page-forwarded-2026-11-21",
+   "title": "Live music: Joel Streeter & Chad Page",
+   "description": "Joel Streeter and Chad Page of Boxed Lunch play live. TJJ Island Catering food truck on site.",
+   "start": "2026-11-21T17:00:00-05:00",
+   "end": "2026-11-21T20:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Glass House Winery & Brewery",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "music",
+    "food"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.7,
+   "flags": [
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -163,11 +449,113 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "live-music-silverstone-pro-re-nata-brewery-2026-11-22",
+   "title": "Live music: Silverstone",
+   "description": "Silverstone plays live at Pro Re Nata. The post also says \"SPLAT opens at 3 PM.\"",
+   "start": "2026-11-22T16:00:00-05:00",
+   "end": "2026-11-22T18:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "pro-re-nata-brewery",
+   "venueName": "Pro Re Nata Brewpub & Music Hall",
+   "address": "",
+   "lat": 38.04873,
+   "lng": -78.71421,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "sunday-afternoon-jazz-with-the-maddy-curtis-trio-and-will-ev-batesville-market-2026-11-22",
+   "title": "Sunday Afternoon Jazz with The Maddy Curtis Trio and Will Evans",
+   "description": "Live jazz from The Maddy Curtis Trio and Will Evans. Tickets can be preordered on the Batesville Market website.",
+   "start": "2026-11-22T16:00:00-05:00",
+   "end": "2026-11-22T18:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "batesville-market",
+   "venueName": "The Batesville Market",
+   "address": "",
+   "lat": 37.99565,
+   "lng": -78.72235,
+   "categories": [
+    "music"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "indoor",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "veritas-illuminated-veritas-vineyard-and-winery-2026-11-25",
+   "title": "Veritas Illuminated",
+   "description": "A walk-through light experience winding through the vineyard, with wine, fire pits and a glowing winter garden after dark.",
+   "start": "2026-11-25T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "veritas-vineyard-and-winery",
+   "venueName": "Veritas Vineyards, Afton",
+   "address": "",
+   "lat": 38.01551,
+   "lng": -78.83648,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
    "status": "published"
   },
   {
@@ -196,10 +584,43 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-25/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "wintergreen-ski-patrol-winter-sale-pro-re-nata-brewery-2026-11-27",
+   "title": "Wintergreen Ski Patrol Winter Sale",
+   "description": "Wintergreen Ski Patrol's annual consignment sale (formerly the ski swap). Buy or sell new and used skis, snowboards, bindings, boots and winter apparel.",
+   "start": "2026-11-27T10:00:00-05:00",
+   "end": "2026-11-27T13:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "pro-re-nata-brewery",
+   "venueName": "Pro Re Nata Brewery",
+   "address": "",
+   "lat": 38.04873,
+   "lng": -78.71421,
+   "categories": [
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
    "flags": [],
    "status": "published"
   },
@@ -230,10 +651,43 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "warren-miller-movie-days-off-pro-re-nata-brewery-2026-11-27",
+   "title": "Warren Miller Movie: Days Off",
+   "description": "Screening of Warren Miller's 77th annual ski film as part of Wintergreen Ski Patrol's Kickoff Party. Each movie ticket includes a raffle ticket for prizes such as skis, snowboards, tune-ups and gift cards.",
+   "start": "2026-11-27T14:00:00-05:00",
+   "end": "2026-11-27T16:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "pro-re-nata-brewery",
+   "venueName": "Pro Re Nata Brewery",
+   "address": "",
+   "lat": 38.04873,
+   "lng": -78.71421,
+   "categories": [
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
    "flags": [],
    "status": "published"
   },
@@ -264,11 +718,84 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "the-toader-race-for-the-underachiever-forwarded-2026-11-28",
+   "title": "The Toader: Race for the Underachiever",
+   "description": "A not-so-challenging 1.51 km Small Business Saturday race with pitstops for Into the Orchard Hard Cider, an apple cider donut and Off the Griddle bacon. Tickets at https://aftontickets.com/Toader include a custom Toader T-shirt, sweatbands, a pint of cider, a donut and bacon.",
+   "start": "2026-11-28T10:00:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Blue Toad Hard Cider",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "beer-cider",
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.7,
+   "flags": [
+    "venue not matched",
+    "no end time"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "barracks-road-holiday-parade-forwarded-2026-11-28",
+   "title": "Barracks Road Holiday Parade",
+   "description": "The shopping center's annual holiday parade through the shops, kicking off the holiday weekend.",
+   "start": "2026-11-28T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Barracks Road Shopping Center",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "festival"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -298,7 +825,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-nicholas-darden-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -332,11 +859,46 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "meet-the-nutcracker-characters-with-shenandoah-civic-dance-c-veritas-vineyard-and-winery-2026-11",
+   "title": "Meet the Nutcracker Characters with Shenandoah Civic Dance Company",
+   "description": "A chance to meet characters from The Nutcracker, presented with Shenandoah Civic Dance Company.",
+   "start": "2026-11-28T18:30:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "veritas-vineyard-and-winery",
+   "venueName": "Veritas Winery",
+   "address": "",
+   "lat": 38.01551,
+   "lng": -78.83648,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
    "status": "published"
   },
   {
@@ -366,7 +928,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
@@ -399,13 +961,13 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/meritage-vertical-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 1,
@@ -439,7 +1001,76 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "holiday-carols-with-schola-cantorum-of-waynesboro-veritas-vineyard-and-winery-2026-12-04",
+   "title": "Holiday Carols with Schola Cantorum of Waynesboro",
+   "description": "Part of Veritas's Illuminated nights holiday series.",
+   "start": "2026-12-04T18:00:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "veritas-vineyard-and-winery",
+   "venueName": "Veritas Winery",
+   "address": "",
+   "lat": 38.01551,
+   "lng": -78.83648,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "live-music-shiny-metal-boxes-the-music-of-the-police-sting-pro-re-nata-brewery-2026-12-04",
+   "title": "Live music: Shiny Metal Boxes – The Music of The Police & Sting",
+   "description": "A tribute to The Police and Sting. $10 door cover, with PRN beer and food available; come early for a good seat.",
+   "start": "2026-12-04T19:00:00-05:00",
+   "end": "2026-12-04T22:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "pro-re-nata-brewery",
+   "venueName": "Pro Re Nata Brew Pub & Music Hall, Crozet, VA",
+   "address": "",
+   "lat": 38.04873,
+   "lng": -78.71421,
+   "categories": [
+    "music",
+    "beer-cider"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.95,
@@ -472,17 +1103,160 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 1,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "grand-illumination-charlottesville-downtown-mall-2026-12-05",
+   "title": "Grand Illumination",
+   "description": "The downtown tree lighting on East Main Street, with music and cocoa.",
+   "start": "2026-12-05T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "charlottesville-downtown-mall",
+   "venueName": "Downtown Mall",
+   "address": "",
+   "lat": 38.03033,
+   "lng": -78.48001,
+   "categories": [
+    "music"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "holiday-market-forwarded-2026-12-05",
+   "title": "Holiday Market",
+   "description": "Kids crafts, vendors, live music and more. Food from the Hog and Hooch food truck and Nothing Bundt Cakes.",
+   "start": "2026-12-05T12:00:00-05:00",
+   "end": "2026-12-05T17:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "music",
+    "food",
+    "family",
+    "market"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": true,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.75,
+   "flags": [
+    "venue not matched"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "the-north-pole-express-forwarded-2026-12-05",
+   "title": "The North Pole Express",
+   "description": "A holiday Polar Express-themed event at Knight's Gambit; the image shows a Crozet Trolley.",
+   "start": "2026-12-05T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "lighting-of-the-lawn-forwarded-2026-12-05",
+   "title": "Lighting of the Lawn",
+   "description": "UVA's tradition of filling the Lawn with lights and music.",
+   "start": "2026-12-05T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "UVA Lawn",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [
+    "music"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -512,7 +1286,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-moon-glow-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -546,7 +1320,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
@@ -581,13 +1355,13 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/carriage-house-christmas/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 1,
@@ -621,11 +1395,45 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "the-north-pole-express-forwarded-2026-12-06",
+   "title": "The North Pole Express",
+   "description": "A holiday Polar Express-themed event at Knight's Gambit; the image shows a Crozet Trolley.",
+   "start": "2026-12-06T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -654,17 +1462,51 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 1,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "the-north-pole-express-forwarded-2026-12-12",
+   "title": "The North Pole Express",
+   "description": "A holiday Polar Express-themed event at Knight's Gambit; the image shows a Crozet Trolley.",
+   "start": "2026-12-12T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -694,7 +1536,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-porch-dogs-2/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -728,7 +1570,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
@@ -762,7 +1604,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
@@ -796,11 +1638,80 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-jingle-w-jimmy-o/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "christmas-songs-with-waynesboro-choral-society-veritas-vineyard-and-winery-2026-12-18",
+   "title": "Christmas Songs with Waynesboro Choral Society",
+   "description": "Part of Veritas's Illuminated nights holiday series.",
+   "start": "2026-12-18T18:00:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "veritas-vineyard-and-winery",
+   "venueName": "Veritas Winery",
+   "address": "",
+   "lat": 38.01551,
+   "lng": -78.83648,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
+   "status": "published"
+  },
+  {
+   "id": "the-north-pole-express-forwarded-2026-12-19",
+   "title": "The North Pole Express",
+   "description": "A holiday Polar Express-themed event at Knight's Gambit; the image shows a Crozet Trolley.",
+   "start": "2026-12-19T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -830,7 +1741,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-shane-click/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -864,11 +1775,46 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "the-nutcracker-performance-with-albemarle-ballet-theatre-veritas-vineyard-and-winery-2026-12-19",
+   "title": "The Nutcracker Performance with Albemarle Ballet Theatre",
+   "description": "A Nutcracker performance by Albemarle Ballet Theatre.",
+   "start": "2026-12-19T18:30:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "veritas-vineyard-and-winery",
+   "venueName": "Veritas Winery",
+   "address": "",
+   "lat": 38.01551,
+   "lng": -78.83648,
+   "categories": [
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
    "status": "published"
   },
   {
@@ -898,11 +1844,45 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "the-north-pole-express-forwarded-2026-12-20",
+   "title": "The North Pole Express",
+   "description": "A holiday Polar Express-themed event at Knight's Gambit; the image shows a Crozet Trolley.",
+   "start": "2026-12-20T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": null,
+   "venueName": "Knight's Gambit Vineyard",
+   "address": "",
+   "lat": null,
+   "lng": null,
+   "categories": [],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "unknown",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.6,
+   "flags": [
+    "no start time",
+    "venue not matched"
+   ],
    "status": "published"
   },
   {
@@ -932,7 +1912,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-rob-midnight/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.9,
@@ -966,7 +1946,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
@@ -1000,11 +1980,47 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T20:49:25.855Z"
+     "lastSeen": "2026-11-18T22:29:38.462Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "a-starfall-dinner-hazy-mountain-vineyards-brewery-2027-01-11",
+   "title": "A Starfall Dinner",
+   "description": "Featuring Bluebird & Co, Bloom 2 Be You, Happy Little Rectangles, The Bloom Trio and Sealed in the Stars. Held in honor of a midnight release; the rest of that line is cut off in the screenshot.",
+   "start": "2027-01-11T21:00:00-05:00",
+   "end": null,
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "hazy-mountain-vineyards-brewery",
+   "venueName": "Hazy Mountain Vineyards",
+   "address": "",
+   "lat": 38.0188,
+   "lng": -78.8091,
+   "categories": [
+    "food",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T22:29:38.462Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [
+    "no end time"
+   ],
    "status": "published"
   }
  ]

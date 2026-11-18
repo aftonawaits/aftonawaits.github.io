@@ -9,6 +9,7 @@ const INTERESTS = [['wine', 'Wine'], ['beer-cider', 'Beer & cider'], ['music', '
 const token = (v) => getComputedStyle(document.documentElement).getPropertyValue(v.slice(4, -1)).trim();   // 'var(--x)' -> its colour, for the map library
 const COLOR = Object.fromEntries(INTERESTS.map(([k, , c]) => [k, c]));
 const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const BASKET = '<path d="M3 9h18l-2 11H5ZM8 9l4-6 4 6M9 13v4M15 13v4"/>';
 const ICON = {
   winery: svg('<path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/>'), brewery: svg('<path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5M6 7c0-3 10-3 10 0"/>'),
   cidery: svg('<path d="M12 8c-6-3-8 3-6 8s4 5 6 3c2 2 4 2 6-3s0-11-6-8ZM12 8c0-3 1-4 3-5"/>'), distillery: svg('<path d="M10 3h4v5l3 4v9H7v-9l3-4ZM7 15h10"/>'),
@@ -18,8 +19,10 @@ const ICON = {
   studio: svg('<path d="M9 3h6M10 3v4l-4 9a4 4 0 0 0 4 5h4a4 4 0 0 0 4-5l-4-9V3"/>'),
   resort: svg('<path d="M12 2v20M3 7l18 10M21 7 3 17"/>'), town: svg('<path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/>'),
   restaurant: svg('<path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/>'), cafe: svg('<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5ZM17 10h2a2 2 0 0 1 0 5h-2M8 3v3M12 3v3"/>'),
+  market: svg(BASKET), grocery: svg(BASKET), 'general-store': svg(BASKET), essentials: svg(BASKET), 'wine-shop': svg('<path d="M10 2h4v5c2 1 3 3 3 5v10H7V12c0-2 1-4 3-5ZM7 15h10"/>'),
   home: svg('<path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6"/>'), event: svg('<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'),
 };
+for (const [k, as] of [['pizza', 'restaurant'], ['bbq', 'restaurant'], ['deli', 'restaurant'], ['bar', 'restaurant'], ['bakery', 'cafe'], ['ice-cream', 'cafe']]) ICON[k] = ICON[as];
 const KEY = 'afton-plan';
 const fmtDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const iso = (d) => d.toISOString().slice(0, 10);

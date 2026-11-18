@@ -10,7 +10,7 @@
 <meta property="og:description" content="Tell the house who’s coming, and it plans the weekend.">
 <meta property="og:url" content="https://aftonawaits.github.io/"><meta property="og:image" content="https://aftonawaits.github.io/img/share.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The farmhouse at dusk from above, windows lit, the Blue Ridge behind.">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia"><meta name="twitter:image" content="https://aftonawaits.github.io/img/share.jpg">
-<link rel="stylesheet" href="/shared.css?v=1795039853">
+<link rel="stylesheet" href="/shared.css?v=1795041088">
 <style>
   /* The landing page: a note from the house on a lamplit evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -59,6 +59,7 @@
   .is-wait .chips a { pointer-events: none; opacity: .45; }
   /* the note, and the two quiet links */
   .note { margin: 0; padding: .7rem 1rem .2rem; text-align: center; background: var(--hearth); }
+  .note__a, .hero nav a.note__a { text-decoration: none; font-size: inherit; line-height: inherit; letter-spacing: 0; } .hero nav a.note__a::after { content: none; } .note__a:hover span { color: var(--ember); border-color: var(--ember); }
   .note span { display: inline-block; padding: .3rem .9rem; border-block: 1px solid rgb(200 149 90 / .55); font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; color: var(--cream); }
   .foot { text-align: center; background: var(--hearth); padding: 0 1rem calc(.6rem + env(safe-area-inset-bottom)); color: var(--muted); } .foot .quiet { color: var(--cream); }
 
@@ -113,7 +114,7 @@
   <div class="hero">
     <img src="/img/aerialDusk-1200.webp?v=2" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high">
     <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" alt="" aria-hidden="true" width="1200" height="800">
-    <nav aria-label="Skip the questions"><a href="/long-light/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="note"><span>Book direct and save · no rental-site fees</span></p></nav>
+    <nav aria-label="Skip the questions"><a href="/long-light/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no rental-site fees</span></a></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1></header>
@@ -140,7 +141,7 @@
         <li><a class="plain" href="/trips/girls/" data-occ="none">Just a weekend away.</a></li>
       </ul>
     </nav>
-    <p class="note"><span>Book direct and save · no rental-site fees</span></p>
+    <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no rental-site fees</span></a></p>
     <p class="foot"><a class="quiet" href="/long-light/">Just show me the house</a> &nbsp;·&nbsp; <a class="quiet" href="/plan/">Plan your trip</a></p>
   </main>
 </div>
@@ -205,6 +206,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 5:10 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 5:31 PM ET</p>
 </body>
 </html>
