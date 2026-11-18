@@ -10,9 +10,15 @@ export const mins = (iso) => +iso.slice(11, 13) * 60 + +iso.slice(14, 16);
 export const clock = (m) => { const h = Math.floor(m / 60) % 24, x = String(Math.round(m % 60)).padStart(2, '0'); return `${h % 12 || 12}:${x} ${h < 12 ? 'AM' : 'PM'}`; };
 export const dayList = (from, to) => { const out = []; for (let d = new Date(from + 'T12:00:00Z'); d.toISOString().slice(0, 10) <= to && out.length < 14; d.setUTCDate(d.getUTCDate() + 1)) out.push(d.toISOString().slice(0, 10)); return out; };
 
-/** Estimated drive time in minutes. Straight-line distance, lengthened for mountain roads, at a rural average speed.
- *  A stand-in until the precomputed road matrix exists; every leg is labelled as an estimate. */
+let ROADS = null;
+/** Optional road matrix { ids, minutes, miles } (rows and columns follow ids). With it, a leg between two known
+ *  points uses the road time; any other leg falls back to the estimate below. Pass null to clear it. */
+export function useRoadTimes(t) { ROADS = t?.ids ? { index: new Map(t.ids.map((id, i) => [id, i])), minutes: t.minutes, miles: t.miles } : null; }
+
+/** Drive time in minutes. Road time when both ends are in the road matrix; otherwise an estimate from straight-line
+ *  distance, lengthened for mountain roads, at a rural average speed. */
 export function drive(a, b) {
+  if (ROADS) { const i = ROADS.index.get(a?.id), j = ROADS.index.get(b?.id), m = i != null && j != null ? ROADS.minutes[i]?.[j] : null; if (m != null) return { minutes: m, miles: ROADS.miles?.[i]?.[j] ?? null, estimated: false }; }
   if (!a?.lat || !b?.lat) return { minutes: 20, miles: null, estimated: true, unknown: true };
   const R = 3958.8, rad = Math.PI / 180, dLat = (b.lat - a.lat) * rad, dLng = (b.lng - a.lng) * rad;
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
@@ -42,7 +48,7 @@ function prepare(item) {
   }
   return { ...item, date: item.pin?.date ?? null, flexible: !item.pin, start: item.pin?.start, end: item.pin ? item.pin.start + item.data.typicalVisitMinutes : undefined, duration: item.data.typicalVisitMinutes };
 }
-const where = (s) => ({ lat: s.data.lat, lng: s.data.lng });
+const where = (s) => ({ id: s.data.placeId ?? s.data.id, lat: s.data.lat, lng: s.data.lng });
 
 /** Build a day-by-day plan.  basket: [{ key, type: 'event'|'place', data, pin?, locked? }] */
 export function buildPlan(basket, { origin, from, to, pace = 'steady', places = [], interests = [], driver = false, kids = false, corridors = [], homeBy = null } = {}) {

@@ -1,7 +1,223 @@
 {
- "about": "UVA home games for the game-weekend page. Edit this file each season; past dates hide themselves. date is YYYY-MM-DD, sport is football or basketball, opponent/time/venue are optional.",
- "season": "",
- "source": "the official schedule at virginiasports.com",
- "sourceUrl": "https://virginiasports.com/",
- "games": []
+ "about": "UVA home games for the game-weekend page. Refresh with tools/games.py or edit by hand; past dates hide themselves. date is YYYY-MM-DD; sport is football, basketball (men's) or womens-basketball; time is as announced or TBA.",
+ "season": "2026-27",
+ "updated": "2026-11-18",
+ "source": "the official schedules at virginiasports.com",
+ "sourceUrl": {
+  "football": "https://virginiasports.com/sports/football/schedule",
+  "basketball": "https://virginiasports.com/sports/mbball/schedule",
+  "womens-basketball": "https://virginiasports.com/sports/wbball/schedule"
+ },
+ "games": [
+  {
+   "date": "2026-11-19",
+   "sport": "womens-basketball",
+   "opponent": "JMU",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-11-20",
+   "sport": "basketball",
+   "opponent": "Loyola Maryland",
+   "time": "7:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2026-11-21",
+   "sport": "football",
+   "opponent": "North Carolina",
+   "time": "12:30 PM",
+   "venue": "Scott Stadium"
+  },
+  {
+   "date": "2026-12-02",
+   "sport": "basketball",
+   "opponent": "Kentucky",
+   "time": "7:15 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2026-12-06",
+   "sport": "womens-basketball",
+   "opponent": "Boston College",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-12-08",
+   "sport": "basketball",
+   "opponent": "Bethune-Cookman",
+   "time": "7:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2026-12-09",
+   "sport": "womens-basketball",
+   "opponent": "American",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-12-13",
+   "sport": "basketball",
+   "opponent": "Western Carolina",
+   "time": "12:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2026-12-13",
+   "sport": "womens-basketball",
+   "opponent": "Navy",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-12-22",
+   "sport": "womens-basketball",
+   "opponent": "Stony Brook",
+   "time": "1:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-12-28",
+   "sport": "womens-basketball",
+   "opponent": "Norfolk State",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2026-12-31",
+   "sport": "womens-basketball",
+   "opponent": "Duke",
+   "time": "8:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-01-02",
+   "sport": "basketball",
+   "opponent": "SMU",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-01-03",
+   "sport": "womens-basketball",
+   "opponent": "Georgia Tech",
+   "time": "12:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-01-10",
+   "sport": "womens-basketball",
+   "opponent": "Virginia Tech",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-01-13",
+   "sport": "basketball",
+   "opponent": "Boston College",
+   "time": "8:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-01-21",
+   "sport": "womens-basketball",
+   "opponent": "Wake Forest",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-01-27",
+   "sport": "basketball",
+   "opponent": "Georgia Tech",
+   "time": "8:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-01-28",
+   "sport": "womens-basketball",
+   "opponent": "Cal",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-01-30",
+   "sport": "basketball",
+   "opponent": "Virginia Tech",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-02-06",
+   "sport": "basketball",
+   "opponent": "Duke",
+   "time": "TBA",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-02-07",
+   "sport": "womens-basketball",
+   "opponent": "Louisville",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-02-13",
+   "sport": "basketball",
+   "opponent": "Notre Dame",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-02-15",
+   "sport": "basketball",
+   "opponent": "Louisville",
+   "time": "7:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-02-18",
+   "sport": "womens-basketball",
+   "opponent": "Florida State",
+   "time": "6:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-02-21",
+   "sport": "womens-basketball",
+   "opponent": "Stanford",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena",
+   "optional": true
+  },
+  {
+   "date": "2027-02-27",
+   "sport": "basketball",
+   "opponent": "Florida State",
+   "time": "2:00 PM",
+   "venue": "John Paul Jones Arena"
+  },
+  {
+   "date": "2027-03-06",
+   "sport": "basketball",
+   "opponent": "NC State",
+   "time": "12:00 PM",
+   "venue": "John Paul Jones Arena"
+  }
+ ]
 }

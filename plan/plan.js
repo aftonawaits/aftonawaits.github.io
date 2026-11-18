@@ -1,6 +1,6 @@
 // Plan your trip: dates, a zoomable map and lists of real places and events, a basket, and a day-by-day itinerary.
 // All state lives in the link and in localStorage; nothing is sent anywhere.
-import { clock, dayList } from '/plan/lib/planner.js';
+import { clock, dayList, useRoadTimes } from '/plan/lib/planner.js';
 import { createApi } from '/plan/lib/api.js';
 
 const $ = (s) => document.querySelector(s);
@@ -26,7 +26,8 @@ const iso = (d) => d.toISOString().slice(0, 10);
 // Everything about the property (where the house is, its links, its quiet hours) comes from one config file.
 const get = (u) => fetch(u).then((r) => r.json());
 const [evData, places, region, property] = await Promise.all([get('/api/events.json'), get('/api/places.json'), get('/api/region.json'), get('/config/property.json')]);
-const events = evData.events, HOME = property.origin;
+const events = evData.events, HOME = { ...property.origin, id: 'origin' };
+try { useRoadTimes(await get('/api/drive.json')); } catch { /* no road matrix: the planner falls back to its estimate */ }
 for (const p of places) p.color = COLOR[p.interests[0]] ?? 'var(--ink)';
 const api = createApi({ events, places, region });
 const placeById = Object.fromEntries(places.map((p) => [p.id, p])), eventById = Object.fromEntries(events.map((e) => [e.id, e]));
