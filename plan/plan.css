@@ -110,3 +110,20 @@ input[type='checkbox'] { width: 1.25rem; height: 1.25rem; accent-color: var(--br
 .tray { position: fixed; z-index: 25; left: .8rem; right: .8rem; bottom: calc(.8rem + env(safe-area-inset-bottom)); display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 3.4rem; padding: .5rem .6rem .5rem 1.2rem; border-radius: 99px; background: var(--hearth); color: var(--cream); text-decoration: none; border: 1px solid color-mix(in srgb, var(--brass) 40%, transparent); box-shadow: var(--shadow-evening); max-width: 34rem; margin-inline: auto; font-family: var(--serif); font-style: italic; font-size: 1rem; }
 .tray[hidden] { display: none; } .tray b { padding: .55rem 1rem; border-radius: 99px; background: var(--honey); color: var(--ink); font-family: var(--sans); font-style: normal; font-weight: 600; font-size: .9375rem; white-space: nowrap; }
 body:has(.tray:not([hidden])) .foot { padding-bottom: 6rem; }
+
+/* ---------- Plan your trip: an evening opening, then linen from "Your dates" on ---------- */
+.strip[data-mood='evening'] { background: var(--hearth); }
+.bar[data-mood='evening'] { background: color-mix(in srgb, var(--night) 90%, transparent); border-bottom-color: var(--hair-evening); }
+.bar[data-mood='evening'] .mark { color: var(--cream); } .bar[data-mood='evening'] .quiet { color: var(--muted); } .bar[data-mood='evening'] .quiet:hover { color: var(--cream); }
+.intro[data-mood='evening'] { position: relative; isolation: isolate; margin-top: 0; padding: 2.2rem 0 5.2rem; background: none; }
+.intro[data-mood='evening']::before { content: ''; position: absolute; z-index: -2; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw; background-color: var(--night); background-image: var(--firelight); }
+.intro[data-mood='evening']::after { content: ''; position: absolute; z-index: -1; bottom: 0; left: calc(50% - 50vw); width: 100vw; height: 3.5rem; background: linear-gradient(transparent, var(--paper)); }   /* the evening eases into the linen page */
+.intro .bub { display: inline-block; max-width: 22rem; margin: 0 0 1.3rem; padding: .6rem .95rem; border-radius: 1.25rem 1.25rem 1.25rem .4rem; background: var(--linen); color: var(--ink); font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 20%, transparent); animation: bub-rise .5s var(--ease) both; }
+@keyframes bub-rise { from { opacity: 0; transform: translateY(6px); } }
+.intro[data-mood='evening'] .kicker { color: var(--muted); } .intro[data-mood='evening'] h1 em { color: var(--brass); } .intro[data-mood='evening'] .lede { color: color-mix(in srgb, var(--cream) 90%, transparent); }
+.intro[data-mood='evening'] .steps a { background: var(--hearth); color: var(--muted); box-shadow: none; border: 1px solid var(--hair-evening); transition: border-color .25s, background-color .25s; }
+.intro[data-mood='evening'] .steps a:hover { border-color: color-mix(in srgb, var(--brass) 55%, transparent); background: color-mix(in srgb, var(--hearth) 90%, var(--brass)); box-shadow: none; }
+.intro[data-mood='evening'] .steps strong { color: var(--cream); } .intro[data-mood='evening'] .steps b { border-color: var(--brass); color: var(--brass); }
+@media (min-width: 1000px) {   /* wide screens: the house at dusk on the right, fading into the dark like the landing page */
+  .intro[data-mood='evening']::before { background-image: linear-gradient(90deg, var(--night) 41%, color-mix(in srgb, var(--night) 55%, transparent) 64%, color-mix(in srgb, var(--night) 25%, transparent)), linear-gradient(transparent 55%, color-mix(in srgb, var(--night) 85%, transparent)), url('/img/aerialDusk-1200.webp?v=2'); background-size: auto, auto, max(60vw, 46rem) auto; background-position: 0 0, 0 0, right top 42%; background-repeat: no-repeat; }
+}

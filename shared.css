@@ -85,7 +85,7 @@ body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
 .strip { font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; line-height: 1.35; border-block: 1px solid color-mix(in srgb, var(--brass) 50%, transparent); }
 .strip b { font-weight: 500; color: var(--ember); } .strip:hover { background: color-mix(in srgb, var(--hearth) 88%, var(--brass)); }
 /* linen pages get the note on paper; trip pages open in the evening, so theirs stays dark */
-[data-mood='linen']:not([data-trip]) > .strip { background: var(--paper); color: var(--ink); border-block-color: var(--rule); } [data-mood='linen']:not([data-trip]) > .strip b { color: var(--brass-deep); } [data-mood='linen']:not([data-trip]) > .strip:hover { background: var(--card); }
+[data-mood='linen']:not([data-trip]) > .strip:not([data-mood]) { background: var(--paper); color: var(--ink); border-block-color: var(--rule); } [data-mood='linen']:not([data-trip]) > .strip:not([data-mood]) b { color: var(--brass-deep); } [data-mood='linen']:not([data-trip]) > .strip:not([data-mood]):hover { background: var(--card); }
 .direct { display: flex; align-items: baseline; gap: .45rem; margin: .8rem 0 0; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; font-weight: 400; color: var(--ember); }
 .direct::before { content: ''; flex: none; align-self: center; width: 1.1rem; height: 1px; background: var(--brass); }
 .direct span { color: color-mix(in srgb, var(--cream) 80%, transparent); }
