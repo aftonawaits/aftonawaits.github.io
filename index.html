@@ -5,7 +5,7 @@
 <title>Afton Awaits | Who’s coming, and what are we doing?</title>
 <meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, golf, trails and skiing, or the Route 151 wine and beer trail.">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794963361">
+<link rel="stylesheet" href="/shared.css?v=1794965090">
 <style>
   /* The landing page: a note from the house on a lamplit evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -13,13 +13,13 @@
   .back { position: static; }
   /* paper grain over everything, barely there */
   .grain { position: fixed; inset: 0; z-index: 40; pointer-events: none; opacity: .045; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .9 0 0 0 0 .82 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  img { filter: saturate(1.05) sepia(.08); }
+  img { filter: saturate(.95) sepia(.12) brightness(.97); }   /* one warm grade for the hero and the trip cards */
 
   /* hero: the house at dusk */
   .hero { position: relative; height: min(42vh, 26rem); overflow: hidden; }
   .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
   .hero::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgb(23 18 15 / .38), transparent 26%, transparent 52%, var(--night)); }
-  .hero nav { display: none; }
+  .hero nav, .hero .mirror { display: none; }
 
   /* the conversation */
   .panel { position: relative; display: flex; flex-direction: column; background: radial-gradient(120% 60% at 50% 110%, rgb(240 160 80 / .16), transparent 70%), var(--night); }
@@ -39,8 +39,9 @@
   .msg--ask em { font-style: italic; color: var(--brass-deep); }
   .dots { align-self: flex-start; display: flex; gap: .28rem; padding: .85rem .95rem; background: var(--linen); border-radius: 1.25rem; border-bottom-left-radius: .4rem; }
   .dots b { width: .45rem; height: .45rem; border-radius: 50%; background: #8a7662; animation: blink 1s infinite; } .dots b:nth-child(2) { animation-delay: .15s; } .dots b:nth-child(3) { animation-delay: .3s; }
-  .card { align-self: flex-start; width: 82%; display: block; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); text-decoration: none; box-shadow: 0 1px 0 rgb(42 32 25 / .2); }
+  .card { position: relative; align-self: flex-start; width: 82%; display: block; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); text-decoration: none; box-shadow: 0 1px 0 rgb(42 32 25 / .2); }
   .card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  .card::before { content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; aspect-ratio: 16 / 9; background: linear-gradient(180deg, rgb(150 70 20 / .34), rgb(90 45 15 / .14) 55%, rgb(60 30 10 / .2)); mix-blend-mode: multiply; pointer-events: none; }   /* evening light over daytime skies */
   .card span { display: block; padding: .65rem .95rem .8rem; } .card small { display: block; font-variant: all-small-caps; letter-spacing: .1em; font-size: .875rem; color: #6a5744; }
   .card strong { font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; font-size: 1.35rem; line-height: 1.15; } .card u { font-family: var(--serif); font-style: italic; color: var(--brass-deep); text-underline-offset: .25em; font-size: 1rem; }
 
@@ -61,26 +62,38 @@
   @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
-  @media (min-width: 900px) and (max-width: 1199px) { .wrap .hero img { margin-left: -40%; } }
   @media (min-width: 900px) {
     html, body { height: 100%; } body { display: flex; flex-direction: column; overflow: hidden; }
     .back { flex: none; }
-    .wrap { position: relative; flex: 1; min-height: 0; display: flex; align-items: flex-end; justify-content: flex-end; padding: 2rem clamp(1.5rem, 5vw, 5rem) clamp(2rem, 9vh, 5.5rem); }   /* the panel sits on its base and grows upward as the conversation does, so the replies never move */
+    .wrap { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
     .hero { position: absolute; inset: 0; height: auto; }
-    .hero img { width: 118%; max-width: none; margin-left: -30.5%; object-position: 50% 58%; -webkit-mask-image: linear-gradient(90deg, #000 74%, transparent 99%); mask-image: linear-gradient(90deg, #000 74%, transparent 99%); }   /* the photo is slid left so the whole house sits clear of the panel, and its right edge fades into the dark behind the panel */
+    /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
+       A mirrored copy continues it to the right edge, so the sky and ridge carry across behind the panel. */
+    .hero { --s: 1.15; --o: -30.5%; }
+    .hero img { width: calc(var(--s) * 100%); max-width: none; margin-left: var(--o); object-position: 50% 56%; }
+    .hero .mirror { display: block; position: absolute; top: 0; left: calc(var(--o) + var(--s) * 100% - 1px); margin: 0; transform: scaleX(-1); }
     .hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgb(60 30 10 / .18), transparent 40%); mix-blend-mode: multiply; pointer-events: none; }   /* warms the cool blue at the top of the sky */
-    .hero::after { background: linear-gradient(90deg, transparent 40%, rgb(23 18 15 / .55) 78%, rgb(23 18 15 / .8)), linear-gradient(transparent 55%, rgb(23 18 15 / .82)); }
+    .hero::after { background: radial-gradient(46% 52% at 100% 100%, rgb(23 18 15 / .92) 35%, transparent), linear-gradient(90deg, transparent 70%, rgb(23 18 15 / .85)), linear-gradient(transparent 58%, rgb(23 18 15 / .8)); }   /* the corner wash hides where the mirrored driveway meets itself */
     .hero nav { position: absolute; z-index: 2; left: clamp(1.5rem, 4vw, 3rem); bottom: 2.2rem; display: grid; gap: .55rem; justify-items: start; }
     .hero nav a { font-family: var(--serif); font-variation-settings: 'SOFT' 100; letter-spacing: -.01em; font-size: 1.7rem; line-height: 1.15; color: var(--cream); text-decoration: underline; text-decoration-color: var(--brass); text-decoration-thickness: 1.5px; text-underline-offset: .28em; }
     .hero nav a::after { content: ' →'; color: var(--brass); } .hero nav a:hover { color: var(--ember); }
     .hero nav .note { background: none; padding: .7rem 0 0; text-align: left; }
-    .panel { z-index: 1; width: min(27rem, 100%); max-height: min(100%, 46rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
+    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; max-height: min(100%, 46rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
     .top { position: static; flex: none; padding: 1.2rem 1rem .9rem; border-bottom: 1px solid var(--hair); } .top .mark { text-shadow: none; }
     .thread { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding-top: 1.1rem; scrollbar-width: none; overscroll-behavior: contain; } .thread::-webkit-scrollbar { display: none; }
     .thread > :first-child { margin-top: auto; }
     .reply, .foot { flex: none; }
     .panel > .note, .foot { display: none; }
     .reply { padding-bottom: 1.1rem; }
+  }
+  @media (min-width: 900px) and (max-width: 1199px) { .hero { --s: 1; --o: -34%; } }   /* narrower desktops: the panel takes half the screen, so the house slides further over */
+  @media (min-width: 1600px) {   /* large screens: the conversation scales up with the panel */
+    .panel { max-height: min(100%, 56rem); } .top { padding: 1.5rem 1.2rem 1.1rem; } .top .mark { font-size: 1.8rem; }
+    .thread { gap: .5rem; padding: 1.3rem 1.3rem 1.1rem; } .stamp { font-size: 1.0625rem; }
+    .msg { font-size: 1.25rem; padding: .7rem 1.1rem; } .msg--in { font-size: 1.25rem; } .msg--ask { font-size: 1.85rem; padding: 1rem 1.25rem; } .msg--out { margin-right: 1.3rem; }
+    .card strong { font-size: 1.6rem; } .card u { font-size: 1.125rem; } .card small { font-size: 1rem; }
+    .reply { padding: 1rem 1.3rem 1.4rem; } .reply h2 { font-size: 1.0625rem; } .chips { gap: .55rem; } .chips a { font-size: 1.1875rem; min-height: 3.1rem; padding: .45rem 1.2rem; }
+    .hero nav a { font-size: 2rem; } .note span { font-size: 1.0625rem; }
   }
   @media (max-width: 899px) and (max-height: 700px) {   /* short phones: every reply still fits on the first screen */
     .hero { height: 40vh; } .top { top: -40vh; padding-top: .8rem; } .top .mark { font-size: 1.35rem; }
@@ -96,6 +109,7 @@
 <div class="wrap">
   <div class="hero">
     <img src="/img/aerialDusk-1200.webp" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high">
+    <img class="mirror" src="/img/aerialDusk-1200.webp" alt="" aria-hidden="true" width="1200" height="800">
     <nav aria-label="Skip the questions"><a href="https://afton-awaits.netlify.app/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="note"><span>Book direct and save · no rental-site fees</span></p></nav>
   </div>
   <main class="panel">
@@ -188,6 +202,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 7:56 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 8:24 PM ET</p>
 </body>
 </html>
