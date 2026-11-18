@@ -85,7 +85,7 @@ const addBtn = (type, id, name) => { const on = inBasket(type, id); return `<but
 function eventCard(e) {
   return `<li class="card ${inBasket('event', e.id) ? 'is-in' : ''}" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}"><div><p class="when">${esc(timeOf(e))}</p><h3>${esc(e.title)}</h3><p class="venue">${e.placeId ? `<button type="button" class="ghost" data-show="${esc(e.placeId)}">${esc(e.venueName)}</button>` : esc(e.venueName)}${e.price ? ` · ${esc(e.price)}` : ''}</p>
     <p class="tags">${e.categories.map((c) => `<span class="tag">${esc(label(c))}</span>`).join('')}</p></div>${addBtn('event', e.id)}
-    ${e.description ? `<p class="desc">${esc(e.description)}</p>` : ''}<p class="desc"><a href="${esc(e.sources[0].url)}" rel="noopener">Details at ${esc(e.sources[0].name)}</a></p></li>`;
+    ${e.description ? `<p class="desc">${esc(e.description)}</p>` : ''}<p class="desc">${e.sources[0].url ? `<a href="${esc(e.sources[0].url)}" rel="noopener">Details at ${esc(e.sources[0].name)}</a>` : `<a href="/explore/events/${e.seriesId ?? e.id}/">More about this event</a>`}</p></li>`;
 }
 const visit = (p) => (p.typicalVisitMinutes >= 120 ? `${p.typicalVisitMinutes / 60} hours` : `${p.typicalVisitMinutes} min`);
 function placeCard(p) {
@@ -254,7 +254,7 @@ function renderBooking() {
   const short = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   const mine = state.booked && state.booked.from === state.from && state.booked.to === state.to;
   $('#avail').href = $('#avail2').href = u.href;
-  $('#avail').textContent = `Check availability for ${short(state.from)} to ${short(state.to)}`;
+  $('#avail').textContent = `Check dates and book: ${short(state.from)} to ${short(state.to)}`;
   $('#avail-row').classList.toggle('is-booked', !!mine);
   $('#avail-note').textContent = mine ? `Your stay: ${short(state.from)} to ${short(state.to)}. Check-in from ${property.checkIn}, check-out by ${property.checkOut}.` : 'Opens the booking page on these dates.';
   $('#avail2').hidden = !!mine;

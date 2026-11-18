@@ -124,3 +124,10 @@ a { text-underline-offset: .22em; }
 /* the floating bar is for phones; the header already carries Plan your stay on wide screens */
 @media (min-width: 900px) { .dock { display: none; } }
 @media (max-width: 899px) { .end { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom)); } .more, .aside, .games-more { scroll-margin-bottom: 5rem; } }
+
+/* the line that answers "who shares a bed?", and the share button */
+.upfront { margin: 1rem 0 1.1rem; padding-left: .9rem; border-left: 2px solid var(--brass); font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.45; color: var(--cream); max-width: 34rem; }
+.sharerow { margin: .9rem 0 0; }
+.share { appearance: none; background: none; border: 0; padding: .5rem 0; font: inherit; font-size: .9375rem; color: var(--cream); text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: .3em; cursor: pointer; }
+.share::before { content: '↗ '; color: var(--brass); } .share:hover { color: var(--ember); }
+.end .proof, .open .proof { color: var(--muted); }

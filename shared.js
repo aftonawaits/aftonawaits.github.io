@@ -14,7 +14,7 @@ const KEY = 'afton-trip';
 
 // The girls' weekend lives on its own site. In a mixed trip the other choice leads and the girls' site is linked from that page.
 export const EXTERNAL = {};   // every trip now has its own page here
-export const HOUSE = 'https://afton-awaits.netlify.app/';
+export const HOUSE = '/long-light/';
 export const url = (ids) => {
   const o = [...ids].sort((a, b) => (a in EXTERNAL) - (b in EXTERNAL));
   return o[0] in EXTERNAL ? EXTERNAL[o[0]] : `/trips/${byId(o[0]).id}/${o[1] ? `?also=${byId(o[1]).id}` : ''}`;

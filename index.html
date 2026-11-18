@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits</title>
-<meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, a UVA game weekend, trails and skiing, or the Route 151 wine and beer trail.">
+<!--head:start--><title>Hot tub’s on. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits</title>
+<meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: a girls’ trip, a family weekend, a UVA game weekend, trails and skiing, or the Route 151 wine and beer trail.">
+<link rel="canonical" href="https://aftonawaits.github.io/">
+<meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Afton Awaits">
-<meta property="og:title" content="Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia">
-<meta property="og:description" content="Tell the house who’s coming, and it plans the weekend.">
-<meta property="og:url" content="https://aftonawaits.github.io/"><meta property="og:image" content="https://aftonawaits.github.io/img/share.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The farmhouse at dusk from above, windows lit, the Blue Ridge behind.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia"><meta name="twitter:image" content="https://aftonawaits.github.io/img/share.jpg">
-<link rel="stylesheet" href="/shared.css?v=1795041787">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Afton Awaits"><meta property="og:title" content="Hot tub’s on. Fire’s lit. A farmhouse for six in Afton, Virginia"><meta property="og:description" content="Tell the house who’s coming, and it plans the weekend."><meta property="og:url" content="https://aftonawaits.github.io/"><meta property="og:image" content="https://aftonawaits.github.io/img/og/aerialDusk.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="aa:title-pool" content="Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits"><meta name="aa:title-cool" content="Hot tub’s on. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits">
+<script>(function(){var d=new Date(),n=(d.getMonth()+1)*100+d.getDate(),q=new URLSearchParams(location.search).get('season'),s=q==='pool'||q==='cool'?q:(n>=501&&n<=930?'pool':'cool');document.documentElement.dataset.season=s;document.addEventListener('DOMContentLoaded',function(){var t=document.querySelector('meta[name="aa:title-'+s+'"]');if(t)document.title=t.content;if(q)document.querySelectorAll('a[href^="/"]').forEach(function(a){if(a.getAttribute('href').indexOf('season=')<0&&a.getAttribute('href').indexOf('#')!==0)a.href=a.getAttribute('href').replace(/(\?|#|$)/,function(m){return '?season='+s+(m==='?'?'&':m)})})})})()</script>
+<script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
+<!--head:end-->
+<link rel="stylesheet" href="/shared.css?v=1795043292">
 <style>
-  /* The landing page: a note from the house on a lamplit evening. */
+  /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
   body { background: var(--night); color: var(--cream); }
   .back { position: static; }
@@ -61,7 +64,8 @@
   .note { margin: 0; padding: .7rem 1rem .2rem; text-align: center; background: var(--hearth); }
   .note__a, .hero nav a.note__a { text-decoration: none; font-size: inherit; line-height: inherit; letter-spacing: 0; } .hero nav a.note__a::after { content: none; } .note__a:hover span { color: var(--ember); border-color: var(--ember); }
   .note span { display: inline-block; padding: .3rem .9rem; border-block: 1px solid rgb(200 149 90 / .55); font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; color: var(--cream); }
-  .foot { text-align: center; background: var(--hearth); padding: 0 1rem calc(.6rem + env(safe-area-inset-bottom)); color: var(--muted); } .foot .quiet { color: var(--cream); }
+  .foot { background: var(--night); } .trust { margin: 0; padding: .55rem 1rem 0; text-align: center; background: var(--hearth); font-family: var(--sans); font-size: .8125rem; letter-spacing: .01em; color: var(--muted); }
+  .hero nav .trust { background: none; text-align: left; padding: .6rem 0 0; color: color-mix(in srgb, var(--cream) 82%, transparent); text-shadow: 0 1px 8px rgb(23 18 15 / .8); } .hero nav .trust a { font: inherit; color: inherit; text-decoration: underline; } .hero nav .trust a::after { content: none; }
 
   @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
@@ -114,21 +118,21 @@
   <div class="hero">
     <img src="/img/aerialDusk-1200.webp?v=2" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high">
     <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" alt="" aria-hidden="true" width="1200" height="800">
-    <nav aria-label="Skip the questions"><a href="/long-light/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no rental-site fees</span></a></p></nav>
+    <nav aria-label="Skip the questions"><a href="/long-light/">Just show me the house</a><a href="/plan/">Plan your trip</a><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check dates and book</a><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no booking-site service fees</span></a></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1></header>
     <div class="thread" id="thread" role="log" aria-live="polite">
       <p class="stamp" id="stamp">This evening, 7:41</p>
       <p class="msg msg--in msg--photo"><img src="/img/houseDusk-800.webp?v=2" alt="The front of the farmhouse at dusk, porch lights on." width="800" height="600"></p>
-      <p class="msg msg--in">Pool’s open. Fire’s lit.</p>
+      <p class="msg msg--in"><span class="s-pool">Pool’s open. Fire’s lit.</span><span class="s-cool">Hot tub’s on. Fire’s lit.</span></p>
       <p class="msg msg--in msg--ask">Who’s coming, and what are <em>we</em> doing?</p>
     </div>
     <nav class="reply" aria-label="Choose your trip">
       <h2 id="hint">Tap a reply</h2>
       <ul class="chips" id="chips">
-        <li><a href="/trips/family/" data-trip="family">The kids need a pool.</a></li>
         <li><a href="/trips/girls/" data-trip="girls">Just us girls.</a></li>
+        <li><a href="/trips/family/" data-trip="family"><span class="s-pool">The kids need a pool.</span><span class="s-cool">The kids are coming.</span></a></li>
         <li><a href="/trips/game-day/" data-trip="game-day">Game day. Kids in tow.</a></li>
         <li><a href="/trips/outdoors/" data-trip="outdoors">Boots or skis.</a></li>
         <li><a href="/trips/trail151/" data-trip="trail151">Wine. All of it.</a></li>
@@ -141,8 +145,16 @@
         <li><a class="plain" href="/trips/girls/" data-occ="none">Just a weekend away.</a></li>
       </ul>
     </nav>
-    <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no rental-site fees</span></a></p>
-    <p class="foot"><a class="quiet" href="/long-light/">Just show me the house</a> &nbsp;·&nbsp; <a class="quiet" href="/plan/">Plan your trip</a></p>
+    <!--trust:start--><p class="trust">5.0 from 52 stays · Guest Favorite · Book direct, no fees</p><!--trust:end-->
+    <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save · no booking-site service fees</span></a></p>
+    <div class="foot"><!--footer:start--><footer class="ft" data-mood="evening">
+<p class="mark">Afton <em>Awaits</em></p>
+<p class="ft__where">Afton, Nelson County, Virginia · Hosted by Jamie of Be Still Getaways</p>
+<nav aria-label="Footer"><a href="/long-light/">The house</a><a href="/plan/">Plan your trip</a><a href="/explore/">Things to do</a><a href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener">Instagram @afton.awaits</a></nav>
+<p class="ft__book"><a class="btn" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener" data-book>Check dates and book</a></p>
+<p class="proof">5.0 ★ from 52 stays · Guest Favorite (top 5% on Airbnb) · Superhost host</p>
+<p class="proof proof--safe">Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour.</p>
+</footer><!--footer:end--></div>
   </main>
 </div>
 <script type="module">
@@ -193,7 +205,7 @@ async function showCard() {
 const OCC = {
   shower: ['Then it’s her weekend. Six of you, a long table, and no sash required.', 'Showers and bachelorettes', 'dining-800'],
   bride: ['Then the king suite is hers. Soft light, a soaking tub, and nobody rushing her.', 'The wedding morning', 'frontDoors-800'],
-  mahjong: ['East deals. There’s a table that floats in the pool, by the way.', 'The mahjong weekend', 'dining-800'],
+  mahjong: [document.documentElement.dataset.season === 'pool' ? 'East deals. There’s a table that floats in the pool, by the way.' : 'East deals. The farm table seats six, and the hot tub is on between rounds.', 'The mahjong weekend', 'dining-800'],
 };
 for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e) => {
   if (e.metaKey || e.ctrlKey || e.shiftKey) return;
@@ -206,6 +218,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 5:43 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 6:08 PM ET</p>
 </body>
 </html>

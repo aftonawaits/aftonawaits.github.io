@@ -24,11 +24,31 @@
    "children1": "0"
   }
  },
- "siteUrl": "https://afton-awaits-welcome.netlify.app",
+ "siteUrl": "https://aftonawaits.github.io",
  "indexable": false,
  "direct": {
   "short": "Book direct and save",
-  "long": "Book direct and save. Booking here skips the service fees the big rental sites add."
+  "long": "Book direct and save. No booking-site service fees."
  },
- "imgVersion": "2"
+ "imgVersion": "2",
+ "season": {
+  "poolOpen": "05-01",
+  "poolClose": "09-30",
+  "note": "The pool is open between these dates (month-day). Outside them the site leads with the hot tub and the fire table."
+ },
+ "proof": {
+  "rating": "5.0",
+  "stays": 52,
+  "line": "5.0 ★ from 52 stays · Guest Favorite (top 5% on Airbnb) · Superhost host",
+  "short": "5.0 from 52 stays · Guest Favorite · Book direct, no fees",
+  "safe": "Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour."
+ },
+ "host": "Hosted by Jamie of Be Still Getaways",
+ "instagram": "afton.awaits",
+ "labels": {
+  "plan": "Plan your trip",
+  "book": "Check dates and book"
+ },
+ "charlottesville": "about 35 minutes",
+ "price": null
 }
