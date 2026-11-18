@@ -6,7 +6,7 @@
 <meta name="description" content="A bridal party getting ready, a mahjong weekend, a birthday, or six friends who finally found a date. A farmhouse for six with a hot tub, a fire table and the Route 151 tasting rooms down the road.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794966841"><link rel="stylesheet" href="/trips/trip.css?v=1794966841">
+<link rel="stylesheet" href="/shared.css?v=1794968274"><link rel="stylesheet" href="/trips/trip.css?v=1794968274">
 </head>
 <body data-trip="girls" data-mood="linen">
 <a class="strip" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> Booking here skips the service fees the big rental sites add.</a>
@@ -20,11 +20,11 @@
     <div class="open__copy">
       <p class="kicker">The girls’ weekend</p>
       <h1>Nobody’s in charge. <em>Finally.</em></h1>
-      <p class="lede">This house bends to whatever the weekend is for. For a wedding, the king suite becomes the getting-ready room, with its own bathroom, a soaking tub and a door that closes, and the valley’s vineyards a few minutes away. For a mahjong weekend, the long farm table takes the tiles, and from May to September there is a mahjong table that floats in the pool. For a birthday or a long-overdue catch-up, there are tasting rooms down the road, a hot tub facing the ridge and a fire table for afterwards. Six of you, one house, and nobody else’s schedule.</p>
+      <p class="lede" id="lede">This house bends to whatever the weekend is for. For a wedding, the king suite becomes the getting-ready room, with its own bathroom, a soaking tub and a door that closes, and the valley’s vineyards a few minutes away. For a mahjong weekend, the long farm table takes the tiles, and from May to September there is a mahjong table that floats in the pool. For a birthday or a long-overdue catch-up, there are tasting rooms down the road, a hot tub facing the ridge and a fire table for afterwards. Six of you, one house, and nobody else’s schedule.</p>
+      <button class="lede-more" id="lede-more" type="button" aria-expanded="false" aria-controls="lede">Read more</button>
       <p class="cta"><a class="btn" href="/plan/?i=wine,food,scenic">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></p>
-      <p class="direct">Book direct and save <span>No rental-site service fees.</span></p>
     </div>
-    <img class="open__img" src="/img/patioFire-1200.webp" alt="Chairs around the fire table on the stone patio, with the lawn and the Blue Ridge beyond." width="1200" height="800" fetchpriority="high">
+    <figure class="open__fig"><img class="open__img" src="/img/patioFire-1200.webp" alt="Chairs around the fire table on the stone patio, with the lawn and the Blue Ridge beyond." width="1200" height="800" fetchpriority="high"></figure>
   </section>
 
   <nav class="jump" aria-label="On this page"><a href="#why">Why this house</a><a href="#day">A day here</a><a href="#near">Close by</a><a href="#on">What’s on</a><a href="#sleep">Who sleeps where</a><a href="#know">Good to know</a></nav>
@@ -106,6 +106,10 @@
 </main>
 <div class="dock" id="dock" data-mood="evening" hidden><span>Book direct and save</span><a class="btn" href="/plan/?i=wine,food,scenic">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></div>
 <script type="module">
+// Phones show three lines of the intro; the button opens the rest. If the text already fits, the button is not shown.
+{ const lede = document.getElementById('lede'), more = document.getElementById('lede-more'), fits = () => { more.hidden = !lede.classList.contains('is-open') && lede.scrollHeight <= lede.clientHeight + 2; };
+  more.addEventListener('click', () => { const open = lede.classList.toggle('is-open'); more.setAttribute('aria-expanded', String(open)); more.textContent = open ? 'Read less' : 'Read more'; });
+  fits(); addEventListener('resize', fits); document.fonts?.ready.then(fits); }
 // The bar with both buttons appears once the opening has scrolled away.
 const dock = document.getElementById('dock'), end = document.querySelector('.end');
 const seen = new Map();
@@ -137,6 +141,6 @@ try {
     : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
 } catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 8:54 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 9:17 PM ET</p>
 </body>
 </html>

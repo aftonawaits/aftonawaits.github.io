@@ -24,7 +24,10 @@
   --shadow-evening: 0 2rem 4rem -1rem rgb(20 12 6 / .6);
   --firelight: radial-gradient(120% 60% at 50% 110%, rgb(240 160 80 / .16), transparent 70%);
   --photo-grade: saturate(.95) sepia(.12) brightness(.97);
-  --map-grade: sepia(.34) saturate(.6) hue-rotate(-10deg) brightness(1.02) contrast(.95);
+  --hero-grade: saturate(.9) sepia(.15) brightness(.92);   /* trip-page hero photos, so daytime skies sit in the evening section */
+  --hero-wash: linear-gradient(180deg, rgb(120 60 20 / .10), rgb(60 30 10 / .16) 45%, rgb(23 18 15 / .55));
+  --map-grade: sepia(.06) saturate(.95);   /* the map is recoloured from the tokens below; this is only a light finish */
+  --map-land: #efe6d8; --map-land-2: #e8dcc9; --map-green: #dfdfc4; --map-wood: #d2d5b6; --map-water: #b4bfbd; --map-road: #fbf6ee; --map-road-major: #f5e6c4; --map-road-edge: #d6c6a9; --map-rail: #b5a48f; --map-building: #e6dac6;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
 
   /* one accent per trip, warm and muted: the first for the evening hero, the -deep one for labels and rules on linen */
@@ -32,7 +35,7 @@
   --t-girls: #dcaaa0; --t-girls-deep: #8f4f4b;         /* dusty rose */
   --t-golf: #a8bd8f; --t-golf-deep: #516b3f;           /* fairway, muted */
   --t-outdoors: #b9b477; --t-outdoors-deep: #64662c;   /* moss */
-  --t-trail151: #cf8f9a; --t-trail151-deep: #7c2f3d;   /* claret */
+  --t-trail151: #9c4a5a; --t-trail151-text: #bd7281; --t-trail151-deep: #7c2f3d;   /* deep claret; -text is the same claret lifted enough for small labels on the dark hero */
 
   /* what's on the map: one colour per interest, for pins and filter chips */
   --i-wine: #7c2f3d; --i-beer-cider: #936018; --i-music: #75566f; --i-outdoors: #64662c; --i-scenic: #4c6c5f;
@@ -44,7 +47,7 @@
 [data-trip='girls'] { --accent: var(--t-girls); --accent-deep: var(--t-girls-deep); }
 [data-trip='golf'] { --accent: var(--t-golf); --accent-deep: var(--t-golf-deep); }
 [data-trip='outdoors'] { --accent: var(--t-outdoors); --accent-deep: var(--t-outdoors-deep); }
-[data-trip='trail151'] { --accent: var(--t-trail151); --accent-deep: var(--t-trail151-deep); }
+[data-trip='trail151'] { --accent: var(--t-trail151); --accent-text: var(--t-trail151-text); --accent-deep: var(--t-trail151-deep); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }

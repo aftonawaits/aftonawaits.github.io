@@ -116,7 +116,15 @@ function initMap() {
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new maplibregl.FullscreenControl(), 'top-right');
     map.addControl(new maplibregl.ScaleControl({ unit: 'imperial' }), 'bottom-right');
-    map.on('load', () => {
+    // Recolour the base map from the tokens in /shared.css: linen land, a muted warm blue-grey for water, cream roads.
+    const warm = () => { const t = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim(), set = (id, prop, v) => { try { map.setPaintProperty(id, prop, v); } catch { /* a layer without that property */ } };
+      for (const { id, type } of map.getStyle().layers) {
+        if (type === 'background') set(id, 'background-color', t('--map-land'));
+        else if (type === 'fill') { if (/^water/.test(id)) set(id, 'fill-color', t('--map-water')); else if (/wood/.test(id)) { set(id, 'fill-color', t('--map-wood')); set(id, 'fill-opacity', .55); } else if (/park|grass/.test(id)) set(id, 'fill-color', t('--map-green')); else if (/building/.test(id)) set(id, 'fill-color', t('--map-building')); else if (/landuse|landcover|aeroway|highway-area|pier/.test(id)) set(id, 'fill-color', t('--map-land-2')); }
+        else if (type === 'line') { if (/^waterway|ferry/.test(id)) set(id, 'line-color', t('--map-water')); else if (/rail/.test(id)) set(id, 'line-color', t('--map-rail')); else if (/casing/.test(id)) set(id, 'line-color', t('--map-road-edge')); else if (/path/.test(id)) set(id, 'line-color', t('--map-rail')); else if (/motorway|trunk|primary/.test(id)) set(id, 'line-color', t('--map-road-major')); else if (/highway|bridge|tunnel|road|aeroway/.test(id)) set(id, 'line-color', t('--map-road')); }
+        else if (type === 'symbol') { set(id, 'text-color', t('--ink-soft')); set(id, 'text-halo-color', t('--map-land')); }
+      } };
+    map.on('load', () => { warm();
       map.addSource('routes', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
       map.addLayer({ id: 'routes', type: 'line', source: 'routes', paint: { 'line-color': ['get', 'color'], 'line-width': 4, 'line-dasharray': [1.5, 1.5] }, layout: { 'line-cap': 'round' } });
       mapReady = true; drawRoutes();
