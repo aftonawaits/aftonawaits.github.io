@@ -22,7 +22,7 @@ const ICON = {
   market: svg(BASKET), grocery: svg(BASKET), 'general-store': svg(BASKET), essentials: svg(BASKET), 'wine-shop': svg('<path d="M10 2h4v5c2 1 3 3 3 5v10H7V12c0-2 1-4 3-5ZM7 15h10"/>'),
   home: svg('<path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6"/>'), event: svg('<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'),
 };
-for (const [k, as] of [['pizza', 'restaurant'], ['bbq', 'restaurant'], ['deli', 'restaurant'], ['bar', 'restaurant'], ['bakery', 'cafe'], ['ice-cream', 'cafe']]) ICON[k] = ICON[as];
+for (const [k, as] of [['historic', 'town'], ['spa', 'resort'], ['pizza', 'restaurant'], ['bbq', 'restaurant'], ['deli', 'restaurant'], ['bar', 'restaurant'], ['bakery', 'cafe'], ['ice-cream', 'cafe']]) ICON[k] = ICON[as];
 const KEY = 'afton-plan';
 const fmtDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const iso = (d) => d.toISOString().slice(0, 10);

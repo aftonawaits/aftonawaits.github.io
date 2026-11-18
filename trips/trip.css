@@ -131,3 +131,14 @@ a { text-underline-offset: .22em; }
 .share { appearance: none; background: none; border: 0; padding: .5rem 0; font: inherit; font-size: .9375rem; color: var(--cream); text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: .3em; cursor: pointer; }
 .share::before { content: '↗ '; color: var(--brass); } .share:hover { color: var(--ember); }
 .end .proof, .open .proof { color: var(--muted); }
+
+/* Close by, in small groups */
+.neargroup + .neargroup { margin-top: 1.6rem; }
+.near__h { margin: 0 0 .6rem; font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .1em; font-size: .9375rem; font-weight: 600; color: var(--accent-deep, var(--brass-deep)); }
+.near p a { text-underline-offset: .25em; }
+
+/* phones: two lines of each description, the rest on a tap */
+@media (max-width: 520px) {
+  .near li p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; cursor: pointer; }
+  .near li p.is-open { display: block; -webkit-line-clamp: unset; cursor: auto; }
+}
