@@ -7,8 +7,8 @@
   "approximate": true
  },
  "bookingUrl": "https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true",
- "houseUrl": "https://afton-awaits.netlify.app/",
- "roomsUrl": "https://afton-awaits.netlify.app/house/",
+ "houseUrl": "/long-light/",
+ "roomsUrl": "/long-light/house/",
  "homeBy": {
   "minutes": 1320,
   "message": "You would be home after 10 PM, when quiet hours start at the house."
