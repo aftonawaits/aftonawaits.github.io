@@ -1,14 +1,51 @@
 @font-face { font-family: 'Fraunces'; src: url('/fonts/fraunces-latin-full-normal.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Fraunces'; src: url('/fonts/fraunces-latin-wght-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Instrument Sans'; src: url('/fonts/instrument-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
-/* A lamplit farmhouse evening: warm darks, linen, brass. No pure black, no grey, no blue. */
+
+/* =====================================================================================================================
+   A lamplit farmhouse evening. Every colour on the site is defined here; no other stylesheet holds a raw colour.
+   Two moods share the tokens: evening (dark, firelit) and linen (light, warm paper). Set data-mood on <body>.
+   ===================================================================================================================== */
 :root {
   --serif: 'Fraunces', Georgia, serif; --sans: 'Instrument Sans', system-ui, sans-serif; --mono: var(--sans);   /* the mono face is retired; labels are Instrument Sans small caps */
-  --night: #17120f; --hearth: #221a15; --linen: #efe6d8; --ink: #2a2019; --cream: #f3eadb; --muted: #b5a48f;
-  --brass: #c8955a; --brass-deep: #8a5a22;   /* brass-deep is brass for text on linen, where plain brass is too pale to read */
-  --ember: #f0b352; --paper: #f3eadb; --hair: rgb(243 234 219 / .08);
   --ease: cubic-bezier(.2, .7, .1, 1);
+
+  /* evening */
+  --night: #17120f; --hearth: #221a15; --cream: #f3eadb; --muted: #b5a48f; --linen: #efe6d8; --hair-evening: rgb(243 234 219 / .08);
+  /* linen */
+  --paper: #f6efe3; --card: #fbf6ee; --ink: #2a2019; --ink-soft: #6a5744; --hair-linen: rgb(42 32 25 / .10);
+  /* accents */
+  --brass: #c8955a; --brass-deep: #8a5a22; --honey: #d6a45e; --ember: #f0b352; --alert: #a4442f;
+  --hair: var(--hair-evening);
+
+  /* warm shadows and glows */
+  --shadow: 0 1px 2px rgb(42 32 25 / .06), 0 8px 24px -12px rgb(42 32 25 / .18);
+  --shadow-lift: 0 2px 4px rgb(42 32 25 / .08), 0 18px 40px -16px rgb(42 32 25 / .3);
+  --shadow-evening: 0 2rem 4rem -1rem rgb(20 12 6 / .6);
+  --firelight: radial-gradient(120% 60% at 50% 110%, rgb(240 160 80 / .16), transparent 70%);
+  --photo-grade: saturate(.95) sepia(.12) brightness(.97);
+  --map-grade: sepia(.34) saturate(.6) hue-rotate(-10deg) brightness(1.02) contrast(.95);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* one accent per trip, warm and muted: the first for the evening hero, the -deep one for labels and rules on linen */
+  --t-family: #a7c2b4; --t-family-deep: #4c6c5f;       /* pool tile */
+  --t-girls: #dcaaa0; --t-girls-deep: #8f4f4b;         /* dusty rose */
+  --t-golf: #a8bd8f; --t-golf-deep: #516b3f;           /* fairway, muted */
+  --t-outdoors: #b9b477; --t-outdoors-deep: #64662c;   /* moss */
+  --t-trail151: #cf8f9a; --t-trail151-deep: #7c2f3d;   /* claret */
+
+  /* what's on the map: one colour per interest, for pins and filter chips */
+  --i-wine: #7c2f3d; --i-beer-cider: #936018; --i-music: #75566f; --i-outdoors: #64662c; --i-scenic: #4c6c5f;
+  --i-food: #a85a34; --i-family: #8f4f4b; --i-festival: #7a6a2a; --i-market: #6a5744;
+  /* a day's route on the map, and its path in the itinerary */
+  --route-1: #8a5a22; --route-2: #7c2f3d; --route-3: #64662c; --route-4: #75566f; --route-5: #a85a34;
 }
+[data-trip='family'] { --accent: var(--t-family); --accent-deep: var(--t-family-deep); }
+[data-trip='girls'] { --accent: var(--t-girls); --accent-deep: var(--t-girls-deep); }
+[data-trip='golf'] { --accent: var(--t-golf); --accent-deep: var(--t-golf-deep); }
+[data-trip='outdoors'] { --accent: var(--t-outdoors); --accent-deep: var(--t-outdoors-deep); }
+[data-trip='trail151'] { --accent: var(--t-trail151); --accent-deep: var(--t-trail151-deep); }
+
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; font-family: var(--sans); font-size: 1rem; line-height: 1.5; color: var(--cream); background: var(--night); -webkit-font-smoothing: antialiased; min-height: 100svh; }
@@ -16,18 +53,40 @@ h1, h2, p, ol, ul { margin: 0; padding: 0; } ol, ul { list-style: none; } a { co
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; border-radius: 4px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- the two moods ---------- */
+[data-mood='evening'] { --bg: var(--night); --surface: var(--hearth); --text: var(--cream); --text-soft: var(--muted); --line: var(--hair-evening); --link: var(--brass); --rule: color-mix(in srgb, var(--brass) 50%, transparent); color-scheme: dark; }
+[data-mood='linen'] { --bg: var(--paper); --surface: var(--card); --text: var(--ink); --text-soft: var(--ink-soft); --line: var(--hair-linen); --link: var(--brass-deep); --rule: color-mix(in srgb, var(--brass-deep) 45%, transparent); color-scheme: light; }
+[data-mood] { background-color: var(--bg); color: var(--text); }
+body[data-mood]::after { content: ''; position: fixed; inset: 0; z-index: 60; pointer-events: none; background-image: var(--grain); opacity: .03; mix-blend-mode: multiply; }   /* paper grain, barely there */
+body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
+
+/* ---------- shared pieces ---------- */
 .mark { font-family: var(--serif); font-size: 1.25rem; font-variation-settings: 'SOFT' 100; text-decoration: none; letter-spacing: -.01em; }
 .mark em { font-style: italic; }
-.quiet { font-family: var(--sans); font-variant: all-small-caps; font-size: .9375rem; letter-spacing: .1em; text-underline-offset: .3em; display: inline-block; padding: .9rem 0; }
+[data-mood] .mark em { color: var(--link); }
+.quiet, .kicker, .when { font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .1em; }
+.quiet { font-size: .9375rem; text-underline-offset: .3em; display: inline-block; padding: .9rem 0; }
+
+/* buttons: honey for the main action, a fine brass outline for the second */
+[data-mood] .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .55rem 1.4rem; border-radius: 99px; border: 1px solid var(--honey); background: var(--honey); color: var(--ink); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color .25s, box-shadow .25s; }
+[data-mood] .btn:hover { background: color-mix(in srgb, var(--honey) 86%, var(--cream)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--honey) 22%, transparent); }
+[data-mood] .btn--ghost, [data-mood] .btn.btn--ghost { background: transparent; border-color: var(--link); color: var(--text); }
+[data-mood] .btn--ghost:hover { background: color-mix(in srgb, var(--link) 14%, transparent); box-shadow: none; }
+
 /* returning visitors */
-.back { position: fixed; z-index: 30; left: 0; right: 0; top: 0; display: flex; gap: .4rem .9rem; flex-wrap: wrap; align-items: center; justify-content: center; padding: .55rem 1rem; background: var(--hearth); color: var(--cream); font-size: .875rem; border-bottom: 1px solid rgb(200 149 90 / .45); }
+.back { position: fixed; z-index: 30; left: 0; right: 0; top: 0; display: flex; gap: .4rem .9rem; flex-wrap: wrap; align-items: center; justify-content: center; padding: .55rem 1rem; background: var(--hearth); color: var(--cream); font-size: .875rem; border-bottom: 1px solid color-mix(in srgb, var(--brass) 45%, transparent); }
 .back[hidden] { display: none; }
 .back a { font-weight: 600; color: var(--ember); } .back button { border: 1px solid var(--brass); background: none; border-radius: 99px; padding: .25rem .8rem; min-height: 2rem; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
 
-/* Book direct: a slim brass-edged ribbon, written like a note, and a short line beside booking buttons */
-.strip { display: block; margin: 0; padding: .5rem 1rem; text-align: center; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; line-height: 1.35; background: var(--hearth); color: var(--cream); text-decoration: none; border-block: 1px solid rgb(200 149 90 / .5); }
-.strip b { font-weight: 500; color: var(--ember); } .strip:hover { background: #2b211a; }
+/* Book direct: a note in Fraunces italic between two fine rules, never a sale banner */
+.strip { display: block; margin: 0; padding: .55rem 1rem; text-align: center; background: var(--hearth); color: var(--cream); text-decoration: none; }
+.strip { font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; line-height: 1.35; border-block: 1px solid color-mix(in srgb, var(--brass) 50%, transparent); }
+.strip b { font-weight: 500; color: var(--ember); } .strip:hover { background: color-mix(in srgb, var(--hearth) 88%, var(--brass)); }
+/* linen pages get the note on paper; trip pages open in the evening, so theirs stays dark */
+[data-mood='linen']:not([data-trip]) > .strip { background: var(--paper); color: var(--ink); border-block-color: var(--rule); } [data-mood='linen']:not([data-trip]) > .strip b { color: var(--brass-deep); } [data-mood='linen']:not([data-trip]) > .strip:hover { background: var(--card); }
 .direct { display: flex; align-items: baseline; gap: .45rem; margin: .8rem 0 0; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; font-weight: 400; color: var(--ember); }
 .direct::before { content: ''; flex: none; align-self: center; width: 1.1rem; height: 1px; background: var(--brass); }
-.direct span { color: rgb(243 234 219 / .8); }
+.direct span { color: color-mix(in srgb, var(--cream) 80%, transparent); }
+[data-mood='linen'] .direct { color: var(--brass-deep); } [data-mood='linen'] .direct::before { background: var(--brass-deep); } [data-mood='linen'] .direct span { color: var(--ink-soft); }

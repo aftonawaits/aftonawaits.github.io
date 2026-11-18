@@ -5,8 +5,8 @@ import { createApi } from '/plan/lib/api.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);   // event text comes from other sites
-const INTERESTS = [['wine', 'Wine', '#e56b8a'], ['beer-cider', 'Beer & cider', '#f2a541'], ['music', 'Live music', '#9b7fe0'], ['outdoors', 'Trails', '#4fb38a'], ['scenic', 'Views', '#4fb3c8'], ['food', 'Food', '#f27d52'], ['family', 'Family', '#f58fb0'], ['festival', 'Festivals', '#c070d8'], ['market', 'Markets', '#c79a5b']];
-document.body.dataset.look = 'd';                                   // the Dusk look (plan/looks.css), matching the landing page
+const INTERESTS = [['wine', 'Wine'], ['beer-cider', 'Beer & cider'], ['music', 'Live music'], ['outdoors', 'Trails'], ['scenic', 'Views'], ['food', 'Food'], ['family', 'Family'], ['festival', 'Festivals'], ['market', 'Markets']].map(([k, l]) => [k, l, `var(--i-${k})`]);   // colours are tokens in /shared.css
+const token = (v) => getComputedStyle(document.documentElement).getPropertyValue(v.slice(4, -1)).trim();   // 'var(--x)' -> its colour, for the map library
 const COLOR = Object.fromEntries(INTERESTS.map(([k, , c]) => [k, c]));
 const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
 const ICON = {
@@ -27,7 +27,7 @@ const iso = (d) => d.toISOString().slice(0, 10);
 const get = (u) => fetch(u).then((r) => r.json());
 const [evData, places, region, property] = await Promise.all([get('/api/events.json'), get('/api/places.json'), get('/api/region.json'), get('/config/property.json')]);
 const events = evData.events, HOME = property.origin;
-for (const p of places) p.color = COLOR[p.interests[0]] ?? '#14161a';
+for (const p of places) p.color = COLOR[p.interests[0]] ?? 'var(--ink)';
 const api = createApi({ events, places, region });
 const placeById = Object.fromEntries(places.map((p) => [p.id, p])), eventById = Object.fromEntries(events.map((e) => [e.id, e]));
 $('#updated').textContent = `Last refreshed ${new Date(evData.updated).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}.`;
@@ -78,7 +78,7 @@ const timeOf = (e) => (e.allDay ? 'Time not published' : `${clock(hm(e.start))}$
 const label = (k) => INTERESTS.find(([x]) => x === k)?.[1] ?? k;
 const addBtn = (type, id, name) => { const on = inBasket(type, id); return `<button class="add" type="button" data-add="${type}" data-id="${esc(id)}" aria-pressed="${on}">${on ? 'Added ✓' : name ? `Add ${esc(name)}` : 'Add'}</button>`; };
 function eventCard(e) {
-  return `<li class="card ${inBasket('event', e.id) ? 'is-in' : ''}" style="--c:${COLOR[e.categories[0]] ?? '#14161a'}"><div><p class="when">${esc(timeOf(e))}</p><h3>${esc(e.title)}</h3><p class="venue">${e.placeId ? `<button type="button" class="ghost" data-show="${esc(e.placeId)}">${esc(e.venueName)}</button>` : esc(e.venueName)}${e.price ? ` · ${esc(e.price)}` : ''}</p>
+  return `<li class="card ${inBasket('event', e.id) ? 'is-in' : ''}" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}"><div><p class="when">${esc(timeOf(e))}</p><h3>${esc(e.title)}</h3><p class="venue">${e.placeId ? `<button type="button" class="ghost" data-show="${esc(e.placeId)}">${esc(e.venueName)}</button>` : esc(e.venueName)}${e.price ? ` · ${esc(e.price)}` : ''}</p>
     <p class="tags">${e.categories.map((c) => `<span class="tag">${esc(label(c))}</span>`).join('')}</p></div>${addBtn('event', e.id)}
     ${e.description ? `<p class="desc">${esc(e.description)}</p>` : ''}<p class="desc"><a href="${esc(e.sources[0].url)}" rel="noopener">Details at ${esc(e.sources[0].name)}</a></p></li>`;
 }
@@ -107,7 +107,7 @@ document.addEventListener('click', (e) => {
 });
 
 // ---------- map ----------
-const DAYCOLOR = ['#c9781f', '#2f8fa6', '#7a5cc9', '#3f9a66', '#cf4f73'];   // deep enough to read on the daytime map
+const DAYCOLOR = [1, 2, 3, 4, 5].map((n) => `var(--route-${n})`);   // tokens in /shared.css
 let map = null, pins = [], mapReady = false, popup = null;
 function initMap() {
   try {
@@ -140,7 +140,7 @@ function renderPins() {
     pins.push(new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map));
     el.setAttribute('aria-label', name);                              // after addTo: the map library sets a generic label of its own
   };
-  add(HOME.lng, HOME.lat, 'pin--home', '#b23a2a', ICON.home, 'The house (approximate)', null);
+  add(HOME.lng, HOME.lat, 'pin--home', 'var(--ink)', ICON.home, 'The house (approximate)', null);
   const live = onDates().filter((e) => wanted(e.categories));
   for (const p of places) {
     const n = live.filter((e) => e.placeId === p.id).length;
@@ -151,7 +151,7 @@ function renderPins() {
 }
 function drawRoutes() {
   if (!mapReady) return;
-  const features = (plan?.days ?? []).filter((d) => d.stops.length).map((d, i) => ({ type: 'Feature', properties: { color: DAYCOLOR[i % DAYCOLOR.length] }, geometry: { type: 'LineString', coordinates: [[HOME.lng, HOME.lat], ...d.stops.filter((s) => s.data.lat).map((s) => [s.data.lng, s.data.lat]), [HOME.lng, HOME.lat]] } }));
+  const features = (plan?.days ?? []).filter((d) => d.stops.length).map((d, i) => ({ type: 'Feature', properties: { color: token(DAYCOLOR[i % DAYCOLOR.length]) }, geometry: { type: 'LineString', coordinates: [[HOME.lng, HOME.lat], ...d.stops.filter((s) => s.data.lat).map((s) => [s.data.lng, s.data.lat]), [HOME.lng, HOME.lat]] } }));
   map.getSource('routes').setData({ type: 'FeatureCollection', features });
 }
 function openPlace(id, fly) {

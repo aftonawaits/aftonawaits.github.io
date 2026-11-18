@@ -1,8 +1,13 @@
-/* Public guide pages. Shares the Watercolour look with Plan your trip. */
-.ex { gap: 1.4rem; max-width: 46rem; } .ex article { display: grid; gap: 1rem; }
-.crumbs { font-size: .875rem; opacity: .8; margin-top: 1rem; } .crumbs a { text-underline-offset: .2em; }
-.ex h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); } .ex h2 { margin-top: 1.2rem; font-size: clamp(1.5rem, 5vw, 2rem); } .ex h3 a { text-decoration: none; } .ex h3 a:hover { text-decoration: underline; }
+/* Public guide pages: linen, like Plan your trip. Colours come only from the tokens in /shared.css. */
+.ex { gap: 1.6rem; max-width: 46rem; } .ex article { display: grid; gap: 1.1rem; }
+.crumbs { margin-top: 1.4rem; font-variant: all-small-caps; letter-spacing: .1em; font-size: .9375rem; color: var(--ink-soft); word-spacing: .15em; } .crumbs a { color: var(--ink-soft); text-decoration-color: color-mix(in srgb, var(--brass-deep) 45%, transparent); } .crumbs a:hover { color: var(--brass-deep); } .crumbs span { color: var(--ink); }
+.ex h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); } .ex h2 { margin-top: 1.4rem; font-size: clamp(1.5rem, 5vw, 2rem); font-style: italic; } .ex h3 a { text-decoration: none; } .ex h3 a:hover { text-decoration: underline; }
 .ex .cards { grid-template-columns: 1fr; } @media (min-width: 720px) { .ex .cards { grid-template-columns: 1fr 1fr; } }
-.facts2 { display: grid; gap: .1rem; margin: 0; } .facts2 div { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding: .6rem 0; border-top: 1px solid var(--line); } .facts2 dt { opacity: .7; } .facts2 dd { margin: 0; }
-.row { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: center; } .row .btn { display: inline-flex; align-items: center; text-decoration: none; }
-.stay { margin-top: 1.6rem; padding: 1.4rem; border-radius: 1.6rem; background: var(--blush); display: grid; gap: .7rem; } .stay h2 { margin: 0; }
+.facts2 { display: grid; margin: .4rem 0 0; background: var(--card); border-radius: 1.3rem; box-shadow: var(--shadow); padding: .4rem 1.3rem; }
+.facts2 div { display: grid; grid-template-columns: 7rem 1fr; gap: 1.2rem; padding: 1rem 0; border-top: 1px solid var(--line); } .facts2 div:first-child { border-top: 0; }
+.facts2 dt { font-variant: all-small-caps; letter-spacing: .1em; font-size: .9375rem; color: var(--ink-soft); } .facts2 dd { margin: 0; } .facts2 dd a { color: var(--brass-deep); }
+.row { display: flex; flex-wrap: wrap; gap: .7rem 1.3rem; align-items: center; } .row .btn { text-decoration: none; }
+/* an evening panel on the linen page */
+.stay { margin-top: 2.2rem; padding: clamp(1.6rem, 5vw, 2.4rem); border-radius: 1.6rem; display: grid; gap: .9rem; background-color: var(--hearth); background-image: var(--firelight); color: var(--cream); box-shadow: var(--shadow-evening); border: 1px solid color-mix(in srgb, var(--brass) 35%, transparent); }
+.stay h2 { margin: 0; font-style: normal; color: var(--cream); } .stay p { color: color-mix(in srgb, var(--cream) 88%, transparent); max-width: 34rem; } .stay .row { margin-top: .4rem; }
+.stay .row a:not(.btn) { color: var(--cream); font-family: var(--serif); font-style: italic; text-decoration-color: var(--brass); }
