@@ -34,7 +34,7 @@
  "season": {
   "poolOpen": "05-01",
   "poolClose": "09-30",
-  "note": "The pool is open between these dates (month-day). Outside them the site leads with the hot tub and the fire table."
+  "note": "The pool is open May to September. Outside these dates (month-day) the site leads with the hot tub and the fire pit."
  },
  "proof": {
   "rating": "5.0",
@@ -49,6 +49,5 @@
   "plan": "Plan your trip",
   "book": "Check dates and book"
  },
- "charlottesville": "about 35 minutes",
- "price": null
+ "charlottesville": "about 35 minutes"
 }
