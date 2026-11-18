@@ -6,7 +6,7 @@
 <meta name="description" content="A fenced saltwater pool, a wide lawn, three bedrooms on one level and a kitchen that can feed all six of you.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794968274"><link rel="stylesheet" href="/trips/trip.css?v=1794968274">
+<link rel="stylesheet" href="/shared.css?v=1794970975"><link rel="stylesheet" href="/trips/trip.css?v=1794970975">
 </head>
 <body data-trip="family" data-mood="linen">
 <a class="strip" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> Booking here skips the service fees the big rental sites add.</a>
@@ -24,7 +24,7 @@
       <button class="lede-more" id="lede-more" type="button" aria-expanded="false" aria-controls="lede">Read more</button>
       <p class="cta"><a class="btn" href="/plan/?i=family,outdoors">Plan your stay</a><a class="btn btn--ghost" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check availability</a></p>
     </div>
-    <figure class="open__fig"><img class="open__img" src="/img/poolLevel-1200.webp" alt="The pool at water level with the lawn, the black fence and the Blue Ridge beyond." width="1200" height="800" fetchpriority="high"></figure>
+    <figure class="open__fig"><img class="open__img" src="/img/poolLevel-1200.webp?v=2" alt="The pool at water level with the lawn, the black fence and the Blue Ridge beyond." width="1200" height="800" fetchpriority="high"></figure>
   </section>
 
   <nav class="jump" aria-label="On this page"><a href="#why">Why this house</a><a href="#day">A day here</a><a href="#near">Close by</a><a href="#on">What’s on</a><a href="#sleep">Who sleeps where</a><a href="#know">Good to know</a></nav>
@@ -32,10 +32,10 @@
   <section class="sec" id="why">
     <h2>Why this house works <em>for a family</em></h2>
     <ul class="why" id="why-list">
-      <li><img src="/img/aerialPool-800.webp" alt="" loading="lazy" width="800" height="600"><h3>A pool that’s only yours</h3><p>Saltwater, private to your family, and fenced all the way round with a gate. Open May to September.</p></li>
-      <li><img src="/img/patioFire-800.webp" alt="" loading="lazy" width="800" height="600"><h3>Everything is steps apart</h3><p>Pool, grill, table and fire table sit together behind the house, so you can cook and still see the water.</p></li>
-      <li><img src="/img/livingWide-800.webp" alt="" loading="lazy" width="800" height="600"><h3>One level, no stairs</h3><p>Nothing to gate off and nobody to carry up. A gas fireplace and a television for the rainy hour.</p></li>
-      <li><img src="/img/kitchenIsland-800.webp" alt="" loading="lazy" width="800" height="600"><h3>A kitchen for six</h3><p>Stocked with the basics, an island for pancakes, and a dishwasher for afterwards.</p></li>
+      <li><img src="/img/aerialPool-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>A pool that’s only yours</h3><p>Saltwater, private to your family, and fenced all the way round with a gate. Open May to September.</p></li>
+      <li><img src="/img/patioFire-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>Everything is steps apart</h3><p>Pool, grill, table and fire table sit together behind the house, so you can cook and still see the water.</p></li>
+      <li><img src="/img/livingWide-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>One level, no stairs</h3><p>Nothing to gate off and nobody to carry up. A gas fireplace and a television for the rainy hour.</p></li>
+      <li><img src="/img/kitchenIsland-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>A kitchen for six</h3><p>Stocked with the basics, an island for pancakes, and a dishwasher for afterwards.</p></li>
     </ul>
   </section>
 
@@ -74,8 +74,8 @@
   <section class="sec" id="sleep">
     <h2>Who sleeps <em>where</em></h2>
     <ul class="sleep">
-      <li><img src="/img/king-800.webp" alt="" loading="lazy" width="800" height="600"><h3>The king suite</h3><p>For the grown-ups: a king bed, a fireplace, a soaking tub and its own bathroom.</p></li>
-      <li><img src="/img/queenIron-800.webp" alt="" loading="lazy" width="800" height="600"><h3>Two queen rooms</h3><p>One each side of a shared full bathroom, at the other end of the house from the king suite.</p></li>
+      <li><img src="/img/king-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>The king suite</h3><p>For the grown-ups: a king bed, a fireplace, a soaking tub and its own bathroom.</p></li>
+      <li><img src="/img/queenIron-800.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>Two queen rooms</h3><p>One each side of a shared full bathroom, at the other end of the house from the king suite.</p></li>
       <li><h3>Room for a sleepover</h3><p>Two twin air mattresses are in the closet if the kids want their own. Bring linens for those.</p></li>
     </ul>
   </section>
@@ -123,7 +123,7 @@ if (also && also !== me) try {
     thread.querySelector('.bub--in').insertAdjacentHTML('beforebegin', '<p class="bub bub--out">' + safe(o.said) + '</p>'); thread.querySelector('.bub--in').textContent = 'Both, then. I like this group.';
     document.querySelector('.kicker').textContent += ' + ' + o.title.replace(/^The /, 'the ');
     const mine = new URLSearchParams(document.querySelector('.cta .btn').getAttribute('href').split('?')[1]).get('i').split(','), both = [...new Set([...mine, ...o.interests.split(',')])].join(',');
-    document.getElementById('why-list').insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
+    document.getElementById('why-list').insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
     const have = new Set([...document.querySelectorAll('#near-list .add')].map((a) => a.getAttribute('href').split('add=p~')[1]));
     document.getElementById('near-list').insertAdjacentHTML('beforeend', o.near.filter((n) => !have.has(n.slug)).slice(0, 3).map((n) => '<li><div><h3><a href="/explore/places/' + n.slug + '/">' + safe(n.name) + '</a></h3><p>' + safe(n.note) + '</p></div><span class="mins">about ' + n.mins + ' min</span><a class="add" href="/plan/?i=x&add=p~' + n.slug + '" aria-label="Add ' + safe(n.name) + ' to my trip">Add</a></li>').join(''));
     for (const a of document.querySelectorAll('a[href^="/plan/?i="]')) a.setAttribute('href', a.getAttribute('href').replace(/i=[^&]*/, 'i=' + both));
@@ -141,6 +141,6 @@ try {
     : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
 } catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 9:17 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:02 PM ET</p>
 </body>
 </html>

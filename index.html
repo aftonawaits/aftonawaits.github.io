@@ -5,7 +5,7 @@
 <title>Afton Awaits | Who’s coming, and what are we doing?</title>
 <meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, golf, trails and skiing, or the Route 151 wine and beer trail.">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794968274">
+<link rel="stylesheet" href="/shared.css?v=1794970975">
 <style>
   /* The landing page: a note from the house on a lamplit evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -13,7 +13,6 @@
   .back { position: static; }
   /* paper grain over everything, barely there */
   .grain { position: fixed; inset: 0; z-index: 40; pointer-events: none; opacity: .045; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .9 0 0 0 0 .82 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  img { filter: saturate(.95) sepia(.12) brightness(.97); }   /* one warm grade for the hero and the trip cards */
 
   /* hero: the house at dusk */
   .hero { position: relative; height: min(42vh, 26rem); overflow: hidden; }
@@ -41,7 +40,6 @@
   .dots b { width: .45rem; height: .45rem; border-radius: 50%; background: #8a7662; animation: blink 1s infinite; } .dots b:nth-child(2) { animation-delay: .15s; } .dots b:nth-child(3) { animation-delay: .3s; }
   .card { position: relative; align-self: flex-start; width: 82%; display: block; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); text-decoration: none; box-shadow: 0 1px 0 rgb(42 32 25 / .2); }
   .card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-  .card::before { content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; aspect-ratio: 16 / 9; background: linear-gradient(180deg, rgb(150 70 20 / .34), rgb(90 45 15 / .14) 55%, rgb(60 30 10 / .2)); mix-blend-mode: multiply; pointer-events: none; }   /* evening light over daytime skies */
   .card span { display: block; padding: .65rem .95rem .8rem; } .card small { display: block; font-variant: all-small-caps; letter-spacing: .1em; font-size: .875rem; color: #6a5744; }
   .card strong { font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; font-size: 1.35rem; line-height: 1.15; } .card u { font-family: var(--serif); font-style: italic; color: var(--brass-deep); text-underline-offset: .25em; font-size: 1rem; }
 
@@ -108,15 +106,15 @@
 <div class="grain" aria-hidden="true"></div>
 <div class="wrap">
   <div class="hero">
-    <img src="/img/aerialDusk-1200.webp" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high">
-    <img class="mirror" src="/img/aerialDusk-1200.webp" alt="" aria-hidden="true" width="1200" height="800">
+    <img src="/img/aerialDusk-1200.webp?v=2" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high">
+    <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" alt="" aria-hidden="true" width="1200" height="800">
     <nav aria-label="Skip the questions"><a href="https://afton-awaits.netlify.app/">Just show me the house</a><a href="/plan/">Plan your trip</a><p class="note"><span>Book direct and save · no rental-site fees</span></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1></header>
     <div class="thread" id="thread" role="log" aria-live="polite">
       <p class="stamp" id="stamp">This evening, 7:41</p>
-      <p class="msg msg--in msg--photo"><img src="/img/houseDusk-800.webp" alt="The front of the farmhouse at dusk, porch lights on." width="800" height="600"></p>
+      <p class="msg msg--in msg--photo"><img src="/img/houseDusk-800.webp?v=2" alt="The front of the farmhouse at dusk, porch lights on." width="800" height="600"></p>
       <p class="msg msg--in">Pool’s open. Fire’s lit.</p>
       <p class="msg msg--in msg--ask">Who’s coming, and what are <em>we</em> doing?</p>
     </div>
@@ -181,7 +179,7 @@ async function showCard() {
   await typing(600);
   card?.remove();
   const t = byId(picked[0]);
-  card = add(`<a class="card" href="${url(picked)}"><img src="/img/${t.img}.webp" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${label(picked)}</strong><br><u>Open your weekend</u></span></a>`);
+  card = add(`<a class="card" href="${url(picked)}"><img src="/img/${t.img}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${label(picked)}</strong><br><u>Open your weekend</u></span></a>`);
   if (picked.length === 1) { hint.textContent = 'Mixed group? Add one more, or open your weekend above'; nav.classList.remove('is-wait'); }
   else { hint.textContent = 'All set. Open your weekend above'; main.hidden = true; }
   card.focus({ preventScroll: true });
@@ -198,10 +196,10 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   const o = OCC[a.dataset.occ];
   if (!o) { main.hidden = false; await showCard(); return; }   // just a weekend: carry on as any other trip
   await typing(900); add(`<p class="msg msg--in">${o[0]}</p>`); await typing(600);
-  card = add(`<a class="card" href="${a.getAttribute('href')}"><img src="/img/${o[2]}.webp" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${o[1]}</strong><br><u>Open your weekend</u></span></a>`);
+  card = add(`<a class="card" href="${a.getAttribute('href')}"><img src="/img/${o[2]}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${o[1]}</strong><br><u>Open your weekend</u></span></a>`);
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 9:17 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:02 PM ET</p>
 </body>
 </html>

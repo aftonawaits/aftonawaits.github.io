@@ -3,7 +3,6 @@
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; letter-spacing: -.015em; margin: 0; }
 main { display: block; }
 a { text-underline-offset: .22em; }
-img { filter: var(--photo-grade); }
 :root { --gutter: max(clamp(1rem, 4vw, 2.5rem), calc((100vw - 76rem) / 2 + 2.5rem)); }
 
 .bar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem var(--gutter); background: color-mix(in srgb, var(--night) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -23,8 +22,7 @@ img { filter: var(--photo-grade); }
 .open h1 { font-size: clamp(2.6rem, 9vw, 5rem); line-height: .98; font-weight: 340; } .open h1 em { font-style: italic; color: var(--accent); }
 .lede { font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.125rem; line-height: 1.55; color: color-mix(in srgb, var(--cream) 90%, transparent); max-width: 36rem; margin: 1rem 0 1.4rem; }
 .open__fig { position: relative; margin: 0; border-radius: 1.5rem; overflow: hidden; border: 1px solid color-mix(in srgb, var(--linen) 28%, transparent); box-shadow: var(--shadow-evening); }
-.open__fig::after { content: ''; position: absolute; inset: 0; background: var(--hero-wash); mix-blend-mode: multiply; pointer-events: none; }   /* evening light over the photo, deepest at the bottom */
-.open__img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; filter: var(--hero-grade); }
+.open__img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .lede-more { display: none; }
 @media (max-width: 699px) {   /* phones: the photo first, then the conversation, headline and a short intro */
   .open { padding-top: 1.1rem; gap: 1.1rem; }

@@ -29,5 +29,6 @@
  "direct": {
   "short": "Book direct and save",
   "long": "Book direct and save. Booking here skips the service fees the big rental sites add."
- }
+ },
+ "imgVersion": "2"
 }
