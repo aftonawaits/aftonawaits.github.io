@@ -1,6 +1,43 @@
 {
- "updated": "2026-11-18T22:36:02.805Z",
+ "updated": "2026-11-18T22:37:57.024Z",
  "events": [
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-17",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-17T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
   {
    "id": "wine-wednesday-three-notch-d-nellysford-2026-11-18",
    "title": "Wine Wednesday",
@@ -27,7 +64,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.85,
@@ -35,6 +72,43 @@
     "no start time"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-18",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-18T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "wine-wednesday-king-family-vineyards-2026-11-18",
@@ -62,12 +136,86 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-18/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-19",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-19T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-20",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-20T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "mcguffey-winter-market-forwarded-2026-11-20",
@@ -95,7 +243,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -133,7 +281,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.7,
@@ -169,7 +317,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -202,7 +350,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -237,7 +385,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.7,
@@ -275,12 +423,49 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-21",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-21T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "charlottesville-holiday-market-forwarded-2026-11-21",
@@ -308,7 +493,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -345,7 +530,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-michael-bergamo-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -379,7 +564,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -413,7 +598,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.7,
@@ -449,12 +634,49 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-22",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-22T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "live-music-silverstone-pro-re-nata-brewery-2026-11-22",
@@ -483,7 +705,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -516,12 +738,86 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-23",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-23T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-24",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-24T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "veritas-illuminated-veritas-vineyard-and-winery-2026-11-25",
@@ -549,7 +845,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.85,
@@ -557,6 +853,43 @@
     "no start time"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-25",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-25T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "wine-wednesday-king-family-vineyards-2026-11-25",
@@ -584,12 +917,49 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-25/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-26",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-26T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "wintergreen-ski-patrol-winter-sale-pro-re-nata-brewery-2026-11-27",
@@ -617,12 +987,49 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-27",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-27T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "black-friday-at-brewing-tree-brewing-tree-beer-co-2026-11-27",
@@ -651,7 +1058,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -684,7 +1091,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -718,7 +1125,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -752,7 +1159,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.7,
@@ -761,6 +1168,43 @@
     "no end time"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-28",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-28T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "barracks-road-holiday-parade-forwarded-2026-11-28",
@@ -788,7 +1232,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -825,7 +1269,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-nicholas-darden-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -859,7 +1303,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -892,7 +1336,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -928,12 +1372,197 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-29",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-29T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-11-30",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-11-30T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-01",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-01T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-02",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-02T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-03",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-03T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "meritage-vertical-tasting-king-family-vineyards-2026-12-03",
@@ -961,18 +1590,55 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/meritage-vertical-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 1,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-04",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-04T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "celebrate-the-season-holiday-gathering-at-glass-hollow-studi-glass-hollow-studios-2026-12-04",
@@ -1001,7 +1667,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -1034,7 +1700,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -1070,7 +1736,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -1103,13 +1769,13 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 1,
@@ -1142,7 +1808,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.85,
@@ -1150,6 +1816,43 @@
     "no start time"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-05",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-05T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "holiday-market-forwarded-2026-12-05",
@@ -1180,7 +1883,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.75,
@@ -1213,7 +1916,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1249,7 +1952,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1286,7 +1989,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-moon-glow-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -1320,7 +2023,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -1355,13 +2058,13 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/carriage-house-christmas/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 1,
@@ -1395,12 +2098,49 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-06",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-06T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "the-north-pole-express-forwarded-2026-12-06",
@@ -1426,7 +2166,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1435,6 +2175,191 @@
     "venue not matched"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-07",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-07T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-08",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-08T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-09",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-09T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-10",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-10T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-11",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-11T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "wreath-making-workshop-ii-king-family-vineyards-2026-12-12",
@@ -1462,18 +2387,55 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 1,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-12",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-12T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "the-north-pole-express-forwarded-2026-12-12",
@@ -1499,7 +2461,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1536,7 +2498,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-porch-dogs-2/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -1570,7 +2532,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -1604,12 +2566,49 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-13",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-13T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "live-music-jingle-w-jimmy-o-afton-mountain-vineyards-2026-12-13",
@@ -1638,12 +2637,197 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-jingle-w-jimmy-o/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-14",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-14T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-15",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-15T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-16",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-16T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-17",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-17T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-18",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-18T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "christmas-songs-with-waynesboro-choral-society-veritas-vineyard-and-winery-2026-12-18",
@@ -1671,7 +2855,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -1679,6 +2863,43 @@
     "no end time"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-19",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-19T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "the-north-pole-express-forwarded-2026-12-19",
@@ -1704,7 +2925,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1741,7 +2962,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-shane-click/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -1775,7 +2996,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -1808,7 +3029,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
@@ -1844,12 +3065,49 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-20",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-20T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "the-north-pole-express-forwarded-2026-12-20",
@@ -1875,7 +3133,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.6,
@@ -1884,6 +3142,228 @@
     "venue not matched"
    ],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-21",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-21T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-22",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-22T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-23",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-23T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-24",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-24T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-25",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-25T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-26",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-26T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "live-music-rob-midnight-afton-mountain-vineyards-2026-12-26",
@@ -1912,7 +3392,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-rob-midnight/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.9,
@@ -1946,7 +3426,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
@@ -1980,12 +3460,271 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.8,
    "flags": [],
    "status": "published"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-27",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-27T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-28",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-28T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-29",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-29T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-30",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-30T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2026-12-31",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2026-12-31T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2027-01-01",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2027-01-01T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
+  },
+  {
+   "id": "winter-wander-trail-of-lights-boar-s-head-resort-2027-01-02",
+   "title": "Winter Wander Trail of Lights",
+   "description": "A lakeside walk through holiday light displays at Boar’s Head Resort. Tickets are sold online, so check the calendar for open nights before you go. Drone show on December 21 and fireworks on New Year’s Eve.",
+   "start": "2027-01-02T12:00:00-05:00",
+   "end": null,
+   "allDay": true,
+   "recurrence": null,
+   "placeId": "boar-s-head-resort",
+   "venueName": "Boar’s Head Resort",
+   "address": "200 Ednam Dr, Charlottesville, VA 22903",
+   "lat": 38.04883,
+   "lng": -78.54242,
+   "categories": [
+    "outdoors"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "both",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": "https://www.winterwander.com/",
+     "lastSeen": "2026-11-18T22:37:57.024Z"
+    }
+   ],
+   "confidence": 0.85,
+   "flags": [
+    "no start time"
+   ],
+   "status": "published",
+   "through": "2027-01-02",
+   "seriesId": "winter-wander-trail-of-lights-boar-s-head-resort"
   },
   {
    "id": "a-starfall-dinner-hazy-mountain-vineyards-brewery-2027-01-11",
@@ -2014,7 +3753,7 @@
      "id": "forwarded",
      "name": "Sent in by the owners",
      "url": null,
-     "lastSeen": "2026-11-18T22:36:02.805Z"
+     "lastSeen": "2026-11-18T22:37:57.024Z"
     }
    ],
    "confidence": 0.95,
