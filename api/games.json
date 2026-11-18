@@ -1,0 +1,7 @@
+{
+ "about": "UVA home games for the game-weekend page. Edit this file each season; past dates hide themselves. date is YYYY-MM-DD, sport is football or basketball, opponent/time/venue are optional.",
+ "season": "",
+ "source": "the official schedule at virginiasports.com",
+ "sourceUrl": "https://virginiasports.com/",
+ "games": []
+}

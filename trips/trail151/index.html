@@ -6,7 +6,7 @@
 <meta name="description" content="Route 151 and its wineries, breweries, cideries and distilleries are right outside. The house is where the evening is poured.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794972439"><link rel="stylesheet" href="/trips/trip.css?v=1794972439">
+<link rel="stylesheet" href="/shared.css?v=1794972838"><link rel="stylesheet" href="/trips/trip.css?v=1794972838">
 </head>
 <body data-trip="trail151" data-mood="linen">
 <a class="strip" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> Booking here skips the service fees the big rental sites add.</a>
@@ -115,7 +115,7 @@ const dock = document.getElementById('dock'), end = document.querySelector('.end
 const seen = new Map();
 const io = new IntersectionObserver((es) => { for (const e of es) seen.set(e.target, e.isIntersecting); dock.hidden = [...seen.values()].some(Boolean); }); io.observe(document.querySelector('.open')); io.observe(end);
 // Mixed group (?also=other): add the second trip's reply, two of its reasons and three of its places, and plan for both.
-const also = new URLSearchParams(location.search).get('also'), me = document.body.dataset.trip;
+const RENAMED = { golf: 'game-day' }, asked = new URLSearchParams(location.search).get('also'), also = RENAMED[asked] ?? asked, me = document.body.dataset.trip;
 if (also && also !== me) try {
   const o = (await (await fetch('/trips/trips.json')).json())[also];
   if (o) {
@@ -129,6 +129,19 @@ if (also && also !== me) try {
     for (const a of document.querySelectorAll('a[href^="/plan/?i="]')) a.setAttribute('href', a.getAttribute('href').replace(/i=[^&]*/, 'i=' + both));
   }
 } catch { /* the page still works as a single trip */ }
+// Home games: upcoming dates from /api/games.json (edited each season). Past dates drop off by themselves.
+const gl = document.getElementById('games-list');
+if (gl) try {
+  const data = await (await fetch('/api/games.json')).json(), safe = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;'), today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+  const shift = (d, n) => { const x = new Date(d + 'T12:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
+  const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const up = (data.games ?? []).filter((g) => /^\d{4}-\d{2}-\d{2}$/.test(g.date) && g.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 10);
+  const official = data.sourceUrl ? '<a href="' + safe(data.sourceUrl) + '" target="_blank" rel="noopener">' + safe(data.source ?? 'The official schedule') + '</a>' : '';
+  gl.innerHTML = up.length
+    ? up.map((g) => '<li><div><span>' + fmt(g.date) + ' · ' + safe(g.sport === 'basketball' ? 'Basketball' : 'Football') + (g.time ? ' · ' + safe(g.time) : '') + '</span><h3>' + safe(g.opponent ? 'Virginia vs ' + g.opponent : 'Virginia home game') + '</h3>' + (g.venue ? '<p>' + safe(g.venue) + '</p>' : '') + '</div><a class="add" href="' + gl.dataset.plan + '&from=' + shift(g.date, -1) + '&to=' + shift(g.date, 1) + '" aria-label="Add the ' + fmt(g.date) + ' game weekend to my trip">Add to my trip</a></li>').join('')
+    : '<li class="on__wait">Next season’s schedule is coming.</li>';
+  document.getElementById('games-more').innerHTML = official ? (up.length ? 'Times and dates can change. Check ' : 'In the meantime, see ') + official + '.' : '';
+} catch { gl.innerHTML = '<li class="on__wait">The schedule didn’t load.</li>'; }
 // What's on: the next few events that suit this trip, straight from the calendar so the page never goes stale.
 const list = document.getElementById('events'), want = list.dataset.filter;
 try {
@@ -141,6 +154,6 @@ try {
     : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
 } catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:27 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:33 PM ET</p>
 </body>
 </html>

@@ -30,7 +30,7 @@
   /* one accent per trip, warm and muted: the first for the evening hero, the -deep one for labels and rules on linen */
   --t-family: #a7c2b4; --t-family-deep: #4c6c5f;       /* pool tile */
   --t-girls: #dcaaa0; --t-girls-deep: #8f4f4b;         /* dusty rose */
-  --t-golf: #a8bd8f; --t-golf-deep: #516b3f;           /* fairway, muted */
+  --t-game-day: #a3b2c4; --t-game-day-deep: #44566c;   /* a warm navy-slate, not a team colour */
   --t-outdoors: #b9b477; --t-outdoors-deep: #64662c;   /* moss */
   --t-trail151: #9c4a5a; --t-trail151-text: #bd7281; --t-trail151-deep: #7c2f3d;   /* deep claret; -text is the same claret lifted enough for small labels on the dark hero */
 
@@ -42,7 +42,7 @@
 }
 [data-trip='family'] { --accent: var(--t-family); --accent-deep: var(--t-family-deep); }
 [data-trip='girls'] { --accent: var(--t-girls); --accent-deep: var(--t-girls-deep); }
-[data-trip='golf'] { --accent: var(--t-golf); --accent-deep: var(--t-golf-deep); }
+[data-trip='game-day'] { --accent: var(--t-game-day); --accent-deep: var(--t-game-day-deep); }
 [data-trip='outdoors'] { --accent: var(--t-outdoors); --accent-deep: var(--t-outdoors-deep); }
 [data-trip='trail151'] { --accent: var(--t-trail151); --accent-text: var(--t-trail151-text); --accent-deep: var(--t-trail151-deep); }
 

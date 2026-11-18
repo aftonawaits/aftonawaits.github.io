@@ -1,2 +1,4 @@
 /field-guide/*  /plan/  302
 /guide/*  /plan/  302
+/trips/golf    /trips/game-day/   301
+/trips/golf/*  /trips/game-day/   301

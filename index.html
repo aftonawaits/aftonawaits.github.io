@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Afton Awaits | Who’s coming, and what are we doing?</title>
-<meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, golf, trails and skiing, or the Route 151 wine and beer trail.">
+<meta name="description" content="A modern farmhouse for six in Afton, Virginia. Tell the house what kind of trip you’re planning: family, girls’ trip, a UVA game weekend, trails and skiing, or the Route 151 wine and beer trail.">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794972439">
+<link rel="stylesheet" href="/shared.css?v=1794972838">
 <style>
   /* The landing page: a note from the house on a lamplit evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -123,7 +123,7 @@
       <ul class="chips" id="chips">
         <li><a href="/trips/family/" data-trip="family">The kids need a pool.</a></li>
         <li><a href="/trips/girls/" data-trip="girls">Just us girls.</a></li>
-        <li><a href="/trips/golf/" data-trip="golf">Tee time’s at 8.</a></li>
+        <li><a href="/trips/game-day/" data-trip="game-day">Game day. Kids in tow.</a></li>
         <li><a href="/trips/outdoors/" data-trip="outdoors">Boots or skis.</a></li>
         <li><a href="/trips/trail151/" data-trip="trail151">Wine. All of it.</a></li>
         <li><a class="plain" href="/plan/">Just help me plan.</a></li>
@@ -150,7 +150,7 @@ const thread = document.getElementById('thread'), nav = document.querySelector('
 const REPLY = {
   family: 'Good. It’s fenced, it’s saltwater, and there’s room for six of you.',
   girls: 'Then the porch is yours. I’ll keep the hot tub warm.',
-  golf: 'Early start, long evening. The fire will be going when you’re back.',
+  'game-day': 'Then the king’s yours, the kids get the queens, and the fire will be going when you get back.',
   outdoors: 'Good. Go get tired. The hot tub’s for after.',
   trail151: 'Smart. Sleep here, taste there. Somebody pick a driver.',
 };
@@ -200,6 +200,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:27 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:33 PM ET</p>
 </body>
 </html>
