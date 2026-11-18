@@ -1,24 +1,33 @@
 @font-face { font-family: 'Fraunces'; src: url('/fonts/fraunces-latin-full-normal.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Fraunces'; src: url('/fonts/fraunces-latin-wght-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Instrument Sans'; src: url('/fonts/instrument-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
-@font-face { font-family: 'DM Mono'; src: url('/fonts/dm-mono-latin-400-normal.woff2') format('woff2'); font-display: swap; }
-:root { --serif: 'Fraunces', Georgia, serif; --sans: 'Instrument Sans', system-ui, sans-serif; --mono: 'DM Mono', ui-monospace, monospace; --ink: #14161a; --paper: #f4efe6; --ember: #f0b352; --ease: cubic-bezier(.2, .7, .1, 1); }
+/* A lamplit farmhouse evening: warm darks, linen, brass. No pure black, no grey, no blue. */
+:root {
+  --serif: 'Fraunces', Georgia, serif; --sans: 'Instrument Sans', system-ui, sans-serif; --mono: var(--sans);   /* the mono face is retired; labels are Instrument Sans small caps */
+  --night: #17120f; --hearth: #221a15; --linen: #efe6d8; --ink: #2a2019; --cream: #f3eadb; --muted: #b5a48f;
+  --brass: #c8955a; --brass-deep: #8a5a22;   /* brass-deep is brass for text on linen, where plain brass is too pale to read */
+  --ember: #f0b352; --paper: #f3eadb; --hair: rgb(243 234 219 / .08);
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; font-family: var(--sans); font-size: 1rem; line-height: 1.5; color: var(--ink); background: var(--ink); -webkit-font-smoothing: antialiased; min-height: 100svh; }
+body { margin: 0; font-family: var(--sans); font-size: 1rem; line-height: 1.5; color: var(--cream); background: var(--night); -webkit-font-smoothing: antialiased; min-height: 100svh; }
 h1, h2, p, ol, ul { margin: 0; padding: 0; } ol, ul { list-style: none; } a { color: inherit; } img { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; border-radius: 4px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .mark { font-family: var(--serif); font-size: 1.25rem; font-variation-settings: 'SOFT' 100; text-decoration: none; letter-spacing: -.01em; }
 .mark em { font-style: italic; }
-.quiet { font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; text-underline-offset: .3em; display: inline-block; padding: .9rem 0; }
-.back { position: fixed; z-index: 30; left: 0; right: 0; top: 0; display: flex; gap: .4rem .9rem; flex-wrap: wrap; align-items: center; justify-content: center; padding: .55rem 1rem; background: var(--ember); color: #1b1408; font-size: .875rem; }
+.quiet { font-family: var(--sans); font-variant: all-small-caps; font-size: .9375rem; letter-spacing: .1em; text-underline-offset: .3em; display: inline-block; padding: .9rem 0; }
+/* returning visitors */
+.back { position: fixed; z-index: 30; left: 0; right: 0; top: 0; display: flex; gap: .4rem .9rem; flex-wrap: wrap; align-items: center; justify-content: center; padding: .55rem 1rem; background: var(--hearth); color: var(--cream); font-size: .875rem; border-bottom: 1px solid rgb(200 149 90 / .45); }
 .back[hidden] { display: none; }
-.back a { font-weight: 600; } .back button { border: 1px solid currentColor; background: none; border-radius: 99px; padding: .25rem .8rem; min-height: 2rem; cursor: pointer; }
+.back a { font-weight: 600; color: var(--ember); } .back button { border: 1px solid var(--brass); background: none; border-radius: 99px; padding: .25rem .8rem; min-height: 2rem; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
 
-/* Book direct: a slim strip across the top of every page, and a short line beside booking buttons */
-.strip { display: block; margin: 0; padding: .45rem 1rem; text-align: center; font-size: .8125rem; line-height: 1.35; background: var(--ember); color: #1b1408; text-decoration: none; } .strip b { font-weight: 700; } .strip:hover { background: #ffd993; }
-.direct { display: flex; align-items: center; gap: .45rem; margin: .8rem 0 0; font-size: .875rem; font-weight: 600; color: #ffd993; } .direct::before { content: ''; flex: none; width: .5rem; height: .5rem; border-radius: 50%; background: var(--ember); }
-.direct span { font-weight: 400; color: rgb(244 239 230 / .75); }
+/* Book direct: a slim brass-edged ribbon, written like a note, and a short line beside booking buttons */
+.strip { display: block; margin: 0; padding: .5rem 1rem; text-align: center; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; line-height: 1.35; background: var(--hearth); color: var(--cream); text-decoration: none; border-block: 1px solid rgb(200 149 90 / .5); }
+.strip b { font-weight: 500; color: var(--ember); } .strip:hover { background: #2b211a; }
+.direct { display: flex; align-items: baseline; gap: .45rem; margin: .8rem 0 0; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; font-weight: 400; color: var(--ember); }
+.direct::before { content: ''; flex: none; align-self: center; width: 1.1rem; height: 1px; background: var(--brass); }
+.direct span { color: rgb(243 234 219 / .8); }
