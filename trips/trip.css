@@ -112,3 +112,15 @@ a { text-underline-offset: .22em; }
 .aside { margin-top: 1.1rem; font-family: var(--serif); font-style: italic; color: var(--ink-soft); }
 .games li { grid-template-columns: 1fr auto; } .games li span { font-variant: all-small-caps; letter-spacing: .1em; font-size: .9375rem; color: var(--accent-deep); } .games .add::before { content: none; } .games .on__wait { background: none; box-shadow: none; padding-left: 0; color: var(--ink-soft); }
 .games-more { margin-top: 1rem; } .games-more summary { cursor: pointer; font-family: var(--serif); font-style: italic; color: var(--brass-deep); padding: .5rem 0; } .games-more ul { margin-top: .6rem; }
+/* home games: weekend tag, weekends-only filter, one-line kickers */
+.games-filter { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: 0 0 1rem; font-size: .9375rem; color: var(--ink-soft); } .games-filter[hidden] { display: none; }
+.games-filter button { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .3rem 1rem; border-radius: 99px; border: 1px solid var(--brass-deep); background: transparent; color: var(--ink); font-weight: 600; cursor: pointer; transition: background-color .25s; }
+.games-filter button::before { content: ''; width: .8rem; height: .8rem; border-radius: 50%; border: 1px solid var(--brass-deep); } .games-filter button:hover { background: color-mix(in srgb, var(--brass-deep) 12%, transparent); }
+.games-filter button[aria-pressed='true'] { background: var(--honey); border-color: var(--honey); } .games-filter button[aria-pressed='true']::before { background: var(--ink); border-color: var(--ink); }
+#games.wk-only .games li:not(.is-wk) { display: none; }
+.games .wk { display: inline-block; margin-left: .4rem; padding: 0 .55rem; border: 1px solid var(--honey); border-radius: 99px; font-weight: 500; font-variant: all-small-caps; letter-spacing: .1em; font-size: .875rem; line-height: 1.5; color: var(--ink); vertical-align: 1px; }
+.games li > div { min-width: 0; } .games li span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 520px) { .games li { grid-template-columns: 1fr auto; } .games li > div { display: contents; } .games li span { grid-column: 1 / -1; grid-row: 1; } .games li h3 { grid-column: 1; grid-row: 2; } .games li p { grid-column: 1; grid-row: 3; margin-top: 0; } .games li .add { grid-column: 2; grid-row: 2 / span 2; align-self: center; } }
+/* the floating bar is for phones; the header already carries Plan your stay on wide screens */
+@media (min-width: 900px) { .dock { display: none; } }
+@media (max-width: 899px) { .end { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom)); } .more, .aside, .games-more { scroll-margin-bottom: 5rem; } }

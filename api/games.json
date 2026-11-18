@@ -1,7 +1,7 @@
 {
  "about": "UVA home games for the game-weekend page. Refresh with tools/games.py or edit by hand; past dates hide themselves. date is YYYY-MM-DD; sport is football, basketball (men's) or womens-basketball; time is as announced or TBA.",
  "season": "2026-27",
- "updated": "2026-11-18",
+ "updated": "2026-11-17",
  "source": "the official schedules at virginiasports.com",
  "sourceUrl": {
   "football": "https://virginiasports.com/sports/football/schedule",

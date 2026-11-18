@@ -6,7 +6,7 @@
 <meta name="description" content="A fenced saltwater pool, a wide lawn, three bedrooms on one level and a kitchen that can feed all six of you.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<link rel="stylesheet" href="/shared.css?v=1794973547"><link rel="stylesheet" href="/trips/trip.css?v=1794973547">
+<link rel="stylesheet" href="/shared.css?v=1794973833"><link rel="stylesheet" href="/trips/trip.css?v=1794973833">
 </head>
 <body data-trip="family" data-mood="linen">
 <a class="strip" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> Booking here skips the service fees the big rental sites add.</a>
@@ -111,10 +111,10 @@
   more.addEventListener('click', () => { const open = lede.classList.toggle('is-open'); more.setAttribute('aria-expanded', String(open)); more.textContent = open ? 'Read less' : 'Read more'; });
   fits(); addEventListener('resize', fits); document.fonts?.ready.then(fits); }
 const safe = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
-// The bar with both buttons appears once the opening has scrolled away.
+// Phones only: the bar with both buttons shows unless the hero buttons or the closing section are on screen.
 const dock = document.getElementById('dock'), end = document.querySelector('.end');
 const seen = new Map();
-const io = new IntersectionObserver((es) => { for (const e of es) seen.set(e.target, e.isIntersecting); dock.hidden = [...seen.values()].some(Boolean); }); io.observe(document.querySelector('.open')); io.observe(end);
+const io = new IntersectionObserver((es) => { for (const e of es) seen.set(e.target, e.isIntersecting); dock.hidden = [...seen.values()].some(Boolean); }); io.observe(document.querySelector('.open .cta')); io.observe(end);
 // Mixed group (?also=other): add the second trip's reply, two of its reasons and three of its places, and plan for both.
 const RENAMED = { golf: 'game-day' }, asked = new URLSearchParams(location.search).get('also'), also = RENAMED[asked] ?? asked, me = document.body.dataset.trip;
 if (also && also !== me) try {
@@ -133,8 +133,8 @@ if (also && also !== me) try {
 // Home games: upcoming dates from /api/games.json (refreshed by tools/games.py or by hand). Past dates drop off by themselves.
 const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
 const shift = (d, n) => { const x = new Date(d + 'T12:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
-const dayFmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
-const SPORT = { football: 'Football', basketball: 'Men’s basketball', 'womens-basketball': 'Women’s basketball' };
+const dayFmt = (d) => new Date(d + 'T17:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/New_York' });   // noon Eastern on that date
+const SPORT = { football: 'Football', basketball: 'Basketball', 'womens-basketball': 'Women’s basketball' };
 /** Arrive the day before and leave the day after; a Saturday or Sunday game makes it Friday to Sunday. */
 const stay = (d) => { const dow = new Date(d + 'T12:00:00Z').getUTCDay(); return dow === 0 ? [shift(d, -2), d] : [shift(d, -1), shift(d, 1)]; };
 let games = [];
@@ -143,8 +143,12 @@ if (gl) try {
   const data = await (await fetch('/api/games.json')).json();
   games = (data.games ?? []).filter((g) => /^\d{4}-\d{2}-\d{2}$/.test(g.date) && g.date >= today).sort((a, b) => a.date.localeCompare(b.date) || a.sport.localeCompare(b.sport));
   const link = (g) => { const [from, to] = stay(g.date); return gl.dataset.plan + '&from=' + from + '&to=' + to; };
-  const row = (g) => '<li><div><span>' + dayFmt(g.date) + ' · ' + safe(SPORT[g.sport] ?? g.sport) + ' · ' + safe(g.time || 'TBA') + '</span><h3>' + safe(g.opponent ? 'Virginia vs ' + g.opponent : 'Virginia home game') + '</h3>' + (g.venue ? '<p>' + safe(g.venue) + '</p>' : '') + '</div><a class="add" href="' + link(g) + '" aria-label="Add the ' + dayFmt(g.date) + ' game against ' + safe(g.opponent) + ' to my trip">Add to my trip</a></li>';
+  const wk = (d) => [5, 6, 0].includes(new Date(d + 'T12:00:00Z').getUTCDay());
+  const row = (g) => '<li' + (wk(g.date) ? ' class="is-wk"' : '') + '><div><span>' + dayFmt(g.date) + ' · ' + safe(SPORT[g.sport] ?? g.sport) + ' · ' + safe(g.time || 'TBA') + '</span><h3>' + safe(g.opponent ? 'Virginia vs ' + g.opponent : 'Virginia home game') + '</h3>' + '<p>' + safe(g.venue) + (wk(g.date) ? ' <b class="wk">Weekend</b>' : '') + '</p></div><a class="add" href="' + link(g) + '" aria-label="Add the ' + dayFmt(g.date) + ' game against ' + safe(g.opponent) + ' to my trip">Add to my trip</a></li>';
   const main = games.filter((g) => !g.optional), more = games.filter((g) => g.optional);
+  const sec = document.getElementById('games'), tog = document.getElementById('wk-only'), nWk = main.filter((g) => wk(g.date)).length;
+  if (main.length) { document.getElementById('wk-count').textContent = nWk + ' of ' + main.length + ' fall on a Friday, Saturday or Sunday.'; document.getElementById('games-filter').hidden = false; }
+  tog.addEventListener('click', () => { const on = tog.getAttribute('aria-pressed') !== 'true'; tog.setAttribute('aria-pressed', String(on)); sec.classList.toggle('wk-only', on); });
   gl.innerHTML = main.length ? main.map(row).join('') : '<li class="on__wait">Next season’s schedule is coming.</li>';
   if (more.length) gl.insertAdjacentHTML('afterend', '<details class="games-more"><summary>Women’s basketball home games (' + more.length + ')</summary><ul class="near games">' + more.map(row).join('') + '</ul></details>');
   const src = data.sourceUrl ?? {}, links = typeof src === 'string' ? '<a href="' + safe(src) + '" target="_blank" rel="noopener">the official schedule</a>' : Object.entries(src).map(([k, u]) => '<a href="' + safe(u) + '" target="_blank" rel="noopener">' + safe((SPORT[k] ?? k).toLowerCase()) + '</a>').join(', ');
@@ -167,6 +171,6 @@ try {
   list.innerHTML = pick.length ? pick.map((c) => c.html).join('') : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
 } catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:45 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 17, 10:50 PM ET</p>
 </body>
 </html>
