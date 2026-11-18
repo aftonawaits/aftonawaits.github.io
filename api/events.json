@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T21:31:13.053Z",
+ "updated": "2026-11-18T20:49:25.855Z",
  "events": [
   {
    "id": "wine-wednesday-king-family-vineyards-2026-11-18",
@@ -27,7 +27,7 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-18/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -61,7 +61,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -95,7 +95,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-michael-bergamo-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -129,7 +129,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -163,7 +163,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -196,7 +196,7 @@
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wine-wednesday/2026-11-25/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -230,7 +230,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -264,7 +264,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -298,7 +298,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-nicholas-darden-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -332,7 +332,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -366,7 +366,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -374,16 +374,16 @@
    "status": "published"
   },
   {
-   "id": "meritage-vertical-king-family-vineyards-2026-12-03",
-   "title": "Meritage Vertical",
-   "description": "Thursday, December 3rd | 6:00PM Purchase Tickets Here What does a single wine become over fifteen harvests? Find out as we pour five vintages of Meritage, our flagship Bordeaux-style blend, side by side: 2009, 2013, 2017, 2023, and a first taste of the 2024, before it’s released to anyone else. Each bottle is a…",
+   "id": "meritage-vertical-tasting-king-family-vineyards-2026-12-03",
+   "title": "Meritage Vertical Tasting",
+   "description": "A guided vertical tasting of the Governor's Cup-winning Meritage (2009, 2013, 2017 and 2023 vintages) plus a preview of the unreleased 2024, led by winemaker Matthieu Finot. Spots are limited and tickets must be purchased.",
    "start": "2026-12-03T18:00:00-05:00",
    "end": "2026-12-03T20:00:00-05:00",
    "allDay": false,
    "recurrence": null,
    "placeId": "king-family-vineyards",
    "venueName": "King Family Vineyards",
-   "address": "6550 Roseland Farm, Crozet, 22932",
+   "address": "6550 Roseland Farm, Crozet, VA 22932",
    "lat": 38.06163,
    "lng": -78.72789,
    "categories": [
@@ -396,27 +396,67 @@
    "setting": "both",
    "sources": [
     {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T20:49:25.855Z"
+    },
+    {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/meritage-vertical-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
-   "confidence": 0.9,
+   "confidence": 1,
    "flags": [],
    "status": "published"
   },
   {
-   "id": "wreath-making-workshop-king-family-vineyards-2026-12-05",
-   "title": "Wreath Making Workshop",
-   "description": "Saturday, December 5th | 10:30AM – 12:30PM Purchase Tickets Here Spend a festive Saturday at the vineyard and get into the holiday spirit! During this hands-on workshop, you’ll create a beautiful, one-of-a-kind wreath using fresh greenery and grapevines straight from our farm. As you craft, enjoy a complimentary glass…",
+   "id": "celebrate-the-season-holiday-gathering-at-glass-hollow-studi-glass-hollow-studios-2026-12-04",
+   "title": "Celebrate the Season: Holiday Gathering at Glass Hollow Studios",
+   "description": "An intimate holiday gathering with wine from Septenary Winery, live music from Annie Savage, and glassblowing demonstrations.",
+   "start": "2026-12-04T17:00:00-05:00",
+   "end": "2026-12-04T20:00:00-05:00",
+   "allDay": false,
+   "recurrence": null,
+   "placeId": "glass-hollow-studios",
+   "venueName": "Glass Hollow Studios",
+   "address": "9080 Rockfish Valley Hwy, Afton, VA 22920",
+   "lat": 37.96629,
+   "lng": -78.8346,
+   "categories": [
+    "music",
+    "wine"
+   ],
+   "price": null,
+   "free": null,
+   "ticketUrl": null,
+   "familyFriendly": null,
+   "setting": "indoor",
+   "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T20:49:25.855Z"
+    }
+   ],
+   "confidence": 0.95,
+   "flags": [],
+   "status": "published"
+  },
+  {
+   "id": "wreath-making-workshop-i-king-family-vineyards-2026-12-05",
+   "title": "Wreath-Making Workshop I",
+   "description": "A hands-on holiday wreath workshop with Holly Clouse, using fresh greenery and grapevines from the vineyard. Supplies and a glass of wine are included; tickets are required.",
    "start": "2026-12-05T10:30:00-05:00",
    "end": "2026-12-05T12:30:00-05:00",
    "allDay": false,
    "recurrence": null,
    "placeId": "king-family-vineyards",
    "venueName": "King Family Vineyards",
-   "address": "6550 Roseland Farm, Crozet, 22932",
+   "address": "6550 Roseland Farm, Crozet, VA 22932",
    "lat": 38.06163,
    "lng": -78.72789,
    "categories": [
@@ -429,13 +469,19 @@
    "setting": "both",
    "sources": [
     {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T20:49:25.855Z"
+    },
+    {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
-   "confidence": 0.9,
+   "confidence": 1,
    "flags": [],
    "status": "published"
   },
@@ -466,7 +512,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-moon-glow-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -500,7 +546,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -510,34 +556,41 @@
   {
    "id": "carriage-house-christmas-king-family-vineyards-2026-12-06",
    "title": "Carriage House Christmas",
-   "description": "Mark your calendars and join us for our annual Carriage House Christmas and experience the true magic of the season at King Family Vineyards! Discover unique treasures from local artisan vendors, savor festive foods from an assortment of food trucks, and let the little ones enjoy a special surprise visit from the North…",
+   "description": "An annual holiday market in the Carriage House with over fifty Virginia vendors, local food trucks, carolers and a visit from the North Pole for kids.",
    "start": "2026-12-06T10:00:00-05:00",
    "end": "2026-12-06T16:00:00-05:00",
    "allDay": false,
    "recurrence": null,
    "placeId": "king-family-vineyards",
    "venueName": "King Family Vineyards",
-   "address": "6550 Roseland Farm, Crozet, 22932",
+   "address": "6550 Roseland Farm, Crozet, VA 22932",
    "lat": 38.06163,
    "lng": -78.72789,
    "categories": [
+    "family",
     "market",
     "wine"
    ],
    "price": null,
    "free": null,
    "ticketUrl": null,
-   "familyFriendly": null,
+   "familyFriendly": true,
    "setting": "both",
    "sources": [
+    {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T20:49:25.855Z"
+    },
     {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/carriage-house-christmas/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
-   "confidence": 0.9,
+   "confidence": 1,
    "flags": [],
    "status": "published"
   },
@@ -568,7 +621,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -576,16 +629,16 @@
    "status": "published"
   },
   {
-   "id": "wreath-making-workshop-king-family-vineyards-2026-12-12",
-   "title": "Wreath Making Workshop",
-   "description": "Saturday, December 12th | 10:30AM – 12:30PM Purchase Tickets Here Spend a festive Saturday at the vineyard and get into the holiday spirit! During this hands-on workshop, you’ll create a beautiful, one-of-a-kind wreath using fresh greenery and grapevines straight from our farm. As you craft, enjoy a complimentary glass…",
+   "id": "wreath-making-workshop-ii-king-family-vineyards-2026-12-12",
+   "title": "Wreath-Making Workshop II",
+   "description": "A hands-on holiday wreath workshop with Holly Clouse, using fresh greenery and grapevines from the vineyard. Supplies and a glass of wine are included; tickets are required.",
    "start": "2026-12-12T10:30:00-05:00",
    "end": "2026-12-12T12:30:00-05:00",
    "allDay": false,
    "recurrence": null,
    "placeId": "king-family-vineyards",
    "venueName": "King Family Vineyards",
-   "address": "6550 Roseland Farm, Crozet, 22932",
+   "address": "6550 Roseland Farm, Crozet, VA 22932",
    "lat": 38.06163,
    "lng": -78.72789,
    "categories": [
@@ -598,13 +651,19 @@
    "setting": "both",
    "sources": [
     {
+     "id": "forwarded",
+     "name": "Sent in by the owners",
+     "url": null,
+     "lastSeen": "2026-11-18T20:49:25.855Z"
+    },
+    {
      "id": "king-family",
      "name": "King Family Vineyards",
      "url": "https://kingfamilyvineyards.com/event/wreath-making-workshop-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
-   "confidence": 0.9,
+   "confidence": 1,
    "flags": [],
    "status": "published"
   },
@@ -635,7 +694,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-porch-dogs-2/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -669,7 +728,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -703,7 +762,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -737,7 +796,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-jingle-w-jimmy-o/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -771,7 +830,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-shane-click/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -805,7 +864,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -839,7 +898,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -873,7 +932,7 @@
      "id": "afton-mountain",
      "name": "Afton Mountain Vineyards",
      "url": "https://www.aftonmountainvineyards.com/event/live-music-rob-midnight/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.9,
@@ -907,7 +966,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
@@ -941,7 +1000,7 @@
      "id": "brewing-tree",
      "name": "Brewing Tree Beer Co",
      "url": "https://brewingtreebeer.com/events/",
-     "lastSeen": "2026-11-17T21:31:13.053Z"
+     "lastSeen": "2026-11-18T20:49:25.855Z"
     }
    ],
    "confidence": 0.8,
