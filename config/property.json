@@ -44,10 +44,11 @@
   "safe": "Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour."
  },
  "host": "Hosted by Jamie of Be Still Getaways",
- "instagram": "afton.awaits",
  "labels": {
   "plan": "Plan your trip",
   "book": "Check dates and book"
  },
- "charlottesville": "about 35 minutes"
+ "charlottesville": "about 35 minutes",
+ "instagramHandle": "afton.awaits",
+ "instagramUrl": "https://www.instagram.com/afton.awaits/"
 }

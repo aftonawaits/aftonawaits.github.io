@@ -111,6 +111,11 @@ body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
 .proof { margin: .7rem 0 0; font-family: var(--sans); font-size: .8125rem; line-height: 1.45; letter-spacing: .01em; color: color-mix(in srgb, currentColor 78%, transparent); }
 .proof--safe { margin-top: .25rem; font-size: .78rem; opacity: .9; }
 [data-season='pool'] .s-cool, [data-season='cool'] .s-pool { display: none !important; }
+.iglink { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; color: inherit; text-underline-offset: .3em; text-decoration-color: #c8955a; }
+.iglink .ig { flex: none; } .iglink:hover { color: #f0b352; }
+.ft nav a.ft__ig { padding: 0; color: #d6a45e; } .ft nav a.ft__ig span { color: #f3eadb; }
+.tagus { max-width: 44rem; margin: 2.2rem auto 0; padding: 0 var(--gutter, 1.1rem); text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.0625rem; color: var(--ink-soft, inherit); }
+.tagus .iglink { display: inline; min-height: 0; padding: .8rem 0; color: var(--brass-deep, inherit); font-style: normal; }
 /* chrome:end */
 .hd__trip b { display: inline-grid; place-items: center; min-width: 1.4rem; height: 1.4rem; padding: 0 .3rem; margin-left: .25rem; border-radius: 99px; background: #d6a45e; color: #2a2019; font-weight: 600; text-decoration: none; }
 @media (max-width: 520px) { .hd nav a.hd__trip { display: inline-block; } .hd nav a.hd__trip { font-size: 0; } .hd nav a.hd__trip b { font-size: .75rem; } }
