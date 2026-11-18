@@ -115,9 +115,9 @@ body:has(.tray:not([hidden])) .foot { padding-bottom: 6rem; }
 .strip[data-mood='evening'] { background: var(--hearth); }
 .bar[data-mood='evening'] { background: color-mix(in srgb, var(--night) 90%, transparent); border-bottom-color: var(--hair-evening); }
 .bar[data-mood='evening'] .mark { color: var(--cream); } .bar[data-mood='evening'] .quiet { color: var(--muted); } .bar[data-mood='evening'] .quiet:hover { color: var(--cream); }
-.intro[data-mood='evening'] { position: relative; isolation: isolate; margin-top: 0; padding: 2.2rem 0 5.2rem; background: none; }
+.intro[data-mood='evening'] { position: relative; isolation: isolate; margin-top: 0; padding: 2.2rem 0 3rem; background: none; }
 .intro[data-mood='evening']::before { content: ''; position: absolute; z-index: -2; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw; background-color: var(--night); background-image: var(--firelight); }
-.intro[data-mood='evening']::after { content: ''; position: absolute; z-index: -1; bottom: 0; left: calc(50% - 50vw); width: 100vw; height: 3.5rem; background: linear-gradient(transparent, var(--paper)); }   /* the evening eases into the linen page */
+.intro[data-mood='evening']::after { content: ''; position: absolute; z-index: -1; top: 100%; left: calc(50% - 50vw); width: 100vw; height: 1.4rem; border-top: 1px solid color-mix(in srgb, var(--brass) 35%, transparent); background: linear-gradient(in oklab, color-mix(in srgb, var(--ink) 16%, transparent), transparent); }   /* a clean edge: the evening ends on a brass hairline, with a soft warm shadow falling onto the linen */
 .intro .bub { display: inline-block; max-width: 22rem; margin: 0 0 1.3rem; padding: .6rem .95rem; border-radius: 1.25rem 1.25rem 1.25rem .4rem; background: var(--linen); color: var(--ink); font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 20%, transparent); animation: bub-rise .5s var(--ease) both; }
 @keyframes bub-rise { from { opacity: 0; transform: translateY(6px); } }
 .intro[data-mood='evening'] .kicker { color: var(--muted); } .intro[data-mood='evening'] h1 em { color: var(--brass); } .intro[data-mood='evening'] .lede { color: color-mix(in srgb, var(--cream) 90%, transparent); }
