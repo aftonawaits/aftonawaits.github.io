@@ -105,7 +105,7 @@ const visit = (p) => (p.typicalVisitMinutes >= 120 ? `${p.typicalVisitMinutes / 
 /** A pick: the large card, the most room any event gets. */
 function eventCard(e) {
   const m = minsHome(e.placeId);
-  return `<li class="card ${inBasket('event', e.id) ? 'is-in' : ''}" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}" data-place="${esc(e.placeId ?? '')}"><div><p class="when">${esc(timeOf(e))}</p><h3>${esc(e.title)}</h3><p class="venue">${e.placeId ? `<button type="button" class="ghost" data-show="${esc(e.placeId)}">${esc(e.venueName)}</button>` : esc(e.venueName)}${m != null ? ` · ${m} min` : ''}${e.price ? ` · ${esc(e.price)}` : ''}</p>
+  return `<li class="card ${inBasket('event', e.id) ? 'is-in' : ''}" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}" data-place="${esc(e.placeId ?? '')}"><div><p class="when">${esc(timeOf(e))}</p><h3>${esc(e.title)}</h3><p class="venue">${e.placeId ? `<button type="button" class="ghost" data-show="${esc(e.placeId)}">${esc(e.venueName)}</button>` : esc(e.venueName)}${m != null ? ` · <span class="nw">${m} min</span>` : ''}${e.price ? ` · ${esc(e.price)}` : ''}</p>
     <p class="tags">${e.categories.map((c) => `<span class="tag">${esc(label(c))}</span>`).join('')}</p></div>${addBtn('event', e.id)}
     ${e.description ? `<p class="desc">${esc(e.description)}</p>` : ''}<p class="desc">${sourceLinks(e)}</p>${clashNote('e:' + e.id)}</li>`;
 }
@@ -119,10 +119,10 @@ function row({ key, place, time, title, sub, cats, more, add, cls = '' }) {
 }
 const eventRow = (e) => { const m = minsHome(e.placeId), f = facts(e);
   return row({ key: 'e:' + e.id, place: e.placeId, time: e.allDay ? '<small>Time<br>to confirm</small>' : esc(short(hm(e.start))), title: e.title, cats: e.categories, cls: inBasket('event', e.id) ? 'is-in' : '',
-    sub: [esc(e.venueName), m != null ? `${m} min` : '', esc(e.categories.slice(0, 2).map(label).join(', '))].filter(Boolean).join(' · '), add: addBtn('event', e.id),
+    sub: [esc(e.venueName), m != null ? `<span class="nw">${m} min</span>` : '', esc(e.categories.slice(0, 2).map(label).join(', '))].filter(Boolean).join(' · '), add: addBtn('event', e.id),
     more: `<p class="row__when">${esc(timeOf(e))}${f ? ' · ' + f : ''}</p>${e.description ? `<p>${esc(e.description)}</p>` : ''}<p class="row__links">${sourceLinks(e)}${e.ticketUrl ? ` · <a href="${esc(e.ticketUrl)}" rel="noopener">Tickets</a>` : ''}${e.placeId ? ` · <button type="button" class="ghost" data-show="${esc(e.placeId)}">Show on map</button>` : ''}</p>` }); };
 const placeRow = (p) => { const m = minsHome(p.id);
-  return row({ key: 'p:' + p.id, place: p.id, time: m != null ? `${m}<small> min</small>` : '', title: p.name, cats: p.interests, cls: (inBasket('place', p.id) ? 'is-in ' : '') + (p.ownerPick ? 'is-pick' : ''),
+  return row({ key: 'p:' + p.id, place: p.id, time: m != null ? `<span class="nw">${m}<small> min</small></span>` : '', title: p.name, cats: p.interests, cls: (inBasket('place', p.id) ? 'is-in ' : '') + (p.ownerPick ? 'is-pick' : ''),
     sub: [esc(KINDS[p.kind] ?? p.kind), p.ownerPick ? 'Our pick' : '', `allow ${visit(p)}`].filter(Boolean).join(' · '), add: addBtn('place', p.id),
     more: `${p.ownerNote ? `<p class="row__note">“${esc(p.ownerNote)}”</p>` : ''}${p.notes ? `<p>${esc(p.notes)}</p>` : ''}${p.address ? `<p class="row__when">${esc(p.address.replace(/^Trailhead: /, 'Start: '))}</p>` : ''}<p class="row__when">Hours aren’t checked here. Confirm before you go.</p><p class="row__links">${p.url ? `<a href="${esc(p.url)}" rel="noopener">Website</a> · ` : ''}<button type="button" class="ghost" data-show="${esc(p.id)}">Show on map</button></p>` }); };
 
@@ -141,7 +141,7 @@ function agenda() {
 }
 /** Three to five picks for a day: the owners' flags first, then what matches the guest's interests, then the nearest, never two of a kind. */
 function picksFor(list) {
-  const want = list.length <= 3 ? list.length : list.length < 9 ? 3 : list.length < 14 ? 4 : 5;
+  const want = Math.min(3, list.length);
   const score = (e) => [e.ownerPick ? 0 : 1, state.interests.size ? -e.categories.filter((c) => state.interests.has(c)).length : 0, minsHome(e.placeId) ?? 60];
   const ranked = [...list].sort((a, b) => { const x = score(a), y = score(b); return x[0] - y[0] || x[1] - y[1] || x[2] - y[2]; }), out = [], kinds = new Set();
   for (const e of ranked) { if (out.length >= want) break; if (e.ownerPick || !kinds.has(e.categories[0])) { out.push(e); kinds.add(e.categories[0]); } }
@@ -150,56 +150,73 @@ function picksFor(list) {
 }
 const PARTS = [['morning', 'Morning', (e) => !e.allDay && hm(e.start) < 720], ['afternoon', 'Afternoon', (e) => !e.allDay && hm(e.start) >= 720 && hm(e.start) < 1020], ['evening', 'Evening', (e) => !e.allDay && hm(e.start) >= 1020], ['anytime', 'Time to confirm', (e) => e.allDay]];
 const span = (g, days) => { const ds = [...new Set(g.map((e) => e.start.slice(0, 10)))]; return ds.length >= days.length && days.length > 1 ? 'every day' : ds.map((d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' })).join(' & '); };
-let pickPlaces = new Set(), dayEvents = [];
+let pickPlaces = new Set(), dayEvents = [], byDay = new Map(), ongoingNow = [];
 
 function renderLists() {
   const { days, ongoing, single } = agenda();
   if (!days.includes(state.day)) state.day = days[0];
-  const flagged = state.near || state.free || state.kid;
-  // the filter bar: interests with their counts on these dates, and the three switches
+  const flags = ['near', 'free', 'kid'].filter((k) => state[k]).length;
+  // the bar: interests with their counts on these dates, a Filters button, and jump links
   const countable = [...single, ...ongoing.map((g) => g[0])].filter((e) => passEvent(e, true));
   $('#chips').innerHTML = INTERESTS.map(([k, l, c]) => { const n = countable.filter((e) => e.categories.includes(k)).length; return `<button type="button" data-k="${k}" style="--c:${c}" aria-pressed="${state.interests.has(k)}"${n || state.interests.has(k) ? '' : ' class="is-none"'}>${l} <b>${n}</b></button>`; }).join('');
   for (const b of document.querySelectorAll('[data-flag]')) b.setAttribute('aria-pressed', !!state[b.dataset.flag]);
-  $('#clear-filters').hidden = !(flagged || state.interests.size);
-  const shownSingle = single.filter((e) => passEvent(e)), shownOngoing = ongoing.filter((g) => passEvent(g[0]));
+  $('#filters-n').textContent = flags; $('#filters-n').hidden = !flags; $('#clear-filters').hidden = !(flags || state.interests.size);
+  const shownSingle = single.filter((e) => passEvent(e)).sort((a, b) => a.start.slice(0, 10).localeCompare(b.start.slice(0, 10)) || a.allDay - b.allDay || a.start.localeCompare(b.start)), shownOngoing = ongoing.filter((g) => passEvent(g[0]));
   $('#n-events').textContent = shownSingle.length + shownOngoing.length; $('#n-places').textContent = places.filter(passPlace).length;
-  $('#status').textContent = `${shownSingle.length + shownOngoing.length} things on your dates${state.interests.size || flagged ? ' with these filters' : ''}`;
-
-  // day tabs
+  $('#status').textContent = `${shownSingle.length + shownOngoing.length} things on your dates${state.interests.size || flags ? ' with these filters' : ''}`;
   const dname = (d, o) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', ...o });
-  $('#days').innerHTML = days.map((d) => { const n = shownSingle.filter((e) => e.start.slice(0, 10) === d).length; return `<button type="button" role="tab" data-day="${d}" id="day-${d}" aria-selected="${d === state.day}" tabindex="${d === state.day ? 0 : -1}"><span>${dname(d, { weekday: 'short' })}</span> <small>${dname(d, { month: 'short', day: 'numeric' })}</small><b>${n}</b></button>`; }).join('');
-  $('#days').hidden = days.length < 2;
 
-  const today = shownSingle.filter((e) => e.start.slice(0, 10) === state.day).sort((a, b) => a.allDay - b.allDay || a.start.localeCompare(b.start));
-  const picks = picksFor(today), rest = today.filter((e) => !picks.includes(e));
-  dayEvents = [...today, ...shownOngoing.map((g) => g.find((e) => e.start.slice(0, 10) === state.day) ?? g[0])];
+  // three picks for the whole stay, then everything else as rows, day after day
+  const picks = picksFor(shownSingle), rest = shownSingle.filter((e) => !picks.includes(e));
+  byDay = new Map(days.map((d) => [d, shownSingle.filter((e) => e.start.slice(0, 10) === d)])); ongoingNow = shownOngoing;
   pickPlaces = new Set([...picks.map((e) => e.placeId), ...places.filter((p) => p.ownerPick).map((p) => p.id)].filter(Boolean));
-  const strip = shownOngoing.length ? `<section class="allweek" aria-label="Running across your stay"><h4>${days.length > 4 ? 'All through your stay' : 'All weekend'}</h4><ul>${shownOngoing.map((g) => { const e = g.find((x) => x.start.slice(0, 10) === state.day) ?? g[0], key = 'e:' + e.id, open = state.row === key;
-      return `<li class="${open ? 'is-open' : ''} ${inBasket('event', e.id) ? 'is-in' : ''} ${e.ownerPick ? 'is-pick' : ''}" data-row="${esc(key)}" data-place="${esc(e.placeId ?? '')}"><button type="button" class="chip" aria-expanded="${open}"><i class="dot" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}"></i>${esc(e.title)} <small>${e.ownerPick ? 'our pick · ' : ''}${esc(span(g, days))}</small></button>${open ? `<div class="allweek__more"><p class="row__when">${esc(e.venueName)}${minsHome(e.placeId) != null ? ` · ${minsHome(e.placeId)} min` : ''} · ${esc(e.categories.map(label).join(', '))}</p>${e.description ? `<p>${esc(e.description)}</p>` : ''}<p class="row__links">${sourceLinks(e)}${e.placeId ? ` · <button type="button" class="ghost" data-show="${esc(e.placeId)}">Show on map</button>` : ''}</p>${addBtn('event', e.id)}</div>` : ''}</li>`; }).join('')}</ul></section>` : '';
-  const groups = PARTS.map(([id, name, test]) => { const all = rest.filter(test); if (!all.length) return '';
-    const key = `${state.day}:${id}`, openAll = state.more.has(key), shown = openAll ? all : all.slice(0, 6), hidden = all.slice(shown.length);
-    const top = hidden.length ? Object.entries(hidden.reduce((m, e) => { m[e.categories[0]] = (m[e.categories[0]] ?? 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1])[0] : null;
-    return `<section class="part"><h4>${name}</h4><ul class="rows">${shown.map(eventRow).join('')}</ul>${hidden.length ? `<button type="button" class="showmore" data-more="${key}">Show ${hidden.length} more${top ? (top[1] === hidden.length ? ` ${esc(label(top[0]).toLowerCase())}` : `, mostly ${esc(label(top[0]).toLowerCase())}`) : ''}</button>` : ''}</section>`; }).join('');
-  const next = days[days.indexOf(state.day) + 1];
-  $('#list').innerHTML = `<div role="tabpanel" aria-labelledby="day-${state.day}" class="dayview"><h3 class="dayview__h">${fmtDay(state.day)}</h3>${strip}
-    ${picks.length ? `<section class="picks"><h4>My picks for ${days.length > 1 ? esc(dname(state.day, { weekday: 'long' })) : 'the day'}</h4><ul class="cards">${picks.map(eventCard).join('')}</ul></section>` : ''}${groups}
-    ${!today.length && !shownOngoing.length ? `<p class="empty">${state.interests.size || flagged ? 'Nothing on this day matches those filters. Clear one, or try another day.' : 'Nothing listed yet for this day. Try Places: those have no set time.'}</p>` : ''}</div>
-    ${next ? `<button type="button" class="nextday" data-day="${next}">${fmtDay(next)} <span>${shownSingle.filter((e) => e.start.slice(0, 10) === next).length} more →</span></button>` : ''}`;
+  const strip = shownOngoing.length ? `<section class="allweek" aria-label="Running across your stay"><h4>${days.length > 4 ? 'All through your stay' : 'All weekend'}</h4><ul>${shownOngoing.map((g) => { const e = g[0], key = 'e:' + e.id, open = state.row === key;
+      return `<li class="${open ? 'is-open' : ''} ${inBasket('event', e.id) ? 'is-in' : ''} ${e.ownerPick ? 'is-pick' : ''}" data-row="${esc(key)}" data-place="${esc(e.placeId ?? '')}"><button type="button" class="chip" aria-expanded="${open}"><i class="dot" style="--c:${COLOR[e.categories[0]] ?? 'var(--ink)'}"></i><span>${esc(e.title)}</span><small>${e.ownerPick ? 'our pick · ' : ''}${esc(span(g, days))}</small></button>${open ? `<div class="allweek__more"><p class="row__when">${esc(e.venueName)}${minsHome(e.placeId) != null ? ` · <span class="nw">${minsHome(e.placeId)} min</span>` : ''} · ${esc(e.categories.map(label).join(', '))}</p>${e.description ? `<p>${esc(e.description)}</p>` : ''}<p class="row__links">${sourceLinks(e)}${e.placeId ? ` · <button type="button" class="ghost" data-show="${esc(e.placeId)}">Show on map</button>` : ''}</p>${addBtn('event', e.id)}</div>` : ''}</li>`; }).join('')}</ul></section>` : '';
+  const dayHtml = days.map((d) => { const rows = rest.filter((e) => e.start.slice(0, 10) === d), total = byDay.get(d).length;
+    const body = !rows.length ? `<p class="daynote">${total ? `${dname(d, { weekday: 'long' })}’s ${total === 1 ? 'event is' : 'events are'} in my picks above.` : state.interests.size || flags ? 'Nothing this day matches those filters.' : 'Nothing listed yet for this day. Places have no set time.'}</p>`
+      : rows.length > 4 ? PARTS.map(([, name, test]) => { const part = rows.filter(test); return part.length ? `<h5 class="partlabel">${name}</h5><ul class="rows">${part.map(eventRow).join('')}</ul>` : ''; }).join('')
+      : `<ul class="rows">${rows.map(eventRow).join('')}</ul>`;
+    return `<section class="dayblock" id="day-${d}" data-day="${d}"><h3 class="dayhead"><span>${fmtDay(d)}</span><small>${total} ${total === 1 ? 'event' : 'events'}</small></h3>${body}</section>`; }).join('');
+  $('#list').innerHTML = `${picks.length ? `<section class="picks"><h4>My picks for your ${days.length > 4 ? 'stay' : 'weekend'}</h4><ul class="cards">${picks.map(eventCard).join('')}</ul></section>` : ''}${strip}${dayHtml}`;
 
   // places: a guide by kind, owners' picks first, then the nearest
   const ps = places.filter(passPlace), near = (a, b) => (minsHome(a.id) ?? 99) - (minsHome(b.id) ?? 99), used = new Set(SECTIONS.flatMap((s) => s[2]));
-  const sections = [['picks', 'My picks', ps.filter((p) => p.ownerPick).sort(near)], ...SECTIONS.map(([id, name, kinds]) => [id, name, ps.filter((p) => kinds.includes(p.kind)).sort((a, b) => !!b.ownerPick - !!a.ownerPick || near(a, b))]), ['more', 'More to do', ps.filter((p) => !used.has(p.kind)).sort(near)]];
-  $('#places').innerHTML = sections.map(([id, name, list]) => { if (!list.length) return '';
-    const openAll = id === 'picks' || state.more.has('places:' + id), base = Math.max(4, list.filter((p) => p.ownerPick).length), shown = openAll ? list : list.slice(0, id === 'picks' ? list.length : base);
-    return `<section class="part" id="places-${id}"><h4>${name} <small>${list.length}</small></h4><ul class="rows">${shown.map(placeRow).join('')}</ul>${list.length > shown.length ? `<button type="button" class="showmore" data-more="places:${id}">Show all ${list.length} ${esc(name.toLowerCase())}</button>` : ''}</section>`; }).join('') || '<p class="empty">No places match those filters.</p>';
+  const sections = [['picks', 'My picks', ps.filter((p) => p.ownerPick).sort(near)], ...SECTIONS.map(([id, name, kinds]) => [id, name, ps.filter((p) => kinds.includes(p.kind)).sort((a, b) => !!b.ownerPick - !!a.ownerPick || near(a, b))]), ['more', 'More to do', ps.filter((p) => !used.has(p.kind)).sort(near)]].filter((s) => s[2].length);
+  $('#places').innerHTML = sections.map(([id, name, list]) => {
+    const openAll = id === 'picks' || state.more.has('places:' + id), base = Math.max(4, list.filter((p) => p.ownerPick).length), shown = openAll ? list : list.slice(0, base);
+    return `<section class="dayblock" id="places-${id}"><h3 class="dayhead"><span>${name}</span><small>${list.length}</small></h3><ul class="rows">${shown.map(placeRow).join('')}</ul>${list.length > shown.length ? `<button type="button" class="showmore" data-more="places:${id}">Show all ${list.length} ${esc(name.toLowerCase())}</button>` : ''}</section>`; }).join('') || '<p class="empty">No places match those filters.</p>';
+
+  // jump links: days on "On your dates", sections on "Places"
+  const SHORT = { picks: 'Picks', wineries: 'Wineries', breweries: 'Breweries', food: 'Food', coffee: 'Coffee', hikes: 'Hikes', views: 'Views', groceries: 'Groceries', more: 'More' };
+  $('#jump-links').innerHTML = state.tab === 'places' ? sections.map(([id]) => `<a href="#places-${id}" data-jump="places-${id}">${SHORT[id]}</a>`).join('')
+    : days.length > 1 ? days.map((d) => `<a href="#day-${d}" data-jump="day-${d}" ${d === state.day ? 'aria-current="true"' : ''}>${dname(d, { weekday: 'short' })} <b>${byDay.get(d).length}</b></a>`).join('') : '';
+  setDay(state.day, true); watchDays();
 }
-// day tabs, "show more", opening a row, the filter switches
+/** The day the reader has scrolled to: the map shows that day's events, and its jump link is marked. */
+function setDay(d, quiet) {
+  if (!byDay.has(d)) return; const changed = state.day !== d; state.day = d;
+  dayEvents = [...byDay.get(d), ...ongoingNow.map((g) => g.find((e) => e.start.slice(0, 10) === d) ?? g[0])];
+  for (const a of document.querySelectorAll('#jump-links [data-jump^="day-"]')) a.toggleAttribute('aria-current', a.dataset.jump === 'day-' + d);
+  if (changed && !quiet) { renderPins(); save(); }
+}
+let dayWatch = null;
+function watchDays() {
+  dayWatch?.disconnect(); if (!('IntersectionObserver' in window)) return;
+  dayWatch = new IntersectionObserver((entries) => { const on = entries.filter((x) => x.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]; if (on && state.tab !== 'places') setDay(on.target.dataset.day); }, { rootMargin: '-25% 0px -60% 0px' });
+  for (const el of document.querySelectorAll('#list .dayblock')) dayWatch.observe(el);
+}
+const goTo = (id) => document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+// the bar's height feeds the sticky day headings, which sit just beneath it
+{ const sizes = () => { document.documentElement.style.setProperty('--bar-h', `${Math.round($('#filters').getBoundingClientRect().height)}px`); document.documentElement.style.setProperty('--hd-h', `${Math.round(document.querySelector('.hd').getBoundingClientRect().height)}px`); };
+  const ro = new ResizeObserver(sizes); ro.observe($('#filters')); ro.observe(document.querySelector('.hd')); }
+// jump links, "show more", opening a row, the filters
 $('#step2').addEventListener('click', (e) => {
-  const day = e.target.closest('[data-day]'); if (day) { state.day = day.dataset.day; state.row = null; render(); (document.getElementById('day-' + state.day) ?? day).focus({ preventScroll: true }); if (day.classList.contains('nextday')) $('#days').scrollIntoView({ block: 'start', behavior: 'auto' }); return; }
+  const jump = e.target.closest('[data-jump]'); if (jump) { e.preventDefault(); if (jump.dataset.jump.startsWith('day-')) setDay(jump.dataset.jump.slice(4)); goTo(jump.dataset.jump); return; }
   const more = e.target.closest('[data-more]'); if (more) { state.more.add(more.dataset.more); render(); return; }
+  if (e.target.closest('#filters-btn')) { const p = $('#filter-panel'); p.hidden = !p.hidden; $('#filters-btn').setAttribute('aria-expanded', !p.hidden); return; }
   const flag = e.target.closest('[data-flag]'); if (flag) { state[flag.dataset.flag] = !state[flag.dataset.flag]; render(); return; }
   if (e.target.closest('#clear-filters')) { state.interests.clear(); state.near = state.free = state.kid = false; render(); return; }
-  const chip = e.target.closest('#chips button'); if (chip) { state.interests.has(chip.dataset.k) ? state.interests.delete(chip.dataset.k) : state.interests.add(chip.dataset.k); render(); document.querySelector(`#chips [data-k="${chip.dataset.k}"]`)?.focus(); return; }
+  const chip = e.target.closest('#chips button'); if (chip) { state.interests.has(chip.dataset.k) ? state.interests.delete(chip.dataset.k) : state.interests.add(chip.dataset.k); const x = $('#chips').scrollLeft; render(); $('#chips').scrollLeft = x; document.querySelector(`#chips [data-k="${chip.dataset.k}"]`)?.focus({ preventScroll: true }); return; }
   const main = e.target.closest('.row__main, .allweek .chip'); if (main) { const key = main.closest('[data-row]').dataset.row; state.row = state.row === key ? null : key; render(); document.querySelector(`[data-row="${CSS.escape(key)}"] button`)?.focus({ preventScroll: true }); }
 });
 // a row lights its pin; arrow keys move between tabs
@@ -373,9 +390,8 @@ function renderBooking() {
   const short = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   const mine = state.booked && state.booked.from === state.from && state.booked.to === state.to;
   $('#avail').href = $('#avail2').href = u.href;
-  $('#avail').textContent = `Check dates and book: ${short(state.from)} to ${short(state.to)}`;
   $('#avail-row').classList.toggle('is-booked', !!mine);
-  $('#avail-note').textContent = mine ? `Your stay: ${short(state.from)} to ${short(state.to)}. Check-in from ${property.checkIn}, check-out by ${property.checkOut}.` : 'Opens the booking page on these dates.';
+  $('#avail-note').textContent = mine ? `Your stay: ${short(state.from)} to ${short(state.to)}. Check-in from ${property.checkIn}, check-out by ${property.checkOut}.` : '';
   $('#avail2').hidden = !!mine;
 }
 const wide = matchMedia('(min-width: 1024px)');   // list and map side by side: the map is always there, so it is not a tab
@@ -387,7 +403,7 @@ function showTab(name) {
   $('#filters').hidden = name === 'map' && !wide.matches;
   if (map) map.resize();
 }
-for (const b of document.querySelectorAll('[data-tab]')) b.addEventListener('click', () => { showTab(b.dataset.tab); save(); b.focus(); });
+for (const b of document.querySelectorAll('[data-tab]')) b.addEventListener('click', () => { showTab(b.dataset.tab); render(); b.focus(); });
 wide.addEventListener('change', () => showTab(state.tab));
 
 /** The itinerary as plain text, for the email and the form. */
@@ -413,3 +429,5 @@ function render() { renderBooking(); renderPlan(); renderLists(); renderPins(); 
 showTab(state.tab);
 initMap();
 render();
+if (q.get('d') && q.get('d') !== dayList(state.from, state.to)[0]) requestAnimationFrame(() => document.getElementById('day-' + q.get('d'))?.scrollIntoView({ block: 'start' }));
+else if (q.get('r')) requestAnimationFrame(() => document.querySelector(`[data-row="${CSS.escape(q.get('r'))}"]`)?.scrollIntoView({ block: 'center' }));
