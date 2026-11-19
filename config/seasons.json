@@ -35,10 +35,12 @@
     },
     {
      "icon": "wine",
-     "place": "veritas-vineyard-and-winery",
+     "place": "flying-fox-vineyard",
      "lead": "{min} min to the wineries.",
-     "text": "Veritas has a tasting room built for a cold afternoon.",
-     "short": "wineries"
+     "text": "Flying Fox is the closest, and Veritas has a tasting room built for a cold afternoon.",
+     "short": "wineries",
+     "minutes": 8,
+     "minutesNote": "The owner’s own drive time to Flying Fox, the closest winery. When minutes is set it is used as written; without it the time is measured to place (9 from the approximate pin)."
     },
     {
      "icon": "beer",
@@ -46,6 +48,13 @@
      "lead": "{min} min to a brewery.",
      "text": "Brewing Tree is practically next door.",
      "short": "brewery"
+    },
+    {
+     "icon": "still",
+     "place": "silverback-distillery",
+     "lead": "{min} min to a distillery.",
+     "text": "Silverback Distillery is a few minutes away on Route 151.",
+     "short": "distillery"
     },
     {
      "icon": "dining",

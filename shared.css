@@ -134,6 +134,7 @@ body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
 .iglink { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; color: inherit; text-underline-offset: .3em; text-decoration-color: #c8955a; }
 .iglink .ig { flex: none; } .iglink:hover { color: #f0b352; }
 .ft nav a.ft__ig { padding: 0; color: #d6a45e; } .ft nav a.ft__ig span { color: #f3eadb; }
+.ft__insta { margin: .2rem 0 0; } .ft__insta .ft__ig { color: #d6a45e; } .ft__insta .ft__ig span { color: #f3eadb; }
 .tagus { max-width: 44rem; margin: 2.2rem auto 0; padding: 0 var(--gutter, 1.1rem); text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.0625rem; color: var(--ink-soft, inherit); }
 .strip--avail { display: block; margin: 0; padding: .6rem 1rem; text-align: center; text-decoration: none; background: #17120f !important; color: #d6a45e !important; border-block: 1px solid rgb(200 149 90 / .5) !important; font-family: var(--serif); font-style: italic; font-size: .9375rem; line-height: 1.4; }
 @keyframes strip-in { from { transform: translateY(-100%); } } @keyframes aa-fade { from { opacity: 0; } } @keyframes aa-draw { from { stroke-dashoffset: 1; } }
