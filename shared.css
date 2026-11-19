@@ -111,6 +111,7 @@ body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
 .proof { margin: .7rem 0 0; font-family: var(--sans); font-size: .8125rem; line-height: 1.45; letter-spacing: .01em; color: color-mix(in srgb, currentColor 78%, transparent); }
 .proof--safe { margin-top: .25rem; font-size: .78rem; opacity: .9; }
 [data-season='pool'] .s-cool, [data-season='cool'] .s-pool { display: none !important; }
+[data-snow='on'] .w-off, [data-snow='off'] .w-on, html:not([data-snow]) .w-on { display: none !important; }
 .iglink { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; color: inherit; text-underline-offset: .3em; text-decoration-color: #c8955a; }
 .iglink .ig { flex: none; } .iglink:hover { color: #f0b352; }
 .ft nav a.ft__ig { padding: 0; color: #d6a45e; } .ft nav a.ft__ig span { color: #f3eadb; }

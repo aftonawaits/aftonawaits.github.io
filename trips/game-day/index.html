@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#17120f">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Afton Awaits"><meta property="og:title" content="The game weekend | Afton Awaits"><meta property="og:description" content="A UVA game weekend with the kids, about 35 minutes from Charlottesville: the king suite for the grown-up, two queen rooms for the kids, and a fire pit and hot tub after the game."><meta property="og:url" content="https://aftonawaits.github.io/trips/game-day/"><meta property="og:image" content="https://aftonawaits.github.io/img/og/porchView.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script>(function(){var d=new Date(),n=(d.getMonth()+1)*100+d.getDate(),q=new URLSearchParams(location.search).get('season'),s=q==='pool'||q==='cool'?q:(n>=501&&n<=930?'pool':'cool');document.documentElement.dataset.season=s;document.addEventListener('DOMContentLoaded',function(){var t=document.querySelector('meta[name="aa:title-'+s+'"]');if(t)document.title=t.content;if(q)document.querySelectorAll('a[href^="/"]').forEach(function(a){if(a.getAttribute('href').indexOf('season=')<0&&a.getAttribute('href').indexOf('#')!==0)a.href=a.getAttribute('href').replace(/(\?|#|$)/,function(m){return '?season='+s+(m==='?'?'&':m)})})})})()</script>
+<script>(function(){var P=new URLSearchParams(location.search),q=P.get('season'),qd=P.get('date'),d=qd?new Date(qd+'T12:00:00'):new Date(),n=(d.getMonth()+1)*100+d.getDate(),s=q==='pool'||q==='summer'?'pool':q==='cool'||q==='winter'||q==='spring'?'cool':(n>=501&&n<=930?'pool':'cool'),w=q==='winter'?'on':q&&!qd?'off':(n>=1015||n<=314?'on':'off'),h=document.documentElement;h.dataset.season=s;h.dataset.snow=w;document.addEventListener('DOMContentLoaded',function(){var t=(w==='on'&&document.querySelector('meta[name="aa:title-snow"]'))||document.querySelector('meta[name="aa:title-'+s+'"]');if(t&&!h.dataset.sells)document.title=t.content;if(q||qd)document.querySelectorAll('a[href^="/"]').forEach(function(a){var u=a.getAttribute('href');if(u.indexOf('season=')<0&&u.indexOf('date=')<0&&u.indexOf('#')!==0)a.href=u.replace(/(\?|#|$)/,function(m){return '?'+(qd?'date='+qd:'season='+q)+(m==='?'?'&':m)})})})})()</script>
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
-<link rel="stylesheet" href="/shared.css?v=1795047669"><link rel="stylesheet" href="/trips/trip.css?v=1795047669">
+<link rel="stylesheet" href="/shared.css?v=1795048972"><link rel="stylesheet" href="/trips/trip.css?v=1795048972">
 </head>
 <body data-trip="game-day" data-mood="linen">
 <a class="strip" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> No booking-site service fees.</a>
@@ -39,7 +39,7 @@
 
   <section class="sec" id="why">
     <h2>Why this house works <em>for a game weekend</em></h2>
-    <ul class="why" id="why-list">
+    <ul class="why" id="why-list" data-why>
       <li><img src="/img/king-800.webp?v=2" alt="King bedroom with a deep teal wall, a whitewashed bed frame, a red patterned rug and a window onto the lawn." loading="lazy" width="800" height="600"><h3>A room that’s yours</h3><p>The king suite has its own bathroom and a door that closes. The kids are at the other end of the house.</p></li>
       <li><img src="/img/patioFire-800.webp?v=2" alt="Gray Adirondack chairs around the fire pit on the stone patio, with the pool fence, the lawn and the Blue Ridge beyond." loading="lazy" width="800" height="600"><h3>The fire pit</h3><p>Where the game gets replayed, play by play, long after the final whistle.</p></li>
       <li><img src="/img/kitchenIsland-800.webp?v=2" alt="The kitchen: a quartz island with three wooden stools, white cabinets and stainless steel appliances." loading="lazy" width="800" height="600"><h3>Pancakes before, snacks after</h3><p>A full kitchen with an island, so game day starts at home and nobody waits in line for breakfast.</p></li>
@@ -175,7 +175,7 @@ if (also && also !== me) try {
     thread.querySelector('.bub--in').insertAdjacentHTML('beforebegin', '<p class="bub bub--out">' + safe(Array.isArray(o.said) ? o.said[document.documentElement.dataset.season === 'pool' ? 0 : 1] : o.said) + '</p>'); thread.querySelector('.bub--in').textContent = 'Both, then. I like this group.';
     document.querySelector('.kicker').textContent += ' + ' + o.title.replace(/^The /, 'the ');
     const mine = new URLSearchParams(document.querySelector('.cta .btn').getAttribute('href').split('?')[1]).get('i').split(','), both = [...new Set([...mine, ...o.interests.split(',')])].join(',');
-    document.getElementById('why-list').insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
+    [...document.querySelectorAll('[data-why]')].find((el) => el.offsetParent !== null).insertAdjacentHTML('beforeend', o.why.slice(0, 2).map(([img, h, p]) => '<li><img src="/img/' + img + '.webp?v=2" alt="" loading="lazy" width="800" height="600"><h3>' + safe(h) + '</h3><p>' + safe(p) + '</p></li>').join(''));
     const have = new Set([...document.querySelectorAll('#near-list .add')].map((a) => a.getAttribute('href').split('add=p~')[1]));
     document.getElementById('near-list').insertAdjacentHTML('beforeend', o.near.filter((n) => !have.has(n.slug)).slice(0, 3).map((n) => '<li><div><h3><a href="/explore/places/' + n.slug + '/">' + safe(n.name) + '</a></h3><p>' + safe(n.note) + '</p></div><span class="mins">' + n.mins + ' min</span><a class="add" href="/plan/?i=x&add=p~' + n.slug + '" aria-label="Add ' + safe(n.name) + ' to my trip">Add</a></li>').join(''));
     for (const a of document.querySelectorAll('a[href^="/plan/?i="]')) a.setAttribute('href', a.getAttribute('href').replace(/i=[^&]*/, 'i=' + both));
@@ -222,6 +222,6 @@ try {
   list.innerHTML = pick.length ? pick.map((c) => c.html).join('') : '<li class="on__wait">Nothing listed for this kind of trip in the next few weeks. The calendar is refreshed weekly.</li>';
 } catch { list.innerHTML = '<li class="on__wait">The calendar didn’t load. Try the link below.</li>'; }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 7:21 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 7:42 PM ET</p>
 </body>
 </html>

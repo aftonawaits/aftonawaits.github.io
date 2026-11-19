@@ -34,7 +34,9 @@
  "season": {
   "poolOpen": "05-01",
   "poolClose": "09-30",
-  "note": "The pool is open May to September. Outside these dates (month-day) the site leads with the hot tub and the fire pit."
+  "note": "The pool is open May to September; outside those dates pages lead with the hot tub and the fire pit. From snowFrom to snowTo the ski and snow version of the trail page shows.",
+  "snowFrom": "10-15",
+  "snowTo": "03-14"
  },
  "proof": {
   "rating": "5.0",

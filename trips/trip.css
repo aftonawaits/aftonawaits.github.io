@@ -142,3 +142,7 @@ a { text-underline-offset: .22em; }
   .near li p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; cursor: pointer; }
   .near li p.is-open { display: block; -webkit-line-clamp: unset; cursor: auto; }
 }
+
+/* ski season: block-level versions swap whole lists */
+.everyone { margin-top: 1.6rem; padding: 1.2rem 1.3rem; border-radius: 1rem; background: var(--card); border: 1px solid var(--rule, rgb(0 0 0 / .08)); max-width: 46rem; }
+.everyone h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin: 0 0 .4rem; } .everyone p { margin: 0; }
