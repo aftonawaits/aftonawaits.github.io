@@ -96,7 +96,17 @@ const wanted = (cats) => !state.interests.size || cats.some((c) => state.interes
 /** Does an event pass every filter? `skipInterests` is for the counts on the interest chips. */
 const passEvent = (e, skipInterests) => (skipInterests || wanted(e.categories)) && (!state.near || (minsHome(e.placeId) ?? 99) <= 15) && (!state.free || e.free === true) && (!state.kid || kidOk(e));
 const passPlace = (p) => wanted(p.interests) && (!state.near || (minsHome(p.id) ?? 99) <= 15);
-const addBtn = (type, id, name) => { const on = inBasket(type, id); return `<button class="add" type="button" data-add="${type}" data-id="${esc(id)}" aria-pressed="${on}">${on ? 'Added ✓' : name ? `Add ${esc(name)}` : 'Add'}</button>`; };
+// ---------- small confirmations (motion). Nothing here runs when the visitor asked for reduced motion ----------
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches, EASE = 'cubic-bezier(.2, .7, .1, 1)';
+const TICK = '<svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12.5l5 5L20 6.5"/></svg>';
+/** Plays a one-off class animation on an element (the class comes off when it ends). */
+const once = (el, cls, ms = 800) => { if (!el || still) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); setTimeout(() => el.classList.remove(cls), ms); };
+/** Lists swap with a short cross-fade when a filter changes; rows do not slide. */
+const swap = () => { if (still) return; for (const id of ['#list', '#places']) $(id).animate?.([{ opacity: .3 }, { opacity: 1 }], { duration: 200, easing: 'ease-out' }); };
+/** A row's details ease open instead of snapping. */
+const easeOpen = (el) => { if (!el || still || !el.animate) return; const h = el.getBoundingClientRect().height; el.style.overflow = 'hidden'; el.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }], { duration: 200, easing: EASE }).onfinish = () => { el.style.overflow = ''; }; };
+let firstPins = true, hadPlan = false;
+const addBtn = (type, id, name) => { const on = inBasket(type, id); return `<button class="add" type="button" data-add="${type}" data-id="${esc(id)}" aria-pressed="${on}">${on ? `Added ${TICK}` : name ? `Add ${esc(name)}` : 'Add'}</button>`; };
 const dots = (cats) => cats.slice(0, 3).map((c) => `<i class="dot" style="--c:${COLOR[c] ?? 'var(--ink)'}"></i>`).join('');
 const sourceLinks = (e) => { const ls = e.sources.filter((s) => s.url).map((s) => `<a href="${esc(s.url)}" rel="noopener">Details at ${esc(s.name)}</a>`); return ls.length ? ls.join(' · ') : `<a href="/explore/events/${e.seriesId ?? e.id}/">More about this event</a>`; };
 const facts = (e) => [e.price ? esc(e.price) : '', e.free === true ? 'Free' : '', kidOk(e) ? 'Family-friendly' : ''].filter(Boolean).join(' · ');
@@ -214,10 +224,10 @@ $('#step2').addEventListener('click', (e) => {
   const jump = e.target.closest('[data-jump]'); if (jump) { e.preventDefault(); if (jump.dataset.jump.startsWith('day-')) setDay(jump.dataset.jump.slice(4)); goTo(jump.dataset.jump); return; }
   const more = e.target.closest('[data-more]'); if (more) { state.more.add(more.dataset.more); render(); return; }
   if (e.target.closest('#filters-btn')) { const p = $('#filter-panel'); p.hidden = !p.hidden; $('#filters-btn').setAttribute('aria-expanded', !p.hidden); return; }
-  const flag = e.target.closest('[data-flag]'); if (flag) { state[flag.dataset.flag] = !state[flag.dataset.flag]; render(); return; }
-  if (e.target.closest('#clear-filters')) { state.interests.clear(); state.near = state.free = state.kid = false; render(); return; }
-  const chip = e.target.closest('#chips button'); if (chip) { state.interests.has(chip.dataset.k) ? state.interests.delete(chip.dataset.k) : state.interests.add(chip.dataset.k); const x = $('#chips').scrollLeft; render(); $('#chips').scrollLeft = x; document.querySelector(`#chips [data-k="${chip.dataset.k}"]`)?.focus({ preventScroll: true }); return; }
-  const main = e.target.closest('.row__main, .allweek .chip'); if (main) { const key = main.closest('[data-row]').dataset.row; state.row = state.row === key ? null : key; render(); document.querySelector(`[data-row="${CSS.escape(key)}"] button`)?.focus({ preventScroll: true }); }
+  const flag = e.target.closest('[data-flag]'); if (flag) { state[flag.dataset.flag] = !state[flag.dataset.flag]; render(); swap(); return; }
+  if (e.target.closest('#clear-filters')) { state.interests.clear(); state.near = state.free = state.kid = false; render(); swap(); return; }
+  const chip = e.target.closest('#chips button'); if (chip) { state.interests.has(chip.dataset.k) ? state.interests.delete(chip.dataset.k) : state.interests.add(chip.dataset.k); const x = $('#chips').scrollLeft; render(); swap(); $('#chips').scrollLeft = x; document.querySelector(`#chips [data-k="${chip.dataset.k}"]`)?.focus({ preventScroll: true }); return; }
+  const main = e.target.closest('.row__main, .allweek .chip'); if (main) { const key = main.closest('[data-row]').dataset.row; state.row = state.row === key ? null : key; render(); if (state.row) easeOpen(document.querySelector(`[data-row="${CSS.escape(key)}"] :is(.row__more, .allweek__more)`)); document.querySelector(`[data-row="${CSS.escape(key)}"] button`)?.focus({ preventScroll: true }); }
 });
 // a row lights its pin; arrow keys move between tabs
 $('#step2').addEventListener('pointerover', (e) => { const r = e.target.closest('[data-place]'); hoverPin(r?.dataset.place || null); });
@@ -232,8 +242,15 @@ document.addEventListener('click', (e) => {
   if (s) { if (!wide.matches) { showTab('map'); $('#step2').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); } openPlace(s.dataset.show, true); return; }
   const b = e.target.closest('[data-add]'); if (!b) return;
   const type = b.dataset.add, id = b.dataset.id, i = state.basket.findIndex((x) => x.type === type && x.id === id);
-  i >= 0 ? state.basket.splice(i, 1) : state.basket.push({ type, id });
-  render(); toast(i >= 0 ? 'Removed from your trip.' : 'Added to your trip.');
+  const apply = () => { i >= 0 ? state.basket.splice(i, 1) : state.basket.push({ type, id });
+    render(); toast(i >= 0 ? 'Removed from your trip.' : 'Added to your trip.');
+    if (i < 0) {   // added: the button's tick draws in, the count bumps, and the place's pin pulses once
+      const sel = `[data-add="${type}"][data-id="${CSS.escape(id)}"]`; for (const x of document.querySelectorAll(sel)) once(x, 'just-added');
+      once($('#count'), 'bump', 300); once($('#tray-text'), 'bump', 300);
+      const place = type === 'place' ? id : document.querySelector(sel)?.closest('[data-place]')?.dataset.place; once(pinEls.get(place), 'is-pulse');
+    } };
+  const stop = i >= 0 && !still ? b.closest('#plan li') : null;   // removed from the itinerary: its row fades first
+  if (stop) { stop.classList.add('is-leaving'); setTimeout(apply, 200); } else apply();
 });
 
 // ---------- map ----------
@@ -273,7 +290,7 @@ function renderPins() {
   pins.forEach((p) => p.remove()); pins = []; pinEls.clear();
   const add = (lng, lat, cls, color, icon, name, id, n) => {
     const el = Object.assign(document.createElement('button'), { type: 'button', className: `pin ${cls}`, innerHTML: icon });
-    el.style.setProperty('--c', color); if (n) el.dataset.n = n;
+    el.style.setProperty('--c', color); if (n) el.dataset.n = n; if (firstPins) el.classList.add('pin--new');
     el.addEventListener('click', (e) => { e.stopPropagation(); if (id) { openPlace(id); revealRow(id); } else openHome(); });
     if (id) pinEls.set(id, el);
     pins.push(new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map));
@@ -287,6 +304,7 @@ function renderPins() {
     const mine = inBasket('place', p.id) || live.some((e) => e.placeId === p.id && inBasket('event', e.id));
     add(p.lng, p.lat, `${n ? 'pin--busy' : ''} ${mine ? 'pin--in' : ''} ${pickPlaces.has(p.id) ? 'pin--pick' : ''} ${state.open === p.id ? 'is-open' : ''}`, p.color, ICON[p.kind] ?? ICON.event, `${p.name}${n ? `, ${n} event${n > 1 ? 's' : ''} on your dates` : ''}`, p.id, n);
   }
+  firstPins = false;
 }
 const pinEls = new Map();
 function hoverPin(id) { for (const [k, el] of pinEls) el.classList.toggle('is-hover', k === id); }
@@ -345,6 +363,7 @@ function renderPlan() {
   $('#count').textContent = state.basket.length;
   const n = state.basket.length;
   $('#send').hidden = $('#opts').hidden = !n; $('#tray').hidden = !n; $('#tray-text').textContent = `${n} added`;
+  if (n && !hadPlan) once($('#plan'), 'is-fresh', 1500); hadPlan = n > 0;
   if (!n) { plan = null; $('#plan').innerHTML = '<p class="empty"><strong>Nothing here yet.</strong> Add a few things in step 2 and your days appear here in order, with drive times. Then you can email the plan to yourself, add it to your calendar, or share a link.</p>'; return; }
   plan = api.planItinerary({ origin: HOME, from: state.from, to: state.to, items: state.basket.map((b) => ({ type: b.type, slug: b.id, pin: b.pin })), interests: [...state.interests], constraints: { pace: state.pace, driver: state.driver, kids: state.kids, homeBy: property.homeBy } });
   const LABEL = { hard: 'These two clash', soft: 'Worth knowing', info: 'A small note', gap: 'Room to breathe' };

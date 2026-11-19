@@ -4,6 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Live Music: The Loya Brothers at Brewing Tree Beer Company, November 27, 2026 | Afton Awaits</title>
 <meta name="description" content="Live Music: The Loya Brothers at Brewing Tree Beer Company, Friday, November 27, 2026, 2:00 PM to 5:00 PM. ">
+<link rel="preload" href="/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/fraunces-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="canonical" href="https://aftonawaits.github.io/explore/events/live-music-the-loya-brothers-brewing-tree-beer-co-2026-11-27/">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#efe6d8">
@@ -40,8 +41,11 @@
   var count = ends.length ? (WORDS[ends.length] || ends.length) + ' ' + month + (ends.length === 1 ? 'weekend' : 'weekends') : '';
   var left = count && xmas ? count + ' and Christmas are all that’s left' : count ? count + (ends.length === 1 ? ' is all that’s left' : ' are all that’s left') : 'Just Christmas is left';
   var dateLinks = function () { return open.map(function (o) { return '<a data-avail-date href="' + esc(link(o.from, o.to)) + '" target="_blank" rel="noopener"' + (o.note ? ' title="' + esc(o.note) + '"' : '') + '>' + esc(o.label) + '</a>'; }).join(' · '); };
-  var run = function () {
-    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]'), keep = qd ? '?date=' + qd : '';
+  var keep = qd ? '?date=' + qd : '';
+  /** Fills the strip, the date line and the pill. Safe to call more than once: pages call it as soon as each piece has
+   *  been read (so nothing changes size after the first paint), and it runs again when the whole page is ready. */
+  var paint = function () {
+    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]');
     var toWait = form ? '#' + form.id : T.home + keep + '#waitlist', toDates = line ? '#dates' : T.home + keep + '#dates';
     // the top strip
     document.querySelectorAll('[data-avail-strip]').forEach(function (s) {
@@ -49,7 +53,7 @@
       if (state === 'open') { s.href = toDates; s.innerHTML = '<b>Last call for ' + was + '.</b> ' + left + ', and ' + Y + ' isn’t open yet. <u>See the dates →</u>'; }
       else { s.href = toWait; s.innerHTML = '<b>' + was + ' is full.</b> ' + opens + ' <u>Get first pick →</u>'; }
     });
-    var pin = document.querySelector('.strip--pin'); if (pin) { var size = function () { html.style.setProperty('--avail-h', pin.offsetHeight + 'px'); }; size(); addEventListener('resize', size); }
+    var pin = document.querySelector('.strip--pin'); if (pin) { var size = function () { html.style.setProperty('--avail-h', pin.offsetHeight + 'px'); }; size(); if (!pin.sized) { pin.sized = 1; addEventListener('resize', size); } }
     // the date line: each date opens the booking page with those dates filled in
     document.querySelectorAll('[data-avail-dates]').forEach(function (p) {
       if (open.length) { var x = open.filter(function (o) { return o.christmas; })[0], by = x ? +x.lastArrival.slice(8) : 0, th = by % 10 === 1 && by !== 11 ? 'st' : by % 10 === 2 && by !== 12 ? 'nd' : by % 10 === 3 && by !== 13 ? 'rd' : 'th';
@@ -60,6 +64,12 @@
     // on a phone the home page's photo carries a short pointer to that line (the line itself sits below the first screen)
     document.querySelectorAll('[data-avail-pill]').forEach(function (p) { p.hidden = false; var a = p.firstElementChild; a.href = state === 'open' ? toDates : toWait; a.textContent = state === 'open' ? 'Last call for ' + was + '. See the dates' : was + ' is full. Get first pick of ' + Y; });
     document.querySelectorAll('[data-avail-block]').forEach(function (b) { b.hidden = false; });
+  };
+  window.AA_AVAIL.paint = paint;
+  var run = function () {
+    paint();
+    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]');
+    var toWait = form ? '#' + form.id : T.home + keep + '#waitlist', toDates = line ? '#dates' : T.home + keep + '#dates';
     // booking buttons never open an empty calendar: they go to the list of open dates, or to the waitlist
     var base = B.url.split('?')[0];
     document.querySelectorAll('a[href]').forEach(function (a) {
@@ -80,14 +90,16 @@
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return fail(v ? 'That doesn’t look like an email address. Please check it.' : 'Please enter your email address.');
         var body = new URLSearchParams(new FormData(f)); body.set('email', v); body.set('page', location.pathname); btn.disabled = true;
         fetch(f.getAttribute('action') || '/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
-          .then(function (r) { if (!r.ok) throw 0; f.hidden = true; done.hidden = false; done.focus(); })
+          .then(function (r) { if (!r.ok) throw 0; f.hidden = true; done.hidden = false; })
           .catch(function () { btn.disabled = false; fail('Sorry, that didn’t go through. Please try again in a moment.'); });
       });
     });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
-<link rel="stylesheet" href="/shared.css?v=1795093958"><link rel="stylesheet" href="/plan/plan.css?v=1795093958"><link rel="stylesheet" href="/explore/explore.css?v=1795093958">
+<script>(function(){var h=document.documentElement,c=h.classList;try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return}catch(e){return}c.add('mo');try{if(location.pathname==='/'&&!sessionStorage.getItem('aa-seq'))c.add('seq')}catch(e){}setTimeout(function(){if(!c.contains('mo-ok'))c.remove('mo');if(!c.contains('seq-run'))c.remove('seq')},3000)})()</script>
+<script src="/motion.js?v=1795095203" defer></script>
+<link rel="stylesheet" href="/shared.css?v=1795095203"><link rel="stylesheet" href="/plan/plan.css?v=1795095203"><link rel="stylesheet" href="/explore/explore.css?v=1795095203">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicEvent","name":"Live Music: The Loya Brothers","startDate":"2026-11-27T14:00:00-05:00","endDate":"2026-11-27T17:00:00-05:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","url":"https://brewingtreebeer.com/events/","location":{"@type":"Place","name":"Brewing Tree Beer Company","address":"9278 Rockfish Valley Hwy, Afton, VA, 22920","geo":{"@type":"GeoCoordinates","latitude":37.96799,"longitude":-78.83467}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Explore","item":"https://aftonawaits.github.io/explore/"},{"@type":"ListItem","position":2,"name":"This weekend","item":"https://aftonawaits.github.io/explore/this-weekend/"},{"@type":"ListItem","position":3,"name":"Live Music: The Loya Brothers","item":"https://aftonawaits.github.io/explore/events/live-music-the-loya-brothers-brewing-tree-beer-co-2026-11-27/"}]}</script>
 </head>
@@ -115,6 +127,6 @@
 <p class="proof proof--safe">Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour.</p>
 <p class="ft__note">Details come from each venue’s own listing and can change. Confirm with the venue before you go. Last refreshed Thursday, November 19, 2026.</p>
 </footer>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:12 AM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:33 AM ET</p>
 </body>
 </html>

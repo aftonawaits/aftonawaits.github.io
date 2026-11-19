@@ -21,7 +21,7 @@ input[type='checkbox'] { width: 1.25rem; height: 1.25rem; accent-color: var(--br
 .opts { display: grid; gap: .3rem 1.4rem; margin-top: 1.2rem; } @media (min-width: 720px) { .opts { grid-template-columns: 1.4fr 1fr 1.3fr; align-items: end; } .setup { grid-template-columns: 1fr 1.8fr; } }
 .opts[hidden] { display: none; }
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
-.chips button { display: inline-flex; align-items: center; gap: .45rem; font: inherit; font-weight: 500; min-height: 2.75rem; padding: .35rem 1rem; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); color: var(--ink); cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
+.chips button { display: inline-flex; align-items: center; gap: .45rem; font: inherit; font-weight: 500; min-height: 2.75rem; padding: .35rem 1rem; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); color: var(--ink); cursor: pointer; transition: background-color 150ms, color 150ms, border-color 150ms; }
 .chips button::before { content: ''; width: .7rem; height: .7rem; border-radius: 50%; background: var(--c); }
 .chips button:hover { border-color: var(--c); } .chips button[aria-pressed='true'] { background: var(--c); border-color: var(--c); color: var(--card); } .chips button[aria-pressed='true']::before { background: var(--card); }
 .browse__head, .weekend__head { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; justify-content: space-between; align-items: center; }
@@ -38,7 +38,7 @@ input[type='checkbox'] { width: 1.25rem; height: 1.25rem; accent-color: var(--br
 .card.is-in { box-shadow: var(--shadow), inset 0 0 0 1.5px var(--brass); }
 .card p { font-size: .9375rem; } .card .venue { color: var(--ink-soft); } .card .desc { grid-column: 1 / -1; color: var(--ink-soft); font-size: .875rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; } .tag { font-size: .8125rem; padding: .05rem .55rem; border: 1px solid var(--line); border-radius: 99px; }
-.add { font: inherit; font-size: .875rem; font-weight: 600; min-height: 2.75rem; padding: .3rem 1rem; border-radius: 99px; border: 1px solid var(--brass-deep); background: transparent; color: var(--ink); cursor: pointer; white-space: nowrap; grid-row: span 2; transition: background-color .25s; }
+.add { font: inherit; font-size: .875rem; font-weight: 600; min-height: 2.75rem; padding: .3rem 1rem; border-radius: 99px; border: 1px solid var(--brass-deep); background: transparent; color: var(--ink); cursor: pointer; white-space: nowrap; grid-row: span 2; transition: background-color 150ms; }
 .add:hover { background: color-mix(in srgb, var(--brass-deep) 14%, transparent); }
 .is-in .add { background: var(--honey); border-color: var(--honey); color: var(--ink); }
 .empty { padding: 1.4rem; border: 1px dashed color-mix(in srgb, var(--brass-deep) 45%, transparent); border-radius: 1.2rem; color: var(--ink-soft); }
@@ -77,7 +77,7 @@ input[type='checkbox'] { width: 1.25rem; height: 1.25rem; accent-color: var(--br
 
 /* three clear steps */
 .steps { display: grid; gap: .7rem; margin-top: 1.4rem; counter-reset: s; } @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-.steps a { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; height: 100%; padding: .95rem 1.05rem; border-radius: 1.3rem; background: var(--card); box-shadow: var(--shadow); text-decoration: none; font-size: .9375rem; line-height: 1.35; color: var(--ink-soft); transition: box-shadow .25s; } .steps a:hover { box-shadow: var(--shadow-lift); }
+.steps a { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; height: 100%; padding: .95rem 1.05rem; border-radius: 1.3rem; background: var(--card); box-shadow: var(--shadow); text-decoration: none; font-size: .9375rem; line-height: 1.35; color: var(--ink-soft); transition: box-shadow 150ms; } .steps a:hover { box-shadow: var(--shadow-lift); }
 .steps b, .step > h2 b { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1px solid var(--brass-deep); background: transparent; color: var(--brass-deep); font: 400 1.15rem/1 var(--serif); font-style: italic; flex: none; }
 .steps strong { display: block; font-size: 1.0625rem; color: var(--ink); }
 .step { display: grid; gap: 1rem; scroll-margin-top: 4.5rem; } .step > h2 { display: flex; align-items: center; gap: .7rem; } .step > h2 b { width: 2.4rem; height: 2.4rem; }
@@ -118,10 +118,10 @@ body:has(.tray:not([hidden])) .foot { padding-bottom: 6rem; }
 .intro[data-mood='evening'] { position: relative; isolation: isolate; margin-top: 0; padding: 2.2rem 0 3rem; background: none; }
 .intro[data-mood='evening']::before { content: ''; position: absolute; z-index: -2; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw; background-color: var(--night); background-image: var(--firelight); }
 .intro[data-mood='evening']::after { content: ''; position: absolute; z-index: -1; top: 100%; left: calc(50% - 50vw); width: 100vw; height: 1.4rem; border-top: 1px solid color-mix(in srgb, var(--brass) 35%, transparent); background: linear-gradient(in oklab, color-mix(in srgb, var(--ink) 16%, transparent), transparent); }   /* a clean edge: the evening ends on a brass hairline, with a soft warm shadow falling onto the linen */
-.intro .bub { display: inline-block; max-width: 22rem; margin: 0 0 1.3rem; padding: .6rem .95rem; border-radius: 1.25rem 1.25rem 1.25rem .4rem; background: var(--linen); color: var(--ink); font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 20%, transparent); animation: bub-rise .5s var(--ease) both; }
-@keyframes bub-rise { from { opacity: 0; transform: translateY(6px); } }
+.intro .bub { display: inline-block; max-width: 22rem; margin: 0 0 1.3rem; padding: .6rem .95rem; border-radius: 1.25rem 1.25rem 1.25rem .4rem; background: var(--linen); color: var(--ink); font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 20%, transparent); animation: bub-rise var(--t-mid) var(--ease) both; }
+@keyframes bub-rise { from { opacity: 0; transform: translateY(8px) scale(.94); } }
 .intro[data-mood='evening'] .kicker { color: var(--muted); } .intro[data-mood='evening'] h1 em { color: var(--brass); } .intro[data-mood='evening'] .lede { color: color-mix(in srgb, var(--cream) 90%, transparent); }
-.intro[data-mood='evening'] .steps a { background: var(--hearth); color: var(--muted); box-shadow: none; border: 1px solid var(--hair-evening); transition: border-color .25s, background-color .25s; }
+.intro[data-mood='evening'] .steps a { background: var(--hearth); color: var(--muted); box-shadow: none; border: 1px solid var(--hair-evening); transition: border-color 150ms, background-color 150ms; }
 .intro[data-mood='evening'] .steps a:hover { border-color: color-mix(in srgb, var(--brass) 55%, transparent); background: color-mix(in srgb, var(--hearth) 90%, var(--brass)); box-shadow: none; }
 .intro[data-mood='evening'] .steps strong { color: var(--cream); } .intro[data-mood='evening'] .steps b { border-color: var(--brass); color: var(--brass); }
 @media (min-width: 1000px) {   /* wide screens: the house at dusk on the right, fading into the dark like the landing page */
@@ -262,3 +262,12 @@ main { gap: 1.2rem; }
 
 /* the waitlist, shown in step 3 only when the house is not open for the chosen dates */
 .stay3 { margin-top: 1.2rem; } .stay3:has(.avail[hidden]) { display: none; } .stay[hidden] { display: none; }
+
+/* ---- small confirmations (motion): only opacity and transform; the sticky bar and day headings never animate ---- */
+.add .tick { margin-left: .1em; }
+#count, #tray-text { display: inline-block; } .mo .bump { animation: bump var(--t-fast) var(--ease); } @keyframes bump { 50% { transform: scale(1.18); } }
+.pin.is-pulse::before { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--honey); pointer-events: none; animation: ping var(--t-slow) var(--ease) both; } @keyframes ping { from { opacity: .9; transform: scale(.8); } to { opacity: 0; transform: scale(1.9); } }
+.mo .pin--new { animation: fade var(--t-mid) both; }
+.pin svg { transition: transform var(--t-fast) var(--ease); } .pin.is-open svg { transform: scale(1.2); } .mo .pin.is-open svg { animation: pin-on var(--t-fast) var(--ease); } @keyframes pin-on { from { transform: scale(1); } }
+#plan li.is-leaving { opacity: 0; transition: opacity var(--t-fast); }
+.mo #plan.is-fresh .day { animation: rise var(--t-mid) var(--ease) both; } .mo #plan.is-fresh .day:nth-child(2) { animation-delay: 80ms; } .mo #plan.is-fresh .day:nth-child(3) { animation-delay: 160ms; } .mo #plan.is-fresh .day:nth-child(n+4) { animation-delay: 240ms; }

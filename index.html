@@ -4,6 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!--head:start--><title>The slopes and the wine country. Why choose? A farmhouse for six in Afton, Virginia | Afton Awaits</title>
 <meta name="description" content="Twenty-seven minutes to Wintergreen’s lifts, about ten to the wineries, and great dining close by. Ski as hard as you like, then come home to the hot tub.">
+<link rel="preload" href="/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/fraunces-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="canonical" href="https://aftonawaits.github.io/">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
@@ -40,8 +41,11 @@
   var count = ends.length ? (WORDS[ends.length] || ends.length) + ' ' + month + (ends.length === 1 ? 'weekend' : 'weekends') : '';
   var left = count && xmas ? count + ' and Christmas are all that’s left' : count ? count + (ends.length === 1 ? ' is all that’s left' : ' are all that’s left') : 'Just Christmas is left';
   var dateLinks = function () { return open.map(function (o) { return '<a data-avail-date href="' + esc(link(o.from, o.to)) + '" target="_blank" rel="noopener"' + (o.note ? ' title="' + esc(o.note) + '"' : '') + '>' + esc(o.label) + '</a>'; }).join(' · '); };
-  var run = function () {
-    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]'), keep = qd ? '?date=' + qd : '';
+  var keep = qd ? '?date=' + qd : '';
+  /** Fills the strip, the date line and the pill. Safe to call more than once: pages call it as soon as each piece has
+   *  been read (so nothing changes size after the first paint), and it runs again when the whole page is ready. */
+  var paint = function () {
+    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]');
     var toWait = form ? '#' + form.id : T.home + keep + '#waitlist', toDates = line ? '#dates' : T.home + keep + '#dates';
     // the top strip
     document.querySelectorAll('[data-avail-strip]').forEach(function (s) {
@@ -49,7 +53,7 @@
       if (state === 'open') { s.href = toDates; s.innerHTML = '<b>Last call for ' + was + '.</b> ' + left + ', and ' + Y + ' isn’t open yet. <u>See the dates →</u>'; }
       else { s.href = toWait; s.innerHTML = '<b>' + was + ' is full.</b> ' + opens + ' <u>Get first pick →</u>'; }
     });
-    var pin = document.querySelector('.strip--pin'); if (pin) { var size = function () { html.style.setProperty('--avail-h', pin.offsetHeight + 'px'); }; size(); addEventListener('resize', size); }
+    var pin = document.querySelector('.strip--pin'); if (pin) { var size = function () { html.style.setProperty('--avail-h', pin.offsetHeight + 'px'); }; size(); if (!pin.sized) { pin.sized = 1; addEventListener('resize', size); } }
     // the date line: each date opens the booking page with those dates filled in
     document.querySelectorAll('[data-avail-dates]').forEach(function (p) {
       if (open.length) { var x = open.filter(function (o) { return o.christmas; })[0], by = x ? +x.lastArrival.slice(8) : 0, th = by % 10 === 1 && by !== 11 ? 'st' : by % 10 === 2 && by !== 12 ? 'nd' : by % 10 === 3 && by !== 13 ? 'rd' : 'th';
@@ -60,6 +64,12 @@
     // on a phone the home page's photo carries a short pointer to that line (the line itself sits below the first screen)
     document.querySelectorAll('[data-avail-pill]').forEach(function (p) { p.hidden = false; var a = p.firstElementChild; a.href = state === 'open' ? toDates : toWait; a.textContent = state === 'open' ? 'Last call for ' + was + '. See the dates' : was + ' is full. Get first pick of ' + Y; });
     document.querySelectorAll('[data-avail-block]').forEach(function (b) { b.hidden = false; });
+  };
+  window.AA_AVAIL.paint = paint;
+  var run = function () {
+    paint();
+    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]');
+    var toWait = form ? '#' + form.id : T.home + keep + '#waitlist', toDates = line ? '#dates' : T.home + keep + '#dates';
     // booking buttons never open an empty calendar: they go to the list of open dates, or to the waitlist
     var base = B.url.split('?')[0];
     document.querySelectorAll('a[href]').forEach(function (a) {
@@ -80,16 +90,18 @@
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return fail(v ? 'That doesn’t look like an email address. Please check it.' : 'Please enter your email address.');
         var body = new URLSearchParams(new FormData(f)); body.set('email', v); body.set('page', location.pathname); btn.disabled = true;
         fetch(f.getAttribute('action') || '/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
-          .then(function (r) { if (!r.ok) throw 0; f.hidden = true; done.hidden = false; done.focus(); })
+          .then(function (r) { if (!r.ok) throw 0; f.hidden = true; done.hidden = false; })
           .catch(function () { btn.disabled = false; fail('Sorry, that didn’t go through. Please try again in a moment.'); });
       });
     });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
+<script>(function(){var h=document.documentElement,c=h.classList;try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return}catch(e){return}c.add('mo');try{if(location.pathname==='/'&&!sessionStorage.getItem('aa-seq'))c.add('seq')}catch(e){}setTimeout(function(){if(!c.contains('mo-ok'))c.remove('mo');if(!c.contains('seq-run'))c.remove('seq')},3000)})()</script>
+<script src="/motion.js?v=1795095203" defer></script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795093958">
+<link rel="stylesheet" href="/shared.css?v=1795095203">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -130,7 +142,19 @@
   .thread { display: flex; flex-direction: column; gap: .4rem; padding: .2rem 1rem .9rem; }
   .thread > * { flex: none; }
   .stamp { align-self: center; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .9375rem; color: var(--muted); margin-bottom: .5rem; }
-  .msg, .card, .dots { animation: rise .5s var(--ease) both; }
+  .is-new, .dots { animation: pop var(--t-mid) var(--ease) both; transform-origin: 0 100%; } .msg--out { transform-origin: 100% 100%; }   /* messages that arrive after the page has loaded */
+  /* the conversation arrives (first visit in a session): everything is laid out from the first frame and only revealed, so nothing below moves */
+  .thread { position: relative; }
+  .seq .thread > [data-seq]:not(.is-in) { opacity: 0; animation: none; }
+  .seq .thread > [data-seq].is-in { animation: pop var(--t-mid) var(--ease) both; transform-origin: 0 100%; }
+  .seq-skip .thread > [data-seq] { opacity: 1 !important; animation: none !important; }
+  .dots--at { position: absolute; margin: 0; }
+  .seq:not(.seq-replies) .reply h2, .seq:not(.seq-replies) #chips li { opacity: 0; } .seq:not(.seq-replies) .reply { pointer-events: none; }
+  .seq.seq-replies:not(.seq-skip) .reply h2, .seq.seq-replies:not(.seq-skip) #chips li { animation: rise var(--t-mid) var(--ease) both; }
+  .seq.seq-replies #chips li:nth-child(2) { animation-delay: 40ms; } .seq.seq-replies #chips li:nth-child(3) { animation-delay: 80ms; } .seq.seq-replies #chips li:nth-child(4) { animation-delay: 120ms; } .seq.seq-replies #chips li:nth-child(5) { animation-delay: 160ms; } .seq.seq-replies #chips li:nth-child(6) { animation-delay: 200ms; }
+  .seq:not(.seq-pill) [data-avail-pill] { opacity: 0; } .seq.seq-pill:not(.seq-skip) [data-avail-pill] { animation: fade var(--t-slow) both; }
+  .hero__pic { height: 100%; }
+  .sent .tick { width: .9rem; height: .9rem; }
   .msg { max-width: 82%; padding: .6rem .95rem; border-radius: 1.25rem; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 rgb(42 32 25 / .2); }
   .msg--in { align-self: flex-start; background: var(--linen); color: var(--ink); border-bottom-left-radius: .4rem; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; }
   .msg--out { align-self: flex-end; background: var(--honey); color: #2a1a08; border-bottom-right-radius: .4rem; margin: .4rem 1.15rem 0 0; }
@@ -149,7 +173,7 @@
   .reply { padding: .8rem 1rem .5rem; border-top: 1px solid var(--hair); background: var(--hearth); }
   .reply h2 { font-family: var(--sans); font-weight: 500; font-variant: all-small-caps; letter-spacing: .12em; font-size: .9375rem; color: var(--muted); line-height: 1.25; margin: 0 0 .6rem; }
   .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
-  .chips a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .4rem 1rem; border: 1px solid var(--brass); border-radius: 1.4rem; color: var(--cream); background: transparent; text-decoration: none; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1rem; line-height: 1.2; transition: background-color .25s, opacity .3s; -webkit-tap-highlight-color: transparent; }
+  .chips a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .4rem 1rem; border: 1px solid var(--brass); border-radius: 1.4rem; color: var(--cream); background: transparent; text-decoration: none; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1rem; line-height: 1.2; transition: background-color 150ms, opacity 150ms; -webkit-tap-highlight-color: transparent; }
   .chips a:hover, .chips a:active { background: rgb(200 149 90 / .14); }
   .chips a.plain { border: 1px dotted rgb(243 234 219 / .7); }
   .chips[hidden], .chips li[hidden] { display: none; }
@@ -164,12 +188,12 @@
   .top .igicon { position: absolute; right: .7rem; top: 50%; translate: 0 -50%; display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: var(--cream); background: rgb(23 18 15 / .55); border: 1px solid rgb(239 230 216 / .3); } .top .igicon:hover { color: var(--ember); border-color: var(--ember); } .top .igicon span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .hero nav .trust { background: none; text-align: left; padding: .6rem 0 0; color: color-mix(in srgb, var(--cream) 82%, transparent); text-shadow: 0 1px 8px rgb(23 18 15 / .8); } .hero nav .trust a { font: inherit; color: inherit; text-decoration: underline; } .hero nav .trust a::after { content: none; }
 
-  @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
   @media (min-width: 900px) {
     .wrap { position: relative; height: 100svh; min-height: 34rem; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
-    .hero { position: absolute; inset: 0; height: auto; }
+    .hero { position: absolute; inset: 0; height: auto; } .hero__pic { position: absolute; inset: 0; height: auto; }
+    .mo .hero__pic { animation: settle 1.2s var(--ease) both; } @keyframes settle { from { transform: scale(1.04); } }
     /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
        A mirrored copy continues it to the right edge, so the sky and ridge carry across behind the panel. */
     .hero { --s: 1.15; --o: -30.5%; }
@@ -200,7 +224,7 @@
     .hero nav .note span::after { content: ' →'; white-space: pre; }
     .hero nav .note__a { display: inline-flex; align-items: center; min-height: 2.75rem; }
     .top .trust { display: block; padding: 0; background: none; text-shadow: none; font-size: .8125rem; color: var(--muted); } .top .trust b { color: var(--honey); }
-    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; max-height: min(100%, 52rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
+    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; height: min(100%, 52rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
     .top .igicon { background: none; border-color: rgb(200 149 90 / .45); color: var(--brass); }
     .top { position: relative; top: 0; flex: none; padding: 1.2rem 1rem .9rem; border-bottom: 1px solid var(--hair); } .top .mark { text-shadow: none; }
     .thread { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding-top: 1.1rem; scrollbar-width: none; overscroll-behavior: contain; } .thread::-webkit-scrollbar { display: none; }
@@ -211,7 +235,7 @@
   }
   @media (min-width: 900px) and (max-width: 1199px) { .hero { --s: 1; --o: -34%; } }   /* narrower desktops: the panel takes half the screen, so the house slides further over */
   @media (min-width: 1600px) {   /* large screens: the conversation scales up with the panel */
-    .panel { max-height: min(100%, 56rem); } .top { padding: 1.5rem 1.2rem 1.1rem; } .top .mark { font-size: 1.8rem; }
+    .panel { height: min(100%, 56rem); } .top { padding: 1.5rem 1.2rem 1.1rem; } .top .mark { font-size: 1.8rem; }
     .thread { gap: .5rem; padding: 1.3rem 1.3rem 1.1rem; } .stamp { font-size: 1.0625rem; }
     .msg { font-size: 1.25rem; padding: .7rem 1.1rem; } .msg--in { font-size: 1.25rem; } .msg--ask { font-size: 1.85rem; padding: 1rem 1.25rem; } .msg--out { margin-right: 1.3rem; }
     .card strong { font-size: 1.6rem; } .card u { font-size: 1.125rem; } .card small { font-size: 1rem; }
@@ -231,7 +255,7 @@
   html[data-avail='off'] .lastcall, html:not([data-avail]) .lastcall { display: none; }
   .foot { display: block; }
   /* the weekend, sent as a message: a link-preview card in the thread, a little wider than a bubble */
-  .wk { align-self: flex-start; width: 92%; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); box-shadow: 0 1px 0 rgb(42 32 25 / .2); animation: rise .5s var(--ease) both; }
+  .wk { align-self: flex-start; width: 92%; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); box-shadow: 0 1px 0 rgb(42 32 25 / .2); transform-origin: 0 100%; }
   .wk__h { margin: 0; padding: .65rem .95rem 0; font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .1em; font-size: .875rem; font-weight: 600; color: #6a5744; line-height: 1.25; }
   .wk__free { margin: 0; padding: .1rem .95rem .5rem; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .875rem; line-height: 1.35; color: #6a5744; }
   .wk ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(42 32 25 / .12); }
@@ -265,13 +289,14 @@
 <!--menu:start--><details class="menu"><summary><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><ul><li><a href="/long-light/">The house</a></li><li><a href="/explore/">Things to do</a></li><li><a class="iglink " href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a></li><li><a class="menu__book" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check dates and book</a></li></ul></details><!--menu:end-->
 <div class="wrap">
   <div class="hero">
-    <!--hero:start--><img src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high" data-hero>
-    <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="" aria-hidden="true" width="1200" height="800">
+    <!--hero:start--><div class="hero__pic"><img src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high" data-hero>
+    <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="" aria-hidden="true" width="1200" height="800"></div>
     <p class="moment moment--m" data-avail-pill hidden><a href="#dates"></a></p><!--hero:end-->
-    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--d" data-avail-pill hidden><a href="#dates"></a></p><!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p></nav>
+    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--d" data-avail-pill hidden><a href="#dates"></a></p><script>try{AA_AVAIL.paint()}catch(e){}</script><!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1><!--trust:start--><p class="trust"><b>★ 5.0</b> from 52 stays<i>·</i>Guest Favorite</p><!--trust:end--><!--igicon:start--><a class="iglink igicon" href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a><!--igicon:end--></header>
+    <!--weekends:start--><script id="weekends" type="application/json">{"2026-11-20":[{"id":"live-music-dara-james-brewing-tree-beer-co-2026-11-20","t":"Live Music: Dara James","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-20T17:30:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"millennial-cartoon-trivia-night-bold-rock-hard-cider-2026-11-20","t":"Millennial Cartoon Trivia Night","v":"Bold Rock (Nellysford)","m":12,"s":"2026-11-20T18:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"karaoke-night-devils-backbone-basecamp-brewpub-2026-11-20","t":"Karaoke Night","v":"Devils Backbone Basecamp and Meadows","m":13,"s":"2026-11-20T18:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"craft-sublime-artisan-fair-basic-city-beer-co-2026-11-21","t":"Craft Sublime Artisan Fair","v":"The Foundry at Basic City Beer Co","m":19,"s":"2026-11-21T11:00:00-05:00","a":0,"q":"","p":0,"c":"family"},{"id":"three-notch-d-brewery-distillery-craft-kitchen-nelson-county-three-notch-d-nellysford-2026-11-21","t":"Three Notch'd Brewery, Distillery, & Craft Kitchen - Nelson County","v":"Three Notch'd Brewery, Distillery & Craft Kitchen - Nelson County","m":8,"s":"2026-11-21T11:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"holiday-tastings-weekend-chiles-peach-orchard-2026-11-21","t":"Holiday Tastings Weekend","v":"Chiles Peach Orchard","m":20,"s":"2026-11-21T12:00:00-05:00","a":1,"q":"","p":0,"c":"family"},{"id":"brims-vino-hat-workshop-at-hazy-mountain-hazy-mountain-vineyards-brewery-2026-11-21","t":"Brims & Vino Hat Workshop at Hazy Mountain","v":"Hazy Mountain Vineyards","m":11,"s":"2026-11-21T13:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"live-music-at-afton-mountain-vineyards-afton-mountain-vineyards-2026-11-21","t":"Live Music at Afton Mountain Vineyards","v":"Afton Mountain Vineyards","m":13,"s":"2026-11-21T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-michael-bergamo-afton-mountain-vineyards-2026-11-21","t":"Live Music: Michael Bergamo","v":"Afton Mountain Vineyards","m":13,"s":"2026-11-21T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-at-brewing-tree-beer-company-brewing-tree-beer-co-2026-11-21","t":"Live Music at Brewing Tree Beer Company","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-21T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-jon-spear-brewing-tree-beer-co-2026-11-21","t":"Live Music: Jon Spear","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-21T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-kurt-crandall-starr-hill-brewery-2026-11-21","t":"Live music: Kurt Crandall","v":"Starr Hill Brewery","m":25,"s":"2026-11-21T17:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"dinner-and-live-music-at-basic-necessities-basic-necessities-2026-11-21","t":"Dinner and Live Music at Basic Necessities","v":"Basic Necessities","m":8,"s":"2026-11-21T17:30:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-at-wood-ridge-farm-brewery-wood-ridge-farm-brewery-2026-11-21","t":"Live Music at Wood Ridge Farm Brewery","v":"Wood Ridge Farm Brewery","m":14,"s":"2026-11-21T19:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"three-notch-d-brewery-distillery-craft-kitchen-nelson-county-three-notch-d-nellysford-2026-11-22","t":"Three Notch'd Brewery, Distillery, & Craft Kitchen - Nelson County","v":"Three Notch'd Brewery, Distillery & Craft Kitchen - Nelson County","m":8,"s":"2026-11-22T11:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"sunday-brunch-at-blue-mountain-barrel-house-blue-mountain-barrel-house-2026-11-22","t":"Sunday Brunch at Blue Mountain Barrel House","v":"Blue Mountain Barrel House","m":28,"s":"2026-11-22T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"giving-thanks-market-at-hazy-mountain-hazy-mountain-vineyards-brewery-2026-11-22","t":"Giving Thanks Market at Hazy Mountain","v":"Hazy Mountain Vineyards","m":11,"s":"2026-11-22T11:00:00-05:00","a":0,"q":"","p":0,"c":"market"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-11-22","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-22T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"crafts-and-cider-sundays-bryant-s-cider-brewery-2026-11-22","t":"Crafts and Cider Sundays","v":"Bryant's Small Batch","m":27,"s":"2026-11-22T12:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"sunday-fun-day-at-wood-ridge-farm-wood-ridge-farm-brewery-2026-11-22","t":"Sunday Fun Day at Wood Ridge Farm","v":"Wood Ridge Farm Brewery","m":14,"s":"2026-11-22T12:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"holiday-tastings-weekend-chiles-peach-orchard-2026-11-22","t":"Holiday Tastings Weekend","v":"Chiles Peach Orchard","m":20,"s":"2026-11-22T12:00:00-05:00","a":1,"q":"","p":0,"c":"family"},{"id":"live-music-silverstone-pro-re-nata-brewery-2026-11-22","t":"Live music: Silverstone","v":"Pro Re Nata Brewpub & Music Hall","m":18,"s":"2026-11-22T16:00:00-05:00","a":0,"q":"","p":0,"c":"music"}],"2026-11-27":[{"id":"wintergreen-ski-patrol-winter-sale-pro-re-nata-brewery-2026-11-27","t":"Wintergreen Ski Patrol Winter Sale","v":"Pro Re Nata Brewery","m":18,"s":"2026-11-27T10:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"soft-opening-thanksgiving-weekend-at-the-roost-the-roost-farm-shop-2026-11-27","t":"Soft Opening Thanksgiving Weekend at The Roost","v":"The Roost","m":5,"s":"2026-11-27T10:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-11-27","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-11-27T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"black-friday-at-brewing-tree-brewing-tree-beer-co-2026-11-27","t":"Black Friday at Brewing Tree","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-27T12:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"warren-miller-movie-days-off-pro-re-nata-brewery-2026-11-27","t":"Warren Miller Movie: Days Off","v":"Pro Re Nata Brewery","m":18,"s":"2026-11-27T14:00:00-05:00","a":0,"q":"","p":0,"c":"beer-cider"},{"id":"live-music-the-loya-brothers-brewing-tree-beer-co-2026-11-27","t":"Live Music: The Loya Brothers","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-27T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"holiday-kickoff-party-santa-is-coming-to-belties-belties-2026-11-27","t":"Holiday Kickoff Party: Santa Is Coming to Belties","v":"Belties Farm Cafe","m":7,"s":"2026-11-27T17:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"soft-opening-thanksgiving-weekend-at-the-roost-the-roost-farm-shop-2026-11-28","t":"Soft Opening Thanksgiving Weekend at The Roost","v":"The Roost","m":5,"s":"2026-11-28T10:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"friends-of-greenwood-artisan-market-greenwood-grocery-2026-11-28","t":"Friends of Greenwood Artisan Market","v":"Greenwood Grocery","m":16,"s":"2026-11-28T11:00:00-05:00","a":0,"q":"","p":0,"c":"market"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-11-28","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-11-28T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"live-music-nicholas-darden-afton-mountain-vineyards-2026-11-28","t":"Live Music: Nicholas Darden","v":"Afton Mountain Vineyards","m":13,"s":"2026-11-28T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-bryan-horowitz-brewing-tree-beer-co-2026-11-28","t":"Live Music: Bryan Horowitz","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-28T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"meet-the-nutcracker-characters-with-shenandoah-civic-dance-c-veritas-vineyard-and-winery-2026-11","t":"Meet the Nutcracker Characters with Shenandoah Civic Dance Company","v":"Veritas Winery","m":11,"s":"2026-11-28T18:30:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"karaoke-night-starr-hill-brewery-2026-11-28","t":"Karaoke Night","v":"Starr Hill Brewery","m":25,"s":"2026-11-28T19:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"soft-opening-thanksgiving-weekend-at-the-roost-the-roost-farm-shop-2026-11-29","t":"Soft Opening Thanksgiving Weekend at The Roost","v":"The Roost","m":5,"s":"2026-11-29T11:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"friends-of-greenwood-artisan-market-greenwood-grocery-2026-11-29","t":"Friends of Greenwood Artisan Market","v":"Greenwood Grocery","m":16,"s":"2026-11-29T11:00:00-05:00","a":0,"q":"","p":0,"c":"market"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-11-29","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-11-29T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-11-29","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-11-29T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"}],"2026-12-04":[{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-04","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-04T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"celebrate-the-season-holiday-gathering-at-glass-hollow-studi-glass-hollow-studios-2026-12-04","t":"Celebrate the Season: Holiday Gathering at Glass Hollow Studios","v":"Glass Hollow Studios","m":3,"s":"2026-12-04T17:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"holiday-carols-with-schola-cantorum-of-waynesboro-veritas-vineyard-and-winery-2026-12-04","t":"Holiday Carols with Schola Cantorum of Waynesboro","v":"Veritas Winery","m":11,"s":"2026-12-04T18:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"live-music-shiny-metal-boxes-the-music-of-the-police-sting-pro-re-nata-brewery-2026-12-04","t":"Live music: Shiny Metal Boxes – The Music of The Police & Sting","v":"Pro Re Nata Brew Pub & Music Hall, Crozet, VA","m":18,"s":"2026-12-04T19:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"holiday-open-house-rockfish-gap-country-store-2026-12-05","t":"Holiday Open House","v":"Rockfish Gap Country Store","m":11,"s":"2026-12-05T10:00:00-05:00","a":0,"q":"","p":0},{"id":"wreath-making-workshop-i-king-family-vineyards-2026-12-05","t":"Wreath-Making Workshop I","v":"King Family Vineyards","m":21,"s":"2026-12-05T10:30:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-05","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-05T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"live-music-moon-glow-afton-mountain-vineyards-2026-12-05","t":"Live Music: Moon Glow","v":"Afton Mountain Vineyards","m":13,"s":"2026-12-05T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-dara-james-brewing-tree-beer-co-2026-12-05","t":"Live Music: Dara James","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-05T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"carriage-house-christmas-king-family-vineyards-2026-12-06","t":"Carriage House Christmas","v":"King Family Vineyards","m":21,"s":"2026-12-06T10:00:00-05:00","a":0,"q":"","p":0,"c":"family"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-12-06","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-06T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-06","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-06T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"}],"2026-12-11":[{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-11","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-11T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"wreath-making-workshop-ii-king-family-vineyards-2026-12-12","t":"Wreath-Making Workshop II","v":"King Family Vineyards","m":21,"s":"2026-12-12T10:30:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-12","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-12T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"grand-opening-at-the-roost-the-roost-farm-shop-2026-12-12","t":"Grand Opening at The Roost","v":"The Roost","m":5,"s":"2026-12-12T12:00:00-05:00","a":1,"q":"","p":0,"c":"music"},{"id":"live-music-porch-dogs-afton-mountain-vineyards-2026-12-12","t":"Live Music: Porch Dogs","v":"Afton Mountain Vineyards","m":13,"s":"2026-12-12T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-jon-spear-brewing-tree-beer-co-2026-12-12","t":"Live Music: Jon Spear","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-12T15:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-12-13","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-13T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-13","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-13T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"live-music-jingle-w-jimmy-o-afton-mountain-vineyards-2026-12-13","t":"Live Music: Jingle w/ Jimmy O","v":"Afton Mountain Vineyards","m":13,"s":"2026-12-13T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"}],"2026-12-18":[{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-18","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-18T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"christmas-songs-with-waynesboro-choral-society-veritas-vineyard-and-winery-2026-12-18","t":"Christmas Songs with Waynesboro Choral Society","v":"Veritas Winery","m":11,"s":"2026-12-18T18:00:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-19","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-19T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"live-music-shane-click-afton-mountain-vineyards-2026-12-19","t":"Live Music: Shane Click","v":"Afton Mountain Vineyards","m":13,"s":"2026-12-19T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-sean-stringer-brewing-tree-beer-co-2026-12-19","t":"Live Music: Sean Stringer","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-19T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"the-nutcracker-performance-with-albemarle-ballet-theatre-veritas-vineyard-and-winery-2026-12-19","t":"The Nutcracker Performance with Albemarle Ballet Theatre","v":"Veritas Winery","m":11,"s":"2026-12-19T18:30:00-05:00","a":0,"q":"","p":0,"c":"wine"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-12-20","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-20T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-20","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-20T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"}],"2026-12-25":[{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-25","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-25T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"veritas-illuminated-veritas-vineyard-and-winery-2026-12-26","t":"Veritas Illuminated","v":"Veritas Vineyards, Afton","m":11,"s":"2026-12-26T12:00:00-05:00","a":1,"q":"veritas-illuminated-veritas-vineyard-and-winery","p":1,"c":"wine"},{"id":"live-music-rob-midnight-afton-mountain-vineyards-2026-12-26","t":"Live Music: Rob Midnight","v":"Afton Mountain Vineyards","m":13,"s":"2026-12-26T13:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"live-music-alex-arbaugh-brewing-tree-beer-co-2026-12-26","t":"Live Music: Alex Arbaugh","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-26T14:00:00-05:00","a":0,"q":"","p":0,"c":"music"},{"id":"sunday-brunch-brewing-tree-beer-co-2026-12-27","t":"Sunday Brunch","v":"Brewing Tree Beer Company","m":3,"s":"2026-12-27T11:00:00-05:00","a":0,"q":"","p":0,"c":"food"}]}</script><!--weekends:end-->
     <div class="thread" id="thread" role="log" aria-live="polite">
       <p class="stamp" id="stamp">This evening, 7:41</p>
       <p class="msg msg--in msg--photo"><img src="/img/houseDusk-800.webp?v=2" alt="The front of the farmhouse at dusk, porch lights on." width="800" height="600"></p>
@@ -279,6 +304,57 @@
       <p class="msg msg--in msg--sub" data-subhead>Ski as hard as you like, then trade the slopes for the hot tub, a tasting room or a great dinner.</p><!--lead:end-->
       <p class="msg msg--in msg--ask">Who’s coming, and what are <em>we</em> doing?</p>
     </div>
+    <script>
+    // What's on, sent as a message: the house's next bubble, then a card with three things from the calendar this weekend
+    // (next weekend, and it says so, when fewer than three things are within half an hour; nothing at all when both are
+    // empty). W holds the nearby events of the coming weekends, keyed by each Friday. ?date=2026-12-04 shows another day.
+    (function () { var thread = document.getElementById('thread'), html = document.documentElement;
+      // the note arrived a minute ago, by the visitor's own clock
+      (function () { var d = new Date(Date.now() - 60000), h = d.getHours(), part = h < 5 ? 'Tonight' : h < 12 ? 'This morning' : h < 17 ? 'This afternoon' : 'This evening';
+        document.getElementById('stamp').textContent = part + ', ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/, ''); })();
+      window.aaWeekend = function (W) {
+        var qd = new URLSearchParams(location.search).get('date'), today = qd ? new Date(qd + 'T12:00:00') : new Date(), dow = today.getDay(), fri = new Date(today); fri.setDate(today.getDate() + (dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow));
+        var iso = function (x) { return x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2); }, safe = function (s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+        var wk = function (n) { var days = [0, 1, 2].map(function (k) { var x = new Date(fri); x.setDate(fri.getDate() + n * 7 + k); return iso(x); }), src = W[days[0]], seen = {}; if (!src) return null;
+          return { days: days, list: src.filter(function (e) { return e.s.slice(0, 10) >= iso(today); }).filter(function (e) { var k = e.q || e.t.trim().toLowerCase() + '|' + e.v; return seen[k] ? false : (seen[k] = 1); }) }; };
+        var w = wk(0), next = false; if (!w) return false;            // this weekend is not in the data: the caller fetches the calendar instead
+        if (w.list.length < 3) { var w2 = wk(1); if (w2 && w2.list.length > w.list.length) { w = w2; next = true; } }
+        window.aaWeekendKnown = true; if (!w.list.length) return true;
+        // picks first (the owners' flags, then the nearest, no two of a kind), then by time: three rows, shown in order
+        var byTime = function (a, b) { return a.s.slice(0, 10).localeCompare(b.s.slice(0, 10)) || a.a - b.a || a.s.localeCompare(b.s); };
+        var ranked = w.list.slice().sort(function (a, b) { return b.p - a.p || a.m - b.m; }), picks = [], kinds = {};
+        ranked.forEach(function (e) { if (picks.length < 3 && (e.p || !kinds[e.c])) { picks.push(e); kinds[e.c] = 1; } });
+        var rows = picks.concat(w.list.filter(function (e) { return picks.indexOf(e) < 0; }).sort(byTime)).slice(0, 3).sort(byTime), n = w.list.length;
+        var time = function (e) { return e.q ? 'All weekend' : new Date(e.s.slice(0, 10) + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short' }) + '<b>' + (e.a ? 'Any time' : new Date(e.s).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).replace(':00', '')) + '</b>'; };
+        var all = '/plan/?from=' + w.days[0] + '&to=' + w.days[2] + '&tab=events';
+        thread.querySelector('.msg--ask').insertAdjacentHTML('afterend', '<p class="msg msg--in" id="wk-msg">Either way, here’s what’s on around here ' + (next ? 'next' : 'this') + ' weekend.</p>'
+          + '<div class="wk" id="wk"><p class="wk__h">' + (next ? 'Next weekend' : 'This weekend') + ' · ' + n + (n === 1 ? ' thing' : ' things') + ' within 30 min</p><p class="wk__free">Free to use, whether you’re staying with us or just visiting the valley.</p><ul>'
+          + rows.map(function (e) { return '<li><a href="/plan/?from=' + w.days[0] + '&to=' + w.days[2] + '&d=' + e.s.slice(0, 10) + '&tab=events&r=' + encodeURIComponent('e:' + e.id) + '"><time>' + time(e) + '</time><span><strong>' + safe(e.t) + '</strong><small>' + safe(e.v) + ' · <span>' + e.m + ' min</span></small></span></a></li>'; }).join('')
+          + '</ul><a class="wk__all" href="' + all + '">' + (n > rows.length ? 'See all ' + n + ' and plan your weekend →' : 'Plan your weekend →') + '</a></div>');
+        window.AA_WEEKEND = { days: w.days, n: n, next: next };
+        return true; };
+      try { window.aaWeekend(JSON.parse(document.getElementById('weekends').textContent)); } catch (e) { /* no data in the page: the script below fetches the calendar */ }
+      // first visit this session: every message is in place but unseen, and arrives one at a time (the script below)
+      if (!html.classList.contains('seq')) return;
+      var items = [].filter.call(thread.querySelectorAll('.msg, .wk'), function (el) { return !el.classList.contains('msg--photo'); }); items.forEach(function (el) { el.setAttribute('data-seq', ''); });
+      // The conversation arrives: dots, then each message, then the weekend card, then the replies. Everything is laid
+      // out already (see the styles), so this only reveals. Any tap, key, wheel or scroll finishes it at once.
+      html.classList.add('seq-run'); try { sessionStorage.setItem('aa-seq', '1'); } catch (e) { /* private mode: it plays again next time */ }
+      var over = false, timer = 0, next = null, events = ['pointerdown', 'keydown', 'wheel', 'touchmove', 'scroll'];
+      var stop = function () { events.forEach(function (e) { removeEventListener(e, finish, true); }); };
+      var finish = function () { if (over) return; over = true; clearTimeout(timer); html.classList.add('seq-skip', 'seq-replies', 'seq-pill'); items.forEach(function (el) { el.classList.add('is-in'); }); var d = thread.querySelector('.dots--at'); if (d) d.remove(); stop(); };
+      events.forEach(function (e) { addEventListener(e, finish, { capture: true, passive: true }); });
+      var after = function (ms, fn) { timer = setTimeout(function () { if (!over) fn(); }, ms); }, i = 0;
+      var step = function () { var el = items[i++];
+        if (!el) return after(120, function () { html.classList.add('seq-replies'); window.aaRepliesAt = Math.round(performance.now()); after(650, function () { html.classList.add('seq-pill'); after(800, function () { over = true; stop(); }); }); });
+        var show = function () { el.classList.add('is-in'); after(90, step); };
+        if (!el.classList.contains('msg')) return after(180, show);
+        // dots where the message will land, for longer before a longer message
+        var d = document.createElement('p'); d.className = 'dots dots--at'; d.setAttribute('aria-hidden', 'true'); d.innerHTML = '<b></b><b></b><b></b>'; d.style.left = el.offsetLeft + 'px'; d.style.top = el.offsetTop + 'px'; thread.appendChild(d);
+        after(Math.max(500, Math.min(900, 360 + el.textContent.length * 4)), function () { d.remove(); show(); }); };
+      step();
+    })();
+    </script>
     <nav class="reply" aria-label="Choose your trip">
       <h2 id="hint">Tap a reply</h2>
       <ul class="chips" id="chips">
@@ -309,7 +385,7 @@
 <div class="wl__row"><label class="wl__sr" for="waitlist-email">Email address</label><input type="email" id="waitlist-email" name="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required aria-describedby="waitlist-msg waitlist-fine"><button type="submit">Put me on the list</button></div>
 <p class="wl__err" id="waitlist-msg" role="alert" hidden></p>
 <p class="wl__fine" id="waitlist-fine">One email when 2027 opens. That’s it. We’ll only use this to tell you when 2027 opens.</p>
-</form><p class="wl__done" role="status" tabindex="-1" hidden>You’re on the list. You’ll hear from us the moment 2027 opens.</p></div></div></section><!--avail:end-->
+</form><p class="wl__done" role="status" tabindex="-1" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12.5l5 5L20 6.5"/></svg>You’re on the list. You’ll hear from us the moment 2027 opens.</p></div></div><script>try{AA_AVAIL.paint()}catch(e){}</script></section><!--avail:end-->
 <div class="foot"><!--footer:start--><footer class="ft ft--min" data-mood="evening">
 <p class="mark">Afton <em>Awaits</em></p>
 <p class="ft__where">Afton, Nelson County, Virginia · Hosted by Jamie of Be Still Getaways</p>
@@ -328,9 +404,6 @@ var M=C.moments.filter(function(m){return within(n,m.from,m.to)})[0];document.qu
 <script type="module">
 import { byId, url, remember, forget, label, reduced, PLAN_INTERESTS } from '/shared.js';
 if (location.search.includes('switch')) { forget(); history.replaceState(null, '', '/'); }
-// the note arrived a minute ago, by the visitor's own clock
-{ const d = new Date(Date.now() - 60000), h = d.getHours(), part = h < 5 ? 'Tonight' : h < 12 ? 'This morning' : h < 17 ? 'This afternoon' : 'This evening';
-  document.getElementById('stamp').textContent = `${part}, ${d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/, '')}`; }
 const thread = document.getElementById('thread'), nav = document.querySelector('.reply'), hint = document.getElementById('hint');
 const REPLY = {
   family: document.documentElement.dataset.season === 'pool' ? 'Good. It’s fenced, it’s saltwater, and there’s room for six of you.' : 'Good. The hot tub’s on, the fire pit’s lit, and there’s room for six of you.',
@@ -341,12 +414,11 @@ const REPLY = {
 };
 const snow = document.documentElement.dataset.snow === 'on';
 const FOR = { girls: 'a girls’ weekend', family: 'a family weekend', outdoors: snow ? 'a ski and snow weekend' : 'an outdoors weekend', 'game-day': 'a game day weekend', trail151: 'a wine weekend' };
-let weekendDates = null;   // set once the calendar has loaded; planner links then open on that weekend
-const planUrl = (interests = []) => { const q = new URLSearchParams(); if (weekendDates) { q.set('from', weekendDates[0]); q.set('to', weekendDates[2]); q.set('tab', 'events'); } if (interests.length) q.set('i', interests.join(',')); const s = q.toString().replace(/%2C/g, ','); return '/plan/' + (s ? '?' + s : ''); };
+const planUrl = (interests = []) => { const q = new URLSearchParams(); const wd = window.AA_WEEKEND?.days; if (wd) { q.set('from', wd[0]); q.set('to', wd[2]); q.set('tab', 'events'); } if (interests.length) q.set('i', interests.join(',')); const s = q.toString().replace(/%2C/g, ','); return '/plan/' + (s ? '?' + s : ''); };
 const id0 = () => picked[0];
 const picked = []; let card; const main = document.getElementById('chips'), occ = document.getElementById('occ');
 const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? 0 : ms));
-const add = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const n = t.content.firstChild; thread.append(n); thread.scrollTo({ top: thread.scrollHeight, behavior: reduced ? 'auto' : 'smooth' }); if (thread.scrollHeight <= thread.clientHeight + 1) nav.scrollIntoView({ block: 'end', behavior: reduced ? 'auto' : 'smooth' }); return n; };
+const add = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const n = t.content.firstChild; n.classList.add('is-new'); thread.append(n); thread.scrollTo({ top: thread.scrollHeight, behavior: reduced ? 'auto' : 'smooth' }); if (thread.scrollHeight <= thread.clientHeight + 1) nav.scrollIntoView({ block: 'end', behavior: reduced ? 'auto' : 'smooth' }); return n; };
 async function typing(ms) { const d = add('<p class="dots" aria-hidden="true"><b></b><b></b><b></b></p>'); await wait(ms); d.remove(); }
 
 for (const a of document.querySelectorAll('a[data-trip]')) a.addEventListener('click', async (e) => {
@@ -355,7 +427,7 @@ for (const a of document.querySelectorAll('a[data-trip]')) a.addEventListener('c
   const id = a.dataset.trip; if (picked.includes(id) || picked.length >= 2) return;
   picked.push(id); remember(picked);
   a.parentElement.hidden = true; nav.classList.add('is-wait');
-  thread.querySelector('.sent')?.remove(); add(`<p class="msg msg--out">${a.textContent}</p>`); add('<p class="sent" role="img" aria-label="Delivered">✓</p>');
+  thread.querySelector('.sent')?.remove(); add(`<p class="msg msg--out">${a.textContent}</p>`); add('<p class="sent" role="img" aria-label="Delivered"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12.5l5 5L20 6.5"/></svg></p>');
   await typing(900);
   if (picked.length === 1) add(`<p class="msg msg--in">${REPLY[id]}</p>`); else add(`<p class="msg msg--in">Both, then. I like this group.</p>`);
   if (id === 'girls' && picked.length === 1) {   // the girls' weekend has its own pages by occasion, so ask
@@ -382,7 +454,7 @@ const OCC = {
 for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e) => {
   if (e.metaKey || e.ctrlKey || e.shiftKey) return;
   e.preventDefault(); nav.classList.add('is-wait'); occ.hidden = true;
-  thread.querySelector('.sent')?.remove(); add(`<p class="msg msg--out">${a.textContent}</p>`); add('<p class="sent" role="img" aria-label="Delivered">✓</p>');
+  thread.querySelector('.sent')?.remove(); add(`<p class="msg msg--out">${a.textContent}</p>`); add('<p class="sent" role="img" aria-label="Delivered"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12.5l5 5L20 6.5"/></svg></p>');
   const o = OCC[a.dataset.occ];
   if (!o) { main.hidden = false; await showCard(); return; }   // just a weekend: carry on as any other trip
   await typing(900); add(`<p class="msg msg--in">${o[0]}</p>`); await typing(600);
@@ -391,42 +463,21 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 
-// What's on, sent as a message: the house's next bubble, then a card with three things from the calendar this weekend.
-// With fewer than three things within half an hour this weekend, it is next weekend's and says so; with nothing on
-// either weekend, the house says nothing more. (?date=2026-12-04 shows another day.)
-try { const [cal, roads] = await Promise.all([fetch('/api/events.json').then((r) => r.json()), fetch('/api/drive.json').then((r) => r.json())]);
+// planner links open on the weekend the card shows
+const setPlanLinks = () => { for (const a of document.querySelectorAll('a[data-plan]')) a.href = planUrl(); for (const a of document.querySelectorAll('a[data-plan-i]')) { const u = new URL(a.href); a.href = planUrl((u.searchParams.get('i') ?? '').split(',').filter(Boolean)); } };
+setPlanLinks();
+
+// If this weekend was not in the page's own data (a build older than a few weeks), read the calendar instead. The
+// replies never wait for it: the weekend's bubble and card simply arrive when they are ready.
+if (!window.aaWeekendKnown) try { const [cal, roads] = await Promise.all([fetch('/api/events.json').then((r) => r.json()), fetch('/api/drive.json').then((r) => r.json())]);
+  const mins = (id) => { const k = roads.ids.indexOf(id); return k < 0 ? null : roads.minutes[0][k]; }, W = {};
   const qd = new URLSearchParams(location.search).get('date'), today = qd ? new Date(qd + 'T12:00:00') : new Date(), dow = today.getDay(), fri = new Date(today); fri.setDate(today.getDate() + (dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow));
-  const iso = (x) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`, safe = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const mins = (id) => { const k = roads.ids.indexOf(id); return k < 0 ? null : roads.minutes[0][k]; };
-  const weekend = (n) => { const days = [0, 1, 2].map((k) => { const x = new Date(fri); x.setDate(fri.getDate() + n * 7 + k); return iso(x); }), seen = new Set();
-    const list = (cal.events ?? cal).filter((e) => days.includes(e.start.slice(0, 10)) && e.start.slice(0, 10) >= iso(today) && e.status !== 'cancelled' && e.placeId && (mins(e.placeId) ?? 99) <= 30)
-      .filter((e) => { const k = e.seriesId || e.title.trim().toLowerCase() + '|' + e.placeId; return seen.has(k) ? false : seen.add(k); });
-    return { days, list }; };
-  let w = weekend(0), next = false; if (w.list.length < 3) { const w2 = weekend(1); if (w2.list.length > w.list.length) { w = w2; next = true; } }
-  if (w.list.length) {
-    weekendDates = w.days; const n = w.list.length, when = next ? 'next weekend' : 'this weekend';
-    for (const a of document.querySelectorAll('a[data-plan]')) a.href = planUrl();
-    // picks first (the owners' flags, then the nearest, no two of a kind), then by time: three rows, shown in order
-    const byTime = (a, b) => a.start.slice(0, 10).localeCompare(b.start.slice(0, 10)) || a.allDay - b.allDay || a.start.localeCompare(b.start);
-    const ranked = [...w.list].sort((a, b) => !!b.ownerPick - !!a.ownerPick || mins(a.placeId) - mins(b.placeId)), picks = [], kinds = new Set();
-    for (const e of ranked) { if (picks.length >= 3) break; if (e.ownerPick || !kinds.has(e.categories[0])) { picks.push(e); kinds.add(e.categories[0]); } }
-    const rows = [...picks, ...w.list.filter((e) => !picks.includes(e)).sort(byTime)].slice(0, 3).sort(byTime);
-    const day = (e) => new Date(e.start.slice(0, 10) + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short' });
-    const time = (e) => e.seriesId ? 'All weekend' : `${day(e)}<b>${e.allDay ? 'Any time' : new Date(e.start).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).replace(':00', '')}</b>`;
-    const link = (e) => `/plan/?from=${w.days[0]}&to=${w.days[2]}&d=${e.start.slice(0, 10)}&tab=events&r=${encodeURIComponent('e:' + e.id)}`;
-    const quiet = picked.length > 0 || reduced;   // already replied, or reduced motion: the weekend is added without the pause
-    const put = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const el = t.content.firstChild, after = thread.querySelector('.msg--ask'); if (!picked.length || !after) thread.append(el); else (thread.querySelector('.wk') ?? thread.querySelector('#wk-msg') ?? after).after(el); return el; };
-    const dots = async (ms) => { if (quiet) return; const d = put('<p class="dots" aria-hidden="true"><b></b><b></b><b></b></p>'); await wait(ms); d.remove(); };
-    await dots(700);
-    put(`<p class="msg msg--in" id="wk-msg">Either way, here’s what’s on around here ${when}.</p>`);
-    await dots(600);
-    put(`<div class="wk" id="wk"><p class="wk__h">${next ? 'Next weekend' : 'This weekend'} · ${n} ${n === 1 ? 'thing' : 'things'} within 30 min</p><p class="wk__free">Free to use, whether you’re staying with us or just visiting the valley.</p>
-      <ul>${rows.map((e) => `<li><a href="${link(e)}"><time>${time(e)}</time><span><strong>${safe(e.title)}</strong><small>${safe(e.venueName)} · <span>${mins(e.placeId)} min</span></small></span></a></li>`).join('')}</ul>
-      <a class="wk__all" href="${planUrl()}">${n > rows.length ? `See all ${n} and plan your weekend →` : 'Plan your weekend →'}</a></div>`);
-    for (const a of document.querySelectorAll('a[data-plan-i]')) { const u = new URL(a.href); a.href = planUrl((u.searchParams.get('i') ?? '').split(',').filter(Boolean)); }
-  }
+  const iso = (x) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`;
+  for (const n of [0, 1]) { const days = [0, 1, 2].map((k) => { const x = new Date(fri); x.setDate(fri.getDate() + n * 7 + k); return iso(x); });
+    W[days[0]] = (cal.events ?? cal).filter((e) => days.includes(e.start.slice(0, 10)) && e.status !== 'cancelled' && e.placeId && (mins(e.placeId) ?? 99) <= 30).map((e) => ({ id: e.id, t: e.title, v: e.venueName, m: mins(e.placeId), s: e.start, a: e.allDay ? 1 : 0, q: e.seriesId || '', p: e.ownerPick ? 1 : 0, c: e.categories[0] })); }
+  window.aaWeekend(W); setPlanLinks();
 } catch { /* the calendar did not load: the conversation carries on without the weekend */ }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:12 AM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:33 AM ET</p>
 </body>
 </html>
