@@ -43,9 +43,9 @@
     {
      "icon": "beer",
      "place": "brewing-tree-beer-co",
-     "lead": "{min} min to a cold beer.",
+     "lead": "{min} min to a brewery.",
      "text": "Brewing Tree is practically next door.",
-     "short": "beer"
+     "short": "brewery"
     },
     {
      "icon": "dining",
