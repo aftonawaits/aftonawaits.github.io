@@ -57,6 +57,8 @@
         p.hidden = false; p.innerHTML = 'The last of ' + was + ' is going fast: ' + dateLinks() + '. After that, the calendar’s closed until ' + Y + '.' + (small ? '<small>' + small + '</small>' : ''); }
       else if (p.dataset.availDates === 'full') { p.hidden = false; p.innerHTML = was + ' is full. ' + opens + ' <a href="' + toWait + '">Get first pick →</a>'; }
     });
+    // on a phone the home page's photo carries a short pointer to that line (the line itself sits below the first screen)
+    document.querySelectorAll('[data-avail-pill]').forEach(function (p) { p.hidden = false; var a = p.firstElementChild; a.href = state === 'open' ? toDates : toWait; a.textContent = state === 'open' ? 'Last call for ' + was + '. See the dates' : was + ' is full. Get first pick of ' + Y; });
     document.querySelectorAll('[data-avail-block]').forEach(function (b) { b.hidden = false; });
     // booking buttons never open an empty calendar: they go to the list of open dates, or to the waitlist
     var base = B.url.split('?')[0];
@@ -85,7 +87,7 @@
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
-<link rel="stylesheet" href="/shared.css?v=1795059785"><link rel="stylesheet" href="/plan/plan.css?v=1795059785"><link rel="stylesheet" href="/explore/explore.css?v=1795059785">
+<link rel="stylesheet" href="/shared.css?v=1795093958"><link rel="stylesheet" href="/plan/plan.css?v=1795093958"><link rel="stylesheet" href="/explore/explore.css?v=1795093958">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Winery","name":"Septenary Winery","url":"https://www.septenarywinery.com","geo":{"@type":"GeoCoordinates","latitude":38.04187,"longitude":-78.74768}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Explore","item":"https://aftonawaits.github.io/explore/"},{"@type":"ListItem","position":2,"name":"Septenary Winery","item":"https://aftonawaits.github.io/explore/places/septenary-winery/"}]}</script>
 </head>
@@ -114,6 +116,6 @@
 <p class="proof proof--safe">Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour.</p>
 <p class="ft__note">Details come from each venue’s own listing and can change. Confirm with the venue before you go. Last refreshed Thursday, November 19, 2026.</p>
 </footer>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 10:43 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:12 AM ET</p>
 </body>
 </html>
