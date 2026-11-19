@@ -36,23 +36,23 @@
     {
      "icon": "wine",
      "place": "veritas-vineyard-and-winery",
-     "lead": "{min} min to Veritas.",
-     "text": "A tasting room built for a cold afternoon.",
-     "short": "Veritas"
+     "lead": "{min} min to the wineries.",
+     "text": "Veritas has a tasting room built for a cold afternoon.",
+     "short": "wineries"
     },
     {
      "icon": "beer",
      "place": "brewing-tree-beer-co",
      "lead": "{min} min to a cold beer.",
      "text": "Brewing Tree is practically next door.",
-     "short": "Brewing Tree"
+     "short": "beer"
     },
     {
-     "icon": "basket",
-     "place": "blue-ridge-grocery-iga",
-     "lead": "{min} min to groceries.",
-     "text": "The IGA covers everything the weekend forgot.",
-     "short": "groceries"
+     "icon": "dining",
+     "place": "three-notch-d-nellysford",
+     "lead": "{min} min to dinner.",
+     "text": "Belties, Iron and Ale and Three Notch’d are all in Nellysford.",
+     "short": "dining"
     },
     {
      "icon": "town",
