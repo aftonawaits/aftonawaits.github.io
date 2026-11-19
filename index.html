@@ -98,10 +98,10 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
 <script>(function(){var h=document.documentElement,c=h.classList;try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return}catch(e){return}c.add('mo');try{if(location.pathname==='/'&&!sessionStorage.getItem('aa-seq'))c.add('seq')}catch(e){}setTimeout(function(){if(!c.contains('mo-ok'))c.remove('mo');if(!c.contains('seq-run'))c.remove('seq')},3000)})()</script>
-<script src="/motion.js?v=1795095203" defer></script>
+<script src="/motion.js?v=1795101305" defer></script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795095203">
+<link rel="stylesheet" href="/shared.css?v=1795101305">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -127,7 +127,7 @@
   .menu li a { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .3rem .8rem; border-radius: .7rem; color: var(--cream); text-decoration: none; font-size: 1rem; }
   .menu li a:hover { background: rgb(200 149 90 / .16); } .menu li a.menu__book { color: var(--ink); background: var(--honey); font-weight: 600; margin-top: .3rem; justify-content: center; }
   .menu .iglink { min-height: 2.75rem; }
-  @media (max-width: 899px) { .menu > summary span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .menu > summary { padding: .3rem .7rem; } }
+  @media (max-width: 1023px) { .menu > summary span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .menu > summary { padding: .3rem .7rem; } }
   .points { list-style: none; margin: 0; padding: .7rem 1rem .1rem; background: var(--hearth); display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem 1rem; font-family: var(--sans); font-size: .8125rem; line-height: 1.3; color: var(--muted); }
   .points li { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; } .points svg { color: var(--brass); flex: none; } .points b { color: var(--cream); font-weight: 600; }
   .chips a.is-featured { background: rgb(200 149 90 / .2); border-color: var(--honey); }
@@ -153,7 +153,8 @@
   .seq.seq-replies:not(.seq-skip) .reply h2, .seq.seq-replies:not(.seq-skip) #chips li { animation: rise var(--t-mid) var(--ease) both; }
   .seq.seq-replies #chips li:nth-child(2) { animation-delay: 40ms; } .seq.seq-replies #chips li:nth-child(3) { animation-delay: 80ms; } .seq.seq-replies #chips li:nth-child(4) { animation-delay: 120ms; } .seq.seq-replies #chips li:nth-child(5) { animation-delay: 160ms; } .seq.seq-replies #chips li:nth-child(6) { animation-delay: 200ms; }
   .seq:not(.seq-pill) [data-avail-pill] { opacity: 0; } .seq.seq-pill:not(.seq-skip) [data-avail-pill] { animation: fade var(--t-slow) both; }
-  .hero__pic { height: 100%; }
+  .hero__pic { position: relative; height: 100%; }
+  .house, .quote { display: none; }   /* desktop only */
   .sent .tick { width: .9rem; height: .9rem; }
   .msg { max-width: 82%; padding: .6rem .95rem; border-radius: 1.25rem; font-size: 1.0625rem; line-height: 1.35; box-shadow: 0 1px 0 rgb(42 32 25 / .2); }
   .msg--in { align-self: flex-start; background: var(--linen); color: var(--ink); border-bottom-left-radius: .4rem; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: 1.0625rem; line-height: 1.35; }
@@ -190,59 +191,7 @@
 
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
-  @media (min-width: 900px) {
-    .wrap { position: relative; height: 100svh; min-height: 34rem; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
-    .hero { position: absolute; inset: 0; height: auto; } .hero__pic { position: absolute; inset: 0; height: auto; }
-    .mo .hero__pic { animation: settle 1.2s var(--ease) both; } @keyframes settle { from { transform: scale(1.04); } }
-    /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
-       A mirrored copy continues it to the right edge, so the sky and ridge carry across behind the panel. */
-    .hero { --s: 1.15; --o: -30.5%; }
-    .hero img { width: calc(var(--s) * 100%); max-width: none; margin-left: var(--o); object-position: 50% 56%; }
-    .hero .mirror { display: block; position: absolute; top: 0; left: calc(var(--o) + var(--s) * 100% - 1px); margin: 0; transform: scaleX(-1); }
-    .hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgb(60 30 10 / .18), transparent 40%); mix-blend-mode: multiply; pointer-events: none; }   /* warms the cool blue at the top of the sky */
-    .hero::after { background: linear-gradient(transparent calc(100% - 120px), var(--hearth)), radial-gradient(46% 52% at 100% 100%, rgb(23 18 15 / .92) 35%, transparent), linear-gradient(90deg, transparent 70%, rgb(23 18 15 / .85)), linear-gradient(transparent 58%, rgb(23 18 15 / .8)); }   /* the corner wash hides where the mirrored driveway meets itself */
-    .moment--m, .points--m { display: none !important; }
-    .points--d { background: none; padding: 0 0 .2rem; justify-content: flex-start; gap: .3rem 1.2rem; font-size: .875rem; color: color-mix(in srgb, var(--cream) 85%, transparent); text-shadow: 0 1px 8px rgb(23 18 15 / .9); }
-    /* the house speaks first: its messages always show in full, and the replies scroll if the screen is short */
-    .panel .thread { flex: 0 0 auto; overflow: visible; }
-    /* once a trip is chosen the conversation grows, so it scrolls again and the header stays put */
-    .panel .thread:has(.card), .panel .thread:has(.msg--out) { flex: 0 1 auto; min-height: 0; overflow-y: auto; } .panel .top { flex: none; } .panel .reply { flex: 0 1 auto; min-height: 5.5rem; overflow-y: auto; scrollbar-width: thin; }
-    @media (max-height: 880px) { .panel .reply { padding: .6rem 1.1rem .7rem; } .panel .reply h2 { margin-bottom: .35rem; } .panel .chips { gap: .4rem; } .panel .chips a { min-height: 2.75rem; padding: .3rem .95rem; font-size: 1rem; } .panel .thread { gap: .3rem; padding-top: .6rem; padding-bottom: .5rem; } .panel .msg { font-size: .9375rem; padding: .4rem .75rem; } .panel .msg--ask { font-size: 1.125rem; } .panel .msg--sub { font-size: .8125rem; } .panel .top { padding: .8rem 1rem .6rem; } .panel .stamp { margin-bottom: .1rem; } }
-    .hero nav { position: absolute; z-index: 2; left: clamp(1.5rem, 4vw, 3rem); bottom: 2.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.4rem; max-width: calc(100vw - clamp(26rem, 28vw, 34rem) - 6rem); }
-    .hero nav .moment { flex: 0 0 100%; } .hero nav .points--d { padding: 0; }
-    /* the bottom row runs the full width from the left edge to the chat panel, and its type grows with the screen */
-    .hero nav { left: clamp(1.5rem, 3vw, 3rem); right: calc(clamp(2rem, 6vw - 3rem, 5rem) + clamp(26rem, 28vw, 34rem) + 1.75rem); max-width: none; gap: .5rem 1.2rem; justify-content: space-between;
-      /* the type is sized from the room available, so the distances and the booking link always share one line */
-      --room: calc(100vw - clamp(2rem, 6vw - 3rem, 5rem) - clamp(26rem, 28vw, 34rem) - 1.75rem - clamp(1.5rem, 3vw, 3rem)); font-size: clamp(.6875rem, calc(var(--room) / 70), 1.2rem); }
-    .hero nav .points--d { flex: 1 1 auto; justify-content: space-between; flex-wrap: nowrap; gap: .3rem 1em; font-size: 1em; } .hero nav .points--d svg { width: 1.25em; height: 1.25em; } .hero nav .points--d li { gap: .4em; }
-    .hero nav .note { flex: none; margin-left: .6em; font-size: 1em; } .hero nav .note a.note__a { font-size: 1em; } .hero nav .note a.note__a span { font-size: 1em; }
-    @media (max-width: 1150px) { .hero nav .points--d { flex-wrap: wrap; justify-content: flex-start; } }
-    .hero nav a { font-family: var(--serif); font-variation-settings: 'SOFT' 100; letter-spacing: -.01em; font-size: 1.7rem; line-height: 1.15; color: var(--cream); text-decoration: underline; text-decoration-color: var(--brass); text-decoration-thickness: 1.5px; text-underline-offset: .28em; }
-    .hero nav a::after { content: ' →'; color: var(--brass); } .hero nav a:hover { color: var(--ember); }
-    .hero nav .note { background: none; padding: 0; text-align: left; }
-    .hero nav .note span { border: 0; padding: 0; font-family: var(--sans); font-style: normal; font-weight: 600; font-size: .875rem; color: var(--ember); text-decoration: underline; text-decoration-color: rgb(200 149 90 / .7); text-underline-offset: .3em; text-shadow: 0 1px 8px rgb(23 18 15 / .9); }
-    .hero nav .note span::after { content: ' →'; white-space: pre; }
-    .hero nav .note__a { display: inline-flex; align-items: center; min-height: 2.75rem; }
-    .top .trust { display: block; padding: 0; background: none; text-shadow: none; font-size: .8125rem; color: var(--muted); } .top .trust b { color: var(--honey); }
-    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; height: min(100%, 52rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
-    .top .igicon { background: none; border-color: rgb(200 149 90 / .45); color: var(--brass); }
-    .top { position: relative; top: 0; flex: none; padding: 1.2rem 1rem .9rem; border-bottom: 1px solid var(--hair); } .top .mark { text-shadow: none; }
-    .thread { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding-top: 1.1rem; scrollbar-width: none; overscroll-behavior: contain; } .thread::-webkit-scrollbar { display: none; }
-    .thread > :first-child { margin-top: auto; }
-    .reply, .foot { flex: none; }
-    .panel > .note { display: none; }
-    .reply { padding-bottom: 1.1rem; }
-  }
-  @media (min-width: 900px) and (max-width: 1199px) { .hero { --s: 1; --o: -34%; } }   /* narrower desktops: the panel takes half the screen, so the house slides further over */
-  @media (min-width: 1600px) {   /* large screens: the conversation scales up with the panel */
-    .panel { height: min(100%, 56rem); } .top { padding: 1.5rem 1.2rem 1.1rem; } .top .mark { font-size: 1.8rem; }
-    .thread { gap: .5rem; padding: 1.3rem 1.3rem 1.1rem; } .stamp { font-size: 1.0625rem; }
-    .msg { font-size: 1.25rem; padding: .7rem 1.1rem; } .msg--in { font-size: 1.25rem; } .msg--ask { font-size: 1.85rem; padding: 1rem 1.25rem; } .msg--out { margin-right: 1.3rem; }
-    .card strong { font-size: 1.6rem; } .card u { font-size: 1.125rem; } .card small { font-size: 1rem; }
-    .reply { padding: 1rem 1.3rem 1.4rem; } .reply h2 { font-size: 1.0625rem; } .chips { gap: .55rem; } .chips a { font-size: 1.1875rem; min-height: 3.1rem; padding: .45rem 1.2rem; }
-    .hero nav a { font-size: 2rem; } .note span { font-size: 1.0625rem; }
-  }
-  @media (max-width: 899px) and (max-height: 700px) {   /* short phones: every reply still fits on the first screen */
+  @media (max-width: 1023px) and (max-height: 700px) {   /* short phones: every reply still fits on the first screen */
     .hero { height: 40vh; } .top { top: -40vh; padding-top: .8rem; } .top .mark { font-size: 1.35rem; }
     .thread { gap: .3rem; padding-bottom: .6rem; } .stamp { margin-bottom: .25rem; font-size: .875rem; }
     .msg { padding: .5rem .85rem; } .msg--ask { font-size: 1.25rem; padding: .6rem .9rem; }
@@ -267,32 +216,67 @@
   .wk small { display: block; font-family: var(--sans); font-size: .8125rem; line-height: 1.3; color: #6a5744; } .wk small span { white-space: nowrap; }
   .wk__all { display: flex; align-items: center; min-height: 2.75rem; padding: .4rem .95rem .5rem; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: 1rem; color: var(--brass-deep); text-decoration: underline; text-underline-offset: .25em; }
   .note { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem .8rem; }
-  @media (max-width: 899px) {   /* phones: a tighter thread and three rows of replies, so the weekend is reached quickly */
+  @media (max-width: 1023px) {   /* phones: a tighter thread and three rows of replies, so the weekend is reached quickly */
     .thread { gap: .3rem; padding-bottom: .7rem; } .stamp { margin-bottom: .35rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { padding: .45rem .85rem; }
     .reply { padding: .65rem .8rem .45rem; } .reply h2 { margin-bottom: .45rem; } .chips a { font-size: .9375rem; }
   }
   .chips, .panel .chips { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; } .chips a, .panel .chips a { display: flex; justify-content: center; text-align: center; padding: .3rem .5rem; } .chips[hidden], .panel .chips[hidden] { display: none; }
-  @media (min-width: 900px) {   /* the panel is a real chat: the thread scrolls inside it and the replies stay pinned at the bottom */
-    .panel .thread, .panel .thread:has(.card), .panel .thread:has(.msg--out) { flex: 1 1 auto; min-height: 0; overflow-y: auto; scrollbar-width: thin; overscroll-behavior: contain; }
-    .panel .reply { flex: none; overflow: visible; min-height: 0; }
-    .hero nav .note { display: flex; flex-wrap: nowrap; gap: 1.1em; margin-left: .2em; } .hero nav .note a { white-space: nowrap; } .hero nav .note span::after { content: none; }
-    .hero nav .points--d { gap: .3rem .8em; } .hero nav .points--d li { gap: .3em; }
-  }
   /* the house's three messages are one size; the question keeps its serif face */
   .panel .thread { font-size: 1.0625rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { font-size: 1em; line-height: 1.35; padding: .55rem .9rem; }
-  @media (min-width: 1600px) { .panel .thread { font-size: 1.1875rem; } }
-  @media (min-width: 900px) and (max-height: 880px) { .panel .thread { font-size: .9375rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { padding: .4rem .75rem; } }
-  @media (min-width: 900px) { .hero nav .moment a { font-size: 1em; } }
+  /* ================= desktop (1024px and up): one left column that scrolls, and the chat as a phone that stays put ================= */
+  @media (min-width: 1024px) {
+    body { background: var(--night); }
+    .wrap { display: grid; grid-template-columns: minmax(0, 1fr) min(40%, 420px); column-gap: clamp(1.5rem, 3.2vw, 3.5rem); align-items: start; max-width: 88rem; margin-inline: auto; padding: 24px clamp(1.5rem, 3vw, 3rem) 3.5rem; }
+    .wrap > * { grid-column: 1; min-width: 0; }
+    /* the phone: sticky for as long as the left column runs, so it stops at the footer by itself */
+    .panel { grid-column: 2; grid-row: 1 / span 5; position: sticky; top: 24px; height: min(calc(100vh - 48px), 56rem); border-radius: 1.75rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1.5rem rgb(0 0 0 / .7); overflow: hidden; }
+    .top { position: relative; top: 0; flex: none; padding: .55rem 1rem .5rem; border-bottom: 1px solid var(--hair); } .top .mark { font-size: 1.3rem; text-shadow: none; } .top .trust { margin-top: .1rem; }
+    .top .trust { display: block; padding: 0; background: none; text-shadow: none; font-size: .8125rem; color: var(--muted); } .top .trust b { color: var(--honey); }
+    .top .igicon { background: none; border-color: rgb(200 149 90 / .45); color: var(--brass); }
+    /* the whole conversation fits; on a short screen the messages scroll inside and the replies stay pinned */
+    .panel .thread { flex: 1 1 auto; min-height: 0; overflow-y: auto; scrollbar-width: none; overscroll-behavior: contain; gap: .25rem; padding: .5rem .9rem .5rem; font-size: .875rem; } .panel .thread::-webkit-scrollbar { display: none; }
+    .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { padding: .32rem .7rem; line-height: 1.28; max-width: 90%; } .stamp { font-size: .75rem; margin-bottom: .05rem; }
+    .wk { width: 96%; } .wk__h { padding-top: .5rem; font-size: .8125rem; } .wk__free { padding-bottom: .35rem; font-size: .8125rem; line-height: 1.3; }
+    .wk li a { min-height: 2.5rem; padding: .25rem .8rem; grid-template-columns: 3.9rem minmax(0, 1fr); } .wk strong { font-size: .875rem; line-height: 1.2; } .wk small { font-size: .75rem; } .wk time { font-size: .75rem; } .wk__all { min-height: 2.25rem; padding: .2rem .8rem .3rem; font-size: .875rem; }
+    .reply { flex: none; padding: .45rem .9rem .7rem; } .reply h2 { margin-bottom: .3rem; font-size: .8125rem; } .chips, .panel .chips { gap: .3rem; } .chips a, .panel .chips a { min-height: 2.4rem; padding: .2rem .5rem; font-size: .9375rem; line-height: 1.15; }
+    @media (min-height: 880px) { .panel .thread { font-size: .9375rem; gap: .35rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { padding: .4rem .75rem; } .wk strong { font-size: .9375rem; } .chips a, .panel .chips a { min-height: 2.75rem; } .top { padding-block: .8rem .65rem; } }
+    .panel > .note, .points--m { display: none !important; }
+    /* 1. the photo, top of the left column, corners matching the phone; the drive times and the two links underneath */
+    .hero { height: auto; overflow: visible; } .hero::after { content: none; }
+    .hero__pic { height: clamp(19rem, 56vh, 34rem); border-radius: 1.75rem; overflow: hidden; } .hero .mirror { display: none; } .hero img { object-position: 50% 62%; }
+    .mo .hero__pic img { animation: settle 1.2s var(--ease) both; } @keyframes settle { from { transform: scale(1.04); } }
+    .moment--m { left: 1rem; right: auto; bottom: 1rem; text-align: left; }
+    .menu { position: absolute; top: calc(24px + .8rem); left: calc(max(0px, (100vw - 88rem) / 2) + clamp(1.5rem, 3vw, 3rem) + .8rem); }   /* on the photo, and it scrolls away with it */
+    .hero nav { display: flex; flex-wrap: wrap; align-items: center; gap: .1rem 1.6rem; padding: .9rem .25rem 0; }
+    .hero nav .moment { flex: 0 0 100%; margin-bottom: .3rem; }
+    .points--d { flex: 1 1 100%; background: none; padding: 0; justify-content: space-between; gap: .3rem 1rem; font-size: clamp(.8125rem, 1.05vw, .9375rem); color: color-mix(in srgb, var(--cream) 85%, transparent); }
+    .hero nav .note { display: flex; gap: 1.6rem; padding: 0; background: none; } .hero nav .note__a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+    .hero nav .note span { border: 0; padding: 0; font-family: var(--sans); font-style: normal; font-weight: 600; font-size: .9375rem; color: var(--ember); text-decoration: underline; text-decoration-color: rgb(200 149 90 / .7); text-underline-offset: .3em; } .hero nav .note span::after { content: ' →'; white-space: pre; }
+    /* 2. the last of the year in large type, then the waitlist on one line. No slab, no card: the same evening page */
+    .lastcall { background: none; padding: 2.6rem .25rem 0; } .lastcall .avail { max-width: none; margin: 0; gap: 1.6rem; }
+    .lastcall .avail__dates { font-size: clamp(1.6rem, 2.5vw, 2.3rem); line-height: 1.25; letter-spacing: -.01em; } .lastcall .avail__dates a { font-size: .8em; font-family: var(--serif); font-weight: 400; color: var(--honey); padding: 0; }
+    .lastcall .avail__dates small { margin-top: .6rem; font-size: 1rem; letter-spacing: 0; }
+    .lastcall .wl-card { max-width: 34rem; padding: 0; background: none; border: 0; color: var(--cream); } .lastcall .wl__h { font-size: 1.25rem; color: var(--cream); } .lastcall .wl__p { display: none; }
+    .lastcall .wl__row { flex-wrap: nowrap; } .lastcall .wl__row button { background: var(--honey); border-color: var(--honey); color: var(--ink); } .lastcall .wl__fine, .lastcall .wl__done { color: var(--muted); } .lastcall .wl__done { color: var(--cream); } .lastcall .wl__err { color: var(--ember); }
+    /* 3. the house: three photos, a line each */
+    .house { display: block; padding: 3.2rem .25rem 0; } .house h2, .quote h2 { margin: 0 0 .9rem; font-family: var(--sans); font-weight: 500; font-variant: all-small-caps; letter-spacing: .12em; font-size: .9375rem; color: var(--muted); }
+    .house ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .house figure { margin: 0; }
+    .house img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 1.1rem; background: var(--hearth); }
+    .house figcaption { margin-top: .55rem; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: 1rem; line-height: 1.35; color: color-mix(in srgb, var(--cream) 88%, transparent); }
+    .house__all { margin: 1.3rem 0 0; } .house__all a { display: inline-flex; align-items: center; min-height: 2.75rem; font-family: var(--sans); font-weight: 600; font-size: .9375rem; color: var(--ember); text-decoration-color: rgb(200 149 90 / .7); text-underline-offset: .3em; }
+    /* 4. one guest quote (shown once quotes are added to the config) */
+    .quote { display: block; margin: 0; padding: 3.2rem .25rem 0; } .quote blockquote { margin: 0; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.3; color: var(--cream); } .quote figcaption { margin-top: .7rem; font-family: var(--sans); font-size: .9375rem; color: var(--muted); } .quote figcaption b { color: var(--honey); font-weight: 600; }
+    .foot { border-top: 0; }
+  }
 </style>
 </head>
 <body>
 <!--menu:start--><details class="menu"><summary><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><ul><li><a href="/long-light/">The house</a></li><li><a href="/explore/">Things to do</a></li><li><a class="iglink " href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a></li><li><a class="menu__book" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check dates and book</a></li></ul></details><!--menu:end-->
 <div class="wrap">
   <div class="hero">
-    <!--hero:start--><div class="hero__pic"><img src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high" data-hero>
-    <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="" aria-hidden="true" width="1200" height="800"></div>
-    <p class="moment moment--m" data-avail-pill hidden><a href="#dates"></a></p><!--hero:end-->
-    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--d" data-avail-pill hidden><a href="#dates"></a></p><script>try{AA_AVAIL.paint()}catch(e){}</script><!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p></nav>
+    <!--hero:start--><div class="hero__pic"><img src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 1024px) 60vw, 100vw" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high" data-hero>
+    <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 1024px) 60vw, 100vw" alt="" aria-hidden="true" width="1200" height="800"><p class="moment moment--m" data-avail-pill hidden><a href="#dates"></a></p><script>try{AA_AVAIL.paint()}catch(e){}</script></div><!--hero:end-->
+    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--d" <!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1><!--trust:start--><p class="trust"><b>★ 5.0</b> from 52 stays<i>·</i>Guest Favorite</p><!--trust:end--><!--igicon:start--><a class="iglink igicon" href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a><!--igicon:end--></header>
@@ -347,7 +331,7 @@
       var after = function (ms, fn) { timer = setTimeout(function () { if (!over) fn(); }, ms); }, i = 0;
       var step = function () { var el = items[i++];
         if (!el) return after(120, function () { html.classList.add('seq-replies'); window.aaRepliesAt = Math.round(performance.now()); after(650, function () { html.classList.add('seq-pill'); after(800, function () { over = true; stop(); }); }); });
-        var show = function () { el.classList.add('is-in'); after(90, step); };
+        var show = function () { el.classList.add('is-in'); var end = el.offsetTop + el.offsetHeight + 10; if (end > thread.scrollTop + thread.clientHeight && thread.scrollHeight > thread.clientHeight + 1) thread.scrollTop = end - thread.clientHeight; after(90, step); };
         if (!el.classList.contains('msg')) return after(180, show);
         // dots where the message will land, for longer before a longer message
         var d = document.createElement('p'); d.className = 'dots dots--at'; d.setAttribute('aria-hidden', 'true'); d.innerHTML = '<b></b><b></b><b></b>'; d.style.left = el.offsetLeft + 'px'; d.style.top = el.offsetTop + 'px'; thread.appendChild(d);
@@ -375,8 +359,7 @@
     <!--pointsm:start--><ul class="points points--m" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsm:end-->
     <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p>
   </main>
-</div>
-<!--avail:start--><section class="lastcall" id="lastcall" data-mood="evening" aria-label="Open dates and the waitlist"><div class="avail" data-avail-block hidden><p class="avail__dates" id="dates" data-avail-dates="full" hidden></p>
+  <!--avail:start--><section class="lastcall" id="lastcall" data-mood="evening" aria-label="Open dates and the waitlist"><div class="avail" data-avail-block hidden><p class="avail__dates" id="dates" data-avail-dates="full" hidden></p>
 <div class="wl-card"><form class="wl" id="waitlist" name="waitlist" method="POST" action="/" data-netlify="true" netlify-honeypot="company" data-waitlist novalidate>
 <input type="hidden" name="form-name" value="waitlist"><input type="hidden" name="list" value="waitlist-2027">
 <p class="wl__sr"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
@@ -386,6 +369,9 @@
 <p class="wl__err" id="waitlist-msg" role="alert" hidden></p>
 <p class="wl__fine" id="waitlist-fine">One email when 2027 opens. That’s it. We’ll only use this to tell you when 2027 opens.</p>
 </form><p class="wl__done" role="status" tabindex="-1" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 12.5l5 5L20 6.5"/></svg>You’re on the list. You’ll hear from us the moment 2027 opens.</p></div></div><script>try{AA_AVAIL.paint()}catch(e){}</script></section><!--avail:end-->
+  <!--house:start--><section class="house" id="house" aria-labelledby="house-h"><h2 id="house-h">The house</h2><ul><li><figure><img src="/img/hotTub-800.webp?v=2" alt="Looking across the bubbling hot tub toward the pool, the lawn and the mountain." loading="lazy" decoding="async" width="800" height="1000"><figcaption>On all winter, facing the ridge.</figcaption></figure></li><li><figure><img src="/img/patioFire-1200.webp?v=2" alt="Gray Adirondack chairs around the fire pit on the stone patio, with the pool fence, the lawn and the Blue Ridge beyond." loading="lazy" decoding="async" width="800" height="1000"><figcaption>Lit by sunset, most nights.</figcaption></figure></li><li><figure><img src="/img/king-800.webp?v=2" alt="King bedroom with a deep teal wall, a whitewashed bed frame, a red patterned rug and a window onto the lawn." loading="lazy" decoding="async" width="800" height="1000"><figcaption>A soaking tub and a door that closes.</figcaption></figure></li></ul><p class="house__all"><a href="/long-light/">See the whole house →</a></p></section><!--house:end-->
+  <!--quote:start--><!--quote:end-->
+</div>
 <div class="foot"><!--footer:start--><footer class="ft ft--min" data-mood="evening">
 <p class="mark">Afton <em>Awaits</em></p>
 <p class="ft__where">Afton, Nelson County, Virginia · Hosted by Jamie of Be Still Getaways</p>
@@ -463,6 +449,14 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 
+// desktop: if the screen is too short for the whole conversation, the phone starts scrolled to the weekend card
+if (!document.documentElement.classList.contains('seq') && thread.scrollHeight > thread.clientHeight + 1) thread.scrollTop = thread.scrollHeight;
+// desktop, hot tub season: when the photos of the house scroll into view, the house says one more thing. Once.
+{ const house = document.getElementById('house');
+  if (house && 'IntersectionObserver' in window && matchMedia('(min-width: 1024px)').matches && document.documentElement.dataset.season === 'cool') {
+    const io = new IntersectionObserver((es) => { if (!es.some((e) => e.isIntersecting)) return; io.disconnect(); if (picked.length || thread.querySelector('#tub-msg')) return;
+      const p = document.createElement('p'); p.className = 'msg msg--in is-new'; p.id = 'tub-msg'; p.textContent = 'That’s the hot tub. It’s on all winter.'; thread.append(p); thread.scrollTo({ top: thread.scrollHeight, behavior: reduced ? 'auto' : 'smooth' }); }, { threshold: .35 });
+    io.observe(house); } }
 // planner links open on the weekend the card shows
 const setPlanLinks = () => { for (const a of document.querySelectorAll('a[data-plan]')) a.href = planUrl(); for (const a of document.querySelectorAll('a[data-plan-i]')) { const u = new URL(a.href); a.href = planUrl((u.searchParams.get('i') ?? '').split(',').filter(Boolean)); } };
 setPlanLinks();
@@ -478,6 +472,6 @@ if (!window.aaWeekendKnown) try { const [cal, roads] = await Promise.all([fetch(
   window.aaWeekend(W); setPlanLinks();
 } catch { /* the calendar did not load: the conversation carries on without the weekend */ }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 8:33 AM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 19, 10:15 AM ET</p>
 </body>
 </html>

@@ -52,5 +52,34 @@
  },
  "charlottesville": "about 35 minutes",
  "instagramHandle": "afton.awaits",
- "instagramUrl": "https://www.instagram.com/afton.awaits/"
+ "instagramUrl": "https://www.instagram.com/afton.awaits/",
+ "homeHouse": {
+  "heading": "The house",
+  "link": "See the whole house",
+  "photos": [
+   {
+    "img": [
+     "winter-hottub-steam",
+     "hotTub"
+    ],
+    "caption": "On all winter, facing the ridge."
+   },
+   {
+    "img": [
+     "winter-fire-bluehour",
+     "patioFire"
+    ],
+    "caption": "Lit by sunset, most nights."
+   },
+   {
+    "img": [
+     "king"
+    ],
+    "caption": "A soaking tub and a door that closes."
+   }
+  ],
+  "note": "Home page, desktop. Each photo uses the first name in img that exists in /img (so a season photo takes over when it is added)."
+ },
+ "guestQuotes": [],
+ "guestQuotesNote": "Add { \"text\": \"...\", \"by\": \"First name, month year\" } to guestQuotes and the first one shows on the home page (desktop) with the rating. Only quotes the guest has agreed to."
 }
