@@ -62,20 +62,21 @@
      "winter-hottub-steam",
      "hotTub"
     ],
-    "caption": "On all winter, facing the ridge."
+    "caption": "Hot tub on all winter, facing the ridge."
    },
    {
     "img": [
      "winter-fire-bluehour",
      "patioFire"
     ],
-    "caption": "Lit by sunset, most nights."
+    "caption": "Relax with a glass of wine by the fire pit."
    },
    {
     "img": [
-     "king"
+     "kitchenIsland",
+     "kitchen"
     ],
-    "caption": "A soaking tub and a door that closes."
+    "caption": "Enough room to relax."
    }
   ],
   "note": "Home page, desktop. Each photo uses the first name in img that exists in /img (so a season photo takes over when it is added)."
