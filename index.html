@@ -13,12 +13,11 @@
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795052694">
+<link rel="stylesheet" href="/shared.css?v=1795052771">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
   body { background: var(--night); color: var(--cream); }
-  .back { position: static; }
   /* paper grain over everything, barely there */
   .grain { position: fixed; inset: 0; z-index: 40; pointer-events: none; opacity: .045; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .9 0 0 0 0 .82 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
@@ -91,7 +90,6 @@
 
   @media (min-width: 900px) {
     html, body { height: 100%; } body { display: flex; flex-direction: column; overflow: hidden; }
-    .back { flex: none; }
     .wrap { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
     .hero { position: absolute; inset: 0; height: auto; }
     /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
@@ -138,7 +136,6 @@
 </style>
 </head>
 <body>
-<p class="back" id="back" hidden></p>
 <!--menu:start--><details class="menu"><summary><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><ul><li><a href="/long-light/">The house</a></li><li><a href="/explore/">Things to do</a></li><li><a class="iglink " href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a></li><li><a class="menu__book" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener">Check dates and book</a></li></ul></details><!--menu:end-->
 <div class="wrap">
   <div class="hero">
@@ -198,9 +195,8 @@ var ul=document.getElementById('chips'),plain=ul.querySelector('.plain').parentN
 order.forEach(function(k){var a=ul.querySelector('[data-trip="'+k+'"]'),b=C.chips[k],t=typeof b==='string'?b:b[pool?0:1];a.textContent=k===S.featured&&S.featuredLabel?S.featuredLabel:t;a.classList.toggle('is-featured',k===S.featured);ul.insertBefore(a.parentNode,plain)});
 var M=C.moments.filter(function(m){return within(n,m.from,m.to)})[0];document.querySelectorAll('[data-moment]').forEach(function(p){p.hidden=!M;if(M){var a=p.firstChild;a.textContent=M.line;a.href=M.href;if(M.out){a.target='_blank';a.rel='noopener'}else{a.removeAttribute('target')}}})})()</script><!--seasonjs:end-->
 <script type="module">
-import { byId, url, remember, forget, label, welcomeBack, reduced } from '/shared.js';
+import { byId, url, remember, forget, label, reduced } from '/shared.js';
 if (location.search.includes('switch')) { forget(); history.replaceState(null, '', '/'); }
-welcomeBack(document.getElementById('back'));
 // the note arrived a minute ago, by the visitor's own clock
 { const d = new Date(Date.now() - 60000), h = d.getHours(), part = h < 5 ? 'Tonight' : h < 12 ? 'This morning' : h < 17 ? 'This afternoon' : 'This evening';
   document.getElementById('stamp').textContent = `${part}, ${d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M/, '')}`; }
@@ -258,6 +254,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 8:44 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 8:46 PM ET</p>
 </body>
 </html>
