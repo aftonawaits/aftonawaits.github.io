@@ -52,7 +52,10 @@ input[type='checkbox'] { width: 1.25rem; height: 1.25rem; accent-color: var(--br
 .reset { position: absolute; left: 1.3rem; top: 1.3rem; z-index: 2; font: inherit; font-size: .8125rem; font-weight: 600; min-height: 2.4rem; padding: .2rem .9rem; border-radius: 99px; border: 1px solid var(--line); background: var(--card); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
 .maplibregl-ctrl-group { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow); margin: 1.2rem 1.2rem 0 0; background: var(--card); } .maplibregl-ctrl-group button { width: 2.6rem; height: 2.6rem; }
 .maplibregl-ctrl-attrib { background: color-mix(in srgb, var(--card) 82%, transparent); color: var(--ink-soft); } .maplibregl-ctrl-attrib a { color: var(--ink-soft); }
-.pin { --c: var(--ink); position: relative; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--c); border: 2.5px solid var(--card); box-shadow: 0 .25rem .6rem color-mix(in srgb, var(--ink) 40%, transparent); color: var(--card); cursor: pointer; padding: 0; }
+/* A pin is the map library's own marker element, which must stay position: absolute at the map's top-left corner:
+   the library moves it with a transform from there. (It was position: relative, so each pin was pushed down by all the
+   pins before it and landed in the wrong place.) Absolute still anchors the count badge and the pulse ring. */
+.pin { --c: var(--ink); position: absolute; top: 0; left: 0; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--c); border: 2.5px solid var(--card); box-shadow: 0 .25rem .6rem color-mix(in srgb, var(--ink) 40%, transparent); color: var(--card); cursor: pointer; padding: 0; }
 .pin svg { width: 1.2rem; height: 1.2rem; pointer-events: none; }
 .pin--home { width: 2.7rem; height: 2.7rem; --c: var(--ink); color: var(--ember); border-color: var(--honey); }
 .maplibregl-marker:has(.pin--home) { z-index: 4; } .pin--home svg { width: 1.5rem; height: 1.5rem; }
