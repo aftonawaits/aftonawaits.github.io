@@ -1,5 +1,5 @@
 {
- "about": "The home page sells the season guests are booking, about 60 days ahead. Dates are month-day. To turn a moment off, change its \"active\" to false. In a season's \"points\", {min} is filled in from the road drive times for \"place\".",
+ "about": "The home page sells the season guests are booking, about 60 days ahead. Dates are month-day. To turn a moment off, change its \"active\" to false. In a season's \"points\", {min} is filled in from the road drive times for \"place\". The home page shows each point as a short line (\"27 min Wintergreen\", from \"short\"); the ski and snow trip page shows the full sentences.",
  "seasons": {
   "winter": {
    "from": "10-15",
@@ -30,31 +30,36 @@
      "icon": "mountain",
      "place": "wintergreen-resort",
      "lead": "{min} min to Wintergreen.",
-     "text": "Lifts, tubing and lessons for every level, from first-timers to first chair."
+     "text": "Lifts, tubing and lessons for every level, from first-timers to first chair.",
+     "short": "Wintergreen"
     },
     {
      "icon": "wine",
      "place": "veritas-vineyard-and-winery",
      "lead": "{min} min to Veritas.",
-     "text": "A tasting room built for a cold afternoon."
+     "text": "A tasting room built for a cold afternoon.",
+     "short": "Veritas"
     },
     {
      "icon": "beer",
      "place": "brewing-tree-beer-co",
      "lead": "{min} min to a cold beer.",
-     "text": "Brewing Tree is practically next door."
+     "text": "Brewing Tree is practically next door.",
+     "short": "Brewing Tree"
     },
     {
      "icon": "basket",
      "place": "blue-ridge-grocery-iga",
      "lead": "{min} min to groceries.",
-     "text": "The IGA covers everything the weekend forgot."
+     "text": "The IGA covers everything the weekend forgot.",
+     "short": "groceries"
     },
     {
      "icon": "town",
      "minutes": 35,
      "lead": "{min} min to Charlottesville.",
-     "text": "C&O, Mockingbird and the Downtown Mall."
+     "text": "C&O, Mockingbird and the Downtown Mall.",
+     "short": "Charlottesville"
     },
     {
      "icon": "fire",
