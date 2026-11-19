@@ -1,12 +1,12 @@
 {
- "about": "The home page sells the season guests are booking, about 60 days ahead. Dates are month-day. To turn a moment off, change its \"active\" to false. In a season's \"points\", {min} is filled in from the road drive times for \"place\". The home page shows each point as a short line (\"27 min Wintergreen\", from \"short\"); the ski and snow trip page shows the full sentences.",
+ "about": "The home page sells the season guests are booking, about 60 days ahead. Dates are month-day. To turn a moment off, change its \"active\" to false. In a season's \"points\", {min} is filled in from the road drive times for \"place\". The home page shows each point as a short line (\"27 min Wintergreen\", from \"short\"); the ski and snow trip page shows the full sentences. \"subhead\" is the line in the chat; \"description\", when present, is the longer sentence search engines and share previews show.",
  "seasons": {
   "winter": {
    "from": "10-15",
    "to": "01-14",
    "sells": "December to March",
    "headline": "The slopes and the wine country. Why choose?",
-   "subhead": "{wintergreenWords} minutes to Wintergreen’s lifts, about ten to the wineries, and great dining close by. Ski as hard as you like, then come home to the hot tub.",
+   "subhead": "Ski as hard as you like, then come home to the hot tub.",
    "chatOrder": [
     "girls",
     "family",
@@ -66,7 +66,8 @@
      "lead": "And at home:",
      "text": "the hot tub’s steaming and the fire pit’s lit."
     }
-   ]
+   ],
+   "description": "{wintergreenWords} minutes to Wintergreen’s lifts, about ten to the wineries, and great dining close by. Ski as hard as you like, then come home to the hot tub."
   },
   "spring": {
    "from": "01-15",
