@@ -1,0 +1,64 @@
+{
+ "about": "The home page sells the season guests are booking, about 60 days ahead. Dates are month-day. To turn a moment off, change its \"active\" to false.",
+ "seasons": {
+  "winter": {
+   "from": "10-15", "to": "01-14", "sells": "December to March",
+   "headline": "Hot tub’s on. Fire’s lit.",
+   "subhead": "A Blue Ridge farmhouse for six: steam rising off the hot tub, wine by the fire, and Wintergreen’s slopes {wintergreen} minutes away.",
+   "chatOrder": ["girls", "family", "outdoors"],
+   "featuredTrip": "outdoors", "featuredLabel": "Ski and snow weekend.",
+   "heroImage": ["winter-hottub-steam", "winter-fire-bluehour", "aerialDusk"],
+   "heroAlt": { "winter-hottub-steam": "Steam rising off the hot tub at sunrise, the Blue Ridge behind.", "winter-fire-bluehour": "The fire pit lit at blue hour, chairs around it and the ridge going dark.", "aerialDusk": "The farmhouse at dusk from above, windows lit, the Blue Ridge behind." },
+   "poolClaims": false
+  },
+  "spring": {
+   "from": "01-15", "to": "03-14", "sells": "March to May",
+   "headline": "The patios are open. So is the porch.",
+   "subhead": "A Blue Ridge farmhouse for six, minutes from Route 151’s wineries as their patios reopen.",
+   "chatOrder": ["girls", "trail151", "family"],
+   "featuredTrip": "girls",
+   "heroImage": ["spring-porch", "porchView"],
+   "heroAlt": { "porchView": "The view from the covered porch across the patio and lawn to the Blue Ridge." },
+   "poolClaims": false
+  },
+  "summer": {
+   "from": "03-15", "to": "07-14", "sells": "May to September",
+   "headline": "Pool’s open. Fire’s lit.",
+   "subhead": "A Blue Ridge farmhouse for six with a private saltwater pool, a hot tub and the fire pit at sunset.",
+   "chatOrder": ["family", "girls", "trail151"],
+   "featuredTrip": "family",
+   "heroImage": ["summer-pool", "poolLevel"],
+   "heroAlt": { "poolLevel": "The saltwater pool at water level with the lawn, the black fence and the Blue Ridge beyond." },
+   "poolClaims": true
+  },
+  "fall": {
+   "from": "07-15", "to": "10-14", "sells": "September to December",
+   "headline": "The leaves are turning. Fire’s lit.",
+   "subhead": "A Blue Ridge farmhouse for six: fall color on the ridge, a hot tub and UVA game days 35 minutes away.",
+   "chatOrder": ["girls", "game-day", "trail151"],
+   "featuredTrip": "game-day",
+   "heroImage": ["fall-ridge", "houseDusk"],
+   "heroAlt": { "houseDusk": "The front of the farmhouse at dusk, every window lit under a pink and violet sky." },
+   "poolClaims": true, "poolClaimsUntil": "09-30"
+  }
+ },
+ "moments": [
+  {
+   "key": "christmas",
+   "active": true,
+   "from": "10-15",
+   "to": "12-15",
+   "line": "Christmas week is still open. A fire, a hot tub and nowhere to be.",
+   "link": "booking",
+   "stay": ["12-21", "12-28"]
+  },
+  {
+   "key": "galentines",
+   "active": true,
+   "from": "12-16",
+   "to": "02-10",
+   "line": "Galentine’s weekend, sorted: wine, the hot tub and nobody in charge.",
+   "link": "/trips/girls/"
+  }
+ ]
+}
