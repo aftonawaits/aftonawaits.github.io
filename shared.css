@@ -116,6 +116,27 @@ body[data-mood='evening']::after { opacity: .045; mix-blend-mode: soft-light; }
 .iglink .ig { flex: none; } .iglink:hover { color: #f0b352; }
 .ft nav a.ft__ig { padding: 0; color: #d6a45e; } .ft nav a.ft__ig span { color: #f3eadb; }
 .tagus { max-width: 44rem; margin: 2.2rem auto 0; padding: 0 var(--gutter, 1.1rem); text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.0625rem; color: var(--ink-soft, inherit); }
+.strip--avail { display: block; margin: 0; padding: .6rem 1rem; text-align: center; text-decoration: none; background: #17120f !important; color: #d6a45e !important; border-block: 1px solid rgb(200 149 90 / .5) !important; font-family: var(--serif); font-style: italic; font-size: .9375rem; line-height: 1.4; }
+.strip--avail[hidden] { display: none; } .strip--pin { position: sticky; top: 0; z-index: 60; } .strip--avail b { font-weight: 500; color: #f3eadb !important; } .strip--avail u { text-underline-offset: .3em; white-space: nowrap; } .strip--avail:hover { background: #221a15 !important; }
+html:not([data-avail='off']) [data-avail-strip]:not(.strip--avail) { visibility: hidden; }
+html:not([data-avail='off']) [data-moment] { display: none !important; }            /* one message at a time: the banner comes before a seasonal moment */
+.avail { display: grid; gap: 1rem; } .avail[hidden] { display: none; }
+.avail__dates { margin: 0; font-family: var(--serif); font-size: 1.125rem; line-height: 1.5; } .avail__dates small { display: block; margin-top: .15rem; font-size: .9375rem; font-style: italic; opacity: .85; } .avail__dates[hidden] { display: none; }
+.avail__dates a { display: inline-block; padding: .5rem 0; color: #d6a45e; font-weight: 600; font-family: var(--sans); font-size: 1rem; text-underline-offset: .3em; white-space: nowrap; } .avail__dates a:hover { color: #f0b352; }
+.wl-card { max-width: 34rem; padding: 1.2rem 1.25rem 1.1rem; border-radius: 1.1rem; background: #efe6d8; color: #2a2019; border: 1px solid rgb(42 32 25 / .14); text-align: left; }
+.wl { display: grid; gap: .6rem; margin: 0; } .wl[hidden] { display: none; }
+.wl__h { margin: 0; font-family: var(--serif); font-weight: 400; font-style: normal; font-size: 1.45rem; line-height: 1.15; letter-spacing: -.01em; color: #2a2019; }
+.wl__p { margin: 0; font-family: var(--sans); font-size: 1rem; line-height: 1.5; color: #2a2019; max-width: none; }
+.wl__row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .2rem; }
+.wl__row input { flex: 1 1 13rem; min-width: 0; min-height: 3rem; padding: .5rem .9rem; border-radius: .7rem; border: 1px solid #8a7460; background: #fbf6ee; color: #2a2019; font: inherit; font-family: var(--sans); font-size: 1rem; }
+.wl__row input:focus-visible { outline: 2px solid #2a2019; outline-offset: 2px; } .wl__row input[aria-invalid='true'] { border-color: #a3341f; box-shadow: 0 0 0 1px #a3341f; }
+.wl__row button { flex: 0 0 auto; min-height: 3rem; padding: .5rem 1.2rem; border-radius: 99px; border: 1px solid #2a2019; background: #2a2019; color: #f3eadb; font: inherit; font-family: var(--sans); font-size: 1rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.wl__row button:hover { background: #3a2c22; } .wl__row button:disabled { opacity: .6; cursor: progress; }
+.wl__err { margin: 0; font-family: var(--sans); font-size: .9375rem; font-weight: 600; color: #8f2c1a; } .wl__err[hidden], .wl__done[hidden] { display: none; }
+.wl__fine { margin: 0; font-family: var(--sans); font-size: .875rem; line-height: 1.45; color: #6a5744; }
+.wl__done { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.35; color: #2a2019; } .wl__done:focus { outline: none; }
+.wl__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 480px) { .wl__row button { flex: 1 1 100%; } }
 .tagus .iglink { display: inline; min-height: 0; padding: .8rem 0; color: var(--brass-deep, inherit); font-style: normal; }
 /* chrome:end */
 .hd__trip b { display: inline-grid; place-items: center; min-width: 1.4rem; height: 1.4rem; padding: 0 .3rem; margin-left: .25rem; border-radius: 99px; background: #d6a45e; color: #2a2019; font-weight: 600; text-decoration: none; }

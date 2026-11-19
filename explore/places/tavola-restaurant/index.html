@@ -11,7 +11,81 @@
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){var P=new URLSearchParams(location.search),q=P.get('season'),qd=P.get('date'),d=qd?new Date(qd+'T12:00:00'):new Date(),n=(d.getMonth()+1)*100+d.getDate(),s=q==='pool'||q==='summer'?'pool':q==='cool'||q==='winter'||q==='spring'?'cool':(n>=501&&n<=930?'pool':'cool'),w=q==='winter'?'on':q&&!qd?'off':(n>=1015||n<=314?'on':'off'),h=document.documentElement;h.dataset.season=s;h.dataset.snow=w;document.addEventListener('DOMContentLoaded',function(){var t=(w==='on'&&document.querySelector('meta[name="aa:title-snow"]'))||document.querySelector('meta[name="aa:title-'+s+'"]');if(t&&!h.dataset.sells)document.title=t.content;if(q||qd)document.querySelectorAll('a[href^="/"]').forEach(function(a){var u=a.getAttribute('href');if(u.indexOf('season=')<0&&u.indexOf('date=')<0&&u.indexOf('#')!==0)a.href=u.replace(/(\?|#|$)/,function(m){return '?'+(qd?'date='+qd:'season='+q)+(m==='?'?'&':m)})})})})()</script>
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
-<link rel="stylesheet" href="/shared.css?v=1795057681"><link rel="stylesheet" href="/plan/plan.css?v=1795057681"><link rel="stylesheet" href="/explore/explore.css?v=1795057681">
+<script>(function availRuntime(A, B, T) {
+  var P = new URLSearchParams(location.search), qd = P.get('date'), d = qd ? new Date(qd + 'T12:00:00') : new Date();
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; }, iso = function (x) { return x.getFullYear() + '-' + pad(x.getMonth() + 1) + '-' + pad(x.getDate()); }, today = iso(d);
+  var next = function (day, n) { var x = new Date(day + 'T12:00:00'); x.setDate(x.getDate() + (n || 1)); return iso(x); };
+  var closedIn = A.noCheckIn || [];
+  // the stays still open; one that can be joined late (Christmas) starts today once its first day has gone by
+  var open = !A.active ? [] : (A.openDates || []).filter(function (o) { return (o.lastArrival || o.from) >= today; }).map(function (o) {
+    var from = o.from > today ? o.from : today; while (closedIn.indexOf(from) >= 0 && from < o.to) from = next(from);
+    return { from: from, to: o.to, label: o.label, christmas: !!o.christmas, note: o.note || '', lastArrival: o.lastArrival || o.from }; }).filter(function (o) { return o.from < o.to && closedIn.indexOf(o.from) < 0; });
+  var state = !A.active ? 'off' : open.length ? 'open' : 'full';
+  var Y = A.nextYear, was = Y - 1, html = document.documentElement; html.dataset.avail = state;
+  // every open night: the nights of each open stay, and the midweek nights while they are open
+  var nights = {}, mark = function (from, last) { for (var x = from; x <= last; x = next(x)) if (x >= today) nights[x] = 1; };
+  open.forEach(function (o) { mark(o.from, next(o.to, -1)); }); if (A.active && A.midweekOpen) (A.midweekNights || []).forEach(function (r) { mark(r[0], r[1]); });
+  var midweek = A.active && A.midweekOpen && (A.midweekNights || []).some(function (r) { return r[1] >= today; });
+  /** Is the house open for a stay from..to? Every night must be open, and arrival must not fall on a no-check-in day. */
+  var covers = function (from, to) { if (!(from < to) || closedIn.indexOf(from) >= 0) return false; for (var x = from; x < to; x = next(x)) if (!nights[x]) return false; return true; };
+  /** The booking page on these dates, or null when the stay would start on a no-check-in day. */
+  var link = function (from, to) { if (closedIn.indexOf(from) >= 0) return null; var u = new URL(B.url), k; u.searchParams.set(B.start, from); u.searchParams.set(B.end, to); for (k in B.extra) u.searchParams.set(k, B.extra[k]); return u.href; };
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
+  var opens = A.nextYearOpens ? Y + ' opens ' + new Date(A.nextYearOpens + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.' : Y + ' opens soon.';
+  window.AA_AVAIL = { state: state, open: open, link: link, covers: covers, year: Y };
+  if (state === 'off') return;
+  // "Two December weekends and Christmas are all that's left", from the list
+  var WORDS = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'], xmas = open.some(function (o) { return o.christmas; }), ends = open.filter(function (o) { return !o.christmas; });
+  var months = ends.map(function (o) { return new Date(o.from + 'T12:00:00').toLocaleDateString('en-US', { month: 'long' }); }), month = months.length && months.every(function (m) { return m === months[0]; }) ? months[0] + ' ' : '';
+  var count = ends.length ? (WORDS[ends.length] || ends.length) + ' ' + month + (ends.length === 1 ? 'weekend' : 'weekends') : '';
+  var left = count && xmas ? count + ' and Christmas are all that’s left' : count ? count + (ends.length === 1 ? ' is all that’s left' : ' are all that’s left') : 'Just Christmas is left';
+  var dateLinks = function () { return open.map(function (o) { return '<a data-avail-date href="' + esc(link(o.from, o.to)) + '" target="_blank" rel="noopener"' + (o.note ? ' title="' + esc(o.note) + '"' : '') + '>' + esc(o.label) + '</a>'; }).join(' · '); };
+  var run = function () {
+    var form = document.querySelector('[data-waitlist]'), line = document.querySelector('[data-avail-dates]'), keep = qd ? '?date=' + qd : '';
+    var toWait = form ? '#' + form.id : T.home + keep + '#waitlist', toDates = line ? '#dates' : T.home + keep + '#dates';
+    // the top strip
+    document.querySelectorAll('[data-avail-strip]').forEach(function (s) {
+      s.hidden = false; s.classList.add('strip--avail'); s.removeAttribute('target'); s.removeAttribute('rel');
+      if (state === 'open') { s.href = toDates; s.innerHTML = '<b>Last call for ' + was + '.</b> ' + left + ', and ' + Y + ' isn’t open yet. <u>See the dates →</u>'; }
+      else { s.href = toWait; s.innerHTML = '<b>' + was + ' is full.</b> ' + opens + ' <u>Get first pick →</u>'; }
+    });
+    var pin = document.querySelector('.strip--pin'); if (pin) { var size = function () { html.style.setProperty('--avail-h', pin.offsetHeight + 'px'); }; size(); addEventListener('resize', size); }
+    // the date line: each date opens the booking page with those dates filled in
+    document.querySelectorAll('[data-avail-dates]').forEach(function (p) {
+      if (open.length) { var x = open.filter(function (o) { return o.christmas; })[0], by = x ? +x.lastArrival.slice(8) : 0, th = by % 10 === 1 && by !== 11 ? 'st' : by % 10 === 2 && by !== 12 ? 'nd' : by % 10 === 3 && by !== 13 ? 'rd' : 'th';
+        var small = [midweek ? 'Midweek nights are open too.' : '', x ? 'Christmas guests: arrive by the ' + by + th + '.' : ''].filter(Boolean).join(' ');
+        p.hidden = false; p.innerHTML = 'The last of ' + was + ' is going fast: ' + dateLinks() + '. After that, the calendar’s closed until ' + Y + '.' + (small ? '<small>' + small + '</small>' : ''); }
+      else if (p.dataset.availDates === 'full') { p.hidden = false; p.innerHTML = was + ' is full. ' + opens + ' <a href="' + toWait + '">Get first pick →</a>'; }
+    });
+    document.querySelectorAll('[data-avail-block]').forEach(function (b) { b.hidden = false; });
+    // booking buttons never open an empty calendar: they go to the list of open dates, or to the waitlist
+    var base = B.url.split('?')[0];
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      if (a.href.indexOf(base) !== 0 || a.hasAttribute('data-avail-date') || a.hasAttribute('data-avail-strip') || a.hasAttribute('data-avail-keep') || a.closest('[data-moment]')) return;
+      a.removeAttribute('target'); a.removeAttribute('rel'); a.href = state === 'open' ? toDates : toWait;
+      if (state === 'full') { var t = a.children.length === 1 && !a.firstElementChild.children.length ? a.firstElementChild : a, said = t.textContent.trim().replace(/\.$/, '');
+        if ((!a.children.length || t !== a) && (said === T.book || said === T.direct)) t.textContent = a.classList.contains('hd__book') ? Y + ' waitlist' : 'Join the ' + Y + ' waitlist'; }
+    });
+    // a link to the waitlist puts the cursor in the email field
+    document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href$="#waitlist"]'); if (a && form && a.pathname === location.pathname) setTimeout(function () { form.querySelector('input[type=email]').focus({ preventScroll: true }); }, 500); });
+    // the sign-up form
+    document.querySelectorAll('[data-waitlist]').forEach(function (f) {
+      var input = f.querySelector('input[type=email]'), err = f.querySelector('.wl__err'), btn = f.querySelector('button'), done = f.parentNode.querySelector('.wl__done');
+      var fail = function (msg) { err.textContent = msg; err.hidden = false; input.setAttribute('aria-invalid', 'true'); input.focus(); };
+      input.addEventListener('input', function () { err.hidden = true; input.removeAttribute('aria-invalid'); });
+      f.addEventListener('submit', function (e) {
+        e.preventDefault(); var v = input.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return fail(v ? 'That doesn’t look like an email address. Please check it.' : 'Please enter your email address.');
+        var body = new URLSearchParams(new FormData(f)); body.set('email', v); body.set('page', location.pathname); btn.disabled = true;
+        fetch(f.getAttribute('action') || '/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
+          .then(function (r) { if (!r.ok) throw 0; f.hidden = true; done.hidden = false; done.focus(); })
+          .catch(function () { btn.disabled = false; fail('Sorry, that didn’t go through. Please try again in a moment.'); });
+      });
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
+<link rel="stylesheet" href="/shared.css?v=1795059078"><link rel="stylesheet" href="/plan/plan.css?v=1795059078"><link rel="stylesheet" href="/explore/explore.css?v=1795059078">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Tavola Restaurant","geo":{"@type":"GeoCoordinates","latitude":38.02443,"longitude":-78.47546}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Explore","item":"https://aftonawaits.github.io/explore/"},{"@type":"ListItem","position":2,"name":"Tavola Restaurant","item":"https://aftonawaits.github.io/explore/places/tavola-restaurant/"}]}</script>
 </head>
@@ -40,6 +114,6 @@
 <p class="proof proof--safe">Same house as our Guest Favorite Airbnb listing · Secure booking through eviivo · Jamie usually replies within the hour.</p>
 <p class="ft__note">Details come from each venue’s own listing and can change. Confirm with the venue before you go. Last refreshed Thursday, November 19, 2026.</p>
 </footer>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 10:08 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 10:31 PM ET</p>
 </body>
 </html>

@@ -259,3 +259,6 @@ main { gap: 1.2rem; }
 
 .row__sub { display: block; -webkit-line-clamp: unset; overflow: visible; white-space: normal; }
 .nw { display: inline-block; }
+
+/* the waitlist, shown in step 3 only when the house is not open for the chosen dates */
+.stay3 { margin-top: 1.2rem; } .stay3:has(.avail[hidden]) { display: none; } .stay[hidden] { display: none; }

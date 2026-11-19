@@ -389,10 +389,16 @@ function renderBooking() {
   u.searchParams.set(b.startParam, state.from); u.searchParams.set(b.endParam, state.to); for (const k in b.extra) u.searchParams.set(k, b.extra[k]);
   const short = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   const mine = state.booked && state.booked.from === state.from && state.booked.to === state.to;
-  $('#avail').href = $('#avail2').href = u.href;
+  const A = window.AA_AVAIL;   // no booking link starts on a no-check-in day (config/availability-banner.json)
+  $('#avail').href = $('#avail2').href = A ? A.link(state.from, state.to) ?? property.bookingUrl : u.href;
   $('#avail-row').classList.toggle('is-booked', !!mine);
   $('#avail-note').textContent = mine ? `Your stay: ${short(state.from)} to ${short(state.to)}. Check-in from ${property.checkIn}, check-out by ${property.checkOut}.` : '';
   $('#avail2').hidden = !!mine;
+  // while the "last call" banner is on: if the house is not open for these dates, the waitlist takes the booking line's place
+  const closed = !!A && A.state !== 'off' && !mine && !A.covers(state.from, state.to);
+  $('#avail-row').hidden = closed; $('#avail-closed').hidden = !closed; if (A) $('#avail-year').textContent = A.year;
+  if (closed) $('#avail2').hidden = true;
+  const card = document.querySelector('#stay3 .avail'); if (card) card.hidden = !closed;
 }
 const wide = matchMedia('(min-width: 1024px)');   // list and map side by side: the map is always there, so it is not a tab
 function showTab(name) {

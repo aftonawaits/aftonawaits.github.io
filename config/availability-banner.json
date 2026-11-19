@@ -1,0 +1,15 @@
+{
+  "active": true,
+  "openDates": [
+    { "from": "2026-12-04", "to": "2026-12-06", "label": "Dec 4–6" },
+    { "from": "2026-12-18", "to": "2026-12-20", "label": "Dec 18–20" },
+    { "from": "2026-12-23", "to": "2026-12-26", "label": "Christmas", "christmas": true, "lastArrival": "2026-12-24", "note": "Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25." }
+  ],
+  "midweekOpen": true,
+  "midweekNights": [["2026-12-01", "2026-12-10"], ["2026-12-13", "2026-12-24"], ["2026-12-26", "2026-12-26"]],
+  "noCheckIn": ["2026-12-25"],
+  "nextYear": 2027,
+  "nextYearOpens": null,
+  "signup": { "endpoint": "/", "form": "waitlist" },
+  "note": "openDates: the stays still open, kept by the owner. Each drops off the day after its from date (after lastArrival, if it has one). An empty list means waitlist only. midweekNights: the open nights behind 'Midweek nights are open too' (first and last night of each run); the planner uses them to tell whether its dates are open. noCheckIn: no booking link ever starts on these days. Set active to false when the next year opens. Sign-ups are tagged waitlist-<nextYear>."
+}
