@@ -89,7 +89,7 @@
 })({"active":true,"openDates":[{"from":"2026-12-04","to":"2026-12-06","label":"Dec 4–6"},{"from":"2026-12-18","to":"2026-12-20","label":"Dec 18–20"},{"from":"2026-12-23","to":"2026-12-26","label":"Christmas","christmas":true,"lastArrival":"2026-12-24","note":"Arrive any day through Dec 24, leave by Dec 27. No check-in on Dec 25."}],"midweekOpen":true,"midweekNights":[["2026-12-01","2026-12-10"],["2026-12-13","2026-12-24"],["2026-12-26","2026-12-26"]],"noCheckIn":["2026-12-25"],"nextYear":2027,"nextYearOpens":null},{"url":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true","start":"startdate","end":"enddate","extra":{"adults1":"2","children1":"0"}},{"home":"/","book":"Check dates and book","direct":"Book direct and save"})</script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795059078">
+<link rel="stylesheet" href="/shared.css?v=1795059785">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -107,7 +107,7 @@
   .moment--m { position: absolute; z-index: 3; left: .7rem; right: .7rem; bottom: .7rem; text-align: center; }
   .hero nav .moment a { font-size: 1.0625rem; margin-bottom: .5rem; text-decoration: none; }
   .msg--sub { font-size: .9375rem; line-height: 1.4; }
-  .msg--offer a { font-weight: 600; color: var(--brass-deep); white-space: nowrap; display: inline-block; padding: .35rem 0; }
+  .msg--offer a { font-weight: 600; color: var(--brass-deep); display: inline-block; padding: .35rem 0; }
   .menu { position: fixed; z-index: 45; top: .7rem; left: .7rem; font-family: var(--sans); }
   .menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .3rem .9rem .3rem .7rem; border-radius: 99px; background: rgb(23 18 15 / .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgb(239 230 216 / .35); color: var(--cream); font-size: .875rem; font-weight: 600; }
   .menu > summary::-webkit-details-marker { display: none; } .menu > summary svg { flex: none; } .menu[open] > summary { border-color: var(--brass); }
@@ -168,7 +168,7 @@
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
   @media (min-width: 900px) {
-    .wrap { position: relative; height: 86svh; min-height: 34rem; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
+    .wrap { position: relative; height: 100svh; min-height: 34rem; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
     .hero { position: absolute; inset: 0; height: auto; }
     /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
        A mirrored copy continues it to the right edge, so the sky and ridge carry across behind the panel. */
@@ -189,7 +189,7 @@
     /* the bottom row runs the full width from the left edge to the chat panel, and its type grows with the screen */
     .hero nav { left: clamp(1.5rem, 3vw, 3rem); right: calc(clamp(2rem, 6vw - 3rem, 5rem) + clamp(26rem, 28vw, 34rem) + 1.75rem); max-width: none; gap: .5rem 1.2rem; justify-content: space-between;
       /* the type is sized from the room available, so the distances and the booking link always share one line */
-      --room: calc(100vw - clamp(2rem, 6vw - 3rem, 5rem) - clamp(26rem, 28vw, 34rem) - 1.75rem - clamp(1.5rem, 3vw, 3rem)); font-size: clamp(.6875rem, calc(var(--room) / 67), 1.2rem); }
+      --room: calc(100vw - clamp(2rem, 6vw - 3rem, 5rem) - clamp(26rem, 28vw, 34rem) - 1.75rem - clamp(1.5rem, 3vw, 3rem)); font-size: clamp(.6875rem, calc(var(--room) / 70), 1.2rem); }
     .hero nav .points--d { flex: 1 1 auto; justify-content: space-between; flex-wrap: nowrap; gap: .3rem 1em; font-size: 1em; } .hero nav .points--d svg { width: 1.25em; height: 1.25em; } .hero nav .points--d li { gap: .4em; }
     .hero nav .note { flex: none; margin-left: .6em; font-size: 1em; } .hero nav .note a.note__a { font-size: 1em; } .hero nav .note a.note__a span { font-size: 1em; }
     @media (max-width: 1150px) { .hero nav .points--d { flex-wrap: wrap; justify-content: flex-start; } }
@@ -200,7 +200,7 @@
     .hero nav .note span::after { content: ' →'; white-space: pre; }
     .hero nav .note__a { display: inline-flex; align-items: center; min-height: 2.75rem; }
     .top .trust { display: block; padding: 0; background: none; text-shadow: none; font-size: .8125rem; color: var(--muted); } .top .trust b { color: var(--honey); }
-    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; max-height: min(100%, 46rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
+    .panel { z-index: 1; width: clamp(26rem, 28vw, 34rem); max-width: 100%; max-height: min(100%, 52rem); border-radius: 1.5rem; border: 1px solid rgb(239 230 216 / .28); box-shadow: 0 2rem 4rem -1rem rgb(20 12 6 / .6); overflow: hidden; }
     .top .igicon { background: none; border-color: rgb(200 149 90 / .45); color: var(--brass); }
     .top { position: relative; top: 0; flex: none; padding: 1.2rem 1rem .9rem; border-bottom: 1px solid var(--hair); } .top .mark { text-shadow: none; }
     .thread { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding-top: 1.1rem; scrollbar-width: none; overscroll-behavior: contain; } .thread::-webkit-scrollbar { display: none; }
@@ -224,28 +224,36 @@
     .msg { padding: .5rem .85rem; } .msg--ask { font-size: 1.25rem; padding: .6rem .9rem; }
     .reply { padding-top: .55rem; } .reply h2 { margin-bottom: .4rem; } .chips { gap: .35rem; } .chips a { min-height: 2.5rem; padding: .3rem .85rem; font-size: .9375rem; }
   }
-  .planner { position: relative; background: var(--hearth); color: var(--cream); padding: clamp(1.6rem, 4vw, 3rem) clamp(1.1rem, 5vw, 4rem) clamp(2.6rem, 6vw, 4.5rem); }
   /* last call: the open dates, then the waitlist, between the photo and the guide (only while the banner is active) */
   .lastcall { position: relative; background: var(--hearth); color: var(--cream); padding: clamp(1.1rem, 3vw, 1.6rem) clamp(1.1rem, 5vw, 4rem) clamp(1.4rem, 3vw, 2rem); }
   .lastcall[hidden] { display: none; } .lastcall .avail { position: relative; z-index: 3; max-width: 46rem; margin-inline: auto; gap: 1.1rem; }
   .lastcall .avail__dates { font-size: clamp(1.125rem, 2.2vw, 1.35rem); line-height: 1.45; } .lastcall .wl-card { max-width: none; }
   html[data-avail='off'] .lastcall, html:not([data-avail]) .lastcall { display: none; }
-  .planner__in { position: relative; z-index: 3; max-width: 46rem; margin-inline: auto; display: grid; gap: .8rem; }
-  .planner .kicker { color: var(--honey); margin: 0; } .planner h2 { font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; font-size: clamp(1.8rem, 4vw, 2.9rem); line-height: 1.08; letter-spacing: -.015em; margin: 0; } .planner h2 em { color: var(--honey); }
-  .planner__count { margin: -.2rem 0 0; font-family: var(--sans); font-size: .9375rem; color: var(--muted); } .planner__count b { color: var(--ember); font-weight: 600; }
-  .planner__lede { margin: 0; max-width: 40rem; font-size: 1.0625rem; line-height: 1.5; color: color-mix(in srgb, var(--cream) 88%, transparent); }
-  .planner__agenda { display: grid; gap: .2rem; margin-top: .4rem; } .planner__agenda:empty { display: none; }
-  .planner__agenda h3 { margin: .7rem 0 .2rem; font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .1em; font-size: .9375rem; font-weight: 600; color: var(--honey); }
-  .planner__agenda ul { list-style: none; margin: 0; padding: 0; border-radius: 1rem; overflow: hidden; border: 1px solid rgb(200 149 90 / .32); background: rgb(23 18 15 / .5); }
-  .planner__agenda li + li { border-top: 1px solid rgb(200 149 90 / .2); }
-  .planner__agenda a { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) auto; align-items: center; gap: .7rem; min-height: 3.75rem; padding: .5rem .9rem; color: var(--cream); text-decoration: none; }
-  .planner__agenda a:hover { background: rgb(200 149 90 / .12); } .planner__agenda time { font-family: var(--sans); font-size: .875rem; font-weight: 600; color: var(--honey); white-space: nowrap; }
-  .planner__agenda strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.0625rem; line-height: 1.25; } .planner__agenda small { display: block; font-family: var(--sans); font-size: .8125rem; color: var(--muted); } .planner__agenda small span { white-space: nowrap; }
-  .planner__agenda i { font-style: normal; color: var(--brass); } .planner__agenda em { font-family: var(--sans); font-style: normal; font-size: .6875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ember); margin-left: .4rem; white-space: nowrap; }
-  .planner__all { margin: .5rem 0 0; } .planner__all a { display: inline-block; padding: .6rem 0; color: var(--cream); font-weight: 600; text-underline-offset: .3em; text-decoration-color: var(--brass); }
-  .planner__cta { margin: 0; }
   .foot { display: block; }
-  @media (min-width: 900px) { .planner { padding-top: .9rem; } }
+  /* the weekend, sent as a message: a link-preview card in the thread, a little wider than a bubble */
+  .wk { align-self: flex-start; width: 92%; border-radius: 1.25rem; border-bottom-left-radius: .4rem; overflow: hidden; background: var(--linen); color: var(--ink); box-shadow: 0 1px 0 rgb(42 32 25 / .2); animation: rise .5s var(--ease) both; }
+  .wk__h { margin: 0; padding: .65rem .95rem 0; font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .1em; font-size: .875rem; font-weight: 600; color: #6a5744; line-height: 1.25; }
+  .wk__free { margin: 0; padding: .1rem .95rem .5rem; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: .875rem; line-height: 1.35; color: #6a5744; }
+  .wk ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(42 32 25 / .12); }
+  .wk li { border-bottom: 1px solid rgb(42 32 25 / .12); }
+  .wk li a { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); align-items: center; gap: .6rem; min-height: 3.25rem; padding: .45rem .95rem; color: var(--ink); text-decoration: none; }
+  .wk li a:hover, .wk__all:hover { background: rgb(200 149 90 / .16); }
+  .wk time { font-family: var(--sans); font-size: .8125rem; font-weight: 600; line-height: 1.25; color: var(--brass-deep); } .wk time b { display: block; font-weight: 600; color: #6a5744; }
+  .wk strong { display: block; font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; font-size: 1rem; line-height: 1.25; overflow-wrap: anywhere; }
+  .wk small { display: block; font-family: var(--sans); font-size: .8125rem; line-height: 1.3; color: #6a5744; } .wk small span { white-space: nowrap; }
+  .wk__all { display: flex; align-items: center; min-height: 2.75rem; padding: .4rem .95rem .5rem; font-family: var(--serif); font-style: italic; font-variation-settings: 'SOFT' 100; font-size: 1rem; color: var(--brass-deep); text-decoration: underline; text-underline-offset: .25em; }
+  .note { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem .8rem; }
+  @media (max-width: 899px) {   /* phones: a tighter thread and three rows of replies, so the weekend is reached quickly */
+    .thread { gap: .3rem; padding-bottom: .7rem; } .stamp { margin-bottom: .35rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { padding: .45rem .85rem; }
+    .reply { padding: .65rem .8rem .45rem; } .reply h2 { margin-bottom: .45rem; } .chips a { font-size: .9375rem; }
+  }
+  .chips, .panel .chips { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; } .chips a, .panel .chips a { display: flex; justify-content: center; text-align: center; padding: .3rem .5rem; } .chips[hidden], .panel .chips[hidden] { display: none; }
+  @media (min-width: 900px) {   /* the panel is a real chat: the thread scrolls inside it and the replies stay pinned at the bottom */
+    .panel .thread, .panel .thread:has(.card), .panel .thread:has(.msg--out) { flex: 1 1 auto; min-height: 0; overflow-y: auto; scrollbar-width: thin; overscroll-behavior: contain; }
+    .panel .reply { flex: none; overflow: visible; min-height: 0; }
+    .hero nav .note { display: flex; flex-wrap: nowrap; gap: 1.1em; margin-left: .2em; } .hero nav .note a { white-space: nowrap; } .hero nav .note span::after { content: none; }
+    .hero nav .points--d { gap: .3rem .8em; } .hero nav .points--d li { gap: .3em; }
+  }
   /* the house's three messages are one size; the question keeps its serif face */
   .panel .thread { font-size: 1.0625rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { font-size: 1em; line-height: 1.35; padding: .55rem .9rem; }
   @media (min-width: 1600px) { .panel .thread { font-size: 1.1875rem; } }
@@ -259,8 +267,8 @@
   <div class="hero">
     <!--hero:start--><img src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="The farmhouse at dusk from above, windows lit, the Blue Ridge behind." width="1200" height="800" fetchpriority="high" data-hero>
     <img class="mirror" src="/img/aerialDusk-1200.webp?v=2" srcset="/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w" sizes="(min-width: 900px) 115vw, 100vw" alt="" aria-hidden="true" width="1200" height="800">
-    <p class="moment moment--m" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--m" data-avail-pill hidden><a href="#dates"></a></p><!--hero:end-->
-    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a></p></nav>
+    <p class="moment moment--m" data-avail-pill hidden><a href="#dates"></a></p><!--hero:end-->
+    <nav aria-label="Offers"><!--momentd:start--><p class="moment moment--d" data-moment><a href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&amp;startdate=2026-12-21&amp;enddate=2026-12-28&amp;adults1=2&amp;children1=0" target="_blank" rel="noopener">Christmas week is still open. A fire, a hot tub and nowhere to be.</a></p><p class="moment moment--d" data-avail-pill hidden><a href="#dates"></a></p><!--momentd:end--><!--pointsd:start--><ul class="points points--d" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsd:end--><p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p></nav>
   </div>
   <main class="panel">
     <header class="top"><h1><a class="mark" href="/">Afton <em>Awaits</em></a></h1><!--trust:start--><p class="trust"><b>★ 5.0</b> from 52 stays<i>·</i>Guest Favorite</p><!--trust:end--><!--igicon:start--><a class="iglink igicon" href="https://www.instagram.com/afton.awaits/" target="_blank" rel="noopener" aria-label="Afton Awaits on Instagram (opens in a new tab)"><svg class="ig" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>@afton.awaits</span></a><!--igicon:end--></header>
@@ -279,7 +287,7 @@
         <li><a href="/trips/outdoors/" data-trip="outdoors" class="is-featured">Ski and snow weekend.</a></li>
         <li><a href="/trips/game-day/" data-trip="game-day">Game day. Kids in tow.</a></li>
         <li><a href="/trips/trail151/" data-trip="trail151">Wine. All of it.</a></li>
-        <li><a class="plain" href="#planner">Just help me plan.</a></li><!--chips:end-->
+        <li><a class="plain" href="/plan/" data-plan>Just help me plan.</a></li><!--chips:end-->
       </ul>
       <ul class="chips" id="occ" hidden>
         <li><a href="/trips/girls/bridal-shower/" data-occ="shower">A shower or bachelorette.</a></li>
@@ -289,7 +297,7 @@
       </ul>
     </nav>
     <!--pointsm:start--><ul class="points points--m" data-points><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 9 8l4 7 3-4 5 9Z"/></svg><span><b>27 min</b> Wintergreen</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8"/></svg><span><b>11 min</b> wineries</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5"/></svg><span><b>3 min</b> brewery</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18"/></svg><span><b>8 min</b> dining</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2"/></svg><span><b>35 min</b> Charlottesville</span></li></ul><!--pointsm:end-->
-    <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a></p>
+    <p class="note"><a class="note__a" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><span>Book direct and save</span></a><a class="note__a note__on" href="/plan/" data-plan><span>What’s on</span></a></p>
   </main>
 </div>
 <!--avail:start--><section class="lastcall" id="lastcall" data-mood="evening" aria-label="Open dates and the waitlist"><div class="avail" data-avail-block hidden><p class="avail__dates" id="dates" data-avail-dates="full" hidden></p>
@@ -302,17 +310,6 @@
 <p class="wl__err" id="waitlist-msg" role="alert" hidden></p>
 <p class="wl__fine" id="waitlist-fine">One email when 2027 opens. That’s it. We’ll only use this to tell you when 2027 opens.</p>
 </form><p class="wl__done" role="status" tabindex="-1" hidden>You’re on the list. You’ll hear from us the moment 2027 opens.</p></div></div></section><!--avail:end-->
-<section class="planner" id="planner" data-mood="evening" aria-labelledby="planner-h">
-  <div class="planner__in">
-    <p class="kicker">What’s on around Afton</p>
-    <h2 id="planner-h">Here’s what’s happening <em id="pl-when">this weekend.</em></h2>
-    <p class="planner__count" id="pl-count" hidden></p>
-    <p class="planner__lede">Every concert, market, tasting and trail near Afton, sorted by day and kept up to date. It’s free to use, whether you’re staying with us or just visiting the valley.</p>
-    <div class="planner__agenda" id="pl-agenda"></div>
-    <p class="planner__all"><a id="pl-all" href="/plan/">See everything on →</a></p>
-    <p class="planner__cta"><a class="btn" href="/plan/">Plan your trip</a></p>
-  </div>
-</section>
 <div class="foot"><!--footer:start--><footer class="ft ft--min" data-mood="evening">
 <p class="mark">Afton <em>Awaits</em></p>
 <p class="ft__where">Afton, Nelson County, Virginia · Hosted by Jamie of Be Still Getaways</p>
@@ -342,8 +339,12 @@ const REPLY = {
   outdoors: 'Good. Go get tired. The hot tub’s for after.',
   trail151: 'Smart. Sleep here, taste there. Somebody pick a driver.',
 };
+const snow = document.documentElement.dataset.snow === 'on';
+const FOR = { girls: 'a girls’ weekend', family: 'a family weekend', outdoors: snow ? 'a ski and snow weekend' : 'an outdoors weekend', 'game-day': 'a game day weekend', trail151: 'a wine weekend' };
+let weekendDates = null;   // set once the calendar has loaded; planner links then open on that weekend
+const planUrl = (interests = []) => { const q = new URLSearchParams(); if (weekendDates) { q.set('from', weekendDates[0]); q.set('to', weekendDates[2]); q.set('tab', 'events'); } if (interests.length) q.set('i', interests.join(',')); const s = q.toString().replace(/%2C/g, ','); return '/plan/' + (s ? '?' + s : ''); };
+const id0 = () => picked[0];
 const picked = []; let card; const main = document.getElementById('chips'), occ = document.getElementById('occ');
-thread.scrollTop = thread.scrollHeight;
 const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? 0 : ms));
 const add = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const n = t.content.firstChild; thread.append(n); thread.scrollTo({ top: thread.scrollHeight, behavior: reduced ? 'auto' : 'smooth' }); if (thread.scrollHeight <= thread.clientHeight + 1) nav.scrollIntoView({ block: 'end', behavior: reduced ? 'auto' : 'smooth' }); return n; };
 async function typing(ms) { const d = add('<p class="dots" aria-hidden="true"><b></b><b></b><b></b></p>'); await wait(ms); d.remove(); }
@@ -368,7 +369,7 @@ async function showCard() {
   card?.remove();
   const t = byId(picked[0]);
   card = add(`<a class="card" href="${url(picked)}"><img src="/img/${t.img}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${label(picked)}</strong><br><u>Open your weekend</u></span></a>`);
-  add(`<p class="msg msg--in msg--offer">Want me to see what’s on while you’re here? <a href="/plan/?i=${[...new Set(picked.flatMap((id) => PLAN_INTERESTS[id] ?? []))].join(',')}">See what’s on →</a></p>`);
+  add(`<p class="msg msg--in msg--offer"><a href="${planUrl([...new Set(picked.flatMap((id) => PLAN_INTERESTS[id] ?? []))])}" data-plan-i>Here’s what’s on for ${picked.length === 1 ? FOR[id0()] : 'your weekend'} →</a></p>`);
   if (picked.length === 1) { hint.textContent = 'Mixed group? Add one more, or open your weekend above'; nav.classList.remove('is-wait'); }
   else { hint.textContent = 'All set. Open your weekend above'; main.hidden = true; }
   card.focus({ preventScroll: true });
@@ -386,37 +387,46 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   if (!o) { main.hidden = false; await showCard(); return; }   // just a weekend: carry on as any other trip
   await typing(900); add(`<p class="msg msg--in">${o[0]}</p>`); await typing(600);
   card = add(`<a class="card" href="${a.getAttribute('href')}"><img src="/img/${o[2]}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${o[1]}</strong><br><u>Open your weekend</u></span></a>`);
-  add(`<p class="msg msg--in msg--offer">Want me to see what’s on while you’re here? <a href="/plan/?i=${PLAN_INTERESTS.girls.join(',')}">See what’s on →</a></p>`);
+  add(`<p class="msg msg--in msg--offer"><a href="${planUrl(PLAN_INTERESTS.girls)}" data-plan-i>Here’s what’s on for ${FOR.girls} →</a></p>`);
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 
-// What's on around Afton: this weekend as a short agenda, straight from the calendar. If fewer than four things are
-// within half an hour this weekend, it shows next weekend and says so.
+// What's on, sent as a message: the house's next bubble, then a card with three things from the calendar this weekend.
+// With fewer than three things within half an hour this weekend, it is next weekend's and says so; with nothing on
+// either weekend, the house says nothing more. (?date=2026-12-04 shows another day.)
 try { const [cal, roads] = await Promise.all([fetch('/api/events.json').then((r) => r.json()), fetch('/api/drive.json').then((r) => r.json())]);
-  const today = new Date(), dow = today.getDay(), fri = new Date(today); fri.setDate(today.getDate() + (dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow));
+  const qd = new URLSearchParams(location.search).get('date'), today = qd ? new Date(qd + 'T12:00:00') : new Date(), dow = today.getDay(), fri = new Date(today); fri.setDate(today.getDate() + (dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow));
   const iso = (x) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`, safe = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const mins = (id) => { const k = roads.ids.indexOf(id); return k < 0 ? null : roads.minutes[0][k]; };
   const weekend = (n) => { const days = [0, 1, 2].map((k) => { const x = new Date(fri); x.setDate(fri.getDate() + n * 7 + k); return iso(x); }), seen = new Set();
     const list = (cal.events ?? cal).filter((e) => days.includes(e.start.slice(0, 10)) && e.start.slice(0, 10) >= iso(today) && e.status !== 'cancelled' && e.placeId && (mins(e.placeId) ?? 99) <= 30)
       .filter((e) => { const k = e.seriesId || e.title.trim().toLowerCase() + '|' + e.placeId; return seen.has(k) ? false : seen.add(k); });
     return { days, list }; };
-  let w = weekend(0), next = false; if (w.list.length < 4) { const w2 = weekend(1); if (w2.list.length > w.list.length) { w = w2; next = true; } }
+  let w = weekend(0), next = false; if (w.list.length < 3) { const w2 = weekend(1); if (w2.list.length > w.list.length) { w = w2; next = true; } }
   if (w.list.length) {
-    document.getElementById('pl-when').textContent = next ? 'next weekend.' : 'this weekend.';
-    const c = document.getElementById('pl-count'); c.innerHTML = `${next ? 'Next weekend: ' : ''}<b>${w.list.length}</b> thing${w.list.length === 1 ? '' : 's'} on ${next ? '' : 'this weekend '}within 30 minutes.`; c.hidden = false;
-    // three picks first (the owners' flags, then the nearest, no two of a kind), then the rest by time, five rows in all
+    weekendDates = w.days; const n = w.list.length, when = next ? 'next weekend' : 'this weekend';
+    for (const a of document.querySelectorAll('a[data-plan]')) a.href = planUrl();
+    // picks first (the owners' flags, then the nearest, no two of a kind), then by time: three rows, shown in order
+    const byTime = (a, b) => a.start.slice(0, 10).localeCompare(b.start.slice(0, 10)) || a.allDay - b.allDay || a.start.localeCompare(b.start);
     const ranked = [...w.list].sort((a, b) => !!b.ownerPick - !!a.ownerPick || mins(a.placeId) - mins(b.placeId)), picks = [], kinds = new Set();
     for (const e of ranked) { if (picks.length >= 3) break; if (e.ownerPick || !kinds.has(e.categories[0])) { picks.push(e); kinds.add(e.categories[0]); } }
-    const rows = [...picks, ...w.list.filter((e) => !picks.includes(e)).sort((a, b) => a.allDay - b.allDay || a.start.localeCompare(b.start))].slice(0, 5).sort((a, b) => a.start.slice(0, 10).localeCompare(b.start.slice(0, 10)) || a.allDay - b.allDay || a.start.localeCompare(b.start));
-    const time = (e) => e.seriesId ? 'All weekend' : e.allDay ? 'Any time' : new Date(e.start).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).replace(':00', '');
-    const day = (d) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long' }), link = (d) => `/plan/?from=${w.days[0]}&to=${w.days[2]}&d=${d}&tab=events`;
-    document.getElementById('pl-agenda').innerHTML = w.days.map((d) => { const es = rows.filter((e) => e.start.slice(0, 10) === d); return es.length ? `<h3>${day(d)}</h3><ul>${es.map((e) => `<li><a href="${link(d)}&r=${encodeURIComponent('e:' + e.id)}"><time>${time(e)}</time><span><strong>${safe(e.title)}${picks.includes(e) ? '<em>pick</em>' : ''}</strong><small>${safe(e.venueName)} · <span>${mins(e.placeId)} min</span></small></span><i aria-hidden="true">→</i></a></li>`).join('')}</ul>` : ''; }).join('');
-    const all = document.getElementById('pl-all'); all.href = `/plan/?from=${w.days[0]}&to=${w.days[2]}&tab=events`; all.textContent = `See all ${w.list.length} things ${next ? 'next' : 'this'} weekend →`;
-    for (const a of document.querySelectorAll('.planner__cta a')) a.href = all.href;
+    const rows = [...picks, ...w.list.filter((e) => !picks.includes(e)).sort(byTime)].slice(0, 3).sort(byTime);
+    const day = (e) => new Date(e.start.slice(0, 10) + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short' });
+    const time = (e) => e.seriesId ? 'All weekend' : `${day(e)}<b>${e.allDay ? 'Any time' : new Date(e.start).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).replace(':00', '')}</b>`;
+    const link = (e) => `/plan/?from=${w.days[0]}&to=${w.days[2]}&d=${e.start.slice(0, 10)}&tab=events&r=${encodeURIComponent('e:' + e.id)}`;
+    const quiet = picked.length > 0 || reduced;   // already replied, or reduced motion: the weekend is added without the pause
+    const put = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); const el = t.content.firstChild, after = thread.querySelector('.msg--ask'); if (!picked.length || !after) thread.append(el); else (thread.querySelector('.wk') ?? thread.querySelector('#wk-msg') ?? after).after(el); return el; };
+    const dots = async (ms) => { if (quiet) return; const d = put('<p class="dots" aria-hidden="true"><b></b><b></b><b></b></p>'); await wait(ms); d.remove(); };
+    await dots(700);
+    put(`<p class="msg msg--in" id="wk-msg">Either way, here’s what’s on around here ${when}.</p>`);
+    await dots(600);
+    put(`<div class="wk" id="wk"><p class="wk__h">${next ? 'Next weekend' : 'This weekend'} · ${n} ${n === 1 ? 'thing' : 'things'} within 30 min</p><p class="wk__free">Free to use, whether you’re staying with us or just visiting the valley.</p>
+      <ul>${rows.map((e) => `<li><a href="${link(e)}"><time>${time(e)}</time><span><strong>${safe(e.title)}</strong><small>${safe(e.venueName)} · <span>${mins(e.placeId)} min</span></small></span></a></li>`).join('')}</ul>
+      <a class="wk__all" href="${planUrl()}">${n > rows.length ? `See all ${n} and plan your weekend →` : 'Plan your weekend →'}</a></div>`);
+    for (const a of document.querySelectorAll('a[data-plan-i]')) { const u = new URL(a.href); a.href = planUrl((u.searchParams.get('i') ?? '').split(',').filter(Boolean)); }
   }
-} catch { /* the calendar did not load: the section still says what the guide is */ }
-for (const a of document.querySelectorAll('a[href="#planner"]')) a.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('planner').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); });
+} catch { /* the calendar did not load: the conversation carries on without the weekend */ }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 10:31 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 10:43 PM ET</p>
 </body>
 </html>
