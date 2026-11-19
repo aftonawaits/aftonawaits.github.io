@@ -325,11 +325,13 @@ function openPlace(id, fly) {
   renderPins(); renderDetail(); showPopup();
 }
 function openHome() {
-  state.open = null; renderPins(); renderDetail(); popup?.remove();
-  popup = new maplibregl.Popup({ offset: 30, maxWidth: '17rem', focusAfterOpen: false }).setLngLat([HOME.lng, HOME.lat])
+  state.open = null; renderPins(); renderDetail(); closePopup();
+  const me = popup = new maplibregl.Popup({ offset: 30, maxWidth: '17rem', focusAfterOpen: false }).setLngLat([HOME.lng, HOME.lat])
     .setHTML('<p class="when">Where you’re staying</p><h3>' + property.brand + '</h3><p>The house, on Route 151 in the Rockfish Valley. The pin is approximate; the hosts send the address before your stay.</p><p class="row"><a href="' + property.houseUrl + '">See the house</a><a href="' + property.roomsUrl + '">Rooms and plan</a></p>').addTo(map);
-  popup.on('close', () => { popup = null; });
+  me.on('close', () => { if (popup === me) popup = null; });
 }
+/** One card on the map at a time: whatever is open is taken away before another opens. */
+function closePopup() { if (popup) { const old = popup; popup = null; old.remove(); } }
 /** The name card that opens on the map, right at the pin. */
 function popupHtml(p) {
   const es = onDates().filter((e) => e.placeId === p.id);
@@ -340,10 +342,10 @@ function popupHtml(p) {
 function showPopup() {
   const p = placeById[state.open];
   if (!map) return;
-  if (!p) { popup?.remove(); popup = null; return; }
-  if (popup && !popup._forPlace) { const old = popup; popup = null; old.remove(); }
-  if (!popup) { popup = new maplibregl.Popup({ offset: 26, maxWidth: '17rem', focusAfterOpen: false }); popup._forPlace = true; popup.on('close', () => { if (popup && state.open) { state.open = null; popup = null; renderPins(); renderDetail(); } }); }
-  popup.setLngLat([p.lng, p.lat]).setHTML(popupHtml(p)).addTo(map);
+  closePopup(); if (!p) return;
+  const me = popup = new maplibregl.Popup({ offset: 26, maxWidth: '17rem', focusAfterOpen: false }).setLngLat([p.lng, p.lat]).setHTML(popupHtml(p)).addTo(map);
+  // closed by the guest (its x, or a tap on the map): the pin and the panel close with it. Not when another card replaced it.
+  me.on('close', () => { if (popup !== me) return; popup = null; state.open = null; renderPins(); renderDetail(); });
 }
 function renderDetail() {
   const p = placeById[state.open], el = $('#detail');
