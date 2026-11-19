@@ -13,7 +13,7 @@
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795054120">
+<link rel="stylesheet" href="/shared.css?v=1795054268">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -108,8 +108,11 @@
     @media (max-height: 880px) { .panel .reply { padding: .6rem 1.1rem .7rem; } .panel .reply h2 { margin-bottom: .35rem; } .panel .chips { gap: .4rem; } .panel .chips a { min-height: 2.75rem; padding: .3rem .95rem; font-size: 1rem; } .panel .thread { gap: .3rem; padding-top: .6rem; padding-bottom: .5rem; } .panel .msg { font-size: .9375rem; padding: .4rem .75rem; } .panel .msg--ask { font-size: 1.125rem; } .panel .msg--sub { font-size: .8125rem; } .panel .top { padding: .8rem 1rem .6rem; } .panel .stamp { margin-bottom: .1rem; } }
     .hero nav { position: absolute; z-index: 2; left: clamp(1.5rem, 4vw, 3rem); bottom: 2.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.4rem; max-width: calc(100vw - clamp(26rem, 28vw, 34rem) - 6rem); }
     .hero nav .moment { flex: 0 0 100%; } .hero nav .points--d { padding: 0; }
-    .hero nav { gap: .3rem 1rem; } .hero nav .points--d { font-size: .875rem; gap: .3rem 1rem; }
-    @media (max-width: 1599px) { .hero nav { left: 1.5rem; max-width: calc(100vw - clamp(26rem, 28vw, 34rem) - 4rem); } .hero nav .points--d, .hero nav .note span { font-size: .8125rem; } .hero nav .points--d { gap: .3rem .8rem; } }
+    /* the bottom row runs the full width from the left edge to the chat panel, and its type grows with the screen */
+    .hero nav { left: clamp(1.5rem, 3vw, 3rem); right: calc(clamp(2rem, 6vw - 3rem, 5rem) + clamp(26rem, 28vw, 34rem) + 1.75rem); max-width: none; gap: .5rem 1.2rem; justify-content: space-between; font-size: clamp(.75rem, .98vw, 1.2rem); }
+    .hero nav .points--d { flex: 1 1 auto; justify-content: space-between; flex-wrap: nowrap; gap: .3rem 1em; font-size: 1em; } .hero nav .points--d svg { width: 1.25em; height: 1.25em; } .hero nav .points--d li { gap: .4em; }
+    .hero nav .note { flex: none; margin-left: 1.2em; font-size: 1em; } .hero nav .note a.note__a { font-size: 1em; } .hero nav .note a.note__a span { font-size: 1em; }
+    @media (max-width: 1150px) { .hero nav .points--d { flex-wrap: wrap; justify-content: flex-start; } }
     .hero nav a { font-family: var(--serif); font-variation-settings: 'SOFT' 100; letter-spacing: -.01em; font-size: 1.7rem; line-height: 1.15; color: var(--cream); text-decoration: underline; text-decoration-color: var(--brass); text-decoration-thickness: 1.5px; text-underline-offset: .28em; }
     .hero nav a::after { content: ' →'; color: var(--brass); } .hero nav a:hover { color: var(--ember); }
     .hero nav .note { background: none; padding: 0; text-align: left; }
@@ -261,6 +264,6 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:08 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:11 PM ET</p>
 </body>
 </html>
