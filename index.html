@@ -13,7 +13,7 @@
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
 <!--head:end-->
 <!--ld:start--><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Afton Awaits","url":"https://aftonawaits.github.io/","image":"https://aftonawaits.github.io/img/og/aerialDusk.jpg","address":{"@type":"PostalAddress","addressLocality":"Afton","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.instagram.com/afton.awaits/"]}</script><!--ld:end-->
-<link rel="stylesheet" href="/shared.css?v=1795055550">
+<link rel="stylesheet" href="/shared.css?v=1795056236">
 <style>
   /* The landing page: a note from the house in the evening. */
   :root { --honey: #d6a45e; }   /* guest replies; ember is kept for small accents only */
@@ -31,6 +31,7 @@
   .moment--m { position: absolute; z-index: 3; left: .7rem; right: .7rem; bottom: .7rem; text-align: center; }
   .hero nav .moment a { font-size: 1.0625rem; margin-bottom: .5rem; text-decoration: none; }
   .msg--sub { font-size: .9375rem; line-height: 1.4; }
+  .msg--offer a { font-weight: 600; color: var(--brass-deep); white-space: nowrap; display: inline-block; padding: .35rem 0; }
   .menu { position: fixed; z-index: 45; top: .7rem; left: .7rem; font-family: var(--sans); }
   .menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .3rem .9rem .3rem .7rem; border-radius: 99px; background: rgb(23 18 15 / .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgb(239 230 216 / .35); color: var(--cream); font-size: .875rem; font-weight: 600; }
   .menu > summary::-webkit-details-marker { display: none; } .menu > summary svg { flex: none; } .menu[open] > summary { border-color: var(--brass); }
@@ -91,8 +92,7 @@
   @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
   @media (min-width: 900px) {
-    html, body { height: 100%; } body { display: flex; flex-direction: column; overflow: hidden; }
-    .wrap { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
+    .wrap { position: relative; height: 100svh; min-height: 34rem; display: flex; align-items: center; justify-content: flex-end; padding: 2rem clamp(2rem, 6vw - 3rem, 5rem) 2rem clamp(1.5rem, 5vw, 5rem); }
     .hero { position: absolute; inset: 0; height: auto; }
     /* The photo is drawn at --s times the screen width and slid left by --o, so the whole house sits clear of the panel.
        A mirrored copy continues it to the right edge, so the sky and ridge carry across behind the panel. */
@@ -104,7 +104,9 @@
     .moment--m, .points--m { display: none !important; }
     .points--d { background: none; padding: 0 0 .2rem; justify-content: flex-start; gap: .3rem 1.2rem; font-size: .875rem; color: color-mix(in srgb, var(--cream) 85%, transparent); text-shadow: 0 1px 8px rgb(23 18 15 / .9); }
     /* the house speaks first: its messages always show in full, and the replies scroll if the screen is short */
-    .panel .thread { flex: 0 0 auto; overflow: visible; } .panel .reply { flex: 0 1 auto; min-height: 5.5rem; overflow-y: auto; scrollbar-width: thin; }
+    .panel .thread { flex: 0 0 auto; overflow: visible; }
+    /* once a trip is chosen the conversation grows, so it scrolls again and the header stays put */
+    .panel .thread:has(.card), .panel .thread:has(.msg--out) { flex: 0 1 auto; min-height: 0; overflow-y: auto; } .panel .top { flex: none; } .panel .reply { flex: 0 1 auto; min-height: 5.5rem; overflow-y: auto; scrollbar-width: thin; }
     @media (max-height: 880px) { .panel .reply { padding: .6rem 1.1rem .7rem; } .panel .reply h2 { margin-bottom: .35rem; } .panel .chips { gap: .4rem; } .panel .chips a { min-height: 2.75rem; padding: .3rem .95rem; font-size: 1rem; } .panel .thread { gap: .3rem; padding-top: .6rem; padding-bottom: .5rem; } .panel .msg { font-size: .9375rem; padding: .4rem .75rem; } .panel .msg--ask { font-size: 1.125rem; } .panel .msg--sub { font-size: .8125rem; } .panel .top { padding: .8rem 1rem .6rem; } .panel .stamp { margin-bottom: .1rem; } }
     .hero nav { position: absolute; z-index: 2; left: clamp(1.5rem, 4vw, 3rem); bottom: 2.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.4rem; max-width: calc(100vw - clamp(26rem, 28vw, 34rem) - 6rem); }
     .hero nav .moment { flex: 0 0 100%; } .hero nav .points--d { padding: 0; }
@@ -146,6 +148,17 @@
     .msg { padding: .5rem .85rem; } .msg--ask { font-size: 1.25rem; padding: .6rem .9rem; }
     .reply { padding-top: .55rem; } .reply h2 { margin-bottom: .4rem; } .chips { gap: .35rem; } .chips a { min-height: 2.5rem; padding: .3rem .85rem; font-size: .9375rem; }
   }
+  .planner { background: radial-gradient(90% 120% at 50% 0%, rgb(240 160 80 / .1), transparent 70%), var(--hearth); color: var(--cream); padding: clamp(2.6rem, 7vw, 5.5rem) clamp(1.1rem, 5vw, 4rem); border-top: 1px solid rgb(200 149 90 / .28); }
+  .planner__in { max-width: 54rem; margin-inline: auto; display: grid; gap: 1rem; }
+  .planner .kicker { color: var(--honey); margin: 0; } .planner h2 { font-family: var(--serif); font-weight: 400; font-variation-settings: 'SOFT' 100; font-size: clamp(1.9rem, 4.4vw, 3.2rem); line-height: 1.08; letter-spacing: -.015em; margin: 0; } .planner h2 em { color: var(--honey); }
+  .planner__lede { margin: 0; max-width: 42rem; font-size: 1.125rem; line-height: 1.5; color: color-mix(in srgb, var(--cream) 88%, transparent); }
+  .planner__count { margin: .6rem 0 0; font-family: var(--serif); font-style: italic; font-size: 1.25rem; } .planner__count b { font-style: normal; color: var(--ember); }
+  .planner__strip { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; } .planner__strip:empty { display: none; }
+  .planner__strip a { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr) auto; align-items: center; gap: .8rem; min-height: 3.4rem; padding: .5rem 1rem; border-radius: 1rem; border: 1px solid rgb(200 149 90 / .4); background: rgb(23 18 15 / .45); color: var(--cream); text-decoration: none; }
+  .planner__strip a:hover { border-color: var(--ember); } .planner__strip span { font-family: var(--sans); font-variant: all-small-caps; letter-spacing: .08em; font-size: .9375rem; color: var(--honey); }
+  .planner__strip strong { font-family: var(--serif); font-weight: 400; font-size: 1.0625rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .planner__strip i { font-style: normal; color: var(--brass); }
+  .planner__cta { margin: .6rem 0 0; }
+  @media (min-width: 720px) { .planner__strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } .planner__strip a { grid-template-columns: 1fr; gap: .15rem; align-content: center; padding: .8rem 1rem; } .planner__strip i { display: none; } .planner__strip strong { white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; } }
   /* the house's three messages are one size; the question keeps its serif face */
   .panel .thread { font-size: 1.0625rem; } .panel .thread .msg, .panel .thread .msg--sub, .panel .thread .msg--ask { font-size: 1em; line-height: 1.35; padding: .55rem .9rem; }
   @media (min-width: 1600px) { .panel .thread { font-size: 1.1875rem; } }
@@ -196,6 +209,16 @@
 </footer><!--footer:end--></div>
   </main>
 </div>
+<section class="planner" id="planner" data-mood="evening" aria-labelledby="planner-h">
+  <div class="planner__in">
+    <p class="kicker">Your stay comes with a planner</p>
+    <h2 id="planner-h">Most rentals hand you a list. <em>We hand you a plan.</em></h2>
+    <p class="planner__lede">Pick your dates and what you’re into. I’ll pull every concert, market, tasting and trail near the house onto one map, sort it into days and send it to your phone.</p>
+    <p class="planner__count" id="pl-count" hidden></p>
+    <ul class="planner__strip" id="pl-strip" aria-label="On this weekend"></ul>
+    <p class="planner__cta"><a class="btn" href="/plan/">Plan your trip</a></p>
+  </div>
+</section>
 <!--seasonjs:start--><script id="seasons" type="application/json">{"seasons":{"winter":{"key":"winter","from":"10-15","to":"01-14","headline":"The slopes and the wine country. Why choose?","subhead":"Ski as hard as you like, then trade the slopes for the hot tub, a tasting room or a great dinner.","description":"Twenty-seven minutes to Wintergreen’s lifts, about ten to the wineries, and great dining close by. Ski as hard as you like, then come home to the hot tub.","points":[{"icon":"mountain","min":27,"short":"Wintergreen"},{"icon":"wine","min":11,"short":"wineries"},{"icon":"beer","min":3,"short":"brewery"},{"icon":"dining","min":8,"short":"dining"},{"icon":"town","min":35,"short":"Charlottesville"}],"order":["girls","family","outdoors"],"featured":"outdoors","featuredLabel":"Ski and snow weekend.","img":"aerialDusk","alt":"The farmhouse at dusk from above, windows lit, the Blue Ridge behind.","mirror":true,"pool":false,"poolUntil":null,"srcset":"/img/aerialDusk-1200.webp?v=2 1200w, /img/aerialDusk-1600.webp?v=2 1600w, /img/aerialDusk-2400.webp?v=2 2400w","title":"The slopes and the wine country. Why choose? A farmhouse for six in Afton, Virginia | Afton Awaits","pointsHtml":"\u003cli>\u003csvg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M3 20 9 8l4 7 3-4 5 9Z\"/>\u003c/svg>\u003cspan>\u003cb>27 min\u003c/b> Wintergreen\u003c/span>\u003c/li>\u003cli>\u003csvg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M7 3h10c0 6-2 9-5 9S7 9 7 3ZM12 12v8M8 21h8\"/>\u003c/svg>\u003cspan>\u003cb>11 min\u003c/b> wineries\u003c/span>\u003c/li>\u003cli>\u003csvg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M6 7h10v13H6ZM16 10h3v6h-3M9 11v5M13 11v5\"/>\u003c/svg>\u003cspan>\u003cb>3 min\u003c/b> brewery\u003c/span>\u003c/li>\u003cli>\u003csvg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 3c-2 2-3 5-3 9h3M17 3v18\"/>\u003c/svg>\u003cspan>\u003cb>8 min\u003c/b> dining\u003c/span>\u003c/li>\u003cli>\u003csvg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M4 21V8l6-4v17M10 21V11h10v10M2 21h20M14 15h2\"/>\u003c/svg>\u003cspan>\u003cb>35 min\u003c/b> Charlottesville\u003c/span>\u003c/li>"},"spring":{"key":"spring","from":"01-15","to":"03-14","headline":"The patios are open. So is the porch.","subhead":"A Blue Ridge farmhouse for six, minutes from Route 151’s wineries as their patios reopen.","description":"A Blue Ridge farmhouse for six, minutes from Route 151’s wineries as their patios reopen.","points":[],"order":["girls","trail151","family"],"featured":"girls","featuredLabel":null,"img":"porchView","alt":"The view from the covered porch across the patio and lawn to the Blue Ridge.","mirror":false,"pool":false,"poolUntil":null,"srcset":"/img/porchView-1200.webp?v=2 1200w, /img/porchView-1600.webp?v=2 1600w, /img/porchView-2400.webp?v=2 2400w","title":"The patios are open. So is the porch. A farmhouse for six in Afton, Virginia | Afton Awaits","pointsHtml":""},"summer":{"key":"summer","from":"03-15","to":"07-14","headline":"Pool’s open. Fire’s lit.","subhead":"A Blue Ridge farmhouse for six with a private saltwater pool, a hot tub and the fire pit at sunset.","description":"A Blue Ridge farmhouse for six with a private saltwater pool, a hot tub and the fire pit at sunset.","points":[],"order":["family","girls","trail151"],"featured":"family","featuredLabel":null,"img":"poolLevel","alt":"The saltwater pool at water level with the lawn, the black fence and the Blue Ridge beyond.","mirror":false,"pool":true,"poolUntil":null,"srcset":"/img/poolLevel-1200.webp?v=2 1200w, /img/poolLevel-1600.webp?v=2 1600w, /img/poolLevel-2400.webp?v=2 2400w","title":"Pool’s open. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits","pointsHtml":""},"fall":{"key":"fall","from":"07-15","to":"10-14","headline":"The leaves are turning. Fire’s lit.","subhead":"A Blue Ridge farmhouse for six: fall color on the ridge, a hot tub and UVA game days 35 minutes away.","description":"A Blue Ridge farmhouse for six: fall color on the ridge, a hot tub and UVA game days 35 minutes away.","points":[],"order":["girls","game-day","trail151"],"featured":"game-day","featuredLabel":null,"img":"houseDusk","alt":"The front of the farmhouse at dusk, every window lit under a pink and violet sky.","mirror":false,"pool":true,"poolUntil":"09-30","srcset":"/img/houseDusk-1200.webp?v=2 1200w, /img/houseDusk-1600.webp?v=2 1600w, /img/houseDusk-2400.webp?v=2 2400w","title":"The leaves are turning. Fire’s lit. A farmhouse for six in Afton, Virginia | Afton Awaits","pointsHtml":""}},"moments":[{"key":"christmas","from":"10-15","to":"12-15","line":"Christmas week is still open. A fire, a hot tub and nowhere to be.","href":"https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true&startdate=2026-12-21&enddate=2026-12-28&adults1=2&children1=0","out":true},{"key":"galentines","from":"12-16","to":"02-10","line":"Galentine’s weekend, sorted: wine, the hot tub and nobody in charge.","href":"/trips/girls/","out":false}],"chips":{"girls":"Just us girls.","family":["The kids need a pool.","The kids are coming."],"game-day":"Game day. Kids in tow.","outdoors":"Boots or skis.","trail151":"Wine. All of it."}}</script>
 <script>(function(){var C=JSON.parse(document.getElementById('seasons').textContent),q=new URLSearchParams(location.search),qd=q.get('date'),d=qd?new Date(qd+'T12:00:00'):new Date(),n=(d.getMonth()+1)*100+d.getDate();
 function num(x){return +x.replace('-','')}function within(n,a,b){a=num(a);b=num(b);return a<=b?n>=a&&n<=b:n>=a||n<=b}
@@ -208,7 +231,7 @@ var ul=document.getElementById('chips'),plain=ul.querySelector('.plain').parentN
 order.forEach(function(k){var a=ul.querySelector('[data-trip="'+k+'"]'),b=C.chips[k],t=typeof b==='string'?b:b[pool?0:1];a.textContent=k===S.featured&&S.featuredLabel?S.featuredLabel:t;a.classList.toggle('is-featured',k===S.featured);ul.insertBefore(a.parentNode,plain)});
 var M=C.moments.filter(function(m){return within(n,m.from,m.to)})[0];document.querySelectorAll('[data-moment]').forEach(function(p){p.hidden=!M;if(M){var a=p.firstChild;a.textContent=M.line;a.href=M.href;if(M.out){a.target='_blank';a.rel='noopener'}else{a.removeAttribute('target')}}})})()</script><!--seasonjs:end-->
 <script type="module">
-import { byId, url, remember, forget, label, reduced } from '/shared.js';
+import { byId, url, remember, forget, label, reduced, PLAN_INTERESTS } from '/shared.js';
 if (location.search.includes('switch')) { forget(); history.replaceState(null, '', '/'); }
 // the note arrived a minute ago, by the visitor's own clock
 { const d = new Date(Date.now() - 60000), h = d.getHours(), part = h < 5 ? 'Tonight' : h < 12 ? 'This morning' : h < 17 ? 'This afternoon' : 'This evening';
@@ -247,6 +270,7 @@ async function showCard() {
   card?.remove();
   const t = byId(picked[0]);
   card = add(`<a class="card" href="${url(picked)}"><img src="/img/${t.img}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${label(picked)}</strong><br><u>Open your weekend</u></span></a>`);
+  add(`<p class="msg msg--in msg--offer">Want me to see what’s on while you’re here? <a href="/plan/?i=${[...new Set(picked.flatMap((id) => PLAN_INTERESTS[id] ?? []))].join(',')}">See what’s on →</a></p>`);
   if (picked.length === 1) { hint.textContent = 'Mixed group? Add one more, or open your weekend above'; nav.classList.remove('is-wait'); }
   else { hint.textContent = 'All set. Open your weekend above'; main.hidden = true; }
   card.focus({ preventScroll: true });
@@ -264,9 +288,23 @@ for (const a of occ.querySelectorAll('a')) a.addEventListener('click', async (e)
   if (!o) { main.hidden = false; await showCard(); return; }   // just a weekend: carry on as any other trip
   await typing(900); add(`<p class="msg msg--in">${o[0]}</p>`); await typing(600);
   card = add(`<a class="card" href="${a.getAttribute('href')}"><img src="/img/${o[2]}.webp?v=2" alt="" width="800" height="450"><span><small>aftonawaits · your weekend</small><strong>${o[1]}</strong><br><u>Open your weekend</u></span></a>`);
+  add(`<p class="msg msg--in msg--offer">Want me to see what’s on while you’re here? <a href="/plan/?i=${PLAN_INTERESTS.girls.join(',')}">See what’s on →</a></p>`);
   hint.textContent = 'All set. Open your weekend above'; nav.classList.remove('is-wait'); card.focus({ preventScroll: true });
 });
+
+// "Your stay comes with a planner": what is really on this coming weekend, near the house
+try { const [cal, roads] = await Promise.all([fetch('/api/events.json').then((r) => r.json()), fetch('/api/drive.json').then((r) => r.json())]);
+  const d = new Date(), dow = d.getDay(), fri = new Date(d); fri.setDate(d.getDate() + (dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow));
+  const iso = (x) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`, days = [0, 1, 2].map((n) => { const x = new Date(fri); x.setDate(fri.getDate() + n); return iso(x); });
+  const mins = (id) => { const k = roads.ids.indexOf(id); return k < 0 ? null : roads.minutes[0][k]; }, safe = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const seen = new Set(), near = (cal.events ?? cal).filter((e) => days.includes(e.start.slice(0, 10)) && e.start.slice(0, 10) >= iso(d) && e.status !== 'cancelled' && e.placeId && (mins(e.placeId) ?? 99) <= 30)
+    .filter((e) => { const k = e.seriesId || e.title.trim().toLowerCase() + '|' + e.placeId; return seen.has(k) ? false : seen.add(k); });
+  if (near.length) { const c = document.getElementById('pl-count'); c.innerHTML = `This weekend: <b>${near.length}</b> thing${near.length === 1 ? '' : 's'} happening within 30 minutes of the house.`; c.hidden = false;
+    const venues = new Set(), three = near.filter((e) => !e.allDay).sort((a, b) => a.start.localeCompare(b.start)).filter((e) => (venues.has(e.placeId) ? false : venues.add(e.placeId))).slice(0, 3);
+    const when = (e) => new Date(e.start).toLocaleString('en-US', { weekday: 'short', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).replace(':00', '');
+    document.getElementById('pl-strip').innerHTML = three.map((e) => `<li><a href="/plan/?from=${days[0]}&to=${days[2]}&d=${e.start.slice(0, 10)}&r=${encodeURIComponent('e:' + e.id)}"><span>${when(e)}</span><strong>${safe(e.title)}</strong><i aria-hidden="true">→</i></a></li>`).join(''); }
+} catch { /* the calendar did not load: the section still makes its point without the live count */ }
 </script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:32 PM ET</p>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:43 PM ET</p>
 </body>
 </html>

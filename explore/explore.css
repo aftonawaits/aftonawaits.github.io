@@ -12,3 +12,6 @@
 .stay h2 { margin: 0; font-style: normal; color: var(--cream); } .stay p { color: color-mix(in srgb, var(--cream) 88%, transparent); max-width: 34rem; } .stay .row { margin-top: .4rem; }
 .stay .row a:not(.btn) { color: var(--cream); font-family: var(--serif); font-style: italic; text-decoration-color: var(--brass); }
 .ex .card > div { min-width: 0; } .ex .card .when { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }   /* the kicker stays on one line */
+
+.planbanner { margin: 0 0 1.4rem; padding: .7rem 1rem; border-radius: 1rem; background: var(--card); border: 1px solid var(--line, rgb(0 0 0 / .1)); font-size: .9375rem; }
+.planbanner a { font-weight: 600; white-space: nowrap; display: inline-block; padding: .6rem 0; }

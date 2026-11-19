@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!--head:start--><title>Plan your trip | Afton Awaits</title>
-<meta name="description" content="Plan your trip near Afton, Virginia: pick your dates, add wineries, breweries, trails, restaurants and what’s on, and get a day-by-day itinerary by email, calendar or link.">
+<meta name="description" content="Every concert, market and tasting near the house, on your dates.">
 <link rel="canonical" href="https://aftonawaits.github.io/plan/">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17120f">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Afton Awaits"><meta property="og:title" content="Plan your trip | Afton Awaits"><meta property="og:description" content="Plan your trip near Afton, Virginia: pick your dates, add wineries, breweries, trails, restaurants and what’s on, and get a day-by-day itinerary by email, calendar or link."><meta property="og:url" content="https://aftonawaits.github.io/plan/"><meta property="og:image" content="https://aftonawaits.github.io/img/og/valleyDusk.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Afton Awaits"><meta property="og:title" content="Plan your trip | Afton Awaits"><meta property="og:description" content="Every concert, market and tasting near the house, on your dates."><meta property="og:url" content="https://aftonawaits.github.io/plan/"><meta property="og:image" content="https://aftonawaits.github.io/img/og/plan.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){var P=new URLSearchParams(location.search),q=P.get('season'),qd=P.get('date'),d=qd?new Date(qd+'T12:00:00'):new Date(),n=(d.getMonth()+1)*100+d.getDate(),s=q==='pool'||q==='summer'?'pool':q==='cool'||q==='winter'||q==='spring'?'cool':(n>=501&&n<=930?'pool':'cool'),w=q==='winter'?'on':q&&!qd?'off':(n>=1015||n<=314?'on':'off'),h=document.documentElement;h.dataset.season=s;h.dataset.snow=w;document.addEventListener('DOMContentLoaded',function(){var t=(w==='on'&&document.querySelector('meta[name="aa:title-snow"]'))||document.querySelector('meta[name="aa:title-'+s+'"]');if(t&&!h.dataset.sells)document.title=t.content;if(q||qd)document.querySelectorAll('a[href^="/"]').forEach(function(a){var u=a.getAttribute('href');if(u.indexOf('season=')<0&&u.indexOf('date=')<0&&u.indexOf('#')!==0)a.href=u.replace(/(\?|#|$)/,function(m){return '?'+(qd?'date='+qd:'season='+q)+(m==='?'?'&':m)})})})})()</script>
 <script>(function(){var K='aa-utm',q=new URLSearchParams(location.search),u={};q.forEach(function(v,k){if(k.indexOf('utm_')===0)u[k]=v});try{if(Object.keys(u).length)sessionStorage.setItem(K,JSON.stringify(u));else u=JSON.parse(sessionStorage.getItem(K)||'{}')}catch(e){}if(!Object.keys(u).length)return;document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="eviivo.com"]').forEach(function(a){try{var h=new URL(a.href);Object.keys(u).forEach(function(k){h.searchParams.set(k,u[k])});a.href=h.href}catch(e){}})})})()</script>
 <!--head:end-->
-<link rel="stylesheet" href="/shared.css?v=1795055550"><link rel="stylesheet" href="/plan/vendor/maplibre-gl.css?v=1795055550"><link rel="stylesheet" href="/plan/plan.css?v=1795055550">
+<link rel="stylesheet" href="/shared.css?v=1795056236"><link rel="stylesheet" href="/plan/vendor/maplibre-gl.css?v=1795056236"><link rel="stylesheet" href="/plan/plan.css?v=1795056236">
 </head>
 <body data-mood="linen">
 <!--header:start--><a class="strip" data-mood="evening" href="https://partners.eviivo.com/BeStillGetaways/p/united-states/virginia/afton/afton-awaits/aftonawaits22920?refresh_all=true" target="_blank" rel="noopener"><b>Book direct and save.</b> No booking-site service fees.</a>
@@ -23,9 +23,9 @@
     <p class="bub bub--in">Tell me your dates. I’ll handle the rest.</p>
     <p class="kicker">Afton and the Rockfish Valley</p>
     <h1>Plan your <em>trip</em></h1>
-    <p class="lede">Build your days in three steps, then send the plan to yourself.</p>
+    <p class="lede">Most rentals hand you a list. We hand you a plan. Pick your dates and what you’re into, and I’ll pull every concert, market, tasting and trail near the house onto one map, sort it into days and send it to your phone.</p>
     <ol class="steps" aria-label="How it works">
-      <li><a href="#step1"><b>1</b><span><strong>Pick your dates</strong> and what you’re into.</span></a></li>
+      <li><a href="#step1"><b>1</b><span><strong>Pick your dates.</strong> I’ll show what’s on.</span></a></li>
       <li><a href="#step2"><b>2</b><span><strong>Add what looks good</strong> from the map or the lists.</span></a></li>
       <li><a href="#trip"><b>3</b><span><strong>Get your itinerary</strong> by email, in your calendar, or as a link to share.</span></a></li>
     </ol>
@@ -38,7 +38,6 @@
         <label>Arrive <input type="date" id="from" required></label>
         <label>Leave <input type="date" id="to" required></label>
       </fieldset>
-      <fieldset><legend>Show me (optional)</legend><div class="chips" id="chips"></div></fieldset>
     </form>
     <p class="avail" id="avail-row"><a class="btn" id="avail" target="_blank" rel="noopener">Check dates and book</a><span id="avail-note"></span></p>
     <!--proof:start--><p class="proof">5.0 ★ from 52 stays · Guest Favorite (top 5% on Airbnb) · Superhost host</p>
@@ -47,27 +46,36 @@
 
   <section class="step" id="step2" aria-labelledby="s2-h">
     <h2 id="s2-h"><b>2</b> Add what looks good</h2>
-    <p class="hint">Tap <strong>Add</strong> on anything you fancy. We’ll put it in order for you in step 3.</p>
-    <div class="tabs" role="tablist" aria-label="Browse by">
-      <button type="button" role="tab" id="tab-map" data-tab="map" aria-selected="true" aria-controls="panel-map">Map</button>
-      <button type="button" role="tab" id="tab-events" data-tab="events" aria-selected="false" aria-controls="panel-events">On your dates <b id="n-events"></b></button>
-      <button type="button" role="tab" id="tab-places" data-tab="places" aria-selected="false" aria-controls="panel-places">Places <b id="n-places"></b></button>
-    </div>
-    <div class="atlas" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-panel="map">
-      <div class="mapbox">
-        <div id="map" role="application" aria-label="Zoomable map of the house, places and events. Everything on it is also in the two lists."></div>
-        <button type="button" class="reset" id="reset">Show everything</button>
+    <p class="hint">Tap <strong>Add</strong> on anything you like. I’ll put it in order for you in step 3.</p>
+    <div class="browse">
+      <div class="browse__list">
+        <div class="tabs" role="tablist" aria-label="Browse by">
+          <button type="button" role="tab" id="tab-events" data-tab="events" aria-selected="true" aria-controls="panel-events">On your dates <b id="n-events"></b></button>
+          <button type="button" role="tab" id="tab-places" data-tab="places" aria-selected="false" aria-controls="panel-places" tabindex="-1">Places <b id="n-places"></b></button>
+          <button type="button" role="tab" id="tab-map" data-tab="map" aria-selected="false" aria-controls="panel-map" tabindex="-1">Map</button>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter what is shown">
+          <div class="chips" id="chips"></div>
+          <div class="toggles"><button type="button" data-flag="near" aria-pressed="false">Within 15 min</button><button type="button" data-flag="free" aria-pressed="false">Free</button><button type="button" data-flag="kid" aria-pressed="false">Kid-friendly</button><button type="button" class="ghost" id="clear-filters" hidden>Clear filters</button></div>
+        </div>
+        <div id="panel-events" role="tabpanel" aria-labelledby="tab-events" data-panel="events" tabindex="0">
+          <p class="status sr" id="status" role="status" aria-live="polite"></p>
+          <div class="days" id="days" role="tablist" aria-label="Day"></div>
+          <div id="list"></div>
+        </div>
+        <div id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-panel="places" tabindex="0" hidden>
+          <p class="hint">No set time: add any and I’ll find room. Opening hours aren’t checked yet, and restaurants change often, so confirm before you go.</p>
+          <div id="places"></div>
+        </div>
       </div>
-      <p class="mapnote" id="mapnote"></p>
-      <div class="detail" id="detail" aria-live="polite"></div>
-    </div>
-    <div id="panel-events" role="tabpanel" aria-labelledby="tab-events" data-panel="events" hidden>
-      <p class="status" id="status" role="status" aria-live="polite"></p>
-      <div id="list"></div>
-    </div>
-    <div id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-panel="places" hidden>
-      <p class="hint">No set time: add any and we’ll find room. Opening hours aren’t checked yet, and restaurants change often, so confirm before you go.</p>
-      <ul class="places" id="places"></ul>
+      <div class="atlas browse__map" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-panel="map" hidden>
+        <div class="mapbox">
+          <div id="map" role="application" aria-label="Zoomable map of the house, places and events. Everything on it is also in the two lists."></div>
+          <button type="button" class="reset" id="reset">Show everything</button>
+        </div>
+        <p class="mapnote" id="mapnote"></p>
+        <div class="detail" id="detail" aria-live="polite"></div>
+      </div>
     </div>
   </section>
 
@@ -102,8 +110,8 @@
 <p class="ft__note">Events come from each venue’s own calendar. <span id="updated"></span> Always confirm with the venue before you drive. Drive times are estimates, and route lines on the map are straight lines, not roads. The house is shown approximately.</p>
 </footer><!--footer:end-->
 <a class="tray" id="tray" href="#trip" hidden><span id="tray-text"></span><b>See my itinerary</b></a>
-<script src="/plan/vendor/maplibre-gl.js?v=1795055550" defer></script>
-<script type="module" src="/plan/plan.js?v=1795055550"></script>
-<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:32 PM ET</p>
+<script src="/plan/vendor/maplibre-gl.js?v=1795056236" defer></script>
+<script type="module" src="/plan/plan.js?v=1795056236"></script>
+<p id="preview-stamp" style="position:fixed;z-index:99;left:.5rem;bottom:.5rem;margin:0;padding:.2rem .55rem;border-radius:99px;background:#f0b352;color:#1b1408;font:600 11px/1.4 system-ui,sans-serif;pointer-events:none">Preview · updated Nov 18, 9:43 PM ET</p>
 </body>
 </html>

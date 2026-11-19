@@ -8,6 +8,8 @@ export const TRIPS = [
 ];
 /** Trips that have been renamed: an old id in a saved choice or a link maps to its replacement. */
 export const ALIAS = { golf: 'game-day' };
+/** What the planner opens with for each trip (its interest filters). */
+export const PLAN_INTERESTS = { family: ['family', 'festival', 'market'], girls: ['wine', 'music', 'market'], 'game-day': ['music', 'beer-cider', 'food'], outdoors: ['outdoors', 'scenic'], trail151: ['wine', 'beer-cider', 'music'] };
 export const byId = (id) => TRIPS.find((t) => t.id === (ALIAS[id] ?? id));
 export const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const KEY = 'afton-trip';
